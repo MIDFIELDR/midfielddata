@@ -1,0 +1,20 @@
+template:
+  params:
+    bootswatch: spacelab
+
+navbar:
+  title: midfieldstudent
+  type:  default
+
+  left:
+  - icon: fa-home fa-lg
+    href: index.html
+
+  - text: Reference
+    href: reference/index.html
+
+  right:
+  - icon: fa-github fa-lg
+    href: https://github.com/graphdr/midfieldr
+
+

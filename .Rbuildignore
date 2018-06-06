@@ -1,0 +1,9 @@
+^data-raw$
+^docs$
+^\.travis\.yml$
+^_pkgdown\.yml$
+^cran-comments\.md$
+^.*\.Rproj$
+^\.Rproj\.user$
+^README\.Rmd$
+^CONDUCT\.md$
