@@ -8,19 +8,30 @@ Status](https://travis-ci.org/MIDFIELDR/midfielddata.svg?branch=master)](https:/
 [![Coverage
 Status](https://img.shields.io/codecov/c/github/MIDFIELDR/midfielddata/master.svg)](https://codecov.io/github/MIDFIELDR/midfielddata?branch=master)
 
-midfielddata contains four data sets for use with the
-[midfieldr](https://github.com/MIDFIELDR/midfieldr) package.
+An R data package containing four data sets:
 
-  - `midfieldstudents`
-  - `midfieldcourses`
-  - `midfieldterms`
-  - `midfielddegrees`
+  - `midfieldstudents`. Student demographic attributes.  
+  - `midfieldcourses`. Academic course attributes.  
+  - `midfieldterms`. Academic term attributes.  
+  - `midfielddegrees`. Student graduation attributes.
+
+These data are a stratified sample of data from the MIDFIELD project,
+comprising student records from registrars at participating US
+universities for 97,640 undergraduate students from 1987 to 2016.
+
+The datasets have at least two variables in common for
+cross-referencing: anonymized identifiers for both student and
+institution. For more about any data set, run its help page, e.g.,
+`?midfieldstudents`, `?midfieldcourses`, etc.
+
+Tools for accessing and analyzing these data are provided by the
+[midfieldr](https://github.com/MIDFIELDR/midfieldr) package.
 
 ## Installation
 
 midfielddata is not currently available from CRAN.
 
-The development version can be installed from github with:
+The development version can be installed from GitHub with:
 
 ``` r
 install.packages("devtools")
@@ -30,9 +41,9 @@ devtools::install_github("MIDFIELDR/midfielddata")
 ## Meta
 
   - Please [report any issues or
-    bugs](https://github.com/MIDFIELDR/midfieldr/issues).
+    bugs](https://github.com/MIDFIELDR/midfielddata/issues).
   - License: CC0.
-  - Get citation information with `citation(package = 'midfieldr')`.
+  - Get citation information with `citation(package = 'midfielddata')`.
   - Please note that this project is released with a [Code of
     Conduct](CONDUCT.md). If you contribute to this project you agree to
     abide by its terms.

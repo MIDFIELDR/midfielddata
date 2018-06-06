@@ -17,4 +17,8 @@ NULL
 #'   \item{degree}{The type of undergraduate degree awarded}
 #' }
 #' @source \url{https://engineering.purdue.edu/MIDFIELD}.
+#' @examples
+#' \dontrun{
+#' tibble::glimpse(midfielddegrees)
+#' }
 "midfielddegrees"

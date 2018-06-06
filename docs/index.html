@@ -75,18 +75,28 @@
 <a href="#midfielddata" class="anchor"></a>midfielddata <a href="https://engineering.purdue.edu/MIDFIELD" target="blank"><img src="reference/figures/midfieldcut.png" align="right"></a>
 </h1></div>
 
-<p>midfielddata contains four data sets for use with the <a href="https://github.com/MIDFIELDR/midfieldr">midfieldr</a> package.</p>
+<p>An R data package containing four data sets:</p>
 <ul>
-<li><code>midfieldstudents</code></li>
-<li><code>midfieldcourses</code></li>
-<li><code>midfieldterms</code></li>
-<li><code>midfielddegrees</code></li>
+<li>
+<code>midfieldstudents</code>. Student demographic attributes.<br>
+</li>
+<li>
+<code>midfieldcourses</code>. Academic course attributes.<br>
+</li>
+<li>
+<code>midfieldterms</code>. Academic term attributes.<br>
+</li>
+<li>
+<code>midfielddegrees</code>. Student graduation attributes.</li>
 </ul>
+<p>These data are a stratified sample of data from the MIDFIELD project, comprising student records from registrars at participating US universities for 97,640 undergraduate students from 1987 to 2016.</p>
+<p>The datasets have at least two variables in common for cross-referencing: anonymized identifiers for both student and institution. For more about any data set, run its help page, e.g., <code><a href="reference/midfieldstudents.html">?midfieldstudents</a></code>, <code><a href="reference/midfieldcourses.html">?midfieldcourses</a></code>, etc.</p>
+<p>Tools for accessing and analyzing these data are provided by the <a href="https://github.com/MIDFIELDR/midfieldr">midfieldr</a> package.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>midfielddata is not currently available from CRAN.</p>
-<p>The development version can be installed from github with:</p>
+<p>The development version can be installed from GitHub with:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">"devtools"</span>)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"MIDFIELDR/midfielddata"</span>)</a></code></pre></div>
 </div>
@@ -94,9 +104,9 @@
 <h2 class="hasAnchor">
 <a href="#meta" class="anchor"></a>Meta</h2>
 <ul>
-<li>Please <a href="https://github.com/MIDFIELDR/midfieldr/issues">report any issues or bugs</a>.</li>
+<li>Please <a href="https://github.com/MIDFIELDR/midfielddata/issues">report any issues or bugs</a>.</li>
 <li>License: CC0.</li>
-<li>Get citation information with <code>citation(package = 'midfieldr')</code>.</li>
+<li>Get citation information with <code>citation(package = 'midfielddata')</code>.</li>
 <li>Please note that this project is released with a <a href="CONDUCT.html">Code of Conduct</a>. If you contribute to this project you agree to abide by its terms.</li>
 </ul>
 </div>

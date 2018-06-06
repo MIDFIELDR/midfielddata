@@ -24,4 +24,9 @@ midfielddegrees
 \description{
 A dataset of degree attributes of 97,640 undergraduates from US universities 1987 to 2016, sampled from the MIDFIELD database. A total of 47,499 students completed the requirements for their degrees.
 }
+\examples{
+\dontrun{
+tibble::glimpse(midfielddegrees)
+}
+}
 \keyword{datasets}

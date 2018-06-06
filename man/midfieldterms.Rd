@@ -30,4 +30,9 @@ midfieldterms
 \description{
 A dataset of term attributes of 97,064 undergraduates matriculating in US universities from from 1987 to 2016, sampled from the MIDFIELD database.
 }
+\examples{
+\dontrun{
+tibble::glimpse(midfieldterms)
+}
+}
 \keyword{datasets}

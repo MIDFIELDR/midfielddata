@@ -23,4 +23,8 @@ NULL
 #'   \item{GPA_cumul}{}
 #' }
 #' @source \url{https://engineering.purdue.edu/MIDFIELD}.
+#' @examples
+#' \dontrun{
+#' tibble::glimpse(midfieldterms)
+#' }
 "midfieldterms"

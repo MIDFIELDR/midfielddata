@@ -30,7 +30,7 @@
 
 <meta property="og:title" content="Academic course data for 98,000 undergraduates — midfieldcourses" />
 
-<meta property="og:description" content="A dataset of course attributes of 97,064 undergraduates matriculating in 
+<meta property="og:description" content="A dataset of course attributes of 97,064 undergraduates matriculating in
 US universities from from 1987 to 2016, sampled from the MIDFIELD database." />
 <meta name="twitter:card" content="summary" />
 
@@ -102,7 +102,7 @@ US universities from from 1987 to 2016, sampled from the MIDFIELD database." />
 
     <div class="ref-description">
     
-    <p>A dataset of course attributes of 97,064 undergraduates matriculating in 
+    <p>A dataset of course attributes of 97,064 undergraduates matriculating in
 US universities from from 1987 to 2016, sampled from the MIDFIELD database.</p>
     
     </div>
@@ -111,8 +111,8 @@ US universities from from 1987 to 2016, sampled from the MIDFIELD database.</p>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame (tibble) with 3.5 M observations and 12 variables, 
-occupying 348 Mb of memory. Each observation is one course in one term for 
+    <p>A data frame (tibble) with 3.5 M observations and 12 variables,
+occupying 348 Mb of memory. Each observation is one course in one term for
 one student. The variables are:</p>
 <dl class='dl-horizontal'>
   <dt>ID</dt><dd><p>Unique, anonymized MIDFIELD student identifier.</p></dd>
@@ -122,9 +122,9 @@ one student. The variables are:</p>
   <dt>abbrev</dt><dd><p>Course alpha identifier (e.g. ENGR, MATH, ENGL)</p></dd>
   <dt>number</dt><dd><p>Course numeric identifier (e.g. 101, 3429)</p></dd>
   <dt>section</dt><dd><p>Course section identifier</p></dd>
-  <dt>hours_course</dt><dd><p>The number of hours awarded upon successful 
+  <dt>hours_course</dt><dd><p>The number of hours awarded upon successful
       completion of the course</p></dd>
-  <dt>type</dt><dd><p>The means by which instruction is predominately delivered 
+  <dt>type</dt><dd><p>The means by which instruction is predominately delivered
       for this course section</p></dd>
   <dt>pass_fail</dt><dd><p>Was the course offered pass/fail?</p></dd>
   <dt>grade</dt><dd><p>The grade awarded for the course</p></dd>
@@ -136,6 +136,10 @@ one student. The variables are:</p>
     <p><a href='https://engineering.purdue.edu/MIDFIELD'>https://engineering.purdue.edu/MIDFIELD</a>.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='kw pkg'>tibble</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/tibble/topics/glimpse'>glimpse</a></span>(<span class='no'>midfieldcourses</span>)
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -144,7 +148,9 @@ one student. The variables are:</p>
       <li><a href="#format">Format</a></li>
 
       <li><a href="#source">Source</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
