@@ -11,9 +11,9 @@ NULL
 #'   \item{ID}{Unique, anonymized MIDFIELD student identifier.}
 #'   \item{institution}{Anonymized institution name.}
 #'   \item{CIP6}{Graduation major expressed as a 6-digit IPEDS
-#'   Classification of Instructional Programs (CIP) code.}
+#'       Classification of Instructional Programs (CIP) code.}
 #'   \item{term_degree}{The academic year and term in which the student
-#'   graduated.}
+#'       graduated.}
 #'   \item{degree}{The type of undergraduate degree awarded}
 #' }
 #' @source \url{https://engineering.purdue.edu/MIDFIELD}.
