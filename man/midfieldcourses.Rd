@@ -9,7 +9,7 @@ occupying 348 Mb of memory. Each observation is one course in one term for
 one student. The variables are:
 
 \describe{
-  \item{ID}{Unique, anonymized MIDFIELD student identifier.}
+  \item{id}{Unique, anonymized MIDFIELD student identifier.}
   \item{institution}{Anonymized institution name.}
   \item{term_course}{The term the course was attempted}
   \item{course}{Course name}

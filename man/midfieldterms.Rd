@@ -7,19 +7,19 @@
 \format{A data frame (tibble) with 729,014 observations and 13 variables,  occupying 82.1 MB of memory. Each observation is one term for one student. The variables are:
 
 \describe{
-  \item{ID}{Unique, anonymized MIDFIELD student identifier.}
+  \item{id}{Unique, anonymized MIDFIELD student identifier.}
   \item{institution}{Anonymized institution name.}
-  \item{CIP6}{}
-  \item{term}{}
+  \item{cip6}{cip6}
+  \item{term}{term}
   \item{level}{level}
-  \item{standing}{}
-  \item{coop}{}
-  \item{hours_term_attempt}{}
-  \item{hours_term}{}
-  \item{GPA_term}{}
-  \item{hours_cumul_attempt}{}
-  \item{hours_cumul}{}
-  \item{GPA_cumul}{}
+  \item{standing}{standing}
+  \item{coop}{coop}
+  \item{hours_term_attempt}{hours_term_attempt}
+  \item{hours_term}{hours_term}
+  \item{gpa_term}{gpa_term}
+  \item{hours_cumul_attempt}{hours_cumul_attempt}
+  \item{hours_cumul}{hours_cumul}
+  \item{gpa_cumul}{gpa_cumul}
 }}
 \source{
 \url{https://engineering.purdue.edu/MIDFIELD}.

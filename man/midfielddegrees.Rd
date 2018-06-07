@@ -7,9 +7,9 @@
 \format{A data frame (tibble) with 97,640  observations and 5 variables,  occupying 10.2 MB of memory. Each observation is a unique student. The variables are:
 
 \describe{
-  \item{ID}{Unique, anonymized MIDFIELD student identifier.}
+  \item{id}{Unique, anonymized MIDFIELD student identifier.}
   \item{institution}{Anonymized institution name.}
-  \item{CIP6}{Graduation major expressed as a 6-digit IPEDS
+  \item{cip6}{Graduation major expressed as a 6-digit IPEDS
       Classification of Instructional Programs (CIP) code.}
   \item{term_degree}{The academic year and term in which the student
       graduated.}
