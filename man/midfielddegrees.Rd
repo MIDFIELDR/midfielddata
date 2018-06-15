@@ -16,7 +16,8 @@
   \item{degree}{The type of undergraduate degree awarded}
 }}
 \source{
-\url{https://engineering.purdue.edu/MIDFIELD}.
+Data provided by the MIDFIELD project:
+\url{https://engineering.purdue.edu/MIDFIELD}
 }
 \usage{
 midfielddegrees

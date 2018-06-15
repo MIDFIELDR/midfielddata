@@ -32,7 +32,8 @@ NULL
 #'   \item{act_comp}{ACT composite test score, used as part of the
 #'       admissions process.}
 #' }
-#' @source \url{https://engineering.purdue.edu/MIDFIELD}.
+#' @source Data provided by the MIDFIELD project:
+#' \url{https://engineering.purdue.edu/MIDFIELD}
 #' @examples
 #' \dontrun{
 #' tibble::glimpse(midfieldstudents)

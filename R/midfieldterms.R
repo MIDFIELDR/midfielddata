@@ -22,7 +22,8 @@ NULL
 #'   \item{hours_cumul}{hours_cumul}
 #'   \item{gpa_cumul}{gpa_cumul}
 #' }
-#' @source \url{https://engineering.purdue.edu/MIDFIELD}.
+#' @source Data provided by the MIDFIELD project:
+#' \url{https://engineering.purdue.edu/MIDFIELD}
 #' @examples
 #' \dontrun{
 #' tibble::glimpse(midfieldterms)

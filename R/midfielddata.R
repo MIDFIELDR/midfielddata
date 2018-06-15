@@ -24,13 +24,6 @@
 #' \url{https://engineering.purdue.edu/MIDFIELD}
 #' @docType package
 #' @name midfielddata
-#' @examples
-#' \dontrun{
-#' tibble::glimpse(midfieldcourses)
-#' tibble::glimpse(midfielddegrees)
-#' tibble::glimpse(midfieldstudents)
-#' tibble::glimpse(midfielddegrees)
-#' }
 NULL
 
 ## addresses R CMD check warning "no visible binding"

@@ -31,11 +31,3 @@ in common for cross-referencing.
     Help page: \code{?midfielddegrees}.}
 }
 }
-\examples{
-\dontrun{
-tibble::glimpse(midfieldcourses)
-tibble::glimpse(midfielddegrees)
-tibble::glimpse(midfieldstudents)
-tibble::glimpse(midfielddegrees)
-}
-}

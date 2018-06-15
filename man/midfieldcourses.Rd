@@ -25,7 +25,8 @@ one student. The variables are:
   \item{faculty_rank}{Academic rank of the person teaching the course}
 }}
 \source{
-\url{https://engineering.purdue.edu/MIDFIELD}.
+Data provided by the MIDFIELD project:
+\url{https://engineering.purdue.edu/MIDFIELD}
 }
 \usage{
 midfieldcourses

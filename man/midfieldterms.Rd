@@ -22,7 +22,8 @@
   \item{gpa_cumul}{gpa_cumul}
 }}
 \source{
-\url{https://engineering.purdue.edu/MIDFIELD}.
+Data provided by the MIDFIELD project:
+\url{https://engineering.purdue.edu/MIDFIELD}
 }
 \usage{
 midfieldterms
