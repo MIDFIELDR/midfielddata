@@ -24,13 +24,16 @@ Tools for accessing and analyzing these data are provided by the
 
 ## Installation
 
-From CRAN,
+Not yet submitted to CRAN, but will be soon. Currently passes R CMD
+check with the results:
 
-``` r
-install.packages("midfielddata")
-```
+    0 errors | 0 warnings | 1 note 
+    checking installed package size ... NOTE
+      installed size is 30.8Mb
+      sub-directories of 1Mb or more:
+        data  30.7Mb
 
-Or you can obtain the most recent devlopment version from GitHub.
+You can obtain the most recent devlopment version from GitHub.
 
 ``` r
 install.packages("devtools")

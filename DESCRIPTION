@@ -4,7 +4,8 @@ Version: 0.1.0
 Language: en-US
 Authors@R: c(
   person("Richard", "Layton", email = "graphdoctor@gmail.com", role = c("cre", "aut")),
-  person("Russell", "Long", email = "ralong@purdue.edu", role = c("dtm", "aut")), 
+  person("Russell", "Long", email = "ralong@purdue.edu", role = c("dtm", "aut")),
+  person("Matthew", "Ohland", email = "ohland@purdue.edu", role = c("aut")),
   person("US National Science Foundation", role = c("fnd"))
   )
 Description: A stratified sample of the MIDFIELD database of student records 
