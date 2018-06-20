@@ -9,29 +9,21 @@ Status](https://travis-ci.org/MIDFIELDR/midfielddata.svg?branch=master)](https:/
 
 An R data package containing four data sets:
 
-  - `midfieldstudents` Student demographic attributes.  
-  - `midfieldcourses` Academic course attributes.  
-  - `midfieldterms` Academic term attributes.  
-  - `midfielddegrees` Student graduation attributes.
+  - `midfieldstudents` Student demographic attributes
+  - `midfieldcourses` Academic course attributes
+  - `midfieldterms` Academic term attributes
+  - `midfielddegrees` Student graduation attributes
 
 These data are a stratified sample of data from the
 [MIDFIELD](https://engineering.purdue.edu/MIDFIELD) project, comprising
 student records from registrars at participating US universities for
-97,640 undergraduate students from 1987 to 2016.
+97,640 undergraduate students from 1987 to 2016. For privacy protection,
+personal and institutional identities are anonymized.
 
 Tools for accessing and analyzing these data are provided by the
 [midfieldr](https://github.com/MIDFIELDR/midfieldr) package.
 
 ## Installation
-
-Not yet submitted to CRAN, but will be soon. Currently passes R CMD
-check with the results:
-
-    0 errors | 0 warnings | 1 note 
-    checking installed package size ... NOTE
-      installed size is 30.8Mb
-      sub-directories of 1Mb or more:
-        data  30.7Mb
 
 You can obtain the most recent devlopment version from GitHub.
 
@@ -39,6 +31,15 @@ You can obtain the most recent devlopment version from GitHub.
 install.packages("devtools")
 devtools::install_github("MIDFIELDR/midfielddata")
 ```
+
+Not yet submitted to CRAN (but will be soon). Currently passes R CMD
+check with the results:
+
+    0 errors | 0 warnings | 1 note 
+    checking installed package size ... NOTE
+      installed size is 30.8Mb
+      sub-directories of 1Mb or more:
+        data  30.7Mb
 
 ## Meta
 
