@@ -21,7 +21,7 @@ student records from registrars at participating US universities for
 personal and institutional identities are anonymized.
 
 Tools for accessing and analyzing these data are provided by the
-[midfieldr](https://github.com/MIDFIELDR/midfieldr) package.
+[midfieldr](https://midfieldr.github.io/midfieldr/) package.
 
 ## Installation
 
