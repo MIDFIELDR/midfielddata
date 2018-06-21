@@ -3,7 +3,6 @@
 
 [![Build
 Status](https://travis-ci.org/MIDFIELDR/midfielddata.svg?branch=master)](https://travis-ci.org/MIDFIELDR/midfielddata)
-[![](https://cranlogs.r-pkg.org/badges/grand-total/midfielddata)](https://cran.r-project.org/package=midfielddata)
 [![License](man/figures/License-CC-0-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 An R data package containing four data sets:
