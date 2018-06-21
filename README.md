@@ -1,7 +1,6 @@
 
 # midfielddata <a href="https://engineering.purdue.edu/MIDFIELD" target="blank"><img src="man/figures/midfieldcut.png" align="right"/></a>
 
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/midfielddata)](http://cran.r-project.org/package=midfielddata)
 [![Build
 Status](https://travis-ci.org/MIDFIELDR/midfielddata.svg?branch=master)](https://travis-ci.org/MIDFIELDR/midfielddata)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/midfielddata)](https://cran.r-project.org/package=midfielddata)
@@ -25,15 +24,25 @@ Tools for accessing and analyzing these data are provided by the
 
 ## Installation
 
-You can obtain the most recent devlopment version from GitHub.
+The data package is installed from a GitHub repository (not CRAN) in
+three steps using the [drat](https://github.com/eddelbuettel/drat)
+package.
+
+  - Install the drat package
+  - Add the midfielddata drat repository to the current session
+  - And install the midfielddata package
+
+<!-- end list -->
 
 ``` r
-install.packages("devtools")
-devtools::install_github("MIDFIELDR/midfielddata")
+install.packages("drat")
+drat::addRepo("midfieldr")
+install.packages("midfielddata")
 ```
 
-Not yet submitted to CRAN (but will be soon). Currently passes R CMD
-check with the results:
+## The build
+
+midfielddata currently passes R CMD check with the results:
 
     0 errors | 0 warnings | 1 note 
     checking installed package size ... NOTE
