@@ -51,10 +51,6 @@ midfielddata currently passes R CMD check with the results:
 
 ## Meta
 
-  - License:
-    [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
-  - Please report any [issues or
-    bugs](https://github.com/MIDFIELDR/midfielddata/issues).
   - Get citation information with `citation("midfielddata")`.
   - Please note that this project is released with a [Code of
     Conduct](CONDUCT.md). If you contribute to this project you agree to
