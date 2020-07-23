@@ -27,5 +27,9 @@
 #' @source Data provided by the MIDFIELD project:
 #' \url{https://engineering.purdue.edu/MIDFIELD}
 #' @examples
+#' \dontrun{
+#' library(data.table)
 #' midfieldterms
+#' }
+#' 
 "midfieldterms"

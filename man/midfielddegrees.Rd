@@ -5,18 +5,18 @@
 \alias{midfielddegrees}
 \title{Degree data for 98,000 undergraduates}
 \format{
-\code{data.table} with 97,640  observations and 5 variables,  
-occupying 10.2 MB of memory. Each observation is a unique student. 
+\code{data.table} with 97,640  observations and 5 variables,
+occupying 10.2 MB of memory. Each observation is a unique student.
 The variables are:
 
 \describe{
   \item{id}{character, unique anonymized MIDFIELD student identifier}
   \item{institution}{character, anonymized institution name}
-  \item{cip6}{character, graduation major, 6-digit IPEDS Classification of 
+  \item{cip6}{character, graduation major, 6-digit IPEDS Classification of
   Instructional Programs (CIP) code}
-  \item{term_degree}{numeric, academic year and term in which the student 
+  \item{term_degree}{numeric, academic year and term in which the student
   graduated, format YYYYT or NA if no degree}
-  \item{degree}{character, type of undergraduate degree awarded or NA if 
+  \item{degree}{character, type of undergraduate degree awarded or NA if
   no degree}
 }
 }
@@ -28,12 +28,15 @@ Data provided by the MIDFIELD project:
 midfielddegrees
 }
 \description{
-Data frame of degree attributes with 97,640 observations and 5 graduation 
-variables keyed by student ID. Each observation is a unique student. 
+Data frame of degree attributes with 97,640 observations and 5 graduation
+variables keyed by student ID. Each observation is a unique student.
 A stratified sample of the MIDFIELD database.
 }
 \examples{
+\dontrun{
+library(data.table)
 midfielddegrees
+}
 
 }
 \keyword{datasets}

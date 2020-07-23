@@ -5,30 +5,30 @@
 \alias{midfieldstudents}
 \title{Demographic data for 98,000 undergraduates}
 \format{
-\code{data.table} with 97,064 observations and 15 variables,  
-occupying 19 MB of memory. Each observation is a unique student. 
+\code{data.table} with 97,064 observations and 15 variables,
+occupying 19 MB of memory. Each observation is a unique student.
 The variables are:
 \describe{
   \item{id}{character, unique anonymized MIDFIELD student identifier}
   \item{institution}{character, anonymized institution name}
-  \item{cip6}{character, 6-digit CIP code of instructional program 
+  \item{cip6}{character, 6-digit CIP code of instructional program
   at matriculation}
-  \item{term_enter}{numeric, academic term the student 
+  \item{term_enter}{numeric, academic term the student
       first entered the institution, format YYYYT}
-  \item{transfer}{character, did the student transfer into the institution? 
+  \item{transfer}{character, did the student transfer into the institution?
       (Y = Yes or N = No)}
-  \item{hours_transfer}{numeric, transfer hours accepted at the 
+  \item{hours_transfer}{numeric, transfer hours accepted at the
       institution}
-  \item{sex}{character, sex (M = Male, F = Female) as self-reported by 
+  \item{sex}{character, sex (M = Male, F = Female) as self-reported by
       the student}
-  \item{race}{character, race/ethnicity as self-reported by the student 
+  \item{race}{character, race/ethnicity as self-reported by the student
       and as reported to IPEDS}
   \item{age}{numeric, age at matriculation as self-reported by the student}
-  \item{us_citizen}{character, is the student a US citizen? (Y = Yes or 
+  \item{us_citizen}{character, is the student a US citizen? (Y = Yes or
       N = No)}
-  \item{home_zip}{character, five or nine digit home ZIP code at time 
+  \item{home_zip}{character, five or nine digit home ZIP code at time
       of entry}
-  \item{high_school}{character, high school code for the last high 
+  \item{high_school}{character, high school code for the last high
       school attended before entering a post-secondary institution}
   \item{sat_math}{numeric, SAT mathematics test score}
   \item{sat_verbal}{numeric, SAT reading test score}
@@ -43,12 +43,15 @@ Data provided by the MIDFIELD project:
 midfieldstudents
 }
 \description{
-Data frame of matriculation attributes with 97,640 observations and 15 
-demographic variables keyed by student ID. Each observation is a unique 
+Data frame of matriculation attributes with 97,640 observations and 15
+demographic variables keyed by student ID. Each observation is a unique
 student. A stratified sample of the MIDFIELD database.
 }
 \examples{
+\dontrun{
+library(data.table)
 midfieldstudents
+}
 
 }
 \keyword{datasets}

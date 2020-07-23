@@ -5,14 +5,14 @@
 \alias{midfieldterms}
 \title{Term data for 98,000 undergraduates}
 \format{
-\code{data.table} with 729,014 observations and 13 variables,  
-occupying 82.1 MB of memory. Each observation is one term for one student. 
+\code{data.table} with 729,014 observations and 13 variables,
+occupying 82.1 MB of memory. Each observation is one term for one student.
 The variables are:
 \describe{
   \item{id}{character, unique anonymized MIDFIELD student identifier}
   \item{institution}{character, anonymized institution name}
-  \item{cip6}{character, 6-digit CIP code of instructional program 
-  during the term}
+  \item{cip6}{character, 6-digit CIP code of instructional program
+      during the term}
   \item{term_course}{numeric, academic year and term, format YYYYT}
   \item{level}{character, level}
   \item{standing}{character, standing}
@@ -33,13 +33,16 @@ Data provided by the MIDFIELD project:
 midfieldterms
 }
 \description{
-Data frame of term attributes of 97,064 undergraduates with 727,369 
-observations and 13 academic term variables keyed by student ID and term. 
-Each observation is one term for one student. A stratified sample 
+Data frame of term attributes of 97,064 undergraduates with 727,369
+observations and 13 academic term variables keyed by student ID and term.
+Each observation is one term for one student. A stratified sample
 of the MIDFIELD database.
 }
 \examples{
+\dontrun{
+library(data.table)
 midfieldterms
+}
 
 }
 \keyword{datasets}
