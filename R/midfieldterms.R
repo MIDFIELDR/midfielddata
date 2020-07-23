@@ -1,31 +1,31 @@
-#' @importFrom tibble tibble
-NULL
-
-#' Academic term data for 98,000 undergraduates
+#' Term data for 98,000 undergraduates
 #'
-#' A dataset of term attributes of 97,064 undergraduates matriculating in US universities from from 1987 to 2016, sampled from the MIDFIELD database.
+#' Data frame of term attributes of 97,064 undergraduates with 727,369
+#' observations and 13 academic term variables keyed by student ID and term.
+#' Each observation is one term for one student. A stratified sample
+#' of the MIDFIELD database.
 #'
-#' @format A data frame (tibble) with 729,014 observations and 13 variables,  occupying 82.1 MB of memory. Each observation is one term for one student. The variables are:
-#'
+#' @format \code{data.table} with 729,014 observations and 13 variables,
+#' occupying 82.1 MB of memory. Each observation is one term for one student.
+#' The variables are:
 #' \describe{
-#'   \item{id}{Unique, anonymized MIDFIELD student identifier.}
-#'   \item{institution}{Anonymized institution name.}
-#'   \item{cip6}{cip6}
-#'   \item{term}{term}
-#'   \item{level}{level}
-#'   \item{standing}{standing}
-#'   \item{coop}{coop}
-#'   \item{hours_term_attempt}{hours_term_attempt}
-#'   \item{hours_term}{hours_term}
-#'   \item{gpa_term}{gpa_term}
-#'   \item{hours_cumul_attempt}{hours_cumul_attempt}
-#'   \item{hours_cumul}{hours_cumul}
-#'   \item{gpa_cumul}{gpa_cumul}
+#'   \item{id}{character, unique anonymized MIDFIELD student identifier}
+#'   \item{institution}{character, anonymized institution name}
+#'   \item{cip6}{character, 6-digit CIP code of instructional program
+#'       during the term}
+#'   \item{term_course}{numeric, academic year and term, format YYYYT}
+#'   \item{level}{character, level}
+#'   \item{standing}{character, standing}
+#'   \item{coop}{character, coop "Y" or "N"}
+#'   \item{hours_term_attempt}{numeric, credit hours attempted in the term}
+#'   \item{hours_term}{numeric, credit hours earned in the term}
+#'   \item{gpa_term}{numeric, term grade point average}
+#'   \item{hours_cumul_attempt}{numeric, cumulative credit hours attempted}
+#'   \item{hours_cumul}{numeric, cumulative credit hours earned}
+#'   \item{gpa_cumul}{numeric, cumulative grade point average}
 #' }
 #' @source Data provided by the MIDFIELD project:
 #' \url{https://engineering.purdue.edu/MIDFIELD}
 #' @examples
-#' \dontrun{
-#' tibble::glimpse(midfieldterms)
-#' }
+#' midfieldterms
 "midfieldterms"

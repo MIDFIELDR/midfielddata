@@ -1,41 +1,40 @@
-#' @importFrom tibble tibble
-NULL
-
 #' Demographic data for 98,000 undergraduates
 #'
-#' A dataset of demographic attributes of 97,640  undergraduates matriculating in US universities from from 1987 to 2016, sampled from the MIDFIELD database.
+#' Data frame of matriculation attributes with 97,640 observations and 15
+#' demographic variables keyed by student ID. Each observation is a unique
+#' student. A stratified sample of the MIDFIELD database.
 #'
-#' @format A data frame (tibble) with 97,064 observations and 15 variables,  occupying 19 MB of memory. Each observation is a unique student. The variables are:
-#'
+#' @format \code{data.table} with 97,064 observations and 15 variables,
+#' occupying 19 MB of memory. Each observation is a unique student.
+#' The variables are:
 #' \describe{
-#'   \item{id}{Unique, anonymized MIDFIELD student identifier.}
-#'   \item{institution}{Anonymized institution name.}
-#'   \item{cip6}{Six-digit CIP code of the program into which the student
-#'        matriculated.}
-#'   \item{term_enter}{Academic year and term the student first entered the
-#'        institution.}
-#'   \item{transfer}{Did the student transfer into the institution? (Y = Yes
-#'       or N = No).}
-#'   \item{hours_transfer}{Transfer hours accepted at your institution.}
-#'   \item{sex}{Sex (M = Male, F = Female) as self-reported by the student.}
-#'   \item{race}{Ethnicity as self-reported by the student and as reported
-#'       to IPEDS.}
-#'   \item{age}{Age at matriculation as self-reported by the student.}
-#'   \item{us_citizen}{Is the student a US citizen? (Y = Yes or N = No).}
-#'   \item{home_zip}{Five or nine digit home ZIP code at time of entry.}
-#'   \item{high_school}{High school code for the last high school attended
-#'        before entering a post-secondary institution}
-#'   \item{sat_math}{SAT mathematics test score, used as part of the
-#'       admissions process.}
-#'   \item{sat_verbal}{SAT reading test score, used as part of the
-#'   admissions process.}
-#'   \item{act_comp}{ACT composite test score, used as part of the
-#'       admissions process.}
+#'   \item{id}{character, unique anonymized MIDFIELD student identifier}
+#'   \item{institution}{character, anonymized institution name}
+#'   \item{cip6}{character, 6-digit CIP code of instructional program
+#'   at matriculation}
+#'   \item{term_enter}{numeric, academic term the student
+#'       first entered the institution, format YYYYT}
+#'   \item{transfer}{character, did the student transfer into the institution?
+#'       (Y = Yes or N = No)}
+#'   \item{hours_transfer}{numeric, transfer hours accepted at the
+#'       institution}
+#'   \item{sex}{character, sex (M = Male, F = Female) as self-reported by
+#'       the student}
+#'   \item{race}{character, race/ethnicity as self-reported by the student
+#'       and as reported to IPEDS}
+#'   \item{age}{numeric, age at matriculation as self-reported by the student}
+#'   \item{us_citizen}{character, is the student a US citizen? (Y = Yes or
+#'       N = No)}
+#'   \item{home_zip}{character, five or nine digit home ZIP code at time
+#'       of entry}
+#'   \item{high_school}{character, high school code for the last high
+#'       school attended before entering a post-secondary institution}
+#'   \item{sat_math}{numeric, SAT mathematics test score}
+#'   \item{sat_verbal}{numeric, SAT reading test score}
+#'   \item{act_comp}{numeric, ACT composite test score}
 #' }
 #' @source Data provided by the MIDFIELD project:
 #' \url{https://engineering.purdue.edu/MIDFIELD}
 #' @examples
-#' \dontrun{
-#' tibble::glimpse(midfieldstudents)
-#' }
+#' midfieldstudents
 "midfieldstudents"

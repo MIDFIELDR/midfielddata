@@ -3,18 +3,23 @@
 \docType{data}
 \name{midfielddegrees}
 \alias{midfielddegrees}
-\title{Graduation data for 98,000 undergraduates}
-\format{A data frame (tibble) with 97,640  observations and 5 variables,  occupying 10.2 MB of memory. Each observation is a unique student. The variables are:
+\title{Degree data for 98,000 undergraduates}
+\format{
+\code{data.table} with 97,640  observations and 5 variables,  
+occupying 10.2 MB of memory. Each observation is a unique student. 
+The variables are:
 
 \describe{
-  \item{id}{Unique, anonymized MIDFIELD student identifier.}
-  \item{institution}{Anonymized institution name.}
-  \item{cip6}{Graduation major expressed as a 6-digit IPEDS
-      Classification of Instructional Programs (CIP) code.}
-  \item{term_degree}{The academic year and term in which the student
-      graduated.}
-  \item{degree}{The type of undergraduate degree awarded}
-}}
+  \item{id}{character, unique anonymized MIDFIELD student identifier}
+  \item{institution}{character, anonymized institution name}
+  \item{cip6}{character, graduation major, 6-digit IPEDS Classification of 
+  Instructional Programs (CIP) code}
+  \item{term_degree}{numeric, academic year and term in which the student 
+  graduated, format YYYYT or NA if no degree}
+  \item{degree}{character, type of undergraduate degree awarded or NA if 
+  no degree}
+}
+}
 \source{
 Data provided by the MIDFIELD project:
 \url{https://engineering.purdue.edu/MIDFIELD}
@@ -23,11 +28,12 @@ Data provided by the MIDFIELD project:
 midfielddegrees
 }
 \description{
-A dataset of degree attributes of 97,640 undergraduates from US universities 1987 to 2016, sampled from the MIDFIELD database. A total of 47,499 students completed the requirements for their degrees.
+Data frame of degree attributes with 97,640 observations and 5 graduation 
+variables keyed by student ID. Each observation is a unique student. 
+A stratified sample of the MIDFIELD database.
 }
 \examples{
-\dontrun{
-tibble::glimpse(midfielddegrees)
-}
+midfielddegrees
+
 }
 \keyword{datasets}

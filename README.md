@@ -7,10 +7,10 @@ Status](https://travis-ci.org/MIDFIELDR/midfielddata.svg?branch=master)](https:/
 
 An R data package containing four data sets:
 
-  - `midfieldstudents` Student demographic attributes
-  - `midfieldcourses` Academic course attributes
-  - `midfieldterms` Academic term attributes
-  - `midfielddegrees` Student graduation attributes
+  - `midfieldstudents` student demographic attributes
+  - `midfieldcourses` academic course attributes
+  - `midfieldterms` academic term attributes
+  - `midfielddegrees` student graduation attributes
 
 These data are a stratified sample of data from the
 [MIDFIELD](https://engineering.purdue.edu/MIDFIELD) project, comprising
@@ -23,21 +23,15 @@ Tools for accessing and analyzing these data are provided by the
 
 ## Installation
 
-The data package is installed from a GitHub repository (not CRAN) in
-three steps using the [drat](https://github.com/eddelbuettel/drat)
-package.
-
-  - Install the drat package
-  - Add the midfielddata drat repository to the current session
-  - And install the midfielddata package
-
-<!-- end list -->
+Install midfielddata from our drat repo. The data package is large, so
+this step takes time. Please be patient and wait for the Console prompt
+\> to reappear.
 
 ``` r
-install.packages("drat")
-drat::addRepo("midfieldr")
-install.packages("midfielddata")
+install.packages("midfielddata", repos = "https://MIDFIELDR.github.io/drat/", type = "source")
 ```
+
+When installed and loaded, each data set has a `data.table` structure.
 
 ## The build
 

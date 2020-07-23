@@ -3,7 +3,6 @@
 \docType{package}
 \name{midfielddata}
 \alias{midfielddata}
-\alias{midfielddata-package}
 \title{Student Record Data for 98,000 Undergraduates}
 \source{
 Data provided by the MIDFIELD project:
@@ -15,10 +14,10 @@ A data package with a stratified sample from the MIDFIELD database.
 \details{
 The data comprise student records from registrars at participating US 
 universities, including demographic, term, course, and degree 
-information for 97,640 undergraduate students from 1987 to 2016.
+information for 97,640 undergraduate students from 1987 to 2016. 
 
 Four data sets are provided, with the student ID and institution variables 
-in common for cross-referencing.
+in common for cross-referencing.   
 
 \describe{
   \item{midfieldstudents}{Demographic data. 
