@@ -12,11 +12,11 @@
 #'   \item{id}{character, unique anonymized MIDFIELD student identifier}
 #'   \item{institution}{character, anonymized institution name}
 #'   \item{cip6}{character, graduation major, 6-digit IPEDS Classification of
-#'   Instructional Programs (CIP) code}
+#'       Instructional Programs (CIP) code}
 #'   \item{term_degree}{numeric, academic year and term in which the student
-#'   graduated, format YYYYT or NA if no degree}
+#'       graduated, format YYYYT or NA if no degree}
 #'   \item{degree}{character, type of undergraduate degree awarded or NA if
-#'   no degree}
+#'       no degree}
 #' }
 #' @source Data provided by the MIDFIELD project:
 #' \url{https://engineering.purdue.edu/MIDFIELD}
@@ -25,5 +25,5 @@
 #' library(data.table)
 #' midfielddegrees
 #' }
-#' 
+#'
 "midfielddegrees"

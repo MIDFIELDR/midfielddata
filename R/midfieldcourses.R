@@ -13,7 +13,7 @@
 #'   \item{id}{character, unique anonymized MIDFIELD student identifier}
 #'   \item{institution}{character, anonymized institution name}
 #'   \item{term_course}{numeric, academic year and term the course is taken,
-#'   format YYYYT}
+#'       format YYYYT}
 #'   \item{course}{character, course name}
 #'   \item{abbrev}{character, course alpha identifier (e.g. ENGR, MATH, ENGL)}
 #'   \item{number}{character, course numeric identifier (e.g. 101, 3429)}
@@ -22,7 +22,7 @@
 #'       completion}
 #'   \item{type}{character, predominant delivery method for this section}
 #'   \item{pass_fail}{character, whether or not the course was offered on a
-#'   pass/fail basis }
+#'       pass/fail basis }
 #'   \item{grade}{character, course grade}
 #'   \item{faculty_rank}{academic rank of the person teaching the course}
 #' }
@@ -33,5 +33,5 @@
 #' library(data.table)
 #' midfieldcourses
 #' }
-#' 
+#'
 "midfieldcourses"

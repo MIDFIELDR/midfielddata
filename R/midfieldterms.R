@@ -31,5 +31,5 @@
 #' library(data.table)
 #' midfieldterms
 #' }
-#' 
+#'
 "midfieldterms"

@@ -40,5 +40,5 @@
 #' library(data.table)
 #' midfieldstudents
 #' }
-#' 
+#'
 "midfieldstudents"
