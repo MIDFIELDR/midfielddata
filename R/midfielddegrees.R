@@ -3,20 +3,34 @@
 #' Data frame of degree attributes with 97,640 observations and 5 graduation
 #' variables keyed by student ID. Each observation is a unique student.
 #' A stratified sample of the MIDFIELD database.
+#' 
+#' Classification of Instructional Programs (CIP) codes are from the 2010 CIP. 
+#' See midfieldr \code{\link[midfieldr:cip]{cip}} for more information.
+#' 
+#' Terms are encoded YYYYT, where YYYY is the year of the Fall term that starts 
+#' the academic year and T = 1 (Fall), 2 (Winter, quarter systems only), 3 
+#' (Spring), and 4 (Summer) or 5 and 6 (Summer sessions 1 and 2). All terms of 
+#' an academic year are encoded with the same YYYY value. For example, the 
+#' terms of the academic year 2009-10 for an institution on a semester system 
+#' are encoded 20091 (Fall) and 20093 (Spring) with summer terms encoded 20094 
+#' or 20095 and 20096 depending on the number of sessions.
 #'
-#' @format \code{data.table} with 97,640  observations and 5 variables,
+#' @format \code{data.table} with 97,640 observations and 5 variables,
 #' occupying 10.2 MB of memory. Each observation is a unique student.
 #' The variables are:
 #'
 #' \describe{
-#'   \item{id}{character, unique anonymized MIDFIELD student identifier}
-#'   \item{institution}{character, anonymized institution name}
-#'   \item{cip6}{character, graduation major, 6-digit IPEDS Classification of
-#'       Instructional Programs (CIP) code}
+#'   \item{id}{character, anonymized student identifier, MID followed by an 
+#'       8-digit integer string, primary key to these data}
+#'   \item{institution}{character, anonymized institution name, e.g., 
+#'       Institution A, Institution B, etc.}
+#'   \item{cip6}{character, 6-digit CIP code of program in which a student 
+#'       earns a degree, NA if no degree}
 #'   \item{term_degree}{numeric, academic year and term in which the student
 #'       graduated, format YYYYT or NA if no degree}
 #'   \item{degree}{character, type of undergraduate degree awarded or NA if
-#'       no degree}
+#'       no degree, e.g., Bachelor's Degree, Bachelor of Arts, 
+#'       Bachelor of Science, etc.}
 #' }
 #' @source Data provided by the MIDFIELD project:
 #' \url{https://engineering.purdue.edu/MIDFIELD}

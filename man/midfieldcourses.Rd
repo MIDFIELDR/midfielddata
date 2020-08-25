@@ -10,21 +10,31 @@ occupying 348 MB of memory. Each observation is one course in one term for
 one student. The variables are:
 
 \describe{
-  \item{id}{character, unique anonymized MIDFIELD student identifier}
-  \item{institution}{character, anonymized institution name}
+  \item{id}{character, anonymized student identifier, MID followed by an 
+      8-digit integer string, composite key to these data with 
+      \code{term_course}, \code{abbrev}, \code{number}, and \code{section}}
+  \item{institution}{character, anonymized institution name, e.g., 
+      Institution A, Institution B, etc.}
   \item{term_course}{numeric, academic year and term the course is taken,
-  format YYYYT}
-  \item{course}{character, course name}
-  \item{abbrev}{character, course alpha identifier (e.g. ENGR, MATH, ENGL)}
-  \item{number}{character, course numeric identifier (e.g. 101, 3429)}
-  \item{section}{character, course section identifier}
+      format YYYYT, composite key (see \code{id})}
+  \item{course}{character, course name, e.g., Chemistry, 
+      College Algebra, US History, etc.}
+  \item{abbrev}{character, course alpha identifier, e.g. ENGR, MATH, ENGL, 
+      composite key (see \code{id})}
+  \item{number}{character, course numeric identifier, e.g. 101, 3429, 
+      composite key (see \code{id})}
+  \item{section}{character, course section identifier, composite key 
+      (see \code{id})}
   \item{hours_course}{numeric, number of credit-hours for successful course
       completion}
-  \item{type}{character, predominant delivery method for this section}
+  \item{type}{character, predominant delivery method for this section, 
+      e.g., Blended, Honors, Lecture, Seminar, etc.}
   \item{pass_fail}{character, whether or not the course was offered on a
-  pass/fail basis }
-  \item{grade}{character, course grade}
-  \item{faculty_rank}{academic rank of the person teaching the course}
+      pass/fail basis, No, Yes, or missing}
+  \item{grade}{character, course grade, e.g., A+, A, A-, B+, I, NG, etc.}
+  \item{faculty_rank}{academic rank of the person teaching the course, e.g., 
+      Assistant Professor, Associate professor, Graduate Assistant, 
+      Visiting, etc.}
 }
 }
 \source{
@@ -35,10 +45,19 @@ Data provided by the MIDFIELD project:
 midfieldcourses
 }
 \description{
-Data frame of course attributes of 97,064 undergraduates with 3.5 M
+Data frame of course attributes of 97,640 undergraduates with 3.5 M
 observations and 12 academic course variables keyed by student ID, term,
 and course. Each observation is one course in one term for one student. A
 stratified sample of the MIDFIELD database.
+}
+\details{
+Terms are encoded YYYYT, where YYYY is the year of the Fall term that starts 
+the academic year and T = 1 (Fall), 2 (Winter, quarter systems only), 3 
+(Spring), and 4 (Summer) or 5 and 6 (Summer sessions 1 and 2). All terms of 
+an academic year are encoded with the same YYYY value. For example, the 
+terms of the academic year 2009-10 for an institution on a semester system 
+are encoded 20091 (Fall) and 20093 (Spring) with summer terms encoded 20094 
+or 20095 and 20096 depending on the number of sessions.
 }
 \examples{
 \dontrun{

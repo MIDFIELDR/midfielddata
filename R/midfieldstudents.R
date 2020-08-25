@@ -3,25 +3,38 @@
 #' Data frame of matriculation attributes with 97,640 observations and 15
 #' demographic variables keyed by student ID. Each observation is a unique
 #' student. A stratified sample of the MIDFIELD database.
+#' 
+#' Classification of Instructional Programs (CIP) codes are from the 2010 CIP. 
+#' See midfieldr \code{\link[midfieldr:cip]{cip}} for more information.
+#' 
+#' Terms are encoded YYYYT, where YYYY is the year of the Fall term that starts 
+#' the academic year and T = 1 (Fall), 2 (Winter, quarter systems only), 3 
+#' (Spring), and 4 (Summer) or 5 and 6 (Summer sessions 1 and 2). All terms of 
+#' an academic year are encoded with the same YYYY value. For example, the 
+#' terms of the academic year 2009-10 for an institution on a semester system 
+#' are encoded 20091 (Fall) and 20093 (Spring) with summer terms encoded 20094 
+#' or 20095 and 20096 depending on the number of sessions.
 #'
-#' @format \code{data.table} with 97,064 observations and 15 variables,
+#' @format \code{data.table} with 97,640 observations and 15 variables,
 #' occupying 19 MB of memory. Each observation is a unique student.
 #' The variables are:
 #' \describe{
-#'   \item{id}{character, unique anonymized MIDFIELD student identifier}
-#'   \item{institution}{character, anonymized institution name}
-#'   \item{cip6}{character, 6-digit CIP code of instructional program
-#'   at matriculation}
+#'   \item{id}{character, anonymized student identifier, MID followed by an 
+#'       8-digit integer string, primary key to these data}
+#'   \item{institution}{character, anonymized institution name, e.g., 
+#'       Institution A, Institution B, etc.}
+#'   \item{cip6}{character, 6-digit CIP code of program in which a student is 
+#'       enrolled at matriculation}
 #'   \item{term_enter}{numeric, academic term the student
 #'       first entered the institution, format YYYYT}
 #'   \item{transfer}{character, did the student transfer into the institution?
 #'       (Y = Yes or N = No)}
 #'   \item{hours_transfer}{numeric, transfer hours accepted at the
 #'       institution}
-#'   \item{sex}{character, sex (M = Male, F = Female) as self-reported by
-#'       the student}
+#'   \item{sex}{character, sex as self-reported by the student, values are 
+#'       Female, Male, and Unknown}
 #'   \item{race}{character, race/ethnicity as self-reported by the student
-#'       and as reported to IPEDS}
+#'       and as reported to IPEDS, e.g., Asian, Black, Hispanic, etc.}
 #'   \item{age}{numeric, age at matriculation as self-reported by the student}
 #'   \item{us_citizen}{character, is the student a US citizen? (Y = Yes or
 #'       N = No)}
