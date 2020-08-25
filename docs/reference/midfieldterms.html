@@ -40,10 +40,12 @@
 
 
 <meta property="og:title" content="Term data for 98,000 undergraduates — midfieldterms" />
-<meta property="og:description" content="Data frame of term attributes of 97,064 undergraduates with 727,369
+<meta property="og:description" content="Data frame of term attributes of 95,995 undergraduates with 727,369
 observations and 13 academic term variables keyed by student ID and term.
 Each observation is one term for one student. A stratified sample
-of the MIDFIELD database." />
+of the MIDFIELD database. The term data has 1645 fewer student IDs than 
+the other data sets in midfielddata. The cause will be corrected or 
+explained as soon as possible." />
 
 
 
@@ -120,10 +122,12 @@ of the MIDFIELD database." />
     </div>
 
     <div class="ref-description">
-    <p>Data frame of term attributes of 97,064 undergraduates with 727,369
+    <p>Data frame of term attributes of 95,995 undergraduates with 727,369
 observations and 13 academic term variables keyed by student ID and term.
 Each observation is one term for one student. A stratified sample
-of the MIDFIELD database.</p>
+of the MIDFIELD database. The term data has 1645 fewer student IDs than 
+the other data sets in midfielddata. The cause will be corrected or 
+explained as soon as possible.</p>
     </div>
 
     <pre class="usage"><span class='no'>midfieldterms</span></pre>
@@ -131,17 +135,21 @@ of the MIDFIELD database.</p>
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p><code>data.table</code> with 729,014 observations and 13 variables,
+    <p><code>data.table</code> with 727,369 observations and 13 variables,
 occupying 82.1 MB of memory. Each observation is one term for one student.
 The variables are:</p><dl'>
-  <dt>id</dt><dd><p>character, unique anonymized MIDFIELD student identifier</p></dd>
-  <dt>institution</dt><dd><p>character, anonymized institution name</p></dd>
-  <dt>cip6</dt><dd><p>character, 6-digit CIP code of instructional program
-      during the term</p></dd>
-  <dt>term_course</dt><dd><p>numeric, academic year and term, format YYYYT</p></dd>
-  <dt>level</dt><dd><p>character, level</p></dd>
-  <dt>standing</dt><dd><p>character, standing</p></dd>
-  <dt>coop</dt><dd><p>character, coop "Y" or "N"</p></dd>
+  <dt>id</dt><dd><p>character, anonymized student identifier, MID followed by an 
+      8-digit integer string, composite key to these data with <code>term</code></p></dd>
+  <dt>institution</dt><dd><p>character, anonymized institution name, e.g., 
+      Institution A, Institution B, etc.</p></dd>
+  <dt>cip6</dt><dd><p>character, 6-digit CIP code of program in which a student is 
+      enrolled in a term</p></dd>
+  <dt>term</dt><dd><p>numeric, academic year and term, format YYYYT, composite key 
+      to these data with <code>id</code></p></dd>
+  <dt>level</dt><dd><p>character, 01 Freshman, 02 Sophomore, etc.</p></dd>
+  <dt>standing</dt><dd><p>character, academic standing, e.g., 
+      Good Standing, Suspended, First Time in College, etc.</p></dd>
+  <dt>coop</dt><dd><p>character, coop Y or N</p></dd>
   <dt>hours_term_attempt</dt><dd><p>numeric, credit hours attempted in the term</p></dd>
   <dt>hours_term</dt><dd><p>numeric, credit hours earned in the term</p></dd>
   <dt>gpa_term</dt><dd><p>numeric, term grade point average</p></dd>
@@ -155,6 +163,17 @@ The variables are:</p><dl'>
 
     <p>Data provided by the MIDFIELD project:
 <a href='https://engineering.purdue.edu/MIDFIELD'>https://engineering.purdue.edu/MIDFIELD</a></p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Classification of Instructional Programs (CIP) codes are from the 2010 CIP. 
+See midfieldr <code><a href='https://rdrr.io/pkg/midfieldr/man/cip.html'>cip</a></code> for more information.</p>
+<p>Terms are encoded YYYYT, where YYYY is the year of the Fall term that starts 
+the academic year and T = 1 (Fall), 2 (Winter, quarter systems only), 3 
+(Spring), and 4 (Summer) or 5 and 6 (Summer sessions 1 and 2). All terms of 
+an academic year are encoded with the same YYYY value. For example, the 
+terms of the academic year 2009-10 for an institution on a semester system 
+are encoded 20091 (Fall) and 20093 (Spring) with summer terms encoded 20094 
+or 20095 and 20096 depending on the number of sessions.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {

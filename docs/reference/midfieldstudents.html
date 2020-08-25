@@ -129,23 +129,25 @@ student. A stratified sample of the MIDFIELD database.</p>
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p><code>data.table</code> with 97,064 observations and 15 variables,
+    <p><code>data.table</code> with 97,640 observations and 15 variables,
 occupying 19 MB of memory. Each observation is a unique student.
 The variables are:</p><dl'>
-  <dt>id</dt><dd><p>character, unique anonymized MIDFIELD student identifier</p></dd>
-  <dt>institution</dt><dd><p>character, anonymized institution name</p></dd>
-  <dt>cip6</dt><dd><p>character, 6-digit CIP code of instructional program
-  at matriculation</p></dd>
+  <dt>id</dt><dd><p>character, anonymized student identifier, MID followed by an 
+      8-digit integer string, primary key to these data</p></dd>
+  <dt>institution</dt><dd><p>character, anonymized institution name, e.g., 
+      Institution A, Institution B, etc.</p></dd>
+  <dt>cip6</dt><dd><p>character, 6-digit CIP code of program in which a student is 
+      enrolled at matriculation</p></dd>
   <dt>term_enter</dt><dd><p>numeric, academic term the student
       first entered the institution, format YYYYT</p></dd>
   <dt>transfer</dt><dd><p>character, did the student transfer into the institution?
       (Y = Yes or N = No)</p></dd>
   <dt>hours_transfer</dt><dd><p>numeric, transfer hours accepted at the
       institution</p></dd>
-  <dt>sex</dt><dd><p>character, sex (M = Male, F = Female) as self-reported by
-      the student</p></dd>
+  <dt>sex</dt><dd><p>character, sex as self-reported by the student, values are 
+      Female, Male, and Unknown</p></dd>
   <dt>race</dt><dd><p>character, race/ethnicity as self-reported by the student
-      and as reported to IPEDS</p></dd>
+      and as reported to IPEDS, e.g., Asian, Black, Hispanic, etc.</p></dd>
   <dt>age</dt><dd><p>numeric, age at matriculation as self-reported by the student</p></dd>
   <dt>us_citizen</dt><dd><p>character, is the student a US citizen? (Y = Yes or
       N = No)</p></dd>
@@ -163,6 +165,17 @@ The variables are:</p><dl'>
 
     <p>Data provided by the MIDFIELD project:
 <a href='https://engineering.purdue.edu/MIDFIELD'>https://engineering.purdue.edu/MIDFIELD</a></p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Classification of Instructional Programs (CIP) codes are from the 2010 CIP. 
+See midfieldr <code><a href='https://rdrr.io/pkg/midfieldr/man/cip.html'>cip</a></code> for more information.</p>
+<p>Terms are encoded YYYYT, where YYYY is the year of the Fall term that starts 
+the academic year and T = 1 (Fall), 2 (Winter, quarter systems only), 3 
+(Spring), and 4 (Summer) or 5 and 6 (Summer sessions 1 and 2). All terms of 
+an academic year are encoded with the same YYYY value. For example, the 
+terms of the academic year 2009-10 for an institution on a semester system 
+are encoded 20091 (Fall) and 20093 (Spring) with summer terms encoded 20094 
+or 20095 and 20096 depending on the number of sessions.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
