@@ -10,14 +10,14 @@
 #' in common for cross-referencing.
 #'
 #' \describe{
-#'   \item{midfieldstudents}{Demographic data. 
-#'       Help page: \code{?midfieldstudents}.}
-#'   \item{midfieldcourses}{Academic course data.
-#'       Help page: \code{?midfieldcourses}.}
-#'   \item{midfieldterms}{Academic term data.
-#'       Help page: \code{?midfieldterms}.}
-#'   \item{midfielddegrees}{Graduation data.
-#'       Help page: \code{?midfielddegrees}.}
+#'   \item{student}{Demographic data. 
+#'       Help page: \code{? student}.}
+#'   \item{course}{Academic course data.
+#'       Help page: \code{? course}.}
+#'   \item{term}{Academic term data.
+#'       Help page: \code{? term}.}
+#'   \item{degree}{Graduation data.
+#'       Help page: \code{? degree}.}
 #' }
 #'
 #' @source Data provided by the MIDFIELD project:
@@ -30,6 +30,6 @@ NULL
 if (getRversion() >= "2.15.1") {
   utils::globalVariables(c(
     ".", ".x",
-    "midfielddegrees", "midfieldstudents", "midfieldterms", "midfieldcourses"
+    "degree", "student", "term", "course"
   ))
 }

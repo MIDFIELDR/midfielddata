@@ -7,27 +7,26 @@ Status](https://travis-ci.org/MIDFIELDR/midfielddata.svg?branch=master)](https:/
 
 An R data package containing four data sets:
 
-  - `midfieldstudents` A data frame with 97,640 observations and 15
-    demographic variables. Each observation is a unique student keyed by
-    student ID. Occupies 19 MB of memory. Data dictionary
-    [(link)](https://midfieldr.github.io/midfielddata/reference/midfieldstudents.html).
+-   `student` A `data.table` with 97,640 observations and 13 variables
+    at admission. Each observation is a unique student keyed by student
+    ID. Occupies 19 MB of memory. Data dictionary
+    [(link)](reference/student.html).
 
-  - `midfieldcourses` A data frame with 3.5 M observations and 12
-    academic course variables keyed by student ID, term, and course.
-    Each observation is one course for one student in one term. Occupies
-    349 MB of memory. Data dictionary
-    [(link)](https://midfieldr.github.io/midfielddata/reference/midfieldcourses.html).
+-   `course` A `data.table` with 3.5 M observations and 12 academic
+    course variables keyed by student ID, term, course abbreviation,
+    number, and section. Each observation is a unique course, section,
+    term, and student. Occupies 349 MB of memory. Data dictionary
+    [(link)](reference/course.html).
 
-  - `midfieldterms` A data frame with 727,369 observations and 13
-    academic term variables keyed by student ID and term. Each
-    observation is one term for one student. Occupies 82 MB of memory.
-    Data dictionary
-    [(link)](https://midfieldr.github.io/midfielddata/reference/midfieldterms.html).
+-   `term` A v with 727,369 observations and 13 academic term variables
+    keyed by student ID and term. Each observation is one term for one
+    student. Occupies 82 MB of memory. Data dictionary
+    [(link)](reference/term.html).
 
-  - `midfielddegrees` A data frame with 97,640 observations and 5
-    graduation variables keyed by student ID. Each observation is a
-    unique student. Occupies 10.2 MB of memory. Data dictionary
-    [(link)](https://midfieldr.github.io/midfielddata/reference/midfielddegrees.html).
+-   `degree` A `data.table` with 47,499 observations and 5 graduation
+    variables keyed by student ID. Each observation is a unique student.
+    Occupies 10.2 MB of memory. Data dictionary
+    [(link)](reference/degree.html).
 
 These data are a stratified sample of data from the
 [MIDFIELD](https://engineering.purdue.edu/MIDFIELD) project, comprising
@@ -42,7 +41,7 @@ Tools for accessing and analyzing these data are provided by the
 
 Install midfielddata from our drat repo. The data package is large, so
 this step takes time. Please be patient and wait for the Console prompt
-\> to reappear.
+&gt; to reappear.
 
 ``` r
 install.packages("midfielddata", repos = "https://MIDFIELDR.github.io/drat/", type = "source")
@@ -62,7 +61,7 @@ midfielddata currently passes R CMD check with the results:
 
 ## Meta
 
-  - Get citation information with `citation("midfielddata")`.
-  - Please note that this project is released with a [Code of
-    Conduct](CONDUCT.md). If you contribute to this project you agree to
-    abide by its terms.
+-   Get citation information with `citation("midfielddata")`.
+-   Please note that this project is released with a [Code of
+    Conduct](CONDUCT.html). If you contribute to this project you agree
+    to abide by its terms.
