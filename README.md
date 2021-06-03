@@ -13,19 +13,18 @@ An R data package containing four data sets:
     [(link)](reference/student.html).
 
 -   `course` A `data.table` with 3.5 M observations and 12 academic
-    course variables keyed by student ID, term, course abbreviation,
-    number, and section. Each observation is a unique course, section,
-    term, and student. Occupies 349 MB of memory. Data dictionary
-    [(link)](reference/course.html).
+    course variables keyed by student ID, term, and course. Each
+    observation is a unique course, section, term, and student. Occupies
+    349 MB of memory. Data dictionary [(link)](reference/course.html).
 
--   `term` A v with 727,369 observations and 13 academic term variables
-    keyed by student ID and term. Each observation is one term for one
-    student. Occupies 82 MB of memory. Data dictionary
+-   `term` A `data.table` with 727,369 observations and 13 academic term
+    variables keyed by student ID and term. Each observation is one term
+    for one student. Occupies 82 MB of memory. Data dictionary
     [(link)](reference/term.html).
 
 -   `degree` A `data.table` with 47,499 observations and 5 graduation
     variables keyed by student ID. Each observation is a unique student.
-    Occupies 10.2 MB of memory. Data dictionary
+    Occupies 10 MB of memory. Data dictionary
     [(link)](reference/degree.html).
 
 These data are a stratified sample of data from the
@@ -53,11 +52,12 @@ When installed and loaded, each data set has a `data.table` structure.
 
 midfielddata currently passes R CMD check with the results:
 
-    0 errors | 0 warnings | 1 note 
-    checking installed package size ... NOTE
-      installed size is 30.8Mb
-      sub-directories of 1Mb or more:
-        data  30.7Mb
+    0 errors v | 0 warnings v | 1 note x
+
+    NOTE installed size is 18.5Mb
+         sub-directories of 1Mb or more: data  18.4Mb
+
+    R CMD check succeeded  
 
 ## Meta
 
