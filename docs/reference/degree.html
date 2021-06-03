@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • midfielddata</title>
+<title>Degree data sample — degree • midfielddata</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,10 @@
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Degree data sample — degree" />
+<meta property="og:description" content="Table of degree-related attributes of approximately 48,000 undergraduates 
+upon completing their programs. Each observation is a unique student 
+keyed by student ID." />
 
 
 
@@ -58,7 +61,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -110,49 +113,73 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1 data-toc-skip>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/MIDFIELDR/midfielddata/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+    <h1>Degree data sample</h1>
+    <small class="dont-index">Source: <a href='https://github.com/MIDFIELDR/midfielddata/blob/master/R/degree.R'><code>R/degree.R</code></a></small>
+    <div class="hidden name"><code>degree.Rd</code></div>
     </div>
 
-    <div id="midfielddata-012-2021-06" class="section level2">
-<h2 class="hasAnchor">
-<a href="#midfielddata-012-2021-06" class="anchor"></a>midfielddata 0.1.2 (2021-06)</h2>
-<ul>
-<li>changed names of data tables to student, term, course, and degree to be consistent with research data</li>
-<li>updates variables names to be consistent with research data</li>
-<li>update Rd help pages</li>
-</ul>
-</div>
-    <div id="midfielddata-0119001-2020-08" class="section level2">
-<h2 class="hasAnchor">
-<a href="#midfielddata-0119001-2020-08" class="anchor"></a>midfielddata 0.1.1.9001 (2020-08)</h2>
-<ul>
-<li>edited help pages</li>
-</ul>
-</div>
-    <div id="midfielddata-011-2020-07-23" class="section level2">
-<h2 class="hasAnchor">
-<a href="#midfielddata-011-2020-07-23" class="anchor"></a>midfielddata 0.1.1 (2020-07-23)</h2>
-<ul>
-<li>reformatted data frames as data.tables</li>
-</ul>
-</div>
-    <div id="midfielddata-010-2018-06-20" class="section level2">
-<h2 class="hasAnchor">
-<a href="#midfielddata-010-2018-06-20" class="anchor"></a>midfielddata 0.1.0 (2018-06-20)</h2>
-<ul>
-<li>made public on GitHub</li>
-</ul>
-<!-- ### New features --><!-- ### Minor improvements --><!-- ### Bug fixes --><!-- ### Deprecated --><!-- ### Defunct -->
-</div>
-  </div>
+    <div class="ref-description">
+    <p>Table of degree-related attributes of approximately 48,000 undergraduates 
+upon completing their programs. Each observation is a unique student 
+keyed by student ID.</p>
+    </div>
 
+    <pre class="usage"><span class='va'>degree</span></pre>
+
+
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>A <code>data.table</code> with approximately 48,000 observations and 
+5 variables occupying 10.2 MB of memory.</p><dl>
+  <dt>mcid</dt><dd><p>character, anonymized student identifier</p></dd>
+  <dt>institution</dt><dd><p>character, anonymized institution name, e.g., 
+      Institution A, Institution B, etc.</p></dd>
+  <dt>term</dt><dd><p>character, academic year and term, format YYYYT, in which a 
+       student completes their program</p></dd>
+  <dt>cip6</dt><dd><p>character, 6-digit CIP code of program in which a student 
+       earns a degree</p></dd>
+  <dt>degree</dt><dd><p>character, type of degree awarded, e.g., Bachelor's Degree, 
+       Bachelor of Arts, Bachelor of Science, etc.</p></dd>
+
+</dl>
+
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p>Data provided by the MIDFIELD project:
+<a href='https://engineering.purdue.edu/MIDFIELD'>https://engineering.purdue.edu/MIDFIELD</a></p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The data in midfielddata are a proportionate stratified random sample of 12 
+institutions in the MIDFIELD research database. However, these are practice 
+data, not research data---suitable for learning about student-record 
+analysis, but not for drawing inferences about student performance.</p>
+<p>Students in the <code>degree</code> table also have records in the <code>student</code>, 
+<code>term</code>, and <code>course</code> tables.</p>
+<p>Terms are encoded YYYYT, where YYYY is the year of the Fall term that starts 
+the academic year and T = 1 (Fall), 2 (Winter, quarter systems only), 3 
+(Spring), and 4 (Summer) or 5 and 6 (Summer sessions 1 and 2). The MIDFIELD 
+research database also includes terms of one month duration, encoded with 
+letters A, B, C, etc., though none are included in this sample.</p>
+<p>All terms of an academic year are encoded with the same YYYY value. For 
+example, the terms of the academic year 2009-10 for an institution on a 
+semester system  are encoded 20091 (Fall) and 20093 (Spring) with summer 
+terms encoded 20094, 20095 and 20096 depending on the number of sessions.</p>
+<p>Classification of Instructional Programs (CIP) codes are from the 2010 CIP. 
+See midfieldr <code><a href='https://rdrr.io/pkg/midfieldr/man/cip.html'>cip</a></code> for more information.</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://r-datatable.com'>data.table</a></span><span class='op'>)</span>
+<span class='va'>degree</span>
+<span class='op'>}</span>
+
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
-
 </div>
 
 
