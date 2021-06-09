@@ -25,6 +25,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -77,7 +79,7 @@
   <div class="contents col-md-9">
 <div id="midfielddata-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#midfielddata-" class="anchor"></a>midfielddata <span class="border-wrap"><img src="reference/figures/midfieldhex05.png" align="right" height="122" width="106" alt="logo.png"></span>
+<a href="#midfielddata-" class="anchor" aria-hidden="true"></a>midfielddata <span class="border-wrap"><img src="reference/figures/midfieldhex05.png" align="right" height="122" width="106" alt="logo.png"></span>
 </h1></div>
 
 <p>An R data package containing four data sets:</p>
@@ -87,19 +89,19 @@
 <li><p><code>term</code> A <code>data.table</code> with 727,369 observations and 13 academic term variables keyed by student ID and term. Each observation is one term for one student. Occupies 82 MB of memory. Data dictionary <a href="reference/term.html">(link)</a>.</p></li>
 <li><p><code>degree</code> A <code>data.table</code> with 47,499 observations and 5 graduation variables keyed by student ID. Each observation is a unique student. Occupies 10 MB of memory. Data dictionary <a href="reference/degree.html">(link)</a>.</p></li>
 </ul>
-<p>These data are a stratified sample of data from the <a href="https://engineering.purdue.edu/MIDFIELD">MIDFIELD</a> project, comprising student records from registrars at participating US universities for 97,640 undergraduate students from 1987 to 2016. For privacy protection, personal and institutional identities are anonymized.</p>
-<p>Tools for accessing and analyzing these data are provided by the <a href="https://midfieldr.github.io/midfieldr">midfieldr</a> package.</p>
+<p>These data are a stratified sample of data from the <a href="https://engineering.purdue.edu/MIDFIELD" class="external-link">MIDFIELD</a> project, comprising student records from registrars at participating US universities for 97,640 undergraduate students from 1987 to 2016. For privacy protection, personal and institutional identities are anonymized.</p>
+<p>Tools for accessing and analyzing these data are provided by the <a href="https://midfieldr.github.io/midfieldr" class="external-link">midfieldr</a> package.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<a href="#installation" class="anchor" aria-hidden="true"></a>Installation</h2>
 <p>Install midfielddata from our drat repo. The data package is large, so this step takes time. Please be patient and wait for the Console prompt &gt; to reappear.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"midfielddata"</span>, repos <span class="op">=</span> <span class="st">"https://MIDFIELDR.github.io/drat/"</span>, type <span class="op">=</span> <span class="st">"source"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"midfielddata"</span>, repos <span class="op">=</span> <span class="st">"https://MIDFIELDR.github.io/drat/"</span>, type <span class="op">=</span> <span class="st">"source"</span><span class="op">)</span></code></pre></div>
 <p>When installed and loaded, each data set has a <code>data.table</code> structure.</p>
 </div>
 <div id="the-build" class="section level2">
 <h2 class="hasAnchor">
-<a href="#the-build" class="anchor"></a>The build</h2>
+<a href="#the-build" class="anchor" aria-hidden="true"></a>The build</h2>
 <p>midfielddata currently passes R CMD check with the results:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span> errors v <span class="sc">|</span> <span class="dv">0</span> warnings v <span class="sc">|</span> <span class="dv">1</span> note x</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -110,9 +112,9 @@
 </div>
 <div id="meta" class="section level2">
 <h2 class="hasAnchor">
-<a href="#meta" class="anchor"></a>Meta</h2>
+<a href="#meta" class="anchor" aria-hidden="true"></a>Meta</h2>
 <ul>
-<li>Get citation information with <code><a href="https://rdrr.io/r/utils/citation.html">citation("midfielddata")</a></code>.</li>
+<li>Get citation information with <code>citation("midfielddata")</code>.</li>
 <li>Please note that this project is released with a <a href="CONDUCT.html">Code of Conduct</a>. If you contribute to this project you agree to abide by its terms.</li>
 </ul>
 </div>
@@ -121,7 +123,7 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
 <li>Browse source code at <br><a href="https://github.com/MIDFIELDR/midfielddata/">https://​github.com/​MIDFIELDR/​midfielddata/​</a>
 </li>
@@ -129,39 +131,47 @@
 </li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li>CC0</li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small>CC0</small></li>
 </ul>
 </div>
+
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Richard Layton <br><small class="roles"> Maintainer, author </small>  </li>
 <li>Russell Long <br><small class="roles"> Data manager, author </small>  </li>
 <li>Matthew Ohland <br><small class="roles"> Author </small>  </li>
+<li>Marisa Orr <br><small class="roles"> Author </small>  </li>
 <li>US National Science Foundation <br><small class="roles"> Funder </small>  </li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://travis-ci.org/MIDFIELDR/midfielddata"><img src="https://travis-ci.org/MIDFIELDR/midfielddata.svg?branch=master" alt="Build Status"></a></li>
-<li><a href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="reference/figures/License-CC-0-blue.svg" alt="License"></a></li>
+<li><a href="https://travis-ci.org/MIDFIELDR/midfielddata" class="external-link"><img src="https://travis-ci.org/MIDFIELDR/midfielddata.svg?branch=master" alt="Build Status"></a></li>
+<li><a href="https://creativecommons.org/publicdomain/zero/1.0/" class="external-link"><img src="reference/figures/License-CC-0-blue.svg" alt="License"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Richard Layton, Russell Long, Matthew Ohland, US National Science Foundation.</p>
+  <p></p>
+<p>Developed by Richard Layton, Russell Long, Matthew Ohland, Marisa Orr, US National Science Foundation.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p>
 </div>
 
       </footer>
@@ -169,6 +179,8 @@
 
   
 
+
+  
 
   </body>
 </html>
