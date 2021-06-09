@@ -12,6 +12,9 @@ Authors@R: c(
   person("Matthew", "Ohland", 
       email = "ohland@purdue.edu", 
       role = c("aut")),
+  person("Marisa", "Orr", 
+      email = "marisak@clemson.edu", 
+      role = c("aut")),
   person("US National Science Foundation", role = c("fnd"))
   )
 Description: Registrar's data for 98,000 undergraduates at participating 

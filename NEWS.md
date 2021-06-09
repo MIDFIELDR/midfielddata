@@ -5,6 +5,8 @@
 - changed names of data tables to student, term, course, and degree to be consistent with research data
 - updates variables names to be consistent with research data
 - update Rd help pages 
+- edit license
+- remove Travis CI
 
 ## midfielddata 0.1.1.9001 (2020-08)
 
