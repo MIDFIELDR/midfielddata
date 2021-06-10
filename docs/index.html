@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Record Data for 98,000 Undergraduates • midfielddata</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/spacelab/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -46,22 +46,16 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
+  <a href="reference/index.html">Data</a>
 </li>
 <li>
-  <a href="reference/index.html">Reference</a>
+  <a href="news/index.html">News</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="news/index.html">News</a>
-</li>
-<li>
-  <a href="https://github.com/graphdr/midfieldr">
-    <span class="fas fa-github fa-lg"></span>
+  <a href="https://github.com/MIDFIELDR/midfielddata/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -84,10 +78,10 @@
 
 <p>An R data package containing four data sets:</p>
 <ul>
-<li><p><code>student</code> A <code>data.table</code> with 97,640 observations and 13 variables at admission. Each observation is a unique student keyed by student ID. Occupies 19 MB of memory. Data dictionary <a href="reference/student.html">(link)</a>.</p></li>
-<li><p><code>course</code> A <code>data.table</code> with 3.5 M observations and 12 academic course variables keyed by student ID, term, and course. Each observation is a unique course, section, term, and student. Occupies 349 MB of memory. Data dictionary <a href="reference/course.html">(link)</a>.</p></li>
-<li><p><code>term</code> A <code>data.table</code> with 727,369 observations and 13 academic term variables keyed by student ID and term. Each observation is one term for one student. Occupies 82 MB of memory. Data dictionary <a href="reference/term.html">(link)</a>.</p></li>
-<li><p><code>degree</code> A <code>data.table</code> with 47,499 observations and 5 graduation variables keyed by student ID. Each observation is a unique student. Occupies 10 MB of memory. Data dictionary <a href="reference/degree.html">(link)</a>.</p></li>
+<li><p><code>student</code> Table of attributes of approximately 98,000 students upon being admitted as degree-seeking undergraduates. Each observation is a unique student keyed by student ID.</p></li>
+<li><p><code>course</code> Table of course-related attributes of approximately 98,000 undergraduates enrolled in courses at their institutions. Each observation is one course in one term for one student keyed by student ID and a combination of course, abbreviation, number, and section.</p></li>
+<li><p><code>term</code> Table of term-related attributes of approximately 96,000 undergraduates for all terms completed at their institutions. Each observation is one term for one student keyed by student ID and term.</p></li>
+<li><p><code>degree</code> Table of degree-related attributes of approximately 48,000 undergraduates upon completing their programs. Each observation is a unique student keyed by student ID.</p></li>
 </ul>
 <p>These data are a stratified sample of data from the <a href="https://engineering.purdue.edu/MIDFIELD" class="external-link">MIDFIELD</a> project, comprising student records from registrars at participating US universities for 97,640 undergraduate students from 1987 to 2016. For privacy protection, personal and institutional identities are anonymized.</p>
 <p>Tools for accessing and analyzing these data are provided by the <a href="https://midfieldr.github.io/midfieldr" class="external-link">midfieldr</a> package.</p>
@@ -96,7 +90,9 @@
 <a href="#installation" class="anchor" aria-hidden="true"></a>Installation</h2>
 <p>Install midfielddata from our drat repo. The data package is large, so this step takes time. Please be patient and wait for the Console prompt &gt; to reappear.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"midfielddata"</span>, repos <span class="op">=</span> <span class="st">"https://MIDFIELDR.github.io/drat/"</span>, type <span class="op">=</span> <span class="st">"source"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"midfielddata"</span>, 
+                 repos <span class="op">=</span> <span class="st">"https://MIDFIELDR.github.io/drat/"</span>, 
+                 type  <span class="op">=</span> <span class="st">"source"</span><span class="op">)</span></code></pre></div>
 <p>When installed and loaded, each data set has a <code>data.table</code> structure.</p>
 </div>
 <div id="the-build" class="section level2">
@@ -114,8 +110,13 @@
 <h2 class="hasAnchor">
 <a href="#meta" class="anchor" aria-hidden="true"></a>Meta</h2>
 <ul>
-<li>Get citation information with <code>citation("midfielddata")</code>.</li>
-<li>Please note that this project is released with a <a href="CONDUCT.html">Code of Conduct</a>. If you contribute to this project you agree to abide by its terms.</li>
+<li>For more information about <a href="https://engineering.purdue.edu/MIDFIELD" class="external-link">MIDFIELD</a><br>
+</li>
+<li>Getting started with R using <a href="https://midfieldr.github.io/2021-asee-workshop/" class="external-link">MIDFIELD workshop materials</a><br>
+</li>
+<li>Get citation information with <code>citation("midfielddata")</code>
+</li>
+<li>This project is released with a <a href="CONDUCT.html">Code of Conduct</a>. If you contribute to this project you agree to abide by its terms.</li>
 </ul>
 </div>
 </div>
@@ -144,7 +145,8 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Richard Layton <br><small class="roles"> Maintainer, author </small>  </li>
+<li>
+<a href="https://github.com/graphdr">Richard Layton</a> <br><small class="roles"> Maintainer, author </small>  </li>
 <li>Russell Long <br><small class="roles"> Data manager, author </small>  </li>
 <li>Matthew Ohland <br><small class="roles"> Author </small>  </li>
 <li>Marisa Orr <br><small class="roles"> Author </small>  </li>
@@ -155,7 +157,6 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://travis-ci.org/MIDFIELDR/midfielddata" class="external-link"><img src="https://travis-ci.org/MIDFIELDR/midfielddata.svg?branch=master" alt="Build Status"></a></li>
 <li><a href="https://creativecommons.org/publicdomain/zero/1.0/" class="external-link"><img src="reference/figures/License-CC-0-blue.svg" alt="License"></a></li>
 </ul>
 </div>
@@ -166,7 +167,7 @@
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by Richard Layton, Russell Long, Matthew Ohland, Marisa Orr, US National Science Foundation.</p>
+<p>Developed by <a href="https://github.com/graphdr" class="external-link">Richard Layton</a>, Russell Long, Matthew Ohland, Marisa Orr, US National Science Foundation.</p>
 </div>
 
 <div class="pkgdown">

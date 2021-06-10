@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Student data sample — student • midfielddata</title>
+<title>Student Record Data for 98,000 Undergraduates — midfielddata-package • midfielddata</title>
 
 
 <!-- jquery -->
@@ -39,10 +39,8 @@
 
 
 
-<meta property="og:title" content="Student data sample — student" />
-<meta property="og:description" content="Table of attributes of approximately 98,000 students upon being admitted as 
-degree-seeking undergraduates. Each observation is a unique student keyed by 
-student ID." />
+<meta property="og:title" content="Student Record Data for 98,000 Undergraduates — midfielddata-package" />
+<meta property="og:description" content="Data package with a stratified sample from the MIDFIELD database." />
 
 
 
@@ -115,45 +113,16 @@ student ID." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Student data sample</h1>
-    <small class="dont-index">Source: <a href='https://github.com/MIDFIELDR/midfielddata/blob/master/R/student.R'><code>R/student.R</code></a></small>
-    <div class="hidden name"><code>student.Rd</code></div>
+    <h1>Student Record Data for 98,000 Undergraduates</h1>
+    <small class="dont-index">Source: <a href='https://github.com/MIDFIELDR/midfielddata/blob/master/R/midfielddata-package.R'><code>R/midfielddata-package.R</code></a></small>
+    <div class="hidden name"><code>midfielddata-package.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Table of attributes of approximately 98,000 students upon being admitted as 
-degree-seeking undergraduates. Each observation is a unique student keyed by 
-student ID.</p>
+    <p>Data package with a stratified sample from the MIDFIELD database.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='va'>student</span></code></pre></div>
 
-
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
-
-    <p>A <code>data.table</code> with approximately 98,000 observations and 13 
-variables occupying 19 MB of memory:</p><dl>
-  <dt>mcid</dt><dd><p>character, anonymized student identifier</p></dd>
-  <dt>institution</dt><dd><p>character, anonymized institution name, e.g., 
-      Institution A, Institution B, etc.</p></dd>
-  <dt>transfer</dt><dd><p>character, stating whether the student is a First-Time 
-  in College students or a First-Time Transfer student</p></dd>
-  <dt>hours_transfer</dt><dd><p>numeric, transfer hours accepted at the
-      institution</p></dd> 
-  <dt>race</dt><dd><p>character, race/ethnicity as self-reported by the student, 
-       e.g., Asian, Black, Hispanic/LatinX, etc.</p></dd>
-  <dt>sex</dt><dd><p>character, sex as self-reported by the student, values are 
-      Female, Male, and Unknown</p></dd>
-  <dt>age</dt><dd><p>numeric, age at admission as self-reported by the student</p></dd>
-  <dt>us_citizen</dt><dd><p>character, is the student a US citizen? (Yes or No)</p></dd>
-  <dt>home_zip</dt><dd><p>character, five or nine digit home ZIP code at admission</p></dd>
-  <dt>high_school</dt><dd><p>character, high school code for the last high
-      school attended before entering a post-secondary institution</p></dd>
-  <dt>sat_math</dt><dd><p>numeric, SAT mathematics test score</p></dd>
-  <dt>sat_verbal</dt><dd><p>numeric, SAT reading test score</p></dd>
-  <dt>act_comp</dt><dd><p>numeric, ACT composite test score</p></dd>
-
-</dl>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
@@ -161,21 +130,31 @@ variables occupying 19 MB of memory:</p><dl>
 <a href='https://engineering.purdue.edu/MIDFIELD'>https://engineering.purdue.edu/MIDFIELD</a></p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The data in midfielddata are a proportionate stratified random sample of 12 
-institutions in the MIDFIELD research database. However, these are practice 
-data, not research data---suitable for learning about student-record 
-analysis, but not for drawing inferences about student performance.</p>
-<p>Students in the <code>student</code> table have records in the <code>term</code> table 
-only if they complete a term; in the <code>course</code> table if they enroll 
-in a course; and in the <code>degree</code> table only if they complete a program.</p>
+    <p>The data comprise student records from registrars at participating US
+universities, including demographic, term, course, and degree
+information for 97,640 undergraduate students from 1987 to 2016.</p>
+<p>Four data sets are provided, with the student ID and institution variables
+in common for cross-referencing.</p>
+<dl>
+  <dt>student</dt><dd><p>Student data sample. Table of attributes of approximately 
+  98,000 students upon being admitted as degree-seeking undergraduates. 
+  Each observation is a unique student keyed by student ID.</p></dd>
+  <dt>course</dt><dd><p>Course data sample. Table of course-related attributes of 
+  approximately 98,000 undergraduates enrolled in courses at their 
+  institutions. Each observation is one course in one term for one student 
+  keyed by student ID and a combination of course, abbreviation, number, and 
+  section.</p></dd>
+  <dt>term</dt><dd><p>Term data sample. Table of term-related attributes of 
+  approximately 96,000 undergraduates for all terms completed at their 
+  institutions. Each observation is one term for one student keyed by student 
+  ID and term.</p></dd>
+  <dt>degree</dt><dd><p>Degree data sample. Table of degree-related attributes of 
+  approximately 48,000 undergraduates upon completing their programs. Each 
+  observation is a unique student keyed by student ID.</p></dd>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
-<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://r-datatable.com'>data.table</a></span><span class='op'>)</span></span>
-<span class='r-in'><span class='va'>student</span></span>
-<span class='r-in'><span class='op'>}</span></span>
-<span class='r-in'></span>
-</code></pre></div>
+</dl>
+
+
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

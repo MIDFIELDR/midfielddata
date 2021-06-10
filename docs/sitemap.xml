@@ -1,51 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://midfieldr.github.io/midfielddata/404.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://midfieldr.github.io/midfielddata/authors.html</loc>
   </url>
   <url>
-    <loc>/CONDUCT.html</loc>
+    <loc>https://midfieldr.github.io/midfielddata/CONDUCT.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://midfieldr.github.io/midfielddata/index.html</loc>
   </url>
   <url>
-    <loc>/LICENSE.html</loc>
+    <loc>https://midfieldr.github.io/midfielddata/LICENSE.html</loc>
   </url>
   <url>
-    <loc>/news/index.html</loc>
+    <loc>https://midfieldr.github.io/midfielddata/news/index.html</loc>
   </url>
   <url>
-    <loc>/reference/course.html</loc>
+    <loc>https://midfieldr.github.io/midfielddata/reference/course.html</loc>
   </url>
   <url>
-    <loc>/reference/degree.html</loc>
+    <loc>https://midfieldr.github.io/midfielddata/reference/degree.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://midfieldr.github.io/midfielddata/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/midfieldcourses.html</loc>
+    <loc>https://midfieldr.github.io/midfielddata/reference/midfieldcourses.html</loc>
   </url>
   <url>
-    <loc>/reference/midfielddata.html</loc>
+    <loc>https://midfieldr.github.io/midfielddata/reference/midfielddata-package.html</loc>
   </url>
   <url>
-    <loc>/reference/midfielddegrees.html</loc>
+    <loc>https://midfieldr.github.io/midfielddata/reference/midfielddata.html</loc>
   </url>
   <url>
-    <loc>/reference/midfieldstudents.html</loc>
+    <loc>https://midfieldr.github.io/midfielddata/reference/midfielddegrees.html</loc>
   </url>
   <url>
-    <loc>/reference/midfieldterms.html</loc>
+    <loc>https://midfieldr.github.io/midfielddata/reference/midfieldstudents.html</loc>
   </url>
   <url>
-    <loc>/reference/student.html</loc>
+    <loc>https://midfieldr.github.io/midfielddata/reference/midfieldterms.html</loc>
   </url>
   <url>
-    <loc>/reference/term.html</loc>
+    <loc>https://midfieldr.github.io/midfielddata/reference/student.html</loc>
+  </url>
+  <url>
+    <loc>https://midfieldr.github.io/midfielddata/reference/term.html</loc>
   </url>
 </urlset>

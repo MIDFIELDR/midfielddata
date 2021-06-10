@@ -25,7 +25,7 @@ navbar:
   title: ~
   type: default
   left:
-    - text: Data
+    - text: Reference
       href: reference/index.html
     - text: News
       href: news/index.html
