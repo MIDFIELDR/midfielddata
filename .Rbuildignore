@@ -1,5 +1,6 @@
 ^data-raw$
 ^docs$
+^wip$
 ^\.travis\.yml$
 ^_pkgdown\.yml$
 ^cran-comments\.md$
