@@ -1,31 +1,28 @@
 
 # midfielddata <span class="border-wrap"><img src="man/figures/midfieldhex05.png" align="right" height="122" width="106" alt="logo.png"></span>
 
-[![Build
-Status](https://travis-ci.org/MIDFIELDR/midfielddata.svg?branch=master)](https://travis-ci.org/MIDFIELDR/midfielddata)
 [![License](man/figures/License-CC-0-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 An R data package containing four data sets:
 
--   `student` A `data.table` with 97,640 observations and 13 variables
-    at admission. Each observation is a unique student keyed by student
-    ID. Occupies 19 MB of memory. Data dictionary
-    [(link)](reference/student.html).
+-   `student` Table of attributes of approximately 98,000 students upon
+    being admitted as degree-seeking undergraduates. Each observation is
+    a unique student keyed by student ID.
 
--   `course` A `data.table` with 3.5 M observations and 12 academic
-    course variables keyed by student ID, term, and course. Each
-    observation is a unique course, section, term, and student. Occupies
-    349 MB of memory. Data dictionary [(link)](reference/course.html).
+-   `course` Table of course-related attributes of approximately 98,000
+    undergraduates enrolled in courses at their institutions. Each
+    observation is one course in one term for one student keyed by
+    student ID and a combination of course, abbreviation, number, and
+    section.
 
--   `term` A `data.table` with 727,369 observations and 13 academic term
-    variables keyed by student ID and term. Each observation is one term
-    for one student. Occupies 82 MB of memory. Data dictionary
-    [(link)](reference/term.html).
+-   `term` Table of term-related attributes of approximately 96,000
+    undergraduates for all terms completed at their institutions. Each
+    observation is one term for one student keyed by student ID and
+    term.
 
--   `degree` A `data.table` with 47,499 observations and 5 graduation
-    variables keyed by student ID. Each observation is a unique student.
-    Occupies 10 MB of memory. Data dictionary
-    [(link)](reference/degree.html).
+-   `degree` Table of degree-related attributes of approximately 48,000
+    undergraduates upon completing their programs. Each observation is a
+    unique student keyed by student ID.
 
 These data are a stratified sample of data from the
 [MIDFIELD](https://engineering.purdue.edu/MIDFIELD) project, comprising
@@ -40,10 +37,12 @@ Tools for accessing and analyzing these data are provided by the
 
 Install midfielddata from our drat repo. The data package is large, so
 this step takes time. Please be patient and wait for the Console prompt
-&gt; to reappear.
+\> to reappear.
 
 ``` r
-install.packages("midfielddata", repos = "https://MIDFIELDR.github.io/drat/", type = "source")
+install.packages("midfielddata", 
+                 repos = "https://MIDFIELDR.github.io/drat/", 
+                 type  = "source")
 ```
 
 When installed and loaded, each data set has a `data.table` structure.
@@ -61,7 +60,10 @@ midfielddata currently passes R CMD check with the results:
 
 ## Meta
 
--   Get citation information with `citation("midfielddata")`.
--   Please note that this project is released with a [Code of
-    Conduct](CONDUCT.html). If you contribute to this project you agree
-    to abide by its terms.
+-   For more information about
+    [MIDFIELD](https://engineering.purdue.edu/MIDFIELD)  
+-   Getting started with R using [MIDFIELD workshop
+    materials](https://midfieldr.github.io/2021-asee-workshop/)  
+-   Get citation information with `citation("midfielddata")`
+-   This project is released with a [Code of Conduct](CONDUCT.html). If
+    you contribute to this project you agree to abide by its terms.

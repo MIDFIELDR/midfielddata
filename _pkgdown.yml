@@ -1,23 +1,31 @@
+url: https://midfieldr.github.io/midfielddata/
+
 template:
-  params:
-    bootswatch: spacelab
+  bootswatch: spacelab
+
+news:
+  cran_dates: false
+
+authors:
+  Richard Layton:
+    href: https://github.com/graphdr
+
+reference:
+  - title: Package
+    contents:
+      - midfielddata-package
+  - title: Tables of practice data 
+    contents:
+      - student
+      - course
+      - term
+      - degree
 
 navbar:
-  title: midfieldstudent
-  type:  default
-
+  title: ~
+  type: default
   left:
-  - icon: fa-home fa-lg
-    href: index.html
-
-  - text: Reference
-    href: reference/index.html
-
-  right:
-  - text: News
-    href: news/index.html
-    
-  - icon: fa-github fa-lg
-    href: https://github.com/graphdr/midfieldr
-
-
+    - text: Data
+      href: reference/index.html
+    - text: News
+      href: news/index.html

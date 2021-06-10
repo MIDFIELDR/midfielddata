@@ -30,7 +30,7 @@
 #' @source Data provided by the MIDFIELD project:
 #' \url{https://engineering.purdue.edu/MIDFIELD}
 #' @docType package
-#' @name midfielddata
+#' @name midfielddata-package
 NULL
 
 ## addresses R CMD check warning "no visible binding"
