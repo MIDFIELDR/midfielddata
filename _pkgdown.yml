@@ -9,6 +9,11 @@ news:
 authors:
   Richard Layton:
     href: https://github.com/graphdr
+    
+home:
+  links:
+  - text: midfieldr package
+    href: https://midfieldr.github.io/midfieldr
 
 reference:
   - title: Package
