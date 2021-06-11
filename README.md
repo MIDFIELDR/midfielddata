@@ -2,6 +2,10 @@
 # midfielddata <span class="border-wrap"><img src="man/figures/midfieldhex05.png" align="right" height="122" width="106" alt="logo.png"></span>
 
 [![License](man/figures/License-CC-0-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Project Status: WIP – Initial development is in progress, but there
+has not yet been a stable, usable release suitable for the
+public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
 An R data package containing four data sets:
 
@@ -10,20 +14,20 @@ An R data package containing four data sets:
     undergraduates. Each observation is a unique student keyed by
     student ID.
 
--   `course` Table of course-related attributes of approximately 98,000
-    undergraduates enrolled in courses at their institutions. Each
-    observation is one course in one term for one student keyed by
-    student ID and a combination of course, abbreviation, number, and
-    section.
+-   [`course`](reference/course.html) Table of course-related attributes
+    of approximately 98,000 undergraduates enrolled in courses at their
+    institutions. Each observation is one course in one term for one
+    student keyed by student ID and a combination of course,
+    abbreviation, number, and section.
 
--   `term` Table of term-related attributes of approximately 96,000
-    undergraduates for all terms completed at their institutions. Each
-    observation is one term for one student keyed by student ID and
-    term.
+-   [`term`](reference/term.html) Table of term-related attributes of
+    approximately 96,000 undergraduates for all terms completed at their
+    institutions. Each observation is one term for one student keyed by
+    student ID and term.
 
--   `degree` Table of degree-related attributes of approximately 48,000
-    undergraduates upon completing their programs. Each observation is a
-    unique student keyed by student ID.
+-   [`degree`](reference/degree.html) Table of degree-related attributes
+    of approximately 48,000 undergraduates upon completing their
+    programs. Each observation is a unique student keyed by student ID.
 
 These data are a stratified sample of data from the
 [MIDFIELD](https://engineering.purdue.edu/MIDFIELD) project, comprising
