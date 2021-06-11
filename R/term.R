@@ -49,12 +49,13 @@
 #'   \item{gpa_term}{numeric, term grade point average}
 #'   \item{gpa_cumul}{numeric, cumulative grade point average}
 #' }
+#' @usage data(term)
 #' @source Data provided by the MIDFIELD project:
 #' \url{https://engineering.purdue.edu/MIDFIELD}
 #' @examples
 #' \dontrun{
 #' library(data.table)
-#' term
+#' data(term)
 #' }
 #'
 "term"

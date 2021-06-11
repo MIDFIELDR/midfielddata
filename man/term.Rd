@@ -31,7 +31,7 @@ Data provided by the MIDFIELD project:
 \url{https://engineering.purdue.edu/MIDFIELD}
 }
 \usage{
-term
+data(term)
 }
 \description{
 Table of term-related attributes of approximately 96,000 undergraduates for 
@@ -67,7 +67,7 @@ See midfieldr \code{\link[midfieldr:cip]{cip}} for more information.
 \examples{
 \dontrun{
 library(data.table)
-term
+data(term)
 }
 
 }

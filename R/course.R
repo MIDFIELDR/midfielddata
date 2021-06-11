@@ -53,12 +53,13 @@
 #'        basis, No, Yes, or missing}
 #'   \item{grade}{character, course grade, e.g., A+, A, A-, B+, I, NG, etc.}
 #' }
+#' @usage data(course)
 #' @source Data provided by the MIDFIELD project:
 #' \url{https://engineering.purdue.edu/MIDFIELD}
 #' @examples
 #' \dontrun{
 #' library(data.table)
-#' course
+#' data(course)
 #' }
 #'
 "course"

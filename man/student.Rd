@@ -34,7 +34,7 @@ Data provided by the MIDFIELD project:
 \url{https://engineering.purdue.edu/MIDFIELD}
 }
 \usage{
-student
+data(student)
 }
 \description{
 Table of attributes of approximately 98,000 students upon being admitted as 
@@ -55,7 +55,7 @@ in the \link[midfielddata]{degree} table only if they complete a program.
 \examples{
 \dontrun{
 library(data.table)
-student
+data(student)
 }
 
 }

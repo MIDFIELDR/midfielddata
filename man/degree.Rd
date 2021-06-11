@@ -24,7 +24,7 @@ Data provided by the MIDFIELD project:
 \url{https://engineering.purdue.edu/MIDFIELD}
 }
 \usage{
-degree
+data(degree)
 }
 \description{
 Table of degree-related attributes of approximately 48,000 undergraduates 
@@ -38,7 +38,7 @@ data, not research data---suitable for learning about student-record
 analysis, but not for drawing inferences about student performance.  
 
 Students in the \code{degree} table also have records in the 
-\link[midfielddata]{student},\link[midfielddata]{course}, and 
+\link[midfielddata]{student}, \link[midfielddata]{course}, and 
 \link[midfielddata]{term} tables. 
 
 Terms are encoded YYYYT, where YYYY is the year of the Fall term that starts 
@@ -58,7 +58,7 @@ See midfieldr \code{\link[midfieldr:cip]{cip}} for more information.
 \examples{
 \dontrun{
 library(data.table)
-degree
+data(degree)
 }
 
 }

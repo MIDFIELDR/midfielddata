@@ -38,12 +38,13 @@
 #'   \item{sat_verbal}{numeric, SAT reading test score}
 #'   \item{act_comp}{numeric, ACT composite test score}
 #' }
+#' @usage data(student)
 #' @source Data provided by the MIDFIELD project:
 #' \url{https://engineering.purdue.edu/MIDFIELD}
 #' @examples
 #' \dontrun{
 #' library(data.table)
-#' student
+#' data(student)
 #' }
 #'
 "student"

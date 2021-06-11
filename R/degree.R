@@ -10,7 +10,7 @@
 #' analysis, but not for drawing inferences about student performance.  
 #' 
 #' Students in the \code{degree} table also have records in the 
-#' \link[midfielddata]{student},\link[midfielddata]{course}, and 
+#' \link[midfielddata]{student}, \link[midfielddata]{course}, and 
 #' \link[midfielddata]{term} tables. 
 #' 
 #' Terms are encoded YYYYT, where YYYY is the year of the Fall term that starts 
@@ -40,12 +40,13 @@
 #'   \item{degree}{character, type of degree awarded, e.g., Bachelor's Degree, 
 #'        Bachelor of Arts, Bachelor of Science, etc.}
 #' }
+#' @usage data(degree)
 #' @source Data provided by the MIDFIELD project:
 #' \url{https://engineering.purdue.edu/MIDFIELD}
 #' @examples
 #' \dontrun{
 #' library(data.table)
-#' degree
+#' data(degree)
 #' }
 #'
 "degree"

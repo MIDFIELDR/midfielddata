@@ -37,7 +37,7 @@ Data provided by the MIDFIELD project:
 \url{https://engineering.purdue.edu/MIDFIELD}
 }
 \usage{
-course
+data(course)
 }
 \description{
 Table of course-related attributes of approximately 98,000 undergraduates 
@@ -71,7 +71,7 @@ terms encoded 20094, 20095 and 20096 depending on the number of sessions.
 \examples{
 \dontrun{
 library(data.table)
-course
+data(course)
 }
 
 }
