@@ -8,17 +8,15 @@
 - edit license
 - remove Travis CI
 
-## midfielddata 0.1.1.9001 (2020-08)
+## midfielddata 0.1.1 (2020-07)
 
-  - edited help pages
+- reformatted data frames as data.tables 
+- remove dependencies on dplyr and related packages 
+- edited help pages
 
-## midfielddata 0.1.1 (2020-07-23)
+## midfielddata 0.1.0 (2018-06)
 
-  - reformatted data frames as data.tables
-
-## midfielddata 0.1.0 (2018-06-20)
-
-  - made public on GitHub
+- made public on GitHub
 
 
 
