@@ -9,8 +9,9 @@
 #' data, not research data---suitable for learning about student-record 
 #' analysis, but not for drawing inferences about student performance.  
 #' 
-#' Students in the \code{degree} table also have records in the \code{student}, 
-#' \code{term}, and \code{course} tables. 
+#' Students in the \code{degree} table also have records in the 
+#' \link[midfielddata]{student},\link[midfielddata]{course}, and 
+#' \link[midfielddata]{term} tables. 
 #' 
 #' Terms are encoded YYYYT, where YYYY is the year of the Fall term that starts 
 #' the academic year and T = 1 (Fall), 2 (Winter, quarter systems only), 3 

@@ -44,10 +44,11 @@ institutions in the MIDFIELD research database. However, these are practice
 data, not research data---suitable for learning about student-record 
 analysis, but not for drawing inferences about student performance.
 
-Students in the \code{term} table have records in the \code{student} table 
-only if they are admitted as degree-seeking undergraduates; in the 
-\code{course} table if they enroll in a course; and in the \code{degree} 
-table only if they complete a program. 
+Students in the \code{term} table have records in the 
+\link[midfielddata]{student} table only if they are admitted as 
+degree-seeking undergraduates; in the \link[midfielddata]{course} table 
+if they enroll in a course; and in the \link[midfielddata]{degree} table 
+only if they complete a program. 
 
 Terms are encoded YYYYT, where YYYY is the year of the Fall term that starts 
 the academic year and T = 1 (Fall), 2 (Winter, quarter systems only), 3 

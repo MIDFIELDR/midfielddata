@@ -47,9 +47,10 @@ institutions in the MIDFIELD research database. However, these are practice
 data, not research data---suitable for learning about student-record 
 analysis, but not for drawing inferences about student performance. 
 
-Students in the \code{student} table have records in the \code{term} table 
-only if they complete a term; in the \code{course} table if they enroll 
-in a course; and in the \code{degree} table only if they complete a program.
+Students in the \code{student} table have records in the 
+\link[midfielddata]{term} table only if they complete a term; in 
+the \link[midfielddata]{course} table if they enroll in a course; and 
+in the \link[midfielddata]{degree} table only if they complete a program.
 }
 \examples{
 \dontrun{
