@@ -5,7 +5,7 @@
 
 An R data package containing four data sets:
 
--   [`student`](docs/reference/student.html) Table of attributes of
+-   [`student`](reference/student.html) Table of attributes of
     approximately 98,000 students upon being admitted as degree-seeking
     undergraduates. Each observation is a unique student keyed by
     student ID.
