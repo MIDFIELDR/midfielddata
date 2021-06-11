@@ -10,7 +10,7 @@
 #' in common for cross-referencing.
 #'
 #' \describe{
-#'   \item{student}{Student data sample. Table of attributes of approximately 
+#'   \item{\link[midfielddata]{student}}{Student data sample. Table of attributes of approximately 
 #'   98,000 students upon being admitted as degree-seeking undergraduates. 
 #'   Each observation is a unique student keyed by student ID.}
 #'   \item{course}{Course data sample. Table of course-related attributes of 
