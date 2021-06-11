@@ -5,9 +5,10 @@
 
 An R data package containing four data sets:
 
--   `student` Table of attributes of approximately 98,000 students upon
-    being admitted as degree-seeking undergraduates. Each observation is
-    a unique student keyed by student ID.
+-   [`student`](docs/reference/student.html) Table of attributes of
+    approximately 98,000 students upon being admitted as degree-seeking
+    undergraduates. Each observation is a unique student keyed by
+    student ID.
 
 -   `course` Table of course-related attributes of approximately 98,000
     undergraduates enrolled in courses at their institutions. Each
