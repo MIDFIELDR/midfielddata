@@ -23,7 +23,7 @@ A \code{data.table} with approximately 730,000 observations and
   \item{standing}{Character, academic standing, e.g.,
       Good Standing, Academic Suspension, etc.}
 
-  \item{coop}{Character, cooperative eductaion term, Yes or No}
+  \item{coop}{Character, cooperative education term, Yes or No}
 
   \item{hours_term}{Numeric, credit hours earned in the term}
 

@@ -40,8 +40,8 @@
 
 
 <meta property="og:title" content="Degree data sample — degree" />
-<meta property="og:description" content="Table of degree-related attributes of approximately 48,000 undergraduates 
-upon completing their programs. Each observation is a unique student 
+<meta property="og:description" content="Table of degree-related attributes of approximately 48,000 undergraduates
+upon completing their programs. Each observation is a unique student
 keyed by student ID." />
 
 
@@ -121,8 +121,8 @@ keyed by student ID." />
     </div>
 
     <div class="ref-description">
-    <p>Table of degree-related attributes of approximately 48,000 undergraduates 
-upon completing their programs. Each observation is a unique student 
+    <p>Table of degree-related attributes of approximately 48,000 undergraduates
+upon completing their programs. Each observation is a unique student
 keyed by student ID.</p>
     </div>
 
@@ -131,16 +131,20 @@ keyed by student ID.</p>
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A <code>data.table</code> with approximately 48,000 observations and 
+    <p>A <code>data.table</code> with approximately 48,000 observations and
 5 variables occupying 10.2 MB of memory.</p><dl>
-  <dt>mcid</dt><dd><p>character, anonymized student identifier</p></dd>
-  <dt>institution</dt><dd><p>character, anonymized institution name, e.g., 
+  <dt>mcid</dt><dd><p>Character, anonymized student identifier</p></dd>
+
+  <dt>institution</dt><dd><p>Character, anonymized institution name, e.g.,
       Institution A, Institution B, etc.</p></dd>
-  <dt>term</dt><dd><p>character, academic year and term, format YYYYT, in which a 
+
+  <dt>term</dt><dd><p>Character, academic year and term, format YYYYT, in which a
        student completes their program</p></dd>
-  <dt>cip6</dt><dd><p>character, 6-digit CIP code of program in which a student 
+
+  <dt>cip6</dt><dd><p>Character, 6-digit CIP code of program in which a student
        earns a degree</p></dd>
-  <dt>degree</dt><dd><p>character, type of degree awarded, e.g., Bachelor's Degree, 
+
+  <dt>degree</dt><dd><p>Character, type of degree awarded, e.g., Bachelor's Degree,
        Bachelor of Arts, Bachelor of Science, etc.</p></dd>
 
 </dl>
@@ -151,32 +155,25 @@ keyed by student ID.</p>
 <a href='https://engineering.purdue.edu/MIDFIELD'>https://engineering.purdue.edu/MIDFIELD</a></p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The data in midfielddata are a proportionate stratified random sample of 12 
-institutions in the MIDFIELD research database. However, these are practice 
-data, not research data---suitable for learning about student-record 
+    <p>The data in midfielddata are a proportionate stratified random sample of 12
+institutions in the MIDFIELD research database. However, these are practice
+data, not research data---suitable for learning about student-record
 analysis, but not for drawing inferences about student performance.</p>
-<p>Students in the <code>degree</code> table also have records in the 
-<a href='student.html'>student</a>, <a href='course.html'>course</a>, and 
+<p>Students in the <code>degree</code> table also have records in the
+<a href='student.html'>student</a>, <a href='course.html'>course</a>, and
 <a href='term.html'>term</a> tables.</p>
-<p>Terms are encoded YYYYT, where YYYY is the year of the Fall term that starts 
-the academic year and T = 1 (Fall), 2 (Winter, quarter systems only), 3 
-(Spring), and 4 (Summer) or 5 and 6 (Summer sessions 1 and 2). The MIDFIELD 
-research database also includes terms of one month duration, encoded with 
+<p>Terms are encoded YYYYT, where YYYY is the year of the Fall term that starts
+the academic year and T = 1 (Fall), 2 (Winter, quarter systems only), 3
+(Spring), and 4 (Summer) or 5 and 6 (Summer sessions 1 and 2). The MIDFIELD
+research database also includes terms of one month duration, encoded with
 letters A, B, C, etc., though none are included in this sample.</p>
-<p>All terms of an academic year are encoded with the same YYYY value. For 
-example, the terms of the academic year 2009-10 for an institution on a 
-semester system  are encoded 20091 (Fall) and 20093 (Spring) with summer 
+<p>All terms of an academic year are encoded with the same YYYY value. For
+example, the terms of the academic year 2009-10 for an institution on a
+semester system  are encoded 20091 (Fall) and 20093 (Spring) with summer
 terms encoded 20094, 20095 and 20096 depending on the number of sessions.</p>
-<p>Classification of Instructional Programs (CIP) codes are from the 2010 CIP. 
+<p>Classification of Instructional Programs (CIP) codes are from the 2010 CIP.
 See midfieldr <code><a href='https://rdrr.io/pkg/midfieldr/man/cip.html'>cip</a></code> for more information.</p>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
-<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://r-datatable.com'>data.table</a></span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>degree</span><span class='op'>)</span></span>
-<span class='r-in'><span class='op'>}</span></span>
-<span class='r-in'></span>
-</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -188,7 +185,7 @@ See midfieldr <code><a href='https://rdrr.io/pkg/midfieldr/man/cip.html'>cip</a>
 
       <footer>
       <div class="copyright">
-  <p><p>Developed by <a href="https://github.com/graphdr" class="external-link">Richard Layton</a>, Russell Long, Matthew Ohland, Marisa Orr, US National Science Foundation.</p></p>
+  <p><p>Developed by <a href="https://github.com/graphdr" class="external-link">Richard Layton</a>, Russell Long, Matthew Ohland, US National Science Foundation.</p></p>
 </div>
 
 <div class="pkgdown">

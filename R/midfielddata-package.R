@@ -1,6 +1,6 @@
 
 
-#' Student-Record Practice Data for 98,000 Undergraduates in the U.S.
+#' Student-Record Practice Data for 98,000 Undergraduates in the US
 #'
 #' Data package with a stratified sample from the MIDFIELD database. The data
 #' comprise student records from registrars at participating US universities,

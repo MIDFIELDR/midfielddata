@@ -1,5 +1,5 @@
 Package: midfielddata
-Title: Student-Record Practice Data for 98,000 Undergraduates in the U.S.
+Title: Student-Record Practice Data for 98,000 Undergraduates in the US
 Version: 0.1.2
 Language: en-US
 Authors@R: c(

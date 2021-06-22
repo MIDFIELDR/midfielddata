@@ -6,38 +6,38 @@
 [![License](man/figures/License-CC-0-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 <!-- badges: end -->
 
-An R data package containing four data sets:
+An R data package containing student records for 97,640 undergraduates
+organized in four data tables:
 
--   [`student`](reference/student.html) Table of attributes of
-    approximately 98,000 students upon being admitted as degree-seeking
-    undergraduates. Each observation is a unique student keyed by
-    student ID.
+-   [`student`](reference/student.html) Table of student attributes upon
+    being admitted as degree-seeking undergraduates. Each observation is
+    a unique student keyed by student ID.
 
 -   [`course`](reference/course.html) Table of course-related attributes
-    of approximately 98,000 undergraduates enrolled in courses at their
-    institutions. Each observation is one course in one term for one
-    student keyed by student ID and a combination of course,
-    abbreviation, number, and section.
+    of undergraduates for all courses attempted at their institutions.
+    Each observation is one course in one term for one student keyed by
+    student ID and a combination of course, abbreviation, number, and
+    section.
 
 -   [`term`](reference/term.html) Table of term-related attributes of
-    approximately 96,000 undergraduates for all terms completed at their
-    institutions. Each observation is one term for one student keyed by
-    student ID and term.
+    undergraduates for all terms completed at their institutions. Each
+    observation is one term for one student keyed by student ID and
+    term.
 
 -   [`degree`](reference/degree.html) Table of degree-related attributes
-    of approximately 48,000 undergraduates upon completing their
-    programs. Each observation is a unique student keyed by student ID.
+    undergraduates upon completing their programs. Each observation is a
+    unique student keyed by student ID.
 
 These data are a stratified sample of data from the
 [MIDFIELD](https://engineering.purdue.edu/MIDFIELD) project, comprising
-student records from registrars at participating US universities for
-97,640 undergraduate students from 1987 to 2016. For privacy protection,
-personal and institutional identities are anonymized.
+student records from registrars at participating US universities. For
+privacy protection, personal and institutional identities are
+anonymized.
 
 Tools for accessing and analyzing these data are provided by the
 [midfieldr](https://midfieldr.github.io/midfieldr) package.
 
-## Installation
+## Install
 
 Install midfielddata from our drat repo. The data package is large, so
 this step takes time. Please be patient and wait for the Console prompt
@@ -51,7 +51,7 @@ install.packages("midfielddata",
 
 When installed and loaded, each data set has a `data.table` structure.
 
-## The build
+## Build
 
 midfielddata currently passes R CMD check with the results:
 
