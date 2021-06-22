@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student-Record Practice Data for 98,000 Undergraduates in the U.S. • midfielddata</title>
+<title>Student-Record Practice Data for 98,000 Undergraduates in the US • midfielddata</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Student-Record Practice Data for 98,000 Undergraduates in the U.S.">
+<script src="pkgdown.js"></script><meta property="og:title" content="Student-Record Practice Data for 98,000 Undergraduates in the US">
 <meta property="og:description" content="Registrar's data for 98,000 undergraduates at participating 
   US institutions from 1987 to 2016. Four data tables with attributes of 
   students, terms, courses, and degrees. The data in midfielddata are a 
@@ -77,18 +77,18 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>An R data package containing four data sets:</p>
+<p>An R data package containing student records for 97,640 undergraduates organized in four data tables:</p>
 <ul>
-<li><p><a href="reference/student.html"><code>student</code></a> Table of attributes of approximately 98,000 students upon being admitted as degree-seeking undergraduates. Each observation is a unique student keyed by student ID.</p></li>
-<li><p><a href="reference/course.html"><code>course</code></a> Table of course-related attributes of approximately 98,000 undergraduates enrolled in courses at their institutions. Each observation is one course in one term for one student keyed by student ID and a combination of course, abbreviation, number, and section.</p></li>
-<li><p><a href="reference/term.html"><code>term</code></a> Table of term-related attributes of approximately 96,000 undergraduates for all terms completed at their institutions. Each observation is one term for one student keyed by student ID and term.</p></li>
-<li><p><a href="reference/degree.html"><code>degree</code></a> Table of degree-related attributes of approximately 48,000 undergraduates upon completing their programs. Each observation is a unique student keyed by student ID.</p></li>
+<li><p><a href="reference/student.html"><code>student</code></a> Table of student attributes upon being admitted as degree-seeking undergraduates. Each observation is a unique student keyed by student ID.</p></li>
+<li><p><a href="reference/course.html"><code>course</code></a> Table of course-related attributes of undergraduates for all courses attempted at their institutions. Each observation is one course in one term for one student keyed by student ID and a combination of course, abbreviation, number, and section.</p></li>
+<li><p><a href="reference/term.html"><code>term</code></a> Table of term-related attributes of undergraduates for all terms completed at their institutions. Each observation is one term for one student keyed by student ID and term.</p></li>
+<li><p><a href="reference/degree.html"><code>degree</code></a> Table of degree-related attributes undergraduates upon completing their programs. Each observation is a unique student keyed by student ID.</p></li>
 </ul>
-<p>These data are a stratified sample of data from the <a href="https://engineering.purdue.edu/MIDFIELD" class="external-link">MIDFIELD</a> project, comprising student records from registrars at participating US universities for 97,640 undergraduate students from 1987 to 2016. For privacy protection, personal and institutional identities are anonymized.</p>
+<p>These data are a stratified sample of data from the <a href="https://engineering.purdue.edu/MIDFIELD" class="external-link">MIDFIELD</a> project, comprising student records from registrars at participating US universities. For privacy protection, personal and institutional identities are anonymized.</p>
 <p>Tools for accessing and analyzing these data are provided by the <a href="https://midfieldr.github.io/midfieldr" class="external-link">midfieldr</a> package.</p>
-<div id="installation" class="section level2">
+<div id="install" class="section level2">
 <h2 class="hasAnchor">
-<a href="#installation" class="anchor" aria-hidden="true"></a>Installation</h2>
+<a href="#install" class="anchor" aria-hidden="true"></a>Install</h2>
 <p>Install midfielddata from our drat repo. The data package is large, so this step takes time. Please be patient and wait for the Console prompt &gt; to reappear.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"midfielddata"</span>, 
@@ -96,9 +96,9 @@
                  type  <span class="op">=</span> <span class="st">"source"</span><span class="op">)</span></code></pre></div>
 <p>When installed and loaded, each data set has a <code>data.table</code> structure.</p>
 </div>
-<div id="the-build" class="section level2">
+<div id="build" class="section level2">
 <h2 class="hasAnchor">
-<a href="#the-build" class="anchor" aria-hidden="true"></a>The build</h2>
+<a href="#build" class="anchor" aria-hidden="true"></a>Build</h2>
 <p>midfielddata currently passes R CMD check with the results:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span> errors v <span class="sc">|</span> <span class="dv">0</span> warnings v <span class="sc">|</span> <span class="dv">1</span> note x</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
