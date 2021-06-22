@@ -1,21 +1,25 @@
 Package: midfielddata
-Title: Student Record Data for 98,000 Undergraduates
+Title: Student-Record Practice Data for 98,000 Undergraduates in the U.S.
 Version: 0.1.2
 Language: en-US
 Authors@R: c(
   person("Richard", "Layton", 
-      email = "graphdoctor@gmail.com", 
-      role = c("cre", "aut")),
+       email = "graphdoctor@gmail.com", 
+       role = c("cre", "aut", "cph")),
   person("Russell", "Long", 
-      email = "ralong@purdue.edu", 
-      role = c("dtm", "aut")),
+       email = "ralong@purdue.edu", 
+       role = c("dtm", "aut", "cph")), 
   person("Matthew", "Ohland", 
-      email = "ohland@purdue.edu", 
-      role = c("aut")),
+       email = "ohland@purdue.edu",
+       role = c("aut", "cph")),
   person("Marisa", "Orr", 
-      email = "marisak@clemson.edu", 
-      role = c("aut")),
-  person("US National Science Foundation", role = c("fnd"))
+       email = "marisak@clemson.edu", 
+       role = c("ctb", "cph")),
+  person("Susan", "Lord", 
+       email = "slord@sandiego.edu",
+       role = c("ctb", "cph")),
+  person("US National Science Foundation", 
+       role = c("fnd"))
   )
 Description: Registrar's data for 98,000 undergraduates at participating 
   US institutions from 1987 to 2016. Four data tables with attributes of 
