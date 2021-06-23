@@ -1,35 +1,32 @@
 
 
-#' Student-Record Practice Data for 98,000 Undergraduates in the US
+#' Sample of MIDFIELD Student Unit Record Data 
 #'
-#' Data package with a stratified sample from the MIDFIELD database. The data
-#' comprise student records from registrars at participating US universities,
-#' including student, course, term, and degree information for 97,640
-#' undergraduate students from 1987 to 2016. Four data sets are provided, with
-#' the student ID and institution variables in common for cross-referencing.
-#'
-#' \describe{
-#'   \item{\link[midfielddata]{student}}{Student data sample. Table of
-#'   attributes of approximately 98,000 students upon being admitted as
-#'   degree-seeking undergraduates. Each observation is a unique student
-#'   keyed by student ID.}
-#'
-#'   \item{\link[midfielddata]{course}}{Course data sample. Table of
-#'   course-related attributes of approximately 98,000 undergraduates
-#'   enrolled in courses at their institutions. Each observation is one
-#'   course in one term for one student keyed by student ID and a combination
-#'   of course, abbreviation, number, and section.}
-#'
-#'   \item{\link[midfielddata]{term}}{Term data sample. Table of term-related
-#'   attributes of approximately 96,000 undergraduates for all terms completed
-#'   at their institutions. Each observation is one term for one student
-#'   keyed by student ID and term.}
-#'
-#'   \item{\link[midfielddata]{degree}}{Degree data sample. Table of
-#'   degree-related attributes of approximately 48,000 undergraduates upon
-#'   completing their programs. Each observation is a unique student keyed
-#'   by student ID.}
+#' Provides a sample of MIDFIELD data for practice working with 
+#' longitudinal, de-identified, individual student unit records from 
+#' multiple US institutions.
+#' 
+#' @section Background:
+#' \href{https://engineering.purdue.edu/MIDFIELD}{MIDFIELD} (as of May 2021)
+#' contains individual student record data for 1.7 M unique students at 33
+#' US institutions. MIDFIELD is large enough to permit disaggregation by
+#' multiple characteristics simultaneously, enabling researchers to examine
+#' student characteristics (race/ethnicity, sex, prior achievement) and
+#' curricular pathways (including coursework and major) by institution and
+#' over time.
+#' 
+#' midfieldata provides a sample of these data (for practice) with 
+#' longitudinal SURs for 98,000 undergraduates at 12 institutions 
+#' from 1987–2016 organized in four data tables:
+#' \itemize{
+#'  \item {\href{https://midfieldr.github.io/midfielddata/reference/student.html}{student}}
+#'  \item {\href{https://midfieldr.github.io/midfielddata/reference/course.html}{course}}
+#'  \item {\href{https://midfieldr.github.io/midfielddata/reference/term.html}{term}}
+#'  \item {\href{https://midfieldr.github.io/midfielddata/reference/degree.html}{degree}}
 #' }
+#' 
+#' Tools to work with these data are provided in the R package 
+#' \href{https://midfieldr.github.io/midfieldr/}{midfieldr}.  
 #'
 #'
 #' @source Data provided by the MIDFIELD project:

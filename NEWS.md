@@ -9,6 +9,7 @@
 - update Rd help pages 
 - edit license
 - remove Travis CI
+- Update README
 
 ## midfielddata 0.1.1 (2020-07)
 

@@ -1,5 +1,5 @@
 Package: midfielddata
-Title: Student-Record Practice Data for 98,000 Undergraduates in the US
+Title: Sample of MIDFIELD Student Unit Record Data
 Version: 0.1.2
 Language: en-US
 Authors@R: c(
@@ -21,13 +21,10 @@ Authors@R: c(
   person("US National Science Foundation", 
        role = c("fnd"))
   )
-Description: Registrar's data for 98,000 undergraduates at participating 
-  US institutions from 1987 to 2016. Four data tables with attributes of 
-  students, terms, courses, and degrees. The data in midfielddata are a 
-  proportionate stratified random sample of 12 institutions in the MIDFIELD 
-  research database. However, these are practice data, not research 
-  data---suitable for learning about student-record analysis, but not for 
-  drawing inferences about student performance.
+Description: The goal of midfielddata is to provide a proportionate stratified 
+    sample of MIDFIELD data for practice working with longitudinal, 
+    de-identified, individual student unit records from multiple US 
+    institutions.
 Depends: R (>= 3.5.0)
 License: CC0
 Encoding: UTF-8
