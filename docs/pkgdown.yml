@@ -2,7 +2,7 @@ pandoc: 2.14.0.1
 pkgdown: 1.6.1.9001
 pkgdown_sha: 900ef5471576f8f29508a7e7d94fae51390f2d96
 articles: {}
-last_built: 2021-06-22T13:44Z
+last_built: 2021-06-23T23:28Z
 urls:
   reference: https://midfieldr.github.io/midfielddata/reference
   article: https://midfieldr.github.io/midfielddata/articles

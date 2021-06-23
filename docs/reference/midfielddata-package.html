@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Student-Record Practice Data for 98,000 Undergraduates in the US — midfielddata-package • midfielddata</title>
+<title>Sample of MIDFIELD Student Unit Record Data — midfielddata-package • midfielddata</title>
 
 
 <!-- jquery -->
@@ -39,12 +39,10 @@
 
 
 
-<meta property="og:title" content="Student-Record Practice Data for 98,000 Undergraduates in the US — midfielddata-package" />
-<meta property="og:description" content="Data package with a stratified sample from the MIDFIELD database. The data
-comprise student records from registrars at participating US universities,
-including student, course, term, and degree information for 97,640
-undergraduate students from 1987 to 2016. Four data sets are provided, with
-the student ID and institution variables in common for cross-referencing." />
+<meta property="og:title" content="Sample of MIDFIELD Student Unit Record Data — midfielddata-package" />
+<meta property="og:description" content="Provides a sample of MIDFIELD data for practice working with 
+longitudinal, de-identified, individual student unit records from 
+multiple US institutions." />
 
 
 
@@ -117,17 +115,15 @@ the student ID and institution variables in common for cross-referencing." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Student-Record Practice Data for 98,000 Undergraduates in the US</h1>
+    <h1>Sample of MIDFIELD Student Unit Record Data</h1>
     <small class="dont-index">Source: <a href='https://github.com/MIDFIELDR/midfielddata/blob/master/R/midfielddata-package.R'><code>R/midfielddata-package.R</code></a></small>
     <div class="hidden name"><code>midfielddata-package.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Data package with a stratified sample from the MIDFIELD database. The data
-comprise student records from registrars at participating US universities,
-including student, course, term, and degree information for 97,640
-undergraduate students from 1987 to 2016. Four data sets are provided, with
-the student ID and institution variables in common for cross-referencing.</p>
+    <p>Provides a sample of MIDFIELD data for practice working with 
+longitudinal, de-identified, individual student unit records from 
+multiple US institutions.</p>
     </div>
 
 
@@ -136,33 +132,28 @@ the student ID and institution variables in common for cross-referencing.</p>
 
     <p>Data provided by the MIDFIELD project:
 <a href='https://engineering.purdue.edu/MIDFIELD'>https://engineering.purdue.edu/MIDFIELD</a></p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="background"><a class="anchor" href="#background"></a>Background</h2>
 
     
-<dl>
-  <dt><a href='student.html'>student</a></dt><dd><p>Student data sample. Table of
-  attributes of approximately 98,000 students upon being admitted as
-  degree-seeking undergraduates. Each observation is a unique student
-  keyed by student ID.</p></dd>
 
-  <dt><a href='course.html'>course</a></dt><dd><p>Course data sample. Table of
-  course-related attributes of approximately 98,000 undergraduates
-  enrolled in courses at their institutions. Each observation is one
-  course in one term for one student keyed by student ID and a combination
-  of course, abbreviation, number, and section.</p></dd>
+<p><a href='https://engineering.purdue.edu/MIDFIELD'>MIDFIELD</a> (as of May 2021)
+contains individual student record data for 1.7 M unique students at 33
+US institutions. MIDFIELD is large enough to permit disaggregation by
+multiple characteristics simultaneously, enabling researchers to examine
+student characteristics (race/ethnicity, sex, prior achievement) and
+curricular pathways (including coursework and major) by institution and
+over time.</p>
+<p>midfieldata provides a sample of these data (for practice) with 
+longitudinal SURs for 98,000 undergraduates at 12 institutions 
+from 1987–2016 organized in four data tables:</p><ul>
+<li><p><a href='https://midfieldr.github.io/midfielddata/reference/student.html'>student</a></p></li>
+<li><p><a href='https://midfieldr.github.io/midfielddata/reference/course.html'>course</a></p></li>
+<li><p><a href='https://midfieldr.github.io/midfielddata/reference/term.html'>term</a></p></li>
+<li><p><a href='https://midfieldr.github.io/midfielddata/reference/degree.html'>degree</a></p></li>
+</ul>
 
-  <dt><a href='term.html'>term</a></dt><dd><p>Term data sample. Table of term-related
-  attributes of approximately 96,000 undergraduates for all terms completed
-  at their institutions. Each observation is one term for one student
-  keyed by student ID and term.</p></dd>
-
-  <dt><a href='degree.html'>degree</a></dt><dd><p>Degree data sample. Table of
-  degree-related attributes of approximately 48,000 undergraduates upon
-  completing their programs. Each observation is a unique student keyed
-  by student ID.</p></dd>
-
-</dl>
-
+<p>Tools to work with these data are provided in the R package 
+<a href='https://midfieldr.github.io/midfieldr/'>midfieldr</a>.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
