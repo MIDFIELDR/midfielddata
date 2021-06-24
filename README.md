@@ -3,7 +3,7 @@
 
 # midfielddata
 
-A sample of the MIDFIELD student unit record data
+Sample of the MIDFIELD Student Unit Record Data
 
 <!-- badges: start -->
 
