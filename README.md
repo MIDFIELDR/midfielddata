@@ -87,7 +87,7 @@ library("midfielddata")
 help("midfielddata-package")
 ```
 
-<img src="man/figures/README-midfielddata-help-page-1.png" align="center" style="width: 75vw; min-width: 330px;"/><br>
+<img src="man/figures/README-midfielddata-help-page-1.png" width="75%" />
 
 ## Build
 
