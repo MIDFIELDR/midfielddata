@@ -3,7 +3,7 @@
 
 # midfielddata
 
-Sample of MIDFIELD student unit record data
+A sample of the MIDFIELD student unit record data
 
 <!-- badges: start -->
 
@@ -18,25 +18,27 @@ institutions.
 ## Background
 
 [MIDFIELD](https://engineering.purdue.edu/MIDFIELD) (as of May 2021)
-contains individual student unit record (SUR) data for 1.7M unique
+contains individual Student Unit Record (SUR) data for 1.7M unique
 students at 33 US institutions. MIDFIELD is large enough to permit
-grouping and summarizing by multiple characteristics simultaneously,
-enabling researchers to examine student characteristics (race/ethnicity,
-sex, prior achievement) and curricular pathways (including coursework
-and major) by institution and over time.
+grouping and summarizing by multiple characteristics, enabling
+researchers to examine student characteristics (race/ethnicity, sex,
+prior achievement) and curricular pathways (including coursework and
+major) by institution and over time.
 
 *midfielddata* provides a sample of these data (for practice) with
-longitudinal SURs for 98,000 undergraduates at 12 institutions from
-1987–2016 organized in four data tables:
+longitudinal SURs for nearly 98,000 undergraduates at 12 institutions
+from 1987–2016 organized in four data tables:
 
--   [`student`](https://midfieldr.github.io/midfielddata/reference/student.html)
-    97,640 rows and 13 columns
--   [`course`](https://midfieldr.github.io/midfielddata/reference/course.html)
-    3.5M rows and 12 columns  
--   [`term`](https://midfieldr.github.io/midfielddata/reference/term.html)
-    728,000 rows and 13 columns  
--   [`degree`](https://midfieldr.github.io/midfielddata/reference/degree.html)
-    47,500 rows and 5 columns
+| Data table                                                                   | Each row is              |  N rows | N columns |
+|:-----------------------------------------------------------------------------|:-------------------------|--------:|----------:|
+| [`student`](https://midfieldr.github.io/midfielddata/reference/student.html) | a degree-seeking student |  97,640 |        13 |
+| [`course`](https://midfieldr.github.io/midfielddata/reference/course.html)   | a student in a course    |    3.5M |        12 |
+| [`term`](https://midfieldr.github.io/midfielddata/reference/term.html)       | a student in a term      | 728,000 |        13 |
+| [`degree`](https://midfieldr.github.io/midfielddata/reference/degree.html)   | a student who graduates  |  48,000 |         5 |
+
+Data tables in `midfielddata`
+
+<br>
 
 ## Usage
 
@@ -51,13 +53,13 @@ data(course)
 data(degree)
 
 
-# Alternatively, load more than one at a time
+# Alternatively, load several tables with one line
 data(student, term, degree)
 ```
 
 -   Each data set has a `data.table` structure.
--   Tools for working these data are provided by the
-    [*midfieldr*](https://midfieldr.github.io/midfieldr) package.
+-   [*midfieldr*](https://midfieldr.github.io/midfieldr) provides tools
+    for working these data.
 
 ## Requirements
 
