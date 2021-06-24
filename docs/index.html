@@ -77,15 +77,16 @@
 <p>A sample of the MIDFIELD student unit record data</p>
 <!-- badges: start -->
 
-<p>The goal of <em>midfielddata</em> is to provide a proportionate stratified sample of MIDFIELD data for practice working with longitudinal, de-identified, individual student unit records from multiple US institutions.</p>
-<div id="background" class="section level2">
+<p>The goal of <em>midfielddata</em> is to provide a sample of MIDFIELD data for practice working with longitudinal, de-identified, individual student unit records.</p>
+<div id="overview" class="section level2">
 <h2 class="hasAnchor">
-<a href="#background" class="anchor" aria-hidden="true"></a>Background</h2>
-<p><a href="https://engineering.purdue.edu/MIDFIELD" class="external-link">MIDFIELD</a> (as of May 2021) contains individual Student Unit Record (SUR) data for 1.7M unique students at 33 US institutions. MIDFIELD is large enough to permit grouping and summarizing by multiple characteristics, enabling researchers to examine student characteristics (race/ethnicity, sex, prior achievement) and curricular pathways (including coursework and major) by institution and over time.</p>
-<p><em>midfielddata</em> provides a sample of these data (for practice) with longitudinal SURs for nearly 98,000 undergraduates at 12 institutions from 1987–2016 organized in four data tables:</p>
+<a href="#overview" class="anchor" aria-hidden="true"></a>Overview</h2>
+<p><a href="https://engineering.purdue.edu/MIDFIELD" class="external-link">MIDFIELD</a> contains individual Student Unit Record (SUR) data for 1.7M students at 33 US institutions (as of June 2021). MIDFIELD is large enough to permit grouping and summarizing by multiple characteristics, enabling researchers to examine student characteristics (race/ethnicity, sex, prior achievement) and curricular pathways (including coursework and major) by institution and over time.</p>
+<p><em>midfielddata</em> provides a a proportionate stratified sample of these data for practice working with longitudinal SURs for nearly 98,000 undergraduates at 12 institutions from 1987–2016 organized in four data tables:</p>
+<p><small></small></p>
 <table class="table">
 <thead><tr class="header">
-<th align="left">Data table</th>
+<th align="left">Data set</th>
 <th align="left">Each row is</th>
 <th align="right">N rows</th>
 <th align="right">N columns</th>
@@ -93,7 +94,7 @@
 <tbody>
 <tr class="odd">
 <td align="left"><a href="https://midfieldr.github.io/midfielddata/reference/student.html"><code>student</code></a></td>
-<td align="left">a degree-seeking student</td>
+<td align="left">a student upon being admitted</td>
 <td align="right">97,640</td>
 <td align="right">13</td>
 </tr>
@@ -111,13 +112,12 @@
 </tr>
 <tr class="even">
 <td align="left"><a href="https://midfieldr.github.io/midfielddata/reference/degree.html"><code>degree</code></a></td>
-<td align="left">a student who graduates</td>
+<td align="left">a student who completes their program</td>
 <td align="right">48,000</td>
 <td align="right">5</td>
 </tr>
 </tbody>
 </table>
-<p>Data tables in <code>midfielddata</code></p>
 <p><br></p>
 </div>
 <div id="usage" class="section level2">
@@ -183,8 +183,7 @@
 <h2 class="hasAnchor">
 <a href="#contributing" class="anchor" aria-hidden="true"></a>Contributing</h2>
 <ul>
-<li>As a data package, contributions are not expected.</li>
-<li>Please use the GitHub <a href="https://github.com/MIDFIELDR/midfielddata/issues" class="external-link">Issues</a> page to report bugs or provide feedback.</li>
+<li>Because this is a data package, contributions would not generally be expected. However, bug reports and feedback are welcome via the GitHub <a href="https://github.com/MIDFIELDR/midfielddata/issues" class="external-link">Issues</a> page.</li>
 <li>Participation in this open source project is subject to a <a href="CONDUCT.html">Code of Conduct</a>.</li>
 </ul>
 </div>
@@ -193,7 +192,7 @@
 <a href="#related-work" class="anchor" aria-hidden="true"></a>Related work</h2>
 <ul>
 <li>
-<a href="https://midfieldr.github.io/midfieldr/" class="external-link"><em>midfieldr</em></a> Tools for studying MIDFIELD student unit record data in R.</li>
+<a href="https://midfieldr.github.io/midfieldr/" class="external-link"><em>midfieldr</em></a> : Tools for studying MIDFIELD student unit record data in R.</li>
 <li>
 <a href="https://engineering.purdue.edu/MIDFIELD" class="external-link">MIDFIELD</a> A partnership of US institutions.</li>
 <li>
