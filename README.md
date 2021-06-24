@@ -10,8 +10,6 @@ A sample of the MIDFIELD student unit record data
 [![License](man/figures/License-CC-0-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 <!-- badges: end -->
 
-------------------------------------------------------------------------
-
 The goal of midfielddata is to provide a sample of MIDFIELD data for
 practice working with longitudinal, de-identified, individual student
 unit records.
