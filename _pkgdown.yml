@@ -29,7 +29,7 @@ reference:
 
 navbar:
   title: ~
-  type: default
+  type: light
   left:
     - text: Reference
       href: reference/index.html
