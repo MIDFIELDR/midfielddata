@@ -1,8 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<img src="man/figures/midfieldhex05.png" align="right" height="122" width="106" alt="logo.png">
-
 # midfielddata
 
 Sample of MIDFIELD student unit record data
