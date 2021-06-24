@@ -74,27 +74,51 @@
 <img src="package-logo.png" class="pkg-logo" alt="" width="120"><div id="midfielddata" class="section level1">
 <div class="pb-2 mt-4 mb-2 border-bottom"><h1 class="hasAnchor">
 <a href="#midfielddata" class="anchor" aria-hidden="true"></a>midfielddata</h1></div>
-<p>Sample of MIDFIELD student unit record data</p>
+<p>A sample of the MIDFIELD student unit record data</p>
 <!-- badges: start -->
 
 <p>The goal of <em>midfielddata</em> is to provide a proportionate stratified sample of MIDFIELD data for practice working with longitudinal, de-identified, individual student unit records from multiple US institutions.</p>
 <div id="background" class="section level2">
 <h2 class="hasAnchor">
 <a href="#background" class="anchor" aria-hidden="true"></a>Background</h2>
-<p><a href="https://engineering.purdue.edu/MIDFIELD" class="external-link">MIDFIELD</a> (as of May 2021) contains individual student unit record (SUR) data for 1.7M unique students at 33 US institutions. MIDFIELD is large enough to permit grouping and summarizing by multiple characteristics simultaneously, enabling researchers to examine student characteristics (race/ethnicity, sex, prior achievement) and curricular pathways (including coursework and major) by institution and over time.</p>
-<p><em>midfielddata</em> provides a sample of these data (for practice) with longitudinal SURs for 98,000 undergraduates at 12 institutions from 1987–2016 organized in four data tables:</p>
-<ul>
-<li>
-<a href="https://midfieldr.github.io/midfielddata/reference/student.html"><code>student</code></a> 97,640 rows and 13 columns</li>
-<li>
-<a href="https://midfieldr.github.io/midfielddata/reference/course.html"><code>course</code></a> 3.5M rows and 12 columns<br>
-</li>
-<li>
-<a href="https://midfieldr.github.io/midfielddata/reference/term.html"><code>term</code></a> 728,000 rows and 13 columns<br>
-</li>
-<li>
-<a href="https://midfieldr.github.io/midfielddata/reference/degree.html"><code>degree</code></a> 47,500 rows and 5 columns</li>
-</ul>
+<p><a href="https://engineering.purdue.edu/MIDFIELD" class="external-link">MIDFIELD</a> (as of May 2021) contains individual Student Unit Record (SUR) data for 1.7M unique students at 33 US institutions. MIDFIELD is large enough to permit grouping and summarizing by multiple characteristics, enabling researchers to examine student characteristics (race/ethnicity, sex, prior achievement) and curricular pathways (including coursework and major) by institution and over time.</p>
+<p><em>midfielddata</em> provides a sample of these data (for practice) with longitudinal SURs for nearly 98,000 undergraduates at 12 institutions from 1987–2016 organized in four data tables:</p>
+<table class="table">
+<thead><tr class="header">
+<th align="left">Data table</th>
+<th align="left">Each row is</th>
+<th align="right">N rows</th>
+<th align="right">N columns</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https://midfieldr.github.io/midfielddata/reference/student.html"><code>student</code></a></td>
+<td align="left">a degree-seeking student</td>
+<td align="right">97,640</td>
+<td align="right">13</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://midfieldr.github.io/midfielddata/reference/course.html"><code>course</code></a></td>
+<td align="left">a student in a course</td>
+<td align="right">3.5M</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://midfieldr.github.io/midfielddata/reference/term.html"><code>term</code></a></td>
+<td align="left">a student in a term</td>
+<td align="right">728,000</td>
+<td align="right">13</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://midfieldr.github.io/midfielddata/reference/degree.html"><code>degree</code></a></td>
+<td align="left">a student who graduates</td>
+<td align="right">48,000</td>
+<td align="right">5</td>
+</tr>
+</tbody>
+</table>
+<p>Data tables in <code>midfielddata</code></p>
+<p><br></p>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
@@ -110,11 +134,12 @@
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">degree</span><span class="op">)</span>
 
 
-<span class="co"># Alternatively, load more than one at a time</span>
+<span class="co"># Alternatively, load several tables with one line</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">student</span>, <span class="va">term</span>, <span class="va">degree</span><span class="op">)</span></code></pre></div>
 <ul>
 <li>Each data set has a <code>data.table</code> structure.</li>
-<li>Tools for working these data are provided by the <a href="https://midfieldr.github.io/midfieldr" class="external-link"><em>midfieldr</em></a> package.</li>
+<li>
+<a href="https://midfieldr.github.io/midfieldr" class="external-link"><em>midfieldr</em></a> provides tools for working these data.</li>
 </ul>
 </div>
 <div id="requirements" class="section level2">

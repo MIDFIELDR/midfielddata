@@ -10,35 +10,35 @@ A sample of the MIDFIELD student unit record data
 [![License](man/figures/License-CC-0-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 <!-- badges: end -->
 
-The goal of *midfielddata* is to provide a proportionate stratified
-sample of MIDFIELD data for practice working with longitudinal,
-de-identified, individual student unit records from multiple US
-institutions.
+The goal of *midfielddata* is to provide a sample of MIDFIELD data for
+practice working with longitudinal, de-identified, individual student
+unit records.
 
-## Background
+## Overview
 
-[MIDFIELD](https://engineering.purdue.edu/MIDFIELD) (as of May 2021)
-contains individual Student Unit Record (SUR) data for 1.7M unique
-students at 33 US institutions. MIDFIELD is large enough to permit
-grouping and summarizing by multiple characteristics, enabling
-researchers to examine student characteristics (race/ethnicity, sex,
-prior achievement) and curricular pathways (including coursework and
-major) by institution and over time.
+[MIDFIELD](https://engineering.purdue.edu/MIDFIELD) contains individual
+Student Unit Record (SUR) data for 1.7M students at 33 US institutions
+(as of June 2021). MIDFIELD is large enough to permit grouping and
+summarizing by multiple characteristics, enabling researchers to examine
+student characteristics (race/ethnicity, sex, prior achievement) and
+curricular pathways (including coursework and major) by institution and
+over time.
 
-*midfielddata* provides a sample of these data (for practice) with
-longitudinal SURs for nearly 98,000 undergraduates at 12 institutions
-from 1987–2016 organized in four data tables:
+*midfielddata* provides a a proportionate stratified sample of these
+data for practice working with longitudinal SURs for nearly 98,000
+undergraduates at 12 institutions from 1987–2016 organized in four data
+tables:
 
-| Data table                                                                   | Each row is              |  N rows | N columns |
-|:-----------------------------------------------------------------------------|:-------------------------|--------:|----------:|
-| [`student`](https://midfieldr.github.io/midfielddata/reference/student.html) | a degree-seeking student |  97,640 |        13 |
-| [`course`](https://midfieldr.github.io/midfielddata/reference/course.html)   | a student in a course    |    3.5M |        12 |
-| [`term`](https://midfieldr.github.io/midfielddata/reference/term.html)       | a student in a term      | 728,000 |        13 |
-| [`degree`](https://midfieldr.github.io/midfielddata/reference/degree.html)   | a student who graduates  |  48,000 |         5 |
+<small>
 
-Data tables in `midfielddata`
+| Data set                                                                     | Each row is                           |  N rows | N columns |
+|:-----------------------------------------------------------------------------|:--------------------------------------|--------:|----------:|
+| [`student`](https://midfieldr.github.io/midfielddata/reference/student.html) | a student upon being admitted         |  97,640 |        13 |
+| [`course`](https://midfieldr.github.io/midfielddata/reference/course.html)   | a student in a course                 |    3.5M |        12 |
+| [`term`](https://midfieldr.github.io/midfielddata/reference/term.html)       | a student in a term                   | 728,000 |        13 |
+| [`degree`](https://midfieldr.github.io/midfielddata/reference/degree.html)   | a student who completes their program |  48,000 |         5 |
 
-<br>
+</small><br>
 
 ## Usage
 
@@ -104,16 +104,16 @@ help("midfielddata-package")
 
 ## Contributing
 
--   As a data package, contributions are not expected.
--   Please use the GitHub
-    [Issues](https://github.com/MIDFIELDR/midfielddata/issues) page to
-    report bugs or provide feedback.
+-   Because this is a data package, contributions would not generally be
+    expected. However, bug reports and feedback are welcome via the
+    GitHub [Issues](https://github.com/MIDFIELDR/midfielddata/issues)
+    page.
 -   Participation in this open source project is subject to a [Code of
     Conduct](CONDUCT.html).
 
 ## Related work
 
--   [*midfieldr*](https://midfieldr.github.io/midfieldr/) Tools for
+-   [*midfieldr*](https://midfieldr.github.io/midfieldr/) : Tools for
     studying MIDFIELD student unit record data in R.
 -   [MIDFIELD](https://engineering.purdue.edu/MIDFIELD) A partnership of
     US institutions.
