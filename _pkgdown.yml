@@ -1,8 +1,8 @@
 url: https://midfieldr.github.io/midfielddata/
 
 template:
-  params:
-    bootswatch: yeti
+  bootstrap: 4
+  bootswatch: spacelab
 
 news:
   cran_dates: false
