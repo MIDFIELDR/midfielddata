@@ -1,4 +1,9 @@
 
+## midfielddata 0.1.3 (2021-07)
+
+- Added some data tests to check for range and possible values 
+- Minor edits to .Rd help pages 
+
 
 ## midfielddata 0.1.2 (2021-06)
 
