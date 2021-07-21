@@ -1,6 +1,11 @@
 
+
+
+
+
 ## midfielddata 0.1.3 (2021-07)
 
+- Removed problematic data after 2003 for Institution M 
 - Added some data tests to check for range and possible values 
 - Minor edits to .Rd help pages 
 

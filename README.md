@@ -34,12 +34,12 @@ proportionate stratified sample of MIDFIELD) with longitudinal SURs for
 nearly 98,000 undergraduates at 12 institutions from 1987–2016 organized
 in four data tables:
 
-| Data set                                                                     | Each row is                           |  N rows | N columns |
-|:-----------------------------------------------------------------------------|:--------------------------------------|--------:|----------:|
-| [`student`](https://midfieldr.github.io/midfielddata/reference/student.html) | a student upon being admitted         |  97,640 |        13 |
-| [`course`](https://midfieldr.github.io/midfielddata/reference/course.html)   | a student in a course                 |    3.5M |        12 |
-| [`term`](https://midfieldr.github.io/midfielddata/reference/term.html)       | a student in a term                   | 728,000 |        13 |
-| [`degree`](https://midfieldr.github.io/midfielddata/reference/degree.html)   | a student who completes their program |  48,000 |         5 |
+| Data set                                                                     | Each row is                           | N rows | N columns |
+|:-----------------------------------------------------------------------------|:--------------------------------------|-------:|----------:|
+| [`student`](https://midfieldr.github.io/midfielddata/reference/student.html) | a student upon being admitted         |    98k |        13 |
+| [`course`](https://midfieldr.github.io/midfielddata/reference/course.html)   | a student in a course                 |   3.4M |        12 |
+| [`term`](https://midfieldr.github.io/midfielddata/reference/term.html)       | a student in a term                   |   711k |        13 |
+| [`degree`](https://midfieldr.github.io/midfielddata/reference/degree.html)   | a student who completes their program |    48k |         5 |
 
 ## Usage
 

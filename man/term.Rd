@@ -5,8 +5,8 @@
 \alias{term}
 \title{Term data sample}
 \format{
-A \code{data.table} with approximately 730,000 observations and
-13 variables occupying 82 MB of memory:
+A \code{data.table} with approximately 711,000 observations and
+13 variables occupying 80 MB of memory:
 \describe{
   \item{mcid}{Character, anonymized student identifier}
 
@@ -62,8 +62,7 @@ analysis, but not for drawing inferences about student performance.
 
 Students in the \code{term} table have records in the
 \link[midfielddata]{student} table only if they are admitted as
-degree-seeking undergraduates; in the \link[midfielddata]{course} table
-if they enroll in a course; and in the \link[midfielddata]{degree} table
+degree-seeking undergraduates and in the \link[midfielddata]{degree} table
 only if they complete a program.
 
 Terms are encoded YYYYT, where YYYY is the year of the Fall term that starts

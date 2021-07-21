@@ -5,8 +5,8 @@
 \alias{course}
 \title{Course data sample}
 \format{
-A \code{data.table} with approximately 3.5 M observations and 12
-variables occupying 348 MB of memory:
+A \code{data.table} with approximately 3.4 M observations and 12
+variables occupying 340 MB of memory:
 \describe{
   \item{mcid}{Character, anonymized student identifier}
 
@@ -54,7 +54,7 @@ data(course)
 Table of course-related attributes of approximately 98,000 undergraduates
 enrolled in courses at their institutions. Each observation is one
 course in one term for one student keyed by student ID and a combination of
-course, abbreviation, number, and section.
+abbreviation, number, and section.
 }
 \details{
 The data in midfielddata are a proportionate stratified random sample of 12
@@ -64,8 +64,7 @@ analysis, but not for drawing inferences about student performance.
 
 Students in the \code{course} table have records in the
 \link[midfielddata]{student} table only if they are admitted as
-degree-seeking undergraduates; in the \link[midfielddata]{term} table
-only if they complete a term; and in the \link[midfielddata]{degree}
+degree-seeking undergraduates and in the \link[midfielddata]{degree}
 table only if they complete a program.
 
 Terms are encoded YYYYT, where YYYY is the year of the Fall term that starts
