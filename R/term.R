@@ -18,14 +18,14 @@
 #'
 #' Terms are encoded YYYYT, where YYYY is the year of the Fall term that starts
 #' the academic year and T = 1 (Fall), 2 (Winter, quarter systems only), 3
-#' (Spring), and 4 (Summer) or 5 and 6 (Summer sessions 1 and 2). For example, 
-#' for the 1995--96 academic year, Fall '95 is encoded 19951, Spring '96 is 
-#' encoded 19953, and the first summer '96 term is encoded 19954. The MIDFIELD 
+#' (Spring), and 4 (Summer) or 5 and 6 (Summer sessions 1 and 2). For example,
+#' for the 1995--96 academic year, Fall '95 is encoded 19951, Spring '96 is
+#' encoded 19953, and the first summer '96 term is encoded 19954. The MIDFIELD
 #' research database also includes terms of one month duration, encoded with
 #' letters A, B, C, etc., though none are included in this sample.
 #'
-#' For program codes, midfielddata uses the 2010 version of the Classification 
-#' of Instructional Programs (CIP) . See midfieldr 
+#' For program codes, midfielddata uses the 2010 version of the Classification
+#' of Instructional Programs (CIP) . See midfieldr
 #' \code{\link[midfieldr:cip]{cip}} for more information.
 #'
 #' @format A \code{data.table} with approximately 711,000 observations and
@@ -65,11 +65,11 @@
 #' @usage data(term)
 #'
 #'
-#' @source 
+#' @source
 #' \itemize{
-#'   \item{Data provided by the MIDFIELD project: 
+#'   \item{Data provided by the MIDFIELD project:
 #'         \url{https://engineering.purdue.edu/MIDFIELD}}
-#'   \item{CIP codes from NCES IPEDS: 
+#'   \item{CIP codes from NCES IPEDS:
 #'         \url{https://nces.ed.gov/ipeds/cipcode/}}
 #' }
 #'
