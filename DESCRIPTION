@@ -1,6 +1,6 @@
 Package: midfielddata
 Title: Sample of MIDFIELD Student Unit Record Data
-Version: 0.1.3
+Version: 0.1.4
 Language: en-US
 Authors@R: c(
   person("Richard", "Layton", 
