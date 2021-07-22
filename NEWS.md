@@ -1,8 +1,5 @@
 
 
-## midfielddata 0.1.4 (current)
-
-
 ## midfielddata 0.1.3 (2021-07)
 
 - Removed problematic data after 2003 for Institution M 
