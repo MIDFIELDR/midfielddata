@@ -29,6 +29,7 @@ reference:
 
 navbar:
   title: ~
+  bg: light
   type: light
   left:
     - text: Reference
