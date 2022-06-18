@@ -16,7 +16,7 @@ data(degree)
 char_idx = which(sapply(degree, is.character))
 expect_equal(
   sort(names(degree[ , .SD, .SDcols = char_idx])), 
-  sort(c("mcid", "institution", "term", "cip6", "degree"))
+  sort(c("mcid", "institution", "term_degree", "cip6", "degree"))
 )
 
 # mcid, number of characters

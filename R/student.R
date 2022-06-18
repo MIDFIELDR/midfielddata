@@ -16,7 +16,7 @@
 #' drop before their institution's drop date. They appear in the in the
 #' \link[midfielddata]{degree} table only if they complete a program.
 #'
-#' @format A \code{data.table} with approximately 98,000 observations and 13
+#' @format A \code{data.table} with 97,640 observations and 13
 #' variables occupying 19 MB of memory:
 #' \describe{
 #'   \item{mcid}{Character, anonymized student identifier}
@@ -57,7 +57,7 @@
 #'
 #'
 #' @source Data provided by the MIDFIELD project:
-#' \url{https://engineering.purdue.edu/MIDFIELD}
+#' \url{https://midfield.online/}
 #'
 #'
 "student"

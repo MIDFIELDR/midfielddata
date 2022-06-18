@@ -1,23 +1,23 @@
 Package: midfielddata
 Title: Sample of MIDFIELD Student Unit Record Data
-Version: 0.1.3
+Version: 0.1.4
 Language: en-US
 Authors@R: c(
   person("Richard", "Layton", 
        email = "graphdoctor@gmail.com", 
-       role = c("cre", "aut", "cph")),
+       role = c("cph", "aut", "cre")),
   person("Russell", "Long", 
        email = "ralong@purdue.edu", 
-       role = c("dtm", "aut", "cph")), 
+       role = c("cph", "aut", "dtm")), 
   person("Matthew", "Ohland", 
        email = "ohland@purdue.edu",
-       role = c("aut", "cph")),
+       role = c("cph", "aut")),
   person("Marisa", "Orr", 
        email = "marisak@clemson.edu", 
-       role = c("ctb", "cph")),
+       role = c("cph", "ctb")),
   person("Susan", "Lord", 
        email = "slord@sandiego.edu",
-       role = c("ctb", "cph")),
+       role = c("cph", "ctb")),
   person("US National Science Foundation", 
        role = c("fnd"))
   )
@@ -29,7 +29,7 @@ Depends: R (>= 3.5.0)
 License: CC0
 Encoding: UTF-8
 LazyData: FALSE
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.0
 Suggests: 
     data.table, 
     spelling, 

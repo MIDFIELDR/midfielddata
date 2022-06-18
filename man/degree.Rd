@@ -13,7 +13,7 @@ A \code{data.table} with approximately 48,000 observations and
   \item{institution}{Character, anonymized institution name, e.g.,
       Institution A, Institution B, etc.}
 
-  \item{term}{Character, academic year and term, format YYYYT, in which a
+  \item{term_degree}{Character, academic year and term, format YYYYT, in which a
        student completes their program}
 
   \item{cip6}{Character, 6-digit CIP code of program in which a student
@@ -26,7 +26,7 @@ A \code{data.table} with approximately 48,000 observations and
 \source{
 \itemize{
   \item{Data provided by the MIDFIELD project:
-        \url{https://engineering.purdue.edu/MIDFIELD}}
+        \url{https://midfield.online/}}
   \item{CIP codes from NCES IPEDS:
         \url{https://nces.ed.gov/ipeds/cipcode/}}
 }

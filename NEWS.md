@@ -1,4 +1,7 @@
+## midfielddata 0.1.4 (2022-07)
 
+- Match variable names in practice data to those in MIDFIELD research data
+- Edit the MIDFIELD project URL
 
 ## midfielddata 0.1.3 (2021-07)
 

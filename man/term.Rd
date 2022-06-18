@@ -41,7 +41,7 @@ A \code{data.table} with approximately 711,000 observations and
 \source{
 \itemize{
   \item{Data provided by the MIDFIELD project:
-        \url{https://engineering.purdue.edu/MIDFIELD}}
+        \url{https://midfield.online/}}
   \item{CIP codes from NCES IPEDS:
         \url{https://nces.ed.gov/ipeds/cipcode/}}
 }

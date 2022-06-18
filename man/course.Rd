@@ -45,7 +45,7 @@ variables occupying 340 MB of memory:
 }
 \source{
 Data provided by the MIDFIELD project:
-\url{https://engineering.purdue.edu/MIDFIELD}
+\url{https://midfield.online/}
 }
 \usage{
 data(course)

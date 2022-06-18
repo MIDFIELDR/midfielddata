@@ -16,13 +16,13 @@ unit records.
 
 ## Overview
 
-[**MIDFIELD**](https://engineering.purdue.edu/MIDFIELD) contains
-individual Student Unit Record (SUR) data for 1.7M students at 33 US
-institutions (as of June 2021). MIDFIELD is large enough to permit
-grouping and summarizing by multiple characteristics, enabling
-researchers to examine student characteristics (race/ethnicity, sex,
-prior achievement) and curricular pathways (including coursework and
-major) by institution and over time.
+[**MIDFIELD**](https://midfield.online/) contains individual Student
+Unit Record (SUR) data for 1.7M students at 21 US institutions (as of
+June 2022). MIDFIELD is large enough to permit grouping and summarizing
+by multiple characteristics, enabling researchers to examine student
+characteristics (race/ethnicity, sex, prior achievement) and curricular
+pathways (including coursework and program) by institution and over
+time.
 
 [**midfieldr**](https://midfieldr.github.io/midfieldr/) is an R package
 that provides tools for working with MIDFIELD SURs. The tools in
@@ -44,15 +44,14 @@ in four data tables:
 ## Usage
 
 ``` r
-library("midfielddata") # required
+# Load the package
+library("midfielddata")
 
-
-# Load the individual data tables as needed
+# Load individual data tables as needed
 data(student)
 data(term)
 data(course)
 data(degree)
-
 
 # Alternatively, load several tables with one line
 data(student, term, degree)
@@ -60,7 +59,7 @@ data(student, term, degree)
 
 ## Requirements
 
--   [R](https://www.r-project.org/) (>= 3.5.0)
+-   [R](https://www.r-project.org/) (\>= 3.5.0)
 
 ## Installation
 
@@ -88,7 +87,10 @@ help("midfielddata-package")
 
 ## Build
 
-midfielddata currently passes R CMD check with the results:
+midfielddata currently passes R CMD check with the results shown below.
+The “note” is expected given the large size of the data table.
+
+due to the size of the data sets. Anything over 5Mb
 
     0 errors v | 0 warnings v | 1 note x
 
@@ -106,16 +108,6 @@ midfielddata currently passes R CMD check with the results:
 -   Participation in this open source project is subject to a [Code of
     Conduct](CONDUCT.html).
 
-## Related work
-
--   [midfieldr](https://midfieldr.github.io/midfieldr/) : Tools for
-    studying MIDFIELD student unit record data in R.
--   [MIDFIELD](https://engineering.purdue.edu/MIDFIELD) A partnership of
-    US institutions.
--   [MIDFIELD
-    workshops](https://midfieldr.github.io/2021-asee-workshop/) for
-    additional information and tutorials.
-
 ## Acknowledgments
 
 This work is supported by a grant from the US National Science
@@ -123,5 +115,15 @@ Foundation (EEC 1545667).
 
 ## License
 
-midfielddata is licensed under [CC0
-1.0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+[![License](man/figures/License-CC-0-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+
+*midfielddata*, written in 2018–2022 by Richard Layton, Russell Long,
+Matthew Ohland, Marisa Orr, and Susan Long, is licensed under CC0 1.0
+[(CC0
+summary)](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+[(CC0 full license)](LICENSE.html).
+
+To the extent possible under law, the authors have dedicated all
+copyright and related and neighboring rights to this software to the
+public domain worldwide. This software is distributed without any
+warranty.

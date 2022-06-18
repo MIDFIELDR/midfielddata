@@ -7,6 +7,6 @@ checking installed package size ... NOTE
     sub-directories of 1Mb or more:
     data  18.0Mb
 
-0 errors v | 0 warnings v | 1 note x
+0 errors | 0 warnings | 1 note
 
 R CMD check succeeded

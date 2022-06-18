@@ -2,9 +2,9 @@
 
 #' Term data sample
 #'
-#' Table of term-related attributes of approximately 96,000 undergraduates for
+#' Table of term-related attributes of approximately 94,000 undergraduates for
 #' all terms completed at their institutions. Each observation is one term for
-#' one student keyed by student ID and term.
+#' one student keyed by student ID.
 #'
 #' The data in midfielddata are a proportionate stratified random sample of 12
 #' institutions in the MIDFIELD research database. However, these are practice
@@ -68,7 +68,7 @@
 #' @source
 #' \itemize{
 #'   \item{Data provided by the MIDFIELD project:
-#'         \url{https://engineering.purdue.edu/MIDFIELD}}
+#'         \url{https://midfield.online/}}
 #'   \item{CIP codes from NCES IPEDS:
 #'         \url{https://nces.ed.gov/ipeds/cipcode/}}
 #' }
