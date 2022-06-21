@@ -34,12 +34,82 @@ proportionate stratified sample of MIDFIELD) with longitudinal SURs for
 nearly 98,000 undergraduates at 12 institutions from 1987–2016 organized
 in four data tables:
 
-| Data set                                                                     | Each row is                           | N rows | N columns |
-|:-----------------------------------------------------------------------------|:--------------------------------------|-------:|----------:|
-| [`student`](https://midfieldr.github.io/midfielddata/reference/student.html) | a student upon being admitted         |    98k |        13 |
-| [`course`](https://midfieldr.github.io/midfielddata/reference/course.html)   | a student in a course                 |   3.4M |        12 |
-| [`term`](https://midfieldr.github.io/midfielddata/reference/term.html)       | a student in a term                   |   711k |        13 |
-| [`degree`](https://midfieldr.github.io/midfielddata/reference/degree.html)   | a student who completes their program |    48k |         5 |
+<table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;background-color: #c7eae5 !important;">
+Practice data table
+</th>
+<th style="text-align:left;background-color: #c7eae5 !important;">
+Each row is
+</th>
+<th style="text-align:right;background-color: #c7eae5 !important;">
+No. of rows
+</th>
+<th style="text-align:right;background-color: #c7eae5 !important;">
+No. of columns
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-family: monospace;color: black !important;background-color: white !important;">
+student
+</td>
+<td style="text-align:left;color: black !important;background-color: white !important;">
+a degree-seeking student
+</td>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+97,640
+</td>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+13
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-family: monospace;color: black !important;background-color: white !important;">
+course
+</td>
+<td style="text-align:left;color: black !important;background-color: white !important;">
+a student in a course
+</td>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+3.5M
+</td>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-family: monospace;color: black !important;background-color: white !important;">
+term
+</td>
+<td style="text-align:left;color: black !important;background-color: white !important;">
+a student in a term
+</td>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+728,000
+</td>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+13
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-family: monospace;color: black !important;background-color: white !important;">
+degree
+</td>
+<td style="text-align:left;color: black !important;background-color: white !important;">
+a student who graduates
+</td>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+48,000
+</td>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+5
+</td>
+</tr>
+</tbody>
+</table>
 
 ## Usage
 

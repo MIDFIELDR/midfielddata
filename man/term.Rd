@@ -50,9 +50,9 @@ A \code{data.table} with approximately 711,000 observations and
 data(term)
 }
 \description{
-Table of term-related attributes of approximately 96,000 undergraduates for
+Table of term-related attributes of approximately 94,000 undergraduates for
 all terms completed at their institutions. Each observation is one term for
-one student keyed by student ID and term.
+one student keyed by student ID.
 }
 \details{
 The data in midfielddata are a proportionate stratified random sample of 12

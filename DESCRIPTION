@@ -32,6 +32,8 @@ LazyData: FALSE
 RoxygenNote: 7.2.0
 Suggests: 
     data.table, 
+    kableExtra,
+    knitr, 
     spelling, 
     tinytest, 
     wrapr

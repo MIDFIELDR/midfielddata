@@ -5,7 +5,7 @@
 \alias{student}
 \title{Student data sample}
 \format{
-A \code{data.table} with approximately 98,000 observations and 13
+A \code{data.table} with 97,640 observations and 13
 variables occupying 19 MB of memory:
 \describe{
   \item{mcid}{Character, anonymized student identifier}

@@ -51,10 +51,9 @@ Data provided by the MIDFIELD project:
 data(course)
 }
 \description{
-Table of course-related attributes of approximately 98,000 undergraduates
+Table of course-related attributes of approximately 96,000 undergraduates
 enrolled in courses at their institutions. Each observation is one
-course in one term for one student keyed by student ID and a combination of
-abbreviation, number, and section.
+course in one term for one student keyed by student ID.
 }
 \details{
 The data in midfielddata are a proportionate stratified random sample of 12
