@@ -2,7 +2,28 @@ url: https://midfieldr.github.io/midfielddata/
 
 template:
   bootstrap: 5
-  bootswatch: yeti
+  bootswatch: simplex
+
+navbar:
+  title: ~
+  left:
+    - text: Reference
+      href: reference/index.html
+    - text: News
+      href: news/index.html
+
+reference:
+
+  - title: Package
+    contents:
+      - midfielddata-package
+
+  - title: Tables of practice data 
+    contents:
+      - student
+      - course
+      - term
+      - degree
 
 news:
   cran_dates: false
@@ -16,23 +37,6 @@ home:
   - text: midfieldr package
     href: https://midfieldr.github.io/midfieldr
 
-reference:
-  - title: Package
-    contents:
-      - midfielddata-package
-  - title: Tables of practice data 
-    contents:
-      - student
-      - course
-      - term
-      - degree
 
-navbar:
-  title: ~
-  bg: light
-  type: light
-  left:
-    - text: Reference
-      href: reference/index.html
-    - text: News
-      href: news/index.html
+
+
