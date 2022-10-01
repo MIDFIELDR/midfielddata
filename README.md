@@ -49,6 +49,9 @@ No. of rows
 <th style="text-align:right;background-color: #c7eae5 !important;">
 No. of columns
 </th>
+<th style="text-align:right;background-color: #c7eae5 !important;">
+Memory
+</th>
 </tr>
 </thead>
 <tbody>
@@ -65,6 +68,9 @@ a degree-seeking student
 <td style="text-align:right;color: black !important;background-color: white !important;">
 13
 </td>
+<td style="text-align:right;">
+19 Mb
+</td>
 </tr>
 <tr>
 <td style="text-align:left;font-family: monospace;color: black !important;background-color: white !important;">
@@ -78,6 +84,9 @@ a student in a course
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
 12
+</td>
+<td style="text-align:right;">
+340 Mb
 </td>
 </tr>
 <tr>
@@ -93,6 +102,9 @@ a student in a term
 <td style="text-align:right;color: black !important;background-color: white !important;">
 13
 </td>
+<td style="text-align:right;">
+80 Mb
+</td>
 </tr>
 <tr>
 <td style="text-align:left;font-family: monospace;color: black !important;background-color: white !important;">
@@ -106,6 +118,9 @@ a student who graduates
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
 5
+</td>
+<td style="text-align:right;">
+10.2 Mb
 </td>
 </tr>
 </tbody>
@@ -138,7 +153,7 @@ time; please be patient and wait for the prompt “\>” to reappear. In the
 Console, run:
 
 ``` r
-# install midfielddata  
+# Type in the Console  
 install.packages("midfielddata", 
                  repos = "https://MIDFIELDR.github.io/drat/", 
                  type = "source")
@@ -149,6 +164,7 @@ You can confirm a successful installation by running the following lines
 to bring up the package help page in the Help window.
 
 ``` r
+# Confirm successful installation
 library("midfielddata")
 help("midfielddata-package")
 ```
@@ -158,14 +174,14 @@ help("midfielddata-package")
 ## Build
 
 midfielddata currently passes R CMD check with the results shown below.
-The “note” is expected given the large size of the data table.
+As a general rule, CRAN expects packages to not exceed 5 Mb, hence the
+“note” below.
 
-due to the size of the data sets. Anything over 5Mb
+    0 errors | 0 warnings | 1 note 
 
-    0 errors v | 0 warnings v | 1 note x
-
-    NOTE installed size is 18.5Mb
-         sub-directories of 1Mb or more: data  18.4Mb
+    NOTE  installed size is 18.4Mb
+          sub-directories of 1Mb or more:
+          data 18.0Mb
 
     R CMD check succeeded  
 
@@ -175,13 +191,14 @@ due to the size of the data sets. Anything over 5Mb
     expected. However, bug reports and feedback are welcome via the
     GitHub [Issues](https://github.com/MIDFIELDR/midfielddata/issues)
     page.
+
 -   Participation in this open source project is subject to a [Code of
     Conduct](CONDUCT.html).
 
 ## Acknowledgments
 
-This work is supported by a grant from the US National Science
-Foundation (EEC 1545667).
+This work is supported by grants from the US National Science Foundation
+(EEC 1545667).
 
 ## License
 

@@ -1,3 +1,9 @@
+## midfielddata 0.1.5 (2022-10)
+
+- Revise race/ethnicity to change Latinx to Latine
+- Ensure values of "" are replaced with NA_character_ 
+
+
 ## midfielddata 0.1.4 (2022-07)
 
 - Match variable names in practice data to those in MIDFIELD research data
