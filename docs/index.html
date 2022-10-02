@@ -85,8 +85,8 @@
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
-<p><a href="https://midfield.online/" class="external-link"><strong>MIDFIELD</strong></a> contains individual Student Unit Record (SUR) data for 1.7M students at 21 US institutions (as of June 2022). MIDFIELD is large enough to permit grouping and summarizing by multiple characteristics, enabling researchers to examine student characteristics (race/ethnicity, sex, prior achievement) and curricular pathways (including coursework and program) by institution and over time.</p>
-<p><a href="https://midfieldr.github.io/midfieldr/" class="external-link"><strong>midfieldr</strong></a> is an R package that provides tools for working with MIDFIELD SURs. The tools in midfieldr work equally well with the research data in MIDFIELD and the practice data in midfielddata.</p>
+<p><a href="https://midfield.online" target="_blank" class="external-link"><strong>MIDFIELD</strong></a> (as of June 2022) contains Student Unit Records (SURs) of 1.7M undergraduates at nineteen US institutions from 1987 through 2018, though different institutions provide data over different time spans. MIDFIELD is large enough to permit summarizing by multiple characteristics such as race/ethnicity, sex, and program.</p>
+<p><a href="https://midfieldr.github.io/midfieldr/" class="external-link"><strong>midfieldr</strong></a> is an R package that provides tools for working with MIDFIELD research data and with the practice data in the midfielddata R package.</p>
 <p><strong>midfielddata</strong> is an R data package that provides practice data (a proportionate stratified sample of MIDFIELD) with longitudinal SURs for nearly 98,000 undergraduates at 12 institutions from 1987–2016 organized in four data tables:</p>
 <table class="table  lightable-paper" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
 <thead><tr>
@@ -207,10 +207,11 @@ a student who graduates
 </h2>
 <p>Because of the size of the data tables, installing midfielddata takes time; please be patient and wait for the prompt “&gt;” to reappear. In the Console, run:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Type in the Console  </span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"midfielddata"</span>, </span>
-<span>                 repos <span class="op">=</span> <span class="st">"https://MIDFIELDR.github.io/drat/"</span>, </span>
-<span>                 type <span class="op">=</span> <span class="st">"source"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="co"># Type in the Console</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"midfielddata"</span>,</span>
+<span>  repos <span class="op">=</span> <span class="st">"https://MIDFIELDR.github.io/drat/"</span>,</span>
+<span>  type <span class="op">=</span> <span class="st">"source"</span></span>
+<span><span class="op">)</span></span>
 <span><span class="co"># be patient</span></span></code></pre></div>
 <p>You can confirm a successful installation by running the following lines to bring up the package help page in the Help window.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
