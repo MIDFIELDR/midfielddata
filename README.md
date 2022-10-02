@@ -16,18 +16,17 @@ unit records.
 
 ## Overview
 
-[**MIDFIELD**](https://midfield.online/) contains individual Student
-Unit Record (SUR) data for 1.7M students at 21 US institutions (as of
-June 2022). MIDFIELD is large enough to permit grouping and summarizing
-by multiple characteristics, enabling researchers to examine student
-characteristics (race/ethnicity, sex, prior achievement) and curricular
-pathways (including coursework and program) by institution and over
-time.
+<a href="https://midfield.online"
+target="_blank"><strong>MIDFIELD</strong></a> (as of June 2022) contains
+Student Unit Records (SURs) of 1.7M undergraduates at nineteen US
+institutions from 1987 through 2018, though different institutions
+provide data over different time spans. MIDFIELD is large enough to
+permit summarizing by multiple characteristics such as race/ethnicity,
+sex, and program.
 
 [**midfieldr**](https://midfieldr.github.io/midfieldr/) is an R package
-that provides tools for working with MIDFIELD SURs. The tools in
-midfieldr work equally well with the research data in MIDFIELD and the
-practice data in midfielddata.
+that provides tools for working with MIDFIELD research data and with the
+practice data in the midfielddata R package.
 
 **midfielddata** is an R data package that provides practice data (a
 proportionate stratified sample of MIDFIELD) with longitudinal SURs for
@@ -153,10 +152,11 @@ time; please be patient and wait for the prompt “\>” to reappear. In the
 Console, run:
 
 ``` r
-# Type in the Console  
-install.packages("midfielddata", 
-                 repos = "https://MIDFIELDR.github.io/drat/", 
-                 type = "source")
+# Type in the Console
+install.packages("midfielddata",
+  repos = "https://MIDFIELDR.github.io/drat/",
+  type = "source"
+)
 # be patient
 ```
 
