@@ -1,7 +1,13 @@
 Package: midfielddata
-Title: Sample of MIDFIELD Student Unit Record Data
-Version: 0.1.5
-Language: en-US
+Version: 0.2.0
+Title: midfielddata: Sample of MIDFIELD Student Unit Record Data
+Description: An 'R' data package for distributing practice Student Unit Record 
+  (SUR) data and documentation. The source is the MIDFIELD database, which 
+  contains (as of October, 2022) individual SUR data for 1.7M undergraduate 
+  students at 19 US institutions from 1987 through 2018. 'midfielddata' 
+  provides a proportionate stratified sample of MIDFIELD data: anonymized SURs 
+  for approximately 98,000 students at three US institutions from 1988 through 
+  2018. Data are organized in four tables: student, course, term, and degree. 
 Authors@R: c(
   person("Richard", "Layton", 
        email = "graphdoctor@gmail.com", 
@@ -21,21 +27,18 @@ Authors@R: c(
   person("US National Science Foundation", 
        role = c("fnd"))
   )
-Description: The goal of midfielddata is to provide a proportionate stratified 
-    sample of MIDFIELD data for practice working with longitudinal, 
-    de-identified, individual student unit records from multiple US 
-    institutions.
+BugReports: https://github.com/MIDFIELDR/midfielddata/issues
+URL: https://midfieldr.github.io/midfielddata/
+Roxygen: list(markdown = TRUE)
 Depends: R (>= 3.5.0)
-License: CC0
-Encoding: UTF-8
+RoxygenNote: 7.2.2
 LazyData: FALSE
-RoxygenNote: 7.2.0
+Encoding: UTF-8
+Language: en-US
 Suggests: 
     data.table, 
     kableExtra,
     knitr, 
-    spelling, 
     tinytest, 
     wrapr
-URL: https://github.com/MIDFIELDR/midfielddata
-BugReports: https://github.com/MIDFIELDR/midfielddata/issues
+License: CC0

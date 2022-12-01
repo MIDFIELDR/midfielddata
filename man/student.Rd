@@ -5,63 +5,66 @@
 \alias{student}
 \title{Student data sample}
 \format{
-A \code{data.table} with 97,640 observations and 13
-variables occupying 19 MB of memory:
+A \code{data.frame} and \code{data.table} with 13 variables and 97,555
+observations of unique students occupying 18 MB of memory:
+
 \describe{
-  \item{mcid}{Character, anonymized student identifier}
 
-  \item{institution}{Character, anonymized institution name, e.g.,
-      Institution A, Institution B, etc.}
+\item{mcid}{Character, anonymized student identifier, e.g.,
+\code{"MCID3111142225"}.}
 
-  \item{transfer}{Character, stating whether the student is a First-Time
-  in College students or a First-Time Transfer student}
+\item{institution}{Character, anonymized institution name, e.g.,
+\code{"Institution B"}.}
 
-  \item{hours_transfer}{Numeric, transfer hours accepted at the
-      institution}
+\item{transfer}{Character, transfer status, possible values are
+\code{"First-Time in College"}, \code{"First-Time Transfer"}.}
 
-  \item{race}{Character, race/ethnicity as self-reported by the student,
-       e.g., Asian, Black, Latine, etc.}
+\item{hours_transfer}{Numeric, number of credit hours transferred (or
+\code{NA}).}
 
-  \item{sex}{Character, sex as self-reported by the student, values are
-      Female, Male, and Unknown}
+\item{race}{Character, race/ethnicity, e.g., \code{"Asian"}, \code{"Black"},
+\code{"International"}, \code{"Latine"}, etc.}
 
-  \item{age}{Numeric, age at admission as self-reported by the student}
+\item{sex}{Character, sex, possible values are \code{"Female"}, \code{"Male"},
+\code{"Unknown"}.}
 
-  \item{us_citizen}{Character, is the student a US citizen? (Yes or No)}
+\item{age_desc}{Character, age group, possible values are \code{"25 and Older"},
+\code{"Under 25"}.}
 
-  \item{home_zip}{Character, five or nine digit home ZIP code at admission}
+\item{us_citizen}{Character, US citizenship, possible values are \code{"No"},
+\code{"Yes"}.}
 
-  \item{high_school}{Character, high school code for the last high
-      school attended before entering a post-secondary institution}
+\item{home_zip}{Character, home ZIP code (or \code{NA}), e.g., \code{"02056"}, \code{"20170"},
+\code{"51301"}, \code{"80129"}, etc.}
 
-  \item{sat_math}{Numeric, SAT mathematics test score}
+\item{high_school}{Character, code for the last high school attended
+before admission (or \code{NA}), e.g., \code{"060075"}, \code{"210512"}, \code{"431800"},
+\code{"502195"}, etc.}
 
-  \item{sat_verbal}{Numeric, SAT reading test score}
+\item{sat_math}{Numeric, SAT mathematics test score (or \code{NA}).}
 
-  \item{act_comp}{Numeric, ACT composite test score}
+\item{sat_verbal}{Numeric, SAT reading test score (or \code{NA}).}
+
+\item{act_comp}{Numeric, ACT composite test score (or \code{NA}).}
+
 }
 }
 \source{
-Data provided by the MIDFIELD project:
-\url{https://midfield.online/}
+Data provided by the MIDFIELD project: \url{https://midfield.online/}
 }
 \usage{
-data(student)
+data(student, package = "midfielddata")
 }
 \description{
-Table of attributes of approximately 98,000 students upon being admitted as
-degree-seeking undergraduates. Each observation is a unique student keyed by
+Demographic information at matriculation for approximately 98,000
+degree-seeking undergraduate students. One record per student, keyed by
 student ID.
 }
 \details{
-The data in midfielddata are a proportionate stratified random sample of 12
-institutions in the MIDFIELD research database. However, these are practice
-data, not research data---suitable for learning about student-record
-analysis, but not for drawing inferences about student performance.
-
-Students in the \code{student} table typically appear also in the
-\link[midfielddata]{course} and \link[midfielddata]{term} tables unless they
-drop before their institution's drop date. They appear in the in the
-\link[midfielddata]{degree} table only if they complete a program.
+The data in 'midfielddata' are practice data, suitable for learning to work
+with Student Unit Records (SURs) generally. Unlike the MIDFIELD source data,
+the data tables in 'midfielddata' are not research data; they are not
+suitable for drawing inferences about program attributes or student
+experiences.
 }
 \keyword{datasets}

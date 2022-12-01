@@ -1,63 +1,62 @@
 
-
 #' Student data sample
 #'
-#' Table of attributes of approximately 98,000 students upon being admitted as
-#' degree-seeking undergraduates. Each observation is a unique student keyed by
+#' Demographic information at matriculation for approximately 98,000
+#' degree-seeking undergraduate students. One record per student, keyed by
 #' student ID.
 #'
-#' The data in midfielddata are a proportionate stratified random sample of 12
-#' institutions in the MIDFIELD research database. However, these are practice
-#' data, not research data---suitable for learning about student-record
-#' analysis, but not for drawing inferences about student performance.
+#' The data in 'midfielddata' are practice data, suitable for learning to work
+#' with Student Unit Records (SURs) generally. Unlike the MIDFIELD source data,
+#' the data tables in 'midfielddata' are not research data; they are not
+#' suitable for drawing inferences about program attributes or student
+#' experiences.
+#' 
+#' @usage data(student, package = "midfielddata")
 #'
-#' Students in the \code{student} table typically appear also in the
-#' \link[midfielddata]{course} and \link[midfielddata]{term} tables unless they
-#' drop before their institution's drop date. They appear in the in the
-#' \link[midfielddata]{degree} table only if they complete a program.
+#' @format A `data.frame` and `data.table` with 13 variables and 97,555 
+#'   observations of unique students occupying 18 MB of memory:
 #'
-#' @format A \code{data.table} with 97,640 observations and 13
-#' variables occupying 19 MB of memory:
-#' \describe{
-#'   \item{mcid}{Character, anonymized student identifier}
+#'   \describe{
 #'
-#'   \item{institution}{Character, anonymized institution name, e.g.,
-#'       Institution A, Institution B, etc.}
+#'   \item{mcid}{Character, anonymized student identifier, e.g., 
+#'   `"MCID3111142225"`.}
 #'
-#'   \item{transfer}{Character, stating whether the student is a First-Time
-#'   in College students or a First-Time Transfer student}
+#'   \item{institution}{Character, anonymized institution name, e.g., 
+#'   `"Institution B"`.}
 #'
-#'   \item{hours_transfer}{Numeric, transfer hours accepted at the
-#'       institution}
+#'   \item{transfer}{Character, transfer status, possible values are  
+#'   `"First-Time in College"`, `"First-Time Transfer"`.}
 #'
-#'   \item{race}{Character, race/ethnicity as self-reported by the student,
-#'        e.g., Asian, Black, Latine, etc.}
+#'   \item{hours_transfer}{Numeric, number of credit hours transferred (or 
+#'   `NA`).}
 #'
-#'   \item{sex}{Character, sex as self-reported by the student, values are
-#'       Female, Male, and Unknown}
+#'   \item{race}{Character, race/ethnicity, e.g., `"Asian"`, `"Black"`, 
+#'   `"International"`, `"Latine"`, etc.}
 #'
-#'   \item{age}{Numeric, age at admission as self-reported by the student}
+#'   \item{sex}{Character, sex, possible values are `"Female"`, `"Male"`, 
+#'   `"Unknown"`.}
 #'
-#'   \item{us_citizen}{Character, is the student a US citizen? (Yes or No)}
+#'   \item{age_desc}{Character, age group, possible values are `"25 and Older"`, 
+#'   `"Under 25"`.}
+#'   
+#'   \item{us_citizen}{Character, US citizenship, possible values are `"No"`, 
+#'   `"Yes"`.}
 #'
-#'   \item{home_zip}{Character, five or nine digit home ZIP code at admission}
+#'   \item{home_zip}{Character, home ZIP code (or `NA`), e.g., `"02056"`, `"20170"`, 
+#'   `"51301"`, `"80129"`, etc.}
 #'
-#'   \item{high_school}{Character, high school code for the last high
-#'       school attended before entering a post-secondary institution}
+#'   \item{high_school}{Character, code for the last high school attended 
+#'   before admission (or `NA`), e.g., `"060075"`, `"210512"`, `"431800"`, 
+#'   `"502195"`, etc.}
 #'
-#'   \item{sat_math}{Numeric, SAT mathematics test score}
+#'   \item{sat_math}{Numeric, SAT mathematics test score (or `NA`).}
 #'
-#'   \item{sat_verbal}{Numeric, SAT reading test score}
+#'   \item{sat_verbal}{Numeric, SAT reading test score (or `NA`).}
 #'
-#'   \item{act_comp}{Numeric, ACT composite test score}
-#' }
+#'   \item{act_comp}{Numeric, ACT composite test score (or `NA`).}
 #'
+#'   }
 #'
-#' @usage data(student)
-#'
-#'
-#' @source Data provided by the MIDFIELD project:
-#' \url{https://midfield.online/}
-#'
-#'
+#' @source Data provided by the MIDFIELD project: \url{https://midfield.online/}
+#'   
 "student"

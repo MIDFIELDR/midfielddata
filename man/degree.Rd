@@ -5,60 +5,60 @@
 \alias{degree}
 \title{Degree data sample}
 \format{
-A \code{data.table} with approximately 48,000 observations and
-5 variables occupying 10.2 MB of memory.
+A \code{data.frame} and \code{data.table} with 5 variables and 49,543
+observations of unique students occupying 6 MB of memory:
+
 \describe{
-  \item{mcid}{Character, anonymized student identifier}
 
-  \item{institution}{Character, anonymized institution name, e.g.,
-      Institution A, Institution B, etc.}
+\item{mcid}{Character, anonymized student identifier, e.g.,
+\code{"MCID3111142225"}.}
 
-  \item{term_degree}{Character, academic year and term, format YYYYT, in which a
-       student completes their program}
+\item{institution}{Character, anonymized institution name, e.g.,
+\code{"Institution B"}.}
 
-  \item{cip6}{Character, 6-digit CIP code of program in which a student
-       earns a degree}
+\item{term_degree}{Character, academic year and term, format \code{"YYYYT"}, in
+which a student completes their program.}
 
-  \item{degree}{Character, type of degree awarded, e.g., Bachelor's Degree,
-       Bachelor of Arts, Bachelor of Science, etc.}
+\item{cip6}{Character, 6-digit CIP code of program in which a student earns
+a degree, e.g., \code{"090101"}, \code{"141201"}, \code{"260901"}, \code{"420101"}, etc.}
+
+\item{degree}{Character, type of degree awarded, e.g.,
+\code{"Bachelor of Arts in Geography"}, \code{"Bachelor of Science in Finance"},
+etc.}
+
 }
 }
 \source{
 \itemize{
-  \item{Data provided by the MIDFIELD project:
-        \url{https://midfield.online/}}
-  \item{CIP codes from NCES IPEDS:
-        \url{https://nces.ed.gov/ipeds/cipcode/}}
+\item Data provided by the MIDFIELD project: \url{https://midfield.online/}
+\item CIP codes adapted from NCES IPEDS: \url{https://nces.ed.gov/ipeds/cipcode/}
 }
 }
 \usage{
-data(degree)
+data(degree, package = "midfielddata")
 }
 \description{
-Table of degree-related attributes of approximately 48,000 undergraduates
-upon completing their programs. Each observation is a unique student
-keyed by student ID.
+Degree information for approximately 50,000 undergraduates earning degrees.
+One record per student per degree, keyed by student ID. A subset of the
+98,000 undergraduates in the practice data.
 }
 \details{
-The data in midfielddata are a proportionate stratified random sample of 12
-institutions in the MIDFIELD research database. However, these are practice
-data, not research data---suitable for learning about student-record
-analysis, but not for drawing inferences about student performance.
+Terms are encoded \code{YYYYT}, where \code{YYYY} is the year at the start of the
+academic year and \code{T} encodes the semester or quarter within an academic year
+as Fall (\code{1}), Winter (\code{2}), Spring (\code{3}), and Summer (\code{4}, \code{5}, and \code{6}).
+For example, for academic year 1995--96, Fall 95--96 is encoded \code{19951},
+Spring 95--96 is encoded \code{19953}, and the first Summer 95-96 term is encoded
+\code{19954}. The source database includes special month-long sessions encoded
+with letters \code{A}, \code{B}, \code{C}, etc., though none are included in this sample.
 
-Students in the \code{degree} table also have records in the
-\link[midfielddata]{student}, \link[midfielddata]{course}, and
-\link[midfielddata]{term} tables.
+For program codes, 'midfielddata' uses the 2010 version of the Classification
+of Instructional Programs (CIP). If 'midfieldr' is installed, type
+\code{help(cip, package = "midfieldr")} for details.
 
-Terms are encoded YYYYT, where YYYY is the year of the Fall term that starts
-the academic year and T = 1 (Fall), 2 (Winter, quarter systems only), 3
-(Spring), and 4 (Summer) or 5 and 6 (Summer sessions 1 and 2). For example,
-for the 1995--96 academic year, Fall '95 is encoded 19951, Spring '96 is
-encoded 19953, and the first summer '96 term is encoded 19954. The MIDFIELD
-research database also includes terms of one month duration, encoded with
-letters A, B, C, etc., though none are included in this sample.
-
-For program codes, midfielddata uses the 2010 version of the Classification
-of Instructional Programs (CIP) . See midfieldr
-\code{\link[midfieldr:cip]{cip}} for more information.
+The data in 'midfielddata' are practice data, suitable for learning to work
+with Student Unit Records (SURs) generally. Unlike the MIDFIELD source data,
+the data tables in 'midfielddata' are not research data; they are not
+suitable for drawing inferences about program attributes or student
+experiences.
 }
 \keyword{datasets}

@@ -56,36 +56,19 @@ Memory
 <tbody>
 <tr>
 <td style="text-align:left;font-family: monospace;color: black !important;background-color: white !important;">
-student
-</td>
-<td style="text-align:left;color: black !important;background-color: white !important;">
-a degree-seeking student
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-97,640
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-13
-</td>
-<td style="text-align:right;">
-19 Mb
-</td>
-</tr>
-<tr>
-<td style="text-align:left;font-family: monospace;color: black !important;background-color: white !important;">
 course
 </td>
 <td style="text-align:left;color: black !important;background-color: white !important;">
 a student in a course
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
-3.5M
+3,289,532
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
 12
 </td>
 <td style="text-align:right;">
-340 Mb
+324 Mb
 </td>
 </tr>
 <tr>
@@ -96,13 +79,30 @@ term
 a student in a term
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
-728,000
+639,915
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
 13
 </td>
 <td style="text-align:right;">
-80 Mb
+73 Mb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-family: monospace;color: black !important;background-color: white !important;">
+student
+</td>
+<td style="text-align:left;color: black !important;background-color: white !important;">
+a degree-seeking student
+</td>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+97,555
+</td>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+13
+</td>
+<td style="text-align:right;">
+18 Mb
 </td>
 </tr>
 <tr>
@@ -113,13 +113,13 @@ degree
 a student who graduates
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
-48,000
+49,543
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
 5
 </td>
 <td style="text-align:right;">
-10.2 Mb
+5 Mb
 </td>
 </tr>
 </tbody>
@@ -132,18 +132,18 @@ a student who graduates
 library("midfielddata")
 
 # Load individual data tables as needed
-data(student)
-data(term)
-data(course)
-data(degree)
+data(student, package = "midfielddata")
+data(term,    package = "midfielddata")
+data(course,  package = "midfielddata")
+data(degree,  package = "midfielddata")
 
 # Alternatively, load several tables with one line
-data(student, term, degree)
+data(student, term, degree, package = "midfielddata")
 ```
 
 ## Requirements
 
--   [R](https://www.r-project.org/) (\>= 3.5.0)
+- [R](https://www.r-project.org/) (\>= 3.5.0)
 
 ## Installation
 
@@ -187,13 +187,12 @@ As a general rule, CRAN expects packages to not exceed 5 Mb, hence the
 
 ## Contributing
 
--   Because this is a data package, contributions would not generally be
-    expected. However, bug reports and feedback are welcome via the
-    GitHub [Issues](https://github.com/MIDFIELDR/midfielddata/issues)
-    page.
+- Because this is a data package, contributions would not generally be
+  expected. However, bug reports and feedback are welcome via the GitHub
+  [Issues](https://github.com/MIDFIELDR/midfielddata/issues) page.
 
--   Participation in this open source project is subject to a [Code of
-    Conduct](CONDUCT.html).
+- Participation in this open source project is subject to a [Code of
+  Conduct](CONDUCT.html).
 
 ## Acknowledgments
 

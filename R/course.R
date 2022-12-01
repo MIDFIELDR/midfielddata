@@ -1,73 +1,74 @@
 
-
 #' Course data sample
 #'
-#' Table of course-related attributes of approximately 96,000 undergraduates
-#' enrolled in courses at their institutions. Each observation is one
-#' course in one term for one student keyed by student ID.
+#' Course information for approximately 98,000 undergraduates. One record per
+#' student per course per term, keyed by student ID.
 #'
-#' The data in midfielddata are a proportionate stratified random sample of 12
-#' institutions in the MIDFIELD research database. However, these are practice
-#' data, not research data---suitable for learning about student-record
-#' analysis, but not for drawing inferences about student performance.
+#' Terms are encoded `YYYYT`, where `YYYY` is the year at the start of the
+#' academic year and `T` encodes the semester or quarter within an academic year
+#' as Fall (`1`), Winter (`2`), Spring (`3`), and Summer (`4`, `5`, and `6`).
+#' For example, for academic year 1995--96, Fall 95--96 is encoded `19951`,
+#' Spring 95--96 is encoded `19953`, and the first Summer 95-96 term is encoded
+#' `19954`. The source database includes special month-long sessions encoded
+#' with letters `A`, `B`, `C`, etc., though none are included in this sample.
 #'
-#' Students in the \code{course} table have records in the
-#' \link[midfielddata]{student} table only if they are admitted as
-#' degree-seeking undergraduates and in the \link[midfielddata]{degree}
-#' table only if they complete a program.
+#' The data in 'midfielddata' are practice data, suitable for learning to work
+#' with Student Unit Records (SURs) generally. Unlike the MIDFIELD source data,
+#' the data tables in 'midfielddata' are not research data; they are not
+#' suitable for drawing inferences about program attributes or student
+#' experiences.
 #'
-#' Terms are encoded YYYYT, where YYYY is the year of the Fall term that starts
-#' the academic year and T = 1 (Fall), 2 (Winter, quarter systems only), 3
-#' (Spring), and 4 (Summer) or 5 and 6 (Summer sessions 1 and 2). For example,
-#' for the 1995--96 academic year, Fall '95 is encoded 19951, Spring '96 is
-#' encoded 19953, and the first summer '96 term is encoded 19954. The MIDFIELD
-#' research database also includes terms of one month duration, encoded with
-#' letters A, B, C, etc., though none are included in this sample.
+#' @usage data(course, package = "midfielddata")
 #'
-#' @format A \code{data.table} with approximately 3.4 M observations and 12
-#' variables occupying 340 MB of memory:
-#' \describe{
-#'   \item{mcid}{Character, anonymized student identifier}
+#' @format A `data.frame` and `data.table` with 12 variables and approximately 
+#'   3.3M observations of 97,555 unique students occupying 325 MB of memory:
 #'
-#'   \item{institution}{Character, anonymized institution name, e.g.,
-#'       Institution A, Institution B, etc.}
+#'   \describe{
 #'
-#'   \item{term}{Character, academic year and term, format YYYYT}
+#'   \item{mcid}{Character, anonymized student identifier, e.g., 
+#'   `"MCID3111142225"`.}
 #'
-#'   \item{course}{Character, course name, e.g., Chemistry,
-#'       College Algebra, US History, etc.}
+#'   \item{institution}{Character, anonymized institution name, e.g., 
+#'   `"Institution B"`.}
 #'
-#'   \item{abbrev}{Character, course alpha identifier, e.g. ENGR, MATH, ENGL,
-#'       composite key (see \code{id})}
+#'   \item{term_course}{Character, academic year and term, format `"YYYYT"`.}
 #'
-#'   \item{number}{Character, course numeric identifier, e.g. 101, 3429,
-#'       composite key (see \code{id})}
+#'   \item{course}{Character, course name, e.g., `"Astrophysics III"`, 
+#'   `"Calculus For Social Science And Business"`, `"Corp Financial Rprtng 1"`, 
+#'   `"Environmental Sanitation II"`, `"Fitness and Wellness"`, 
+#'   `"Introductory Astronomy 2"`, `"Our Changing Environment"`, etc.}
 #'
-#'   \item{section}{Character, course section identifier, composite key
-#'       (see \code{id})}
+#'   \item{abbrev}{Character, course alpha identifier, e.g. `"AA"`, `"MATH"`, 
+#'   `"ACCT"`, `"EH"`, `"HES"`, `"ASTR"`, etc.}
+#
+#'   \item{number}{Character, course numeric identifier, e.g. `"1104"`, `"1209"`, 
+#'   `"228"`, `"4047"`, etc.}
 #'
-#'   \item{type}{Character, predominant delivery method for this section,
-#'       e.g., Blended, Honors, Lecture, Seminar, etc.}
+#'   \item{section}{Character, course section identifier, from one to four 
+#'   characters, e.g., `"1"`, `"2"`, `"01"`, `"14"`, `"001"`, `"040"`, `"785"`, 
+#'   `"H02"`, `"R01"`, `"300E"`, `"888R"`, etc.}
+#'
+#'   \item{type}{Character, predominant delivery method for this section, e.g.,
+#'   `"Blended"`, `"Distance Education"`, `"Face-to-Face"`, `"Online"`, etc.}
 #'
 #'   \item{faculty_rank}{Character, academic rank of the person teaching the
-#'        course, e.g., Assistant Professor, Associate professor,
-#'        Graduate Assistant, Visiting, etc.}
+#'   course, e.g., `"Assistant Professor"`, `"Associate Professor"`, 
+#'   `"Graduate Assistant"`, `"Visiting Faculty"`, etc.}
 #'
 #'   \item{hours_course}{Numeric, number of credit-hours for successful course
-#'        completion}
+#'   completion.}
 #'
-#'   \item{pass_fail}{Character, whether the course was offered on a pass/fail
-#'        basis, No, Yes, or missing}
+#'   \item{grade}{Character, course grade, e.g., `"A+"`, `"A"`, `"A-"`, `"B+"`, 
+#'   `"I"`, `"NG"`, etc.}
+#'   
+#'   \item{discipline_midfield}{Character, a variable for grouping courses by
+#'   academic discipline assigned by the MIDFIELD data curator, e.g., 
+#'   `"Anthropology"`, `"Business"`, `"Computer Science"`, 
+#'   `"Engineering"`, `"Language and Literature"`, `"Mathematics"`, 
+#'   `"Visual and Performing Arts"`, etc.}
 #'
-#'   \item{grade}{Character, course grade, e.g., A+, A, A-, B+, I, NG, etc.}
-#' }
+#'   }
 #'
-#'
-#' @usage data(course)
-#'
-#'
-#' @source Data provided by the MIDFIELD project:
-#' \url{https://midfield.online/}
-#'
-#'
+#' @source Data provided by the MIDFIELD project: \url{https://midfield.online/}
+#'   
 "course"

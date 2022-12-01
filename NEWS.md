@@ -1,8 +1,11 @@
+## midfielddata 0.2.0 (2022-11)
+
+- Complete new sample, all four data sets
+
 ## midfielddata 0.1.5 (2022-10)
 
 - Revise race/ethnicity to change Latinx to Latine
 - Ensure values of "" are replaced with NA_character_ 
-
 
 ## midfielddata 0.1.4 (2022-07)
 
@@ -15,10 +18,10 @@
 - Added some data tests to check for range and possible values 
 - Minor edits to .Rd help pages 
 
-
 ## midfielddata 0.1.2 (2021-06)
 
-- changed names of data tables to student, term, course, and degree to be consistent with research data
+- changed names of data tables to student, term, course, and degree to be 
+  consistent with research data
 - updates variables names to be consistent with research data
 - update authors and contributors in DESCRIPTION
 - set LazyData to FALSE
