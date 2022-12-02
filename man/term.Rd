@@ -72,9 +72,9 @@ of Instructional Programs (CIP). If  'midfieldr' is installed, type
 \code{help(cip, package = "midfieldr")} for details.
 
 The data in 'midfielddata' are practice data, suitable for learning to work
-with Student Unit Records (SURs) generally. Unlike the MIDFIELD source data,
-the data tables in 'midfielddata' are not research data; they are not
-suitable for drawing inferences about program attributes or student
+with Student Unit Records (SURs) generally. Unlike the MIDFIELD research
+database, the data tables in 'midfielddata' are not research data; they are
+not suitable for drawing inferences about program attributes or student
 experiences.
 }
 \keyword{datasets}

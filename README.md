@@ -3,37 +3,40 @@
 
 # midfielddata
 
-Sample of the MIDFIELD Student Unit Record Data
+Sample of MIDFIELD Student Unit Record Data
 
 <!-- badges: start -->
 
 [![License](man/figures/License-CC-0-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 <!-- badges: end -->
 
-The goal of midfielddata is to provide a sample of MIDFIELD data for
-practice working with longitudinal, de-identified, individual student
-unit records.
+Provides a sample of registrar’s data from the MIDFIELD database.
+Suitable for practice working with undergraduate, longitudinal Student
+Unit Records (SURs).
 
 ## Overview
 
-<a href="https://midfield.online"
-target="_blank"><strong>MIDFIELD</strong></a> (as of June 2022) contains
-Student Unit Records (SURs) of 1.7M undergraduates at nineteen US
-institutions from 1987 through 2018, though different institutions
-provide data over different time spans. MIDFIELD is large enough to
-permit summarizing by multiple characteristics such as race/ethnicity,
-sex, and program.
+[**MIDFIELD**](https://midfield.online) is a database containing (as of
+October, 2022) individual SUR data for 1.7M undergraduate students at 19
+US institutions from 1987 through 2018. Access to the MIDFIELD research
+database is currently limited to MIDFIELD partner institutions. However,
+a sample of the data are accessible via the ‘midfielddata’ R package.
 
-[**midfieldr**](https://midfieldr.github.io/midfieldr/) is an R package
-that provides tools for working with MIDFIELD research data and with the
-practice data in the midfielddata R package.
+[**midfieldr**](https://midfieldr.github.io/midfieldr/) is an ‘R’
+package that provides tools for working with MIDFIELD research data and
+with ‘midfielddata’ practice data.
 
-**midfielddata** is an R data package that provides practice data (a
-proportionate stratified sample of MIDFIELD) with longitudinal SURs for
-nearly 98,000 undergraduates at 12 institutions from 1987–2016 organized
-in four data tables:
+**midfielddata** is an ‘R’ data package providing practice data and
+documentation of anonymized SURs for approximately 98,000 students at
+three US institutions from 1988 through 2018 organized in four tables:
+`course`, `term`, `student`, and `degree.` These data are a
+proportionate stratified sample of the MIDFIELD database. The practice
+data are characterized in Table 1.
 
 <table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+Table 1: Attributes of the practice data tables in midfielddata
+</caption>
 <thead>
 <tr>
 <th style="text-align:left;background-color: #c7eae5 !important;">
@@ -125,6 +128,19 @@ a student who graduates
 </tbody>
 </table>
 
+All data tables are keyed by student ID. The `course` table has multiple
+observations (rows) per student with one observation per student per
+course per term. The `term` table also has multiple rows per student,
+with one observation per student per term. The `degree` table has one
+observation per student per degree and the `student` table has one
+observation per student.
+
+The data in ‘midfielddata’ are practice data, suitable for learning to
+work with Student Unit Records (SURs) generally. Unlike the MIDFIELD
+research database, the data tables in ‘midfielddata’ are not research
+data; they are not suitable for drawing inferences about program
+attributes or student experiences.
+
 ## Usage
 
 ``` r
@@ -173,9 +189,9 @@ help("midfielddata-package")
 
 ## Build
 
-midfielddata currently passes R CMD check with the results shown below.
-As a general rule, CRAN expects packages to not exceed 5 Mb, hence the
-“note” below.
+‘midfielddata’ currently passes R CMD check with the results shown
+below. As a general rule, CRAN expects packages to not exceed 5 Mb,
+hence the “note” below.
 
 ``` default
 0 errors | 0 warnings | 1 note 
@@ -205,7 +221,7 @@ This work is supported by grants from the US National Science Foundation
 
 [![License](man/figures/License-CC-0-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-*midfielddata*, written in 2018–2022 by Richard Layton, Russell Long,
+‘midfielddata’, written in 2018–2023 by Richard Layton, Russell Long,
 Matthew Ohland, Marisa Orr, and Susan Long, is licensed under CC0 1.0
 [(CC0
 summary)](https://creativecommons.org/publicdomain/zero/1.0/legalcode)

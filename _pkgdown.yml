@@ -13,7 +13,7 @@ navbar:
       href: news/index.html
 
 reference:
-
+  - pagetitle: Reference
   - title: Package
     contents:
       - midfielddata-package

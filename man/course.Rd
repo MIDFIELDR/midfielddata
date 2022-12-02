@@ -73,9 +73,9 @@ Spring 95--96 is encoded \code{19953}, and the first Summer 95-96 term is encode
 with letters \code{A}, \code{B}, \code{C}, etc., though none are included in this sample.
 
 The data in 'midfielddata' are practice data, suitable for learning to work
-with Student Unit Records (SURs) generally. Unlike the MIDFIELD source data,
-the data tables in 'midfielddata' are not research data; they are not
-suitable for drawing inferences about program attributes or student
+with Student Unit Records (SURs) generally. Unlike the MIDFIELD research
+database, the data tables in 'midfielddata' are not research data; they are
+not suitable for drawing inferences about program attributes or student
 experiences.
 }
 \keyword{datasets}
