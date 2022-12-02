@@ -13,9 +13,11 @@ navbar:
       href: news/index.html
 
 reference:
+  - title: ~
   - desc: >
     Functions for installing Spark components and managing
     connections to Spark
+  
   - title: Package
   - contents:
       - midfielddata-package
