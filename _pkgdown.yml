@@ -13,7 +13,7 @@ navbar:
       href: news/index.html
 
 reference:
-  desc: >
+  - desc: >
     Functions for installing Spark components and managing
     connections to Spark
   - title: Package
