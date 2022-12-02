@@ -10,7 +10,6 @@
 test_degree <- function() {
   
 # Setup -------------------------------------------------------------------
-  su <- function(x) sort(unique(x))
   data(degree, package = "midfielddata")
   suppressPackageStartupMessages(library(data.table))
   options(datatable.print.class = TRUE)
@@ -18,35 +17,21 @@ test_degree <- function() {
 # Variable class ----------------------------------------------------------
   ans <- sort(c("mcid", "institution", "term_degree", "cip6", "degree"))
   expect_equal(sort(names(degree[ , .SD, .SDcols = is.character])), ans)
-
-# Should be complete ------------------------------------------------------
-  ans = dim(degree)
-  expect_equal(dim(degree[!(is.na(institution) | institution == "")]), ans)
-  expect_equal(dim(degree[!(is.na(term_degree) | term_degree == "")]), ans)
-  expect_equal(dim(degree[!(is.na(degree)      | degree == "")])     , ans)
-  expect_equal(dim(degree[!(is.na(mcid)        | mcid == "")])       , ans)
-  expect_equal(dim(degree[!(is.na(cip6)        | cip6 == "")])       , ans)
   
 # Possible values ---------------------------------------------------------
-  # mcid
-  expect_equal(unique(nchar(degree$mcid)), 14)
-  expect_equal(unique(substr(degree$mcid, 1, 4)), "MCID")
-  
-  # institution
-  ans <- sort(c("Institution B", "Institution C", "Institution J"))
-  expect_equal(su(degree$institution), ans)
   
   # term_degree
-  ans <- c("19881", "20191")
-  expect_equal(range(degree$term_degree), ans)
+  min_x <- min(degree$term_degree, na.rm = TRUE)
+  expect_true(min_x >= "19871")
+  expect_equal(unique(nchar(degree$term_degree)), 5)
   
   # cip6
-  ans <- c("010101", "540101")
-  expect_equal(range(degree$cip6), ans)
+  min_x <- min(degree$cip6, na.rm = TRUE)
+  max_x <- max(degree$cip6, na.rm = TRUE)
+  expect_true(min_x >= "000000"  & max_x <= "999999")
+  expect_equal(unique(nchar(degree$cip6)), 6)
 
   # degree
-  ans <- nrow(degree)
-  expect_equal(sum(degree$degree %ilike% "bachelor"), ans)
   expect_equal(sum(degree$degree %ilike% "master"), 0)
   
 }

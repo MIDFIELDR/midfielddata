@@ -5,11 +5,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="The goal of midfielddata is to provide a proportionate stratified 
-    sample of MIDFIELD data for practice working with longitudinal, 
-    de-identified, individual student unit records from multiple US 
-    institutions.">
-<title>Sample of MIDFIELD Student Unit Record Data • midfielddata</title>
+<meta name="description" content="An R data package for distributing practice Student Unit Record 
+  (SUR) data and documentation. The source is the MIDFIELD database, which 
+  contains (as of October, 2022) individual SUR data for 1.7M undergraduate 
+  students at 19 US institutions from 1987 through 2018. midfielddata 
+  provides a proportionate stratified sample of MIDFIELD data: anonymized SURs 
+  for approximately 98,000 students at three US institutions from 1988 through 
+  2018. Data are organized in four tables: student, course, term, and degree. ">
+<title>midfielddata: Sample of MIDFIELD Student Unit Record Data • midfielddata</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -20,11 +23,14 @@
 <link href="deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Sample of MIDFIELD Student Unit Record Data">
-<meta property="og:description" content="The goal of midfielddata is to provide a proportionate stratified 
-    sample of MIDFIELD data for practice working with longitudinal, 
-    de-identified, individual student unit records from multiple US 
-    institutions.">
+<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="midfielddata: Sample of MIDFIELD Student Unit Record Data">
+<meta property="og:description" content="An R data package for distributing practice Student Unit Record 
+  (SUR) data and documentation. The source is the MIDFIELD database, which 
+  contains (as of October, 2022) individual SUR data for 1.7M undergraduate 
+  students at 19 US institutions from 1987 through 2018. midfielddata 
+  provides a proportionate stratified sample of MIDFIELD data: anonymized SURs 
+  for approximately 98,000 students at three US institutions from 1988 through 
+  2018. Data are organized in four tables: student, course, term, and degree. ">
 <meta property="og:image" content="https://midfieldr.github.io/midfielddata/logo.svg">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -39,7 +45,7 @@
     
     <a class="navbar-brand me-2" href="index.html">midfielddata</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.5</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -109,36 +115,19 @@ Memory
 <tbody>
 <tr>
 <td style="text-align:left;font-family: monospace;color: black !important;background-color: white !important;">
-student
-</td>
-<td style="text-align:left;color: black !important;background-color: white !important;">
-a degree-seeking student
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-97,640
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-13
-</td>
-<td style="text-align:right;">
-19 Mb
-</td>
-</tr>
-<tr>
-<td style="text-align:left;font-family: monospace;color: black !important;background-color: white !important;">
 course
 </td>
 <td style="text-align:left;color: black !important;background-color: white !important;">
 a student in a course
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
-3.5M
+3,289,532
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
 12
 </td>
 <td style="text-align:right;">
-340 Mb
+324 Mb
 </td>
 </tr>
 <tr>
@@ -149,13 +138,30 @@ term
 a student in a term
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
-728,000
+639,915
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
 13
 </td>
 <td style="text-align:right;">
-80 Mb
+73 Mb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-family: monospace;color: black !important;background-color: white !important;">
+student
+</td>
+<td style="text-align:left;color: black !important;background-color: white !important;">
+a degree-seeking student
+</td>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+97,555
+</td>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+13
+</td>
+<td style="text-align:right;">
+18 Mb
 </td>
 </tr>
 <tr>
@@ -166,13 +172,13 @@ degree
 a student who graduates
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
-48,000
+49,543
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
 5
 </td>
 <td style="text-align:right;">
-10.2 Mb
+5 Mb
 </td>
 </tr>
 </tbody>
@@ -183,16 +189,16 @@ a student who graduates
 </h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load the package</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/MIDFIELDR/midfielddata" class="external-link">"midfielddata"</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://midfieldr.github.io/midfielddata/">"midfielddata"</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Load individual data tables as needed</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">student</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">term</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">course</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">degree</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">student</span>, package <span class="op">=</span> <span class="st">"midfielddata"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">term</span>,    package <span class="op">=</span> <span class="st">"midfielddata"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">course</span>,  package <span class="op">=</span> <span class="st">"midfielddata"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">degree</span>,  package <span class="op">=</span> <span class="st">"midfielddata"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Alternatively, load several tables with one line</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">student</span>, <span class="va">term</span>, <span class="va">degree</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">student</span>, <span class="va">term</span>, <span class="va">degree</span>, package <span class="op">=</span> <span class="st">"midfielddata"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="requirements">Requirements<a class="anchor" aria-label="anchor" href="#requirements"></a>
@@ -216,7 +222,7 @@ a student who graduates
 <p>You can confirm a successful installation by running the following lines to bring up the package help page in the Help window.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Confirm successful installation</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/MIDFIELDR/midfielddata" class="external-link">"midfielddata"</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://midfieldr.github.io/midfielddata/">"midfielddata"</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/help.html" class="external-link">help</a></span><span class="op">(</span><span class="st">"midfielddata-package"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-midfielddata-help-page-1.png" width="75%"></p>
 </div>

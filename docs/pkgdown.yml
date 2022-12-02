@@ -1,8 +1,8 @@
-pandoc: '2.18'
+pandoc: 2.19.2
 pkgdown: 2.0.6
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-10-02T18:48Z
+last_built: 2022-12-01T21:44Z
 urls:
   reference: https://midfieldr.github.io/midfielddata/reference
   article: https://midfieldr.github.io/midfielddata/articles

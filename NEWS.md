@@ -1,6 +1,8 @@
-## midfielddata 0.2.0 (2022-11)
+## midfielddata 0.2.0 (2022-12)
 
-- Complete new sample, all four data sets
+- New sample data, all four data sets
+- Updated package tests to match 
+- Updated README and help pages 
 
 ## midfielddata 0.1.5 (2022-10)
 

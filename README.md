@@ -133,9 +133,9 @@ library("midfielddata")
 
 # Load individual data tables as needed
 data(student, package = "midfielddata")
-data(term,    package = "midfielddata")
-data(course,  package = "midfielddata")
-data(degree,  package = "midfielddata")
+data(term, package = "midfielddata")
+data(course, package = "midfielddata")
+data(degree, package = "midfielddata")
 
 # Alternatively, load several tables with one line
 data(student, term, degree, package = "midfielddata")
@@ -169,7 +169,7 @@ library("midfielddata")
 help("midfielddata-package")
 ```
 
-<img src="man/figures/README-midfielddata-help-page-1.png" width="75%" />
+<img src="man/figures/README-midfielddata-help-page-1.png" width="90%" />
 
 ## Build
 
@@ -177,13 +177,15 @@ midfielddata currently passes R CMD check with the results shown below.
 As a general rule, CRAN expects packages to not exceed 5 Mb, hence the
 “note” below.
 
-    0 errors | 0 warnings | 1 note 
+``` default
+0 errors | 0 warnings | 1 note 
 
-    NOTE  installed size is 18.4Mb
-          sub-directories of 1Mb or more:
-          data 18.0Mb
+NOTE  installed size is 24.3Mb
+      sub-directories of 1Mb or more:
+      data 23.9Mb
 
-    R CMD check succeeded  
+R CMD check succeeded  
+```
 
 ## Contributing
 
