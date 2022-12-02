@@ -2,7 +2,7 @@ url: https://midfieldr.github.io/midfielddata/
 
 template:
   bootstrap: 5
-  bootswatch: simplex
+  bootswatch: cerulean
 
 navbar:
   title: ~
@@ -14,15 +14,16 @@ navbar:
 
 reference:
   - title: ~
-  - desc: >
-    Functions for installing Spark components and managing
-    connections to Spark
-  
+    desc: >
+      'midfielddata' is an 'R' data package. Functions for working with
+      these data are provided in the 
+      ['midfieldr'](https://midfieldr.github.io/midfieldr/) package. 
+    
   - title: Package
   - contents:
       - midfielddata-package
 
-  - title: Tables of practice data 
+  - title: Practice data 
   - contents:
       - student
       - course
