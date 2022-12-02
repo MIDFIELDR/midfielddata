@@ -12,19 +12,6 @@ navbar:
     - text: News
       href: news/index.html
 
-reference:
-  - pagetitle: Reference
-  - title: Package
-    contents:
-      - midfielddata-package
-
-  - title: Tables of practice data 
-    contents:
-      - student
-      - course
-      - term
-      - degree
-
 news:
   cran_dates: false
 
