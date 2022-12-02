@@ -2,7 +2,7 @@ url: https://midfieldr.github.io/midfielddata/
 
 template:
   bootstrap: 5
-  bootswatch: cerulean
+  bootswatch: spacelab
 
 navbar:
   title: ~
