@@ -110,12 +110,11 @@ one student per degree earned
 Student-level data refers to information collected by undergraduate
 institutions on individual students, including:
 
-- course information such as course name, number, type, credit hours,
-  and student grades
-- term information such as year and term, program, academic standing,
-  and grade point average
-- student demographic information such as age, sex, race/ethnicity, and
-  standardized test scores
+- course information such as course name, number, credit hours, and
+  student grades
+- term information such as program, academic standing, and grade point
+  average
+- student demographic information such as age, sex, and race/ethnicity
 - degree information such as institution, program, term, and
   baccalaureate degree
 
@@ -138,8 +137,6 @@ Alternatively, several data tables can be loaded at once.
 data(student, course, term, degree, package = "midfielddata")
 ```
 
-## `student`
-
 We use ‘data.table’ throughout for its compact syntax. Its use is
 optional, though one would have to modify the examples to accommodate a
 different data manipulation syntax such as that in base ‘R’ or ‘dplyr’.
@@ -148,6 +145,8 @@ different data manipulation syntax such as that in base ‘R’ or ‘dplyr’.
 # Package useful for data manipulation
 library(data.table)
 ```
+
+## `student`
 
 To illustrate the data structure, we can examine the student-level data
 for one specific student.
