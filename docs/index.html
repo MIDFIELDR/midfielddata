@@ -183,9 +183,9 @@ one student per degree earned
 </table>
 <p>Student-level data refers to information collected by undergraduate institutions on individual students, including:</p>
 <ul>
-<li>course information such as course name, number, type, credit hours, and student grades</li>
-<li>term information such as year and term, program, academic standing, and grade point average</li>
-<li>student demographic information such as age, sex, race/ethnicity, and standardized test scores</li>
+<li>course information such as course name, number, credit hours, and student grades</li>
+<li>term information such as program, academic standing, and grade point average</li>
+<li>student demographic information such as age, sex, and race/ethnicity</li>
 <li>degree information such as institution, program, term, and baccalaureate degree</li>
 </ul>
 </div>
@@ -203,15 +203,15 @@ one student per degree earned
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load multiple tables at once </span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">student</span>, <span class="va">course</span>, <span class="va">term</span>, <span class="va">degree</span>, package <span class="op">=</span> <span class="st">"midfielddata"</span><span class="op">)</span></span></code></pre></div>
+<p>We use ‘data.table’ throughout for its compact syntax. Its use is optional, though one would have to modify the examples to accommodate a different data manipulation syntax such as that in base ‘R’ or ‘dplyr’.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Package useful for data manipulation</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com" class="external-link">data.table</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="student">
 <code>student</code><a class="anchor" aria-label="anchor" href="#student"></a>
 </h2>
-<p>We use ‘data.table’ throughout for its compact syntax. Its use is optional, though one would have to modify the examples to accommodate a different data manipulation syntax such as that in base ‘R’ or ‘dplyr’.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Package useful for data manipulation</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com" class="external-link">data.table</a></span><span class="op">)</span></span></code></pre></div>
 <p>To illustrate the data structure, we can examine the student-level data for one specific student.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># One student ID</span></span>
