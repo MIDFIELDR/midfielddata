@@ -1,9 +1,15 @@
 
-#' Course data sample
+#' Course student-level data
 #'
-#' Course information for approximately 98,000 undergraduates. One record per
-#' student per course per term, keyed by student ID.
+#' Student-level course information for approximately 98,000 undergraduates,
+#' keyed by student ID. "Student-level" data refers to information collected by
+#' undergraduate institutions about individual students, for example, course
+#' name and number, credit hours, and student grades.
 #'
+#' Course data are structured in block-record form, that is, records associated
+#' with a particular ID can span multiple rows---one record per student per
+#' course per term.
+#' 
 #' Terms are encoded `YYYYT`, where `YYYY` is the year at the start of the
 #' academic year and `T` encodes the semester or quarter within an academic year
 #' as Fall (`1`), Winter (`2`), Spring (`3`), and Summer (`4`, `5`, and `6`).
@@ -12,14 +18,20 @@
 #' `19954`. The source database includes special month-long sessions encoded
 #' with letters `A`, `B`, `C`, etc., though none are included in this sample.
 #'
-#' The data in 'midfielddata' are practice data, suitable for learning to work
-#' with Student Unit Records (SURs) generally. Unlike the MIDFIELD research
-#' database, the data tables in 'midfielddata' are not research data; they are
-#' not suitable for drawing inferences about program attributes or student
-#' experiences.
+#' The data in \pkg{midfielddata} are a proportionate stratified sample of the
+#' MIDFIELD database, but are not suitable for drawing inferences about program
+#' attributes or student experiences---\pkg{midfielddata} provides practice
+#' data, not research data.
 #'
-#' @usage data(course, package = "midfielddata")
+#' @docType data
+#' @family datasets
+#' @keywords datasets
+#' @source 2022 [MIDFIELD](https://midfield.online/) database
+#' @seealso Package [\pkg{midfieldr}](https://midfieldr.github.io/midfieldr/)
+#'   for tools and methods for working with MIDFIELD data in 'R'.
 #'
+#' @usage data(course)
+#' 
 #' @format A `data.frame` and `data.table` with 12 variables and approximately 
 #'   3.3M observations of 97,555 unique students occupying 325 MB of memory:
 #'
@@ -66,9 +78,22 @@
 #'   `"Anthropology"`, `"Business"`, `"Computer Science"`, 
 #'   `"Engineering"`, `"Language and Literature"`, `"Mathematics"`, 
 #'   `"Visual and Performing Arts"`, etc.}
-#'
-#'   }
-#'
-#' @source Data provided by the MIDFIELD project: \url{https://midfield.online/}
 #'   
+#'   }
+#'   
+#' @examples
+#' \dontrun{
+#' 
+#' # Load data
+#' data(course)
+#' 
+#' # Select specific rows and columns
+#' rows_we_want <- course$mcid == "MCID3112192438"
+#' cols_we_want <- c("mcid", "term_course", "course", "grade")
+#' 
+#' # View observations for this ID 
+#' course[rows_we_want, cols_we_want]
+#' 
+#' }
+#'  
 "course"

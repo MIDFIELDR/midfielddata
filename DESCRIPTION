@@ -1,15 +1,15 @@
 Package: midfielddata
 Title: MIDFIELD Data Sample
 Version: 0.2.0
-Description: Provides a data sample for practice working with individual 
-    undergraduate student unit records (registrar's data) in 'R'. Data are 
-    organized in four data tables --- `student`, `course`, `term`, and `degree` 
-    --- providing anonymized records for approximately 98,000 students at three 
-    US institutions from 1988 through 2018, keyed by student ID. These data are 
-    a proportionate stratified sample of the MIDFIELD database. However, unlike 
-    MIDFIELD data, the data in 'midfielddata' are not suitable for drawing 
-    inferences about program attributes or student experiences --- these are 
-    practice data, not research data.   
+Description: This data package contains anonymized student-level records for 
+  98,000 undergraduates from three US institutions from 1988 through 2018 
+  organized in four data tables keyed by student ID. Student-level data refers 
+  to information collected by undergraduate institutions on individual students 
+  including demographics, programs and academic standing by term, individual 
+  courses, grades, and degrees. These data are a proportionate stratified sample 
+  of the MIDFIELD database, but are not suitable for drawing inferences about 
+  program attributes or student experiences---‘midfielddata’ provides practice 
+  data, not research data.   
 Authors@R: c(
   person("Richard", "Layton", 
        email = "graphdoctor@gmail.com", 

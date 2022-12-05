@@ -3,7 +3,7 @@
 \docType{data}
 \name{course}
 \alias{course}
-\title{Course data sample}
+\title{Course student-level data}
 \format{
 A \code{data.frame} and \code{data.table} with 12 variables and approximately
 3.3M observations of 97,555 unique students occupying 325 MB of memory:
@@ -54,16 +54,22 @@ academic discipline assigned by the MIDFIELD data curator, e.g.,
 }
 }
 \source{
-Data provided by the MIDFIELD project: \url{https://midfield.online/}
+2022 \href{https://midfield.online/}{MIDFIELD} database
 }
 \usage{
-data(course, package = "midfielddata")
+data(course)
 }
 \description{
-Course information for approximately 98,000 undergraduates. One record per
-student per course per term, keyed by student ID.
+Student-level course information for approximately 98,000 undergraduates,
+keyed by student ID. "Student-level" data refers to information collected by
+undergraduate institutions about individual students, for example, course
+name and number, credit hours, and student grades.
 }
 \details{
+Course data are structured in block-record form, that is, records associated
+with a particular ID can span multiple rows---one record per student per
+course per term.
+
 Terms are encoded \code{YYYYT}, where \code{YYYY} is the year at the start of the
 academic year and \code{T} encodes the semester or quarter within an academic year
 as Fall (\code{1}), Winter (\code{2}), Spring (\code{3}), and Summer (\code{4}, \code{5}, and \code{6}).
@@ -72,10 +78,35 @@ Spring 95--96 is encoded \code{19953}, and the first Summer 95-96 term is encode
 \code{19954}. The source database includes special month-long sessions encoded
 with letters \code{A}, \code{B}, \code{C}, etc., though none are included in this sample.
 
-The data in 'midfielddata' are practice data, suitable for learning to work
-with Student Unit Records (SURs) generally. Unlike the MIDFIELD research
-database, the data tables in 'midfielddata' are not research data; they are
-not suitable for drawing inferences about program attributes or student
-experiences.
+The data in \pkg{midfielddata} are a proportionate stratified sample of the
+MIDFIELD database, but are not suitable for drawing inferences about program
+attributes or student experiences---\pkg{midfielddata} provides practice
+data, not research data.
 }
+\examples{
+\dontrun{
+
+# Load data
+data(course)
+
+# Select specific rows and columns
+rows_we_want <- course$mcid == "MCID3112192438"
+cols_we_want <- c("mcid", "term_course", "course", "grade")
+
+# View observations for this ID 
+course[rows_we_want, cols_we_want]
+
+}
+ 
+}
+\seealso{
+Package \href{https://midfieldr.github.io/midfieldr/}{\pkg{midfieldr}}
+for tools and methods for working with MIDFIELD data in 'R'.
+
+Other datasets: 
+\code{\link{degree}},
+\code{\link{student}},
+\code{\link{term}}
+}
+\concept{datasets}
 \keyword{datasets}

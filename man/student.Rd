@@ -3,7 +3,7 @@
 \docType{data}
 \name{student}
 \alias{student}
-\title{Student data sample}
+\title{Student-level demographic data}
 \format{
 A \code{data.frame} and \code{data.table} with 13 variables and 97,555
 observations of unique students occupying 18 MB of memory:
@@ -34,12 +34,12 @@ observations of unique students occupying 18 MB of memory:
 \item{us_citizen}{Character, US citizenship, possible values are \code{"No"},
 \code{"Yes"}.}
 
-\item{home_zip}{Character, home ZIP code (or \code{NA}), e.g., \code{"02056"}, \code{"20170"},
-\code{"51301"}, \code{"80129"}, etc.}
+\item{home_zip}{Character, home ZIP code (or \code{NA}), e.g., \code{"02056"},
+\code{"20170"}, \code{"51301"}, \code{"80129"}, etc.}
 
-\item{high_school}{Character, code for the last high school attended
-before admission (or \code{NA}), e.g., \code{"060075"}, \code{"210512"}, \code{"431800"},
-\code{"502195"}, etc.}
+\item{high_school}{Character, code for the last high school attended before
+admission (or \code{NA}), e.g., \code{"060075"}, \code{"210512"}, \code{"431800"}, \code{"502195"},
+etc.}
 
 \item{sat_math}{Numeric, SAT mathematics test score (or \code{NA}).}
 
@@ -50,21 +50,51 @@ before admission (or \code{NA}), e.g., \code{"060075"}, \code{"210512"}, \code{"
 }
 }
 \source{
-Data provided by the MIDFIELD project: \url{https://midfield.online/}
+2022 \href{https://midfield.online/}{MIDFIELD} database
 }
 \usage{
-data(student, package = "midfielddata")
+data(student)
 }
 \description{
-Demographic information at matriculation for approximately 98,000
-degree-seeking undergraduate students. One record per student, keyed by
-student ID.
+Student-level demographic information for approximately 98,000 degree-seeking
+undergraduate students, keyed by student ID. "Student-level" data refers to
+information collected by undergraduate institutions about individual
+students, for example, age, sex, and race/ethnicity at matriculation.
 }
 \details{
-The data in 'midfielddata' are practice data, suitable for learning to work
-with Student Unit Records (SURs) generally. Unlike the MIDFIELD research
-database, the data tables in 'midfielddata' are not research data; they are
-not suitable for drawing inferences about program attributes or student
-experiences.
+Student data are structured in row-record form, that is, information
+associated with a particular ID occupies a single row---one record per
+student.
+
+The data in \pkg{midfielddata} are a proportionate stratified sample of the
+MIDFIELD database, but are not suitable for drawing inferences about program
+attributes or student experiences---\pkg{midfielddata} provides practice
+data, not research data.
 }
+\examples{
+\dontrun{
+
+# Load data
+data(student)
+
+# Select specific rows and columns
+rows_we_want <- student$mcid == "MCID3112192438"
+cols_we_want <- c("mcid", "institution", "transfer", "race", "sex", "age_desc")
+
+# View observations for this ID 
+student[rows_we_want, cols_we_want]
+
+}
+
+}
+\seealso{
+Package \href{https://midfieldr.github.io/midfieldr/}{\pkg{midfieldr}}
+for tools and methods for working with MIDFIELD data in 'R'.
+
+Other datasets: 
+\code{\link{course}},
+\code{\link{degree}},
+\code{\link{term}}
+}
+\concept{datasets}
 \keyword{datasets}

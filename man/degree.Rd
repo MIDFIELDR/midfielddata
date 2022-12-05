@@ -3,7 +3,7 @@
 \docType{data}
 \name{degree}
 \alias{degree}
-\title{Degree data sample}
+\title{Degree student-level data}
 \format{
 A \code{data.frame} and \code{data.table} with 5 variables and 49,543
 observations of unique students occupying 6 MB of memory:
@@ -29,20 +29,22 @@ etc.}
 }
 }
 \source{
-\itemize{
-\item Data provided by the MIDFIELD project: \url{https://midfield.online/}
-\item CIP codes adapted from NCES IPEDS: \url{https://nces.ed.gov/ipeds/cipcode/}
-}
+2022 \href{https://midfield.online/}{MIDFIELD} database
 }
 \usage{
-data(degree, package = "midfielddata")
+data(degree)
 }
 \description{
-Degree information for approximately 50,000 undergraduates earning degrees.
-One record per student per degree, keyed by student ID. A subset of the
-98,000 undergraduates in the practice data.
+Student-level degree information for approximately 50,000 undergraduates
+earning degrees, keyed by student ID. "Student-level" data refers to
+information collected by undergraduate institutions about individual
+students, for example, institution, program, term, and baccalaureate degree.
 }
 \details{
+Degree data are structured in block-record form, that is, records associated
+with a particular ID can span multiple rows---one record per student per
+degree. Multiple degrees can occur in the same term or in different terms.
+
 Terms are encoded \code{YYYYT}, where \code{YYYY} is the year at the start of the
 academic year and \code{T} encodes the semester or quarter within an academic year
 as Fall (\code{1}), Winter (\code{2}), Spring (\code{3}), and Summer (\code{4}, \code{5}, and \code{6}).
@@ -51,14 +53,39 @@ Spring 95--96 is encoded \code{19953}, and the first Summer 95-96 term is encode
 \code{19954}. The source database includes special month-long sessions encoded
 with letters \code{A}, \code{B}, \code{C}, etc., though none are included in this sample.
 
-For program codes, 'midfielddata' uses the 2010 version of the Classification
-of Instructional Programs (CIP). If 'midfieldr' is installed, type
-\code{help(cip, package = "midfieldr")} for details.
+For program codes, \pkg{midfielddata}  uses the 2010 version of the
+Classification of Instructional Programs (CIP). If  \pkg{midfieldr}  is
+installed, type \code{help(cip, package = "midfieldr")} for details.
 
-The data in 'midfielddata' are practice data, suitable for learning to work
-with Student Unit Records (SURs) generally. Unlike the MIDFIELD research
-database, the data tables in 'midfielddata' are not research data; they are
-not suitable for drawing inferences about program attributes or student
-experiences.
+The data in \pkg{midfielddata} are a proportionate stratified sample of the
+MIDFIELD database, but are not suitable for drawing inferences about program
+attributes or student experiences---\pkg{midfielddata} provides practice
+data, not research data.
 }
+\examples{
+\dontrun{
+
+# Load data
+data(degree)
+
+# Select specific rows and columns
+rows_we_want <- degree$mcid == "MCID3112192438"
+cols_we_want <- c("mcid", "term_degree", "cip6", "degree")
+
+# View observations for this ID 
+degree[rows_we_want, cols_we_want]
+
+}
+
+}
+\seealso{
+Package \href{https://midfieldr.github.io/midfieldr/}{\pkg{midfieldr}}
+for tools and methods for working with MIDFIELD data in 'R'.
+
+Other datasets: 
+\code{\link{course}},
+\code{\link{student}},
+\code{\link{term}}
+}
+\concept{datasets}
 \keyword{datasets}

@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 options(datatable.print.class = TRUE)
 ```
 
-<br>This package contains a practice-data sample of the MIDFIELD database that provides anonymized student-level records for 98,000 undergraduates.  
+<br>This data package contains anonymized student-level records for 98,000 undergraduates; a practice-data sample of the MIDFIELD database. 
 
 ![](https://github.com/MIDFIELDR/midfielddata/blob/main/docs/logo.png?raw=true)
 
@@ -65,13 +65,6 @@ These data are a proportionate stratified sample of the [MIDFIELD database](#mor
 
 ## Usage
 
-We use 'data.table' throughout for its compact syntax. Its use is optional, though one would have to modify the examples to accommodate a different data manipulation syntax such as that in base 'R' or 'dplyr'.
-
-```{r}
-# For data manipulation
-library(data.table)
-```
-
 Data tables can be loaded individually or in groups as needed.  
 
 ```{r}
@@ -100,77 +93,87 @@ mcid_we_want <- "MCID3112192438"
 The `student` data table contains one observation per student. Here we select a subset of columns for a less cluttered printout. 
 
 ```{r}
-# Select specific columns
+# Select specific rows and columns
+rows_we_want <- student$mcid == mcid_we_want
 cols_we_want <- c("mcid", "institution", "transfer", "race", "sex", "age_desc")
 
 # All observations for this ID 
-student[mcid == mcid_we_want, .SD, .SDcols = cols_we_want]
+df <- student[rows_we_want, cols_we_want]
+
+# Cleanup and display
+row.names(df) <- NULL
+df
 ```
+
+
 
 
 ### `course`
 
-The remaining excerpts illustrate the block-record structure of the data, that is, information for one student forms a block of rows, all with the same ID. 
+Course data are structured in block-record form, that is, records associated with a particular ID can span multiple rows---one record per student per course per term.
 
-The `course` information for this student, for example, contains 47 rows---one observation per course per term---from Fall 2005 through Spring 2009. 
+For the example case, the `course` records span 47 rows. 
 
 ```{r}
 #| eval: false
-# Select specific columns
+# Select specific rows and columns
+rows_we_want <- course$mcid == mcid_we_want
 cols_we_want <- c("mcid", "term_course", "course", "grade")
 
 # All observations for this ID 
-course[mcid == mcid_we_want, .SD, .SDcols = cols_we_want]
-#>               mcid term_course                         course  grade
-#>             <char>      <char>                         <char> <char>
-#>  1: MCID3112192438       20051 Key Academic Community Seminar      A
-#>  2: MCID3112192438       20051       Humans and Other Animals      B
-#>  3: MCID3112192438       20051            Health and Wellness      A
-#>  4: MCID3112192438       20051            College Composition      A
-#>  5: MCID3112192438       20051      Moral and Social Problems      A
-#>  6: MCID3112192438       20053 Africn-Americn Hist Since 1865     B+
-#>  7: MCID3112192438       20053  Individual&Family Development      B
-#>  8: MCID3112192438       20053           First-Year Spanish I     A-
-#>  9: MCID3112192438       20061  Chicana/o History and Culture     C+
-#> 10: MCID3112192438       20061   Basic Concepts of Plant Life      B
-#> 11: MCID3112192438       20061  Basic Concepts-Plant Life Lab      A
-#> 12: MCID3112192438       20061                    Advertising     B-
-#> 13: MCID3112192438       20061    Ldrshp in Higher Ed Environ      A
-#> 14: MCID3112192438       20061 Introductn to Criminal Justice      A
-#> 15: MCID3112192438       20063          First-Year Spanish II     A-
-#> 16: MCID3112192438       20063 Contemporary Sociolgicl Theory      A
-#> 17: MCID3112192438       20071    Introduction to Social Work     B+
-#> 18: MCID3112192438       20071  Human Behavior Social Environ      A
-#> 19: MCID3112192438       20071 Practicum-Communication Skills      A
-#> 20: MCID3112192438       20071 Methds of Sociological Inquiry     A-
-#> 21: MCID3112192438       20073      Psychology of Differences     B+
-#> 22: MCID3112192438       20073  Research Methds in Psychology      A
-#> 23: MCID3112192438       20073              Social Psychology      A
-#> 24: MCID3112192438       20073 Introductn-Statistical Methods      C
-#> 25: MCID3112192438       20081              Writing Arguments      A
-#> 26: MCID3112192438       20081      Organizational Psychology      B
-#> 27: MCID3112192438       20081  Organizational Psychology Lab      A
-#> 28: MCID3112192438       20081  History&Systems of Psychology      A
-#> 29: MCID3112192438       20081  Computer Methods in Sociology      A
-#> 30: MCID3112192438       20081          Sociology of Disaster      A
-#> 31: MCID3112192438       20083 Concepts-Human Anat&Physiology      A
-#> 32: MCID3112192438       20083 Principles of Human Physiology      B
-#> 33: MCID3112192438       20083      Mind, Brain, and Behavior      A
-#> 34: MCID3112192438       20083       Sensation and Perception      A
-#> 35: MCID3112192438       20083   Sensation and Perception Lab      A
-#> 36: MCID3112192438       20083           Symbolic Interaction      A
-#> 37: MCID3112192438       20091  Psychology of Human Sexuality      A
-#> 38: MCID3112192438       20091            Abnormal Psychology      A
-#> 39: MCID3112192438       20091          Social Stratification     A+
-#> 40: MCID3112192438       20091                     Internship      A
-#> 41: MCID3112192438       20091                        Seminar      A
-#> 42: MCID3112192438       20093 Introduction to Ethnic Studies     A+
-#> 43: MCID3112192438       20093              Independent Study      A
-#> 44: MCID3112192438       20093          Leadership for Greeks      A
-#> 45: MCID3112192438       20093            Health and the Mind     A+
-#> 46: MCID3112192438       20093   Social Psychology Laboratory      A
-#> 47: MCID3112192438       20093                    Group Study     A+
-#>               mcid term_course                         course  grade
+df <- course[rows_we_want, cols_we_want]
+
+# Cleanup and display
+row.names(df) <- NULL
+df
+#>              mcid term_course                         course grade
+#> 1  MCID3112192438       20051 Key Academic Community Seminar     A
+#> 2  MCID3112192438       20051       Humans and Other Animals     B
+#> 3  MCID3112192438       20051            Health and Wellness     A
+#> 4  MCID3112192438       20051            College Composition     A
+#> 5  MCID3112192438       20051      Moral and Social Problems     A
+#> 6  MCID3112192438       20053 Africn-Americn Hist Since 1865    B+
+#> 7  MCID3112192438       20053  Individual&Family Development     B
+#> 8  MCID3112192438       20053           First-Year Spanish I    A-
+#> 9  MCID3112192438       20061  Chicana/o History and Culture    C+
+#> 10 MCID3112192438       20061   Basic Concepts of Plant Life     B
+#> 11 MCID3112192438       20061  Basic Concepts-Plant Life Lab     A
+#> 12 MCID3112192438       20061                    Advertising    B-
+#> 13 MCID3112192438       20061    Ldrshp in Higher Ed Environ     A
+#> 14 MCID3112192438       20061 Introductn to Criminal Justice     A
+#> 15 MCID3112192438       20063          First-Year Spanish II    A-
+#> 16 MCID3112192438       20063 Contemporary Sociolgicl Theory     A
+#> 17 MCID3112192438       20071    Introduction to Social Work    B+
+#> 18 MCID3112192438       20071  Human Behavior Social Environ     A
+#> 19 MCID3112192438       20071 Practicum-Communication Skills     A
+#> 20 MCID3112192438       20071 Methds of Sociological Inquiry    A-
+#> 21 MCID3112192438       20073      Psychology of Differences    B+
+#> 22 MCID3112192438       20073  Research Methds in Psychology     A
+#> 23 MCID3112192438       20073              Social Psychology     A
+#> 24 MCID3112192438       20073 Introductn-Statistical Methods     C
+#> 25 MCID3112192438       20081              Writing Arguments     A
+#> 26 MCID3112192438       20081      Organizational Psychology     B
+#> 27 MCID3112192438       20081  Organizational Psychology Lab     A
+#> 28 MCID3112192438       20081  History&Systems of Psychology     A
+#> 29 MCID3112192438       20081  Computer Methods in Sociology     A
+#> 30 MCID3112192438       20081          Sociology of Disaster     A
+#> 31 MCID3112192438       20083 Concepts-Human Anat&Physiology     A
+#> 32 MCID3112192438       20083 Principles of Human Physiology     B
+#> 33 MCID3112192438       20083      Mind, Brain, and Behavior     A
+#> 34 MCID3112192438       20083       Sensation and Perception     A
+#> 35 MCID3112192438       20083   Sensation and Perception Lab     A
+#> 36 MCID3112192438       20083           Symbolic Interaction     A
+#> 37 MCID3112192438       20091  Psychology of Human Sexuality     A
+#> 38 MCID3112192438       20091            Abnormal Psychology     A
+#> 39 MCID3112192438       20091          Social Stratification    A+
+#> 40 MCID3112192438       20091                     Internship     A
+#> 41 MCID3112192438       20091                        Seminar     A
+#> 42 MCID3112192438       20093 Introduction to Ethnic Studies    A+
+#> 43 MCID3112192438       20093              Independent Study     A
+#> 44 MCID3112192438       20093          Leadership for Greeks     A
+#> 45 MCID3112192438       20093            Health and the Mind    A+
+#> 46 MCID3112192438       20093   Social Psychology Laboratory     A
+#> 47 MCID3112192438       20093                    Group Study    A+
 ```
 
 
@@ -178,34 +181,59 @@ course[mcid == mcid_we_want, .SD, .SDcols = cols_we_want]
 
 ### `term`
 
-The `term` data table has one observation per student per term. This student enrolled for 10 consecutive terms, changing majors once (row 2, `cip6` variable) and then changing back. 
+Term data are also structured in block-record form---one record per student per term.
+
+For the example case, the `term` records span 10 rows. 
 
 ```{r}
-# Select specific columns
+# Select specific rows and columns
+rows_we_want <- term$mcid == mcid_we_want
 cols_we_want <- c("mcid", "term", "cip6", "level", "standing", "gpa_cumul")
 
 # All observations for this ID 
-term[mcid == mcid_we_want, .SD, .SDcols = cols_we_want]
+df <- term[rows_we_want, cols_we_want]
+
+# Cleanup and display
+row.names(df) <- NULL
+df
 ```
+
+
+
 
 
 ### `degree`
 
-The `degree` data table has one observation per student per degree. This student earned a double degree in Psychology and Sociology, thus there are two observations for this ID. 
+Degree data are also structured in block-record form---one record per student per degree. Multiple degrees can occur in the same term or in different terms.
+
+For the example case, the `degree` records indicate a double degree in Psychology and Sociology earned in the same term. 
 
 ```{r}
-# Select specific columns 
+# Select specific rows and columns
+rows_we_want <- degree$mcid == mcid_we_want
 cols_we_want <- c("mcid", "term_degree", "cip6", "degree")
 
 # All observations for this ID 
-degree[mcid == mcid_we_want, .SD, .SDcols = cols_we_want]
+df <- degree[rows_we_want, cols_we_want]
+
+# Cleanup and display
+row.names(df) <- NULL
+df
 ```
 
 Not all students with more than one degree earn them in the same term. For example, the next student earned a degree in Biological Sciences in 1996 and a second baccalaureate degree in Animal Biology in 1999. In most analyses, only the first baccalaureate degree would be used. 
 
 ```{r}
+# Select specific rows and columns
+rows_we_want <- degree$mcid == "MCID3111315508"
+cols_we_want <- c("mcid", "term_degree", "cip6", "degree")
+
 # All observations for this ID 
-degree[mcid == "MCID3111315508", .SD, .SDcols = cols_we_want]
+df <- degree[rows_we_want, cols_we_want]
+
+# Cleanup and display
+row.names(df) <- NULL
+df
 ```
 
 ```{r}
@@ -224,28 +252,25 @@ degree[mcid == "MCID3111315508", .SD, .SDcols = cols_we_want]
 
 ## Installation
 
-The installed size of 'midfielddata' is about 24 Mb. Because this exceeds the CRAN package limit (5 Mb), we host the package on the  [MIDFIELD 'drat' repository](https://github.com/MIDFIELDR/drat).  
-
-Also because of its size, the installation takes some time. Install with: 
+Install with: 
 
 ```{r}
 #| eval: false
-
 install.packages("midfielddata",
   repos = "https://MIDFIELDR.github.io/drat/",
   type = "source"
 )
 ``` 
 
-
+The installed size of 'midfielddata' is about 24 Mb, which has two consequences. First, the installation takes some time. Second, we host the package on the  [MIDFIELD 'drat' repository](https://github.com/MIDFIELDR/drat) instead of CRAN because 24 Mb exceeds the CRAN package limit (5 Mb). 
 
 
 ## More information
 
-[MIDFIELD database](https://midfield.online/)
-
-: MIDFIELD contains, as of October 2022, individual student-level data for 1.7M undergraduates at 19 US institutions from 1987 through 2018. Access to the MIDFIELD research database is currently limited to MIDFIELD partner institutions, but a sample of these data are available in 'midfielddata'.  
-
 ['midfieldr'](https://midfieldr.github.io/midfieldr/)
 
 : A companion 'R' package that provides tools and detailed procedures for working with MIDFIELD data. 
+
+[MIDFIELD](https://midfield.online/)
+
+: The MIDFIELD database contains, as of October 2022, individual student-level data for 1.7M undergraduates at 19 US institutions from 1987 through 2018. Access to the MIDFIELD research database is currently limited to MIDFIELD partner institutions, but 'midfielddata' provides a sample of MIDFIELD data. 
