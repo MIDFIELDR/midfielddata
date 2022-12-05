@@ -1,9 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<br>‘midfielddata’ is an ‘R’ data package that supplies four linked
-tables of undergraduate student-level data sampled from the MIDFIELD
-database.
+<br>An ‘R’ data package that provides undergraduate student-level data
+sampled from the MIDFIELD database.
 
 ![](https://github.com/MIDFIELDR/midfielddata/blob/main/docs/logo.png?raw=true)
 
@@ -333,7 +332,6 @@ working with MIDFIELD data.
 
 ## License
 
-‘midfielddata’ by Richard Layton, Russell Long, Susan Lord, Matthew
-Ohland, and Marisa Orr is licensed under CC0 1.0 [(CC0
+‘midfielddata’ is licensed under CC0 1.0 [(CC0
 summary)](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 [(CC0 full license)](LICENSE.html).
