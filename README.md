@@ -1,8 +1,11 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-‘midfielddata’ is an ‘R’ data package that supplies four linked tables
-of undergraduate student-level data sampled from the MIDFIELD database.
+<br>‘midfielddata’ is an ‘R’ data package that supplies four linked
+tables of undergraduate student-level data sampled from the MIDFIELD
+database.
+
+![](https://github.com/MIDFIELDR/midfielddata/blob/main/docs/logo.png?raw=true)
 
 ## Introduction
 

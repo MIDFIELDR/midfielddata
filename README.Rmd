@@ -21,7 +21,9 @@ knitr::opts_chunk$set(
 options(datatable.print.topn = 5, datatable.print.class = TRUE)
 ```
 
-'midfielddata' is an 'R' data package that supplies four linked tables of  undergraduate student-level data sampled from the MIDFIELD database. 
+<br>'midfielddata' is an 'R' data package that supplies four linked tables of  undergraduate student-level data sampled from the MIDFIELD database.
+
+![](https://github.com/MIDFIELDR/midfielddata/blob/main/docs/logo.png?raw=true)
 
 
 

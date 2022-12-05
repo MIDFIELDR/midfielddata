@@ -5,14 +5,16 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="An R data package providing practice data and documentation 
-  of anonymized Student Unit Records (SURs) for approximately 98,000 students 
-  at three US institutions from 1988 through 2018 organized in four tables: 
-  course, term, student, and degree. These data are a proportionate stratified 
-  sample of the MIDFIELD database which contains (as of October, 2022) 
-  individual SUR data for 1.7M undergraduate students at 19 US institutions 
-  from 1987 through 2018. ">
-<title>midfielddata: Sample of MIDFIELD Student Unit Record Data • midfielddata</title>
+<meta name="description" content="Provides a data sample for practice working with individual 
+    undergraduate student unit records (registrars data) in R. Data are 
+    organized in four data tables --- `student`, `course`, `term`, and `degree` 
+    --- providing anonymized records for approximately 98,000 students at three 
+    US institutions from 1988 through 2018, keyed by student ID. These data are 
+    a proportionate stratified sample of the MIDFIELD database. However, unlike 
+    MIDFIELD data, the data in midfielddata' are not suitable for drawing 
+    inferences about program attributes or student experiences --- these are 
+    practice data, not research data.   ">
+<title>MIDFIELD Data Sample • midfielddata</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -23,14 +25,16 @@
 <link href="deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="midfielddata: Sample of MIDFIELD Student Unit Record Data">
-<meta property="og:description" content="An R data package providing practice data and documentation 
-  of anonymized Student Unit Records (SURs) for approximately 98,000 students 
-  at three US institutions from 1988 through 2018 organized in four tables: 
-  course, term, student, and degree. These data are a proportionate stratified 
-  sample of the MIDFIELD database which contains (as of October, 2022) 
-  individual SUR data for 1.7M undergraduate students at 19 US institutions 
-  from 1987 through 2018. ">
+<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="MIDFIELD Data Sample">
+<meta property="og:description" content="Provides a data sample for practice working with individual 
+    undergraduate student unit records (registrars data) in R. Data are 
+    organized in four data tables --- `student`, `course`, `term`, and `degree` 
+    --- providing anonymized records for approximately 98,000 students at three 
+    US institutions from 1988 through 2018, keyed by student ID. These data are 
+    a proportionate stratified sample of the MIDFIELD database. However, unlike 
+    MIDFIELD data, the data in midfielddata' are not suitable for drawing 
+    inferences about program attributes or student experiences --- these are 
+    practice data, not research data.   ">
 <meta property="og:image" content="https://midfieldr.github.io/midfielddata/logo.svg">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -79,24 +83,14 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header">
-<img src="logo.svg" class="logo" alt=""><h1 id="midfielddata">midfielddata<a class="anchor" aria-label="anchor" href="#midfielddata"></a>
-</h1>
-</div>
-<p>Sample of MIDFIELD Student Unit Record Data</p>
-<!-- badges: start -->
-
-<p>Provides a sample of registrar’s data from the MIDFIELD database. Suitable for practice working with undergraduate, longitudinal Student Unit Records (SURs).</p>
+  <main id="main" class="col-md-9"><p>‘midfielddata’ is an ‘R’ data package that supplies four linked tables of undergraduate student-level data sampled from the MIDFIELD database.</p>
 <div class="section level2">
-<h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+<h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
-<p><a href="https://midfield.online" class="external-link"><strong>MIDFIELD</strong></a> is a database containing (as of October, 2022) individual SUR data for 1.7M undergraduate students at 19 US institutions from 1987 through 2018. Access to the MIDFIELD research database is currently limited to MIDFIELD partner institutions. However, a sample of the data are accessible via the ‘midfielddata’ R package.</p>
-<p><a href="https://midfieldr.github.io/midfieldr/" class="external-link"><strong>midfieldr</strong></a> is an ‘R’ package that provides tools for working with MIDFIELD research data and with ‘midfielddata’ practice data.</p>
-<p><strong>midfielddata</strong> is an ‘R’ data package providing practice data and documentation of anonymized SURs for approximately 98,000 students at three US institutions from 1988 through 2018 organized in four tables: <code>course</code>, <code>term</code>, <code>student</code>, and <code>degree.</code> These data are a proportionate stratified sample of the MIDFIELD database. The practice data are characterized in Table 1.</p>
+<p>‘midfielddata’ provides anonymized student-level data on approximately 98,000 undergraduates at three US institutions from 1988 through 2018. Data are organized in four tables keyed by student ID.</p>
 <table class="table  lightable-paper" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
 <caption>
-Table 1: Attributes of the practice data tables in midfielddata
+Practice data tables in ‘midfielddata’.
 </caption>
 <thead><tr>
 <th style="text-align:left;background-color: #c7eae5 !important;">
@@ -121,7 +115,7 @@ Memory
 course
 </td>
 <td style="text-align:left;color: black !important;background-color: white !important;">
-a student in a course
+one student per course per term
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
 3,289,532
@@ -129,7 +123,7 @@ a student in a course
 <td style="text-align:right;color: black !important;background-color: white !important;">
 12
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;color: black !important;background-color: white !important;">
 324 Mb
 </td>
 </tr>
@@ -138,7 +132,7 @@ a student in a course
 term
 </td>
 <td style="text-align:left;color: black !important;background-color: white !important;">
-a student in a term
+one student per term
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
 639,915
@@ -146,7 +140,7 @@ a student in a term
 <td style="text-align:right;color: black !important;background-color: white !important;">
 13
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;color: black !important;background-color: white !important;">
 73 Mb
 </td>
 </tr>
@@ -155,7 +149,7 @@ a student in a term
 student
 </td>
 <td style="text-align:left;color: black !important;background-color: white !important;">
-a degree-seeking student
+one degree-seeking student
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
 97,555
@@ -163,7 +157,7 @@ a degree-seeking student
 <td style="text-align:right;color: black !important;background-color: white !important;">
 13
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;color: black !important;background-color: white !important;">
 18 Mb
 </td>
 </tr>
@@ -172,7 +166,7 @@ a degree-seeking student
 degree
 </td>
 <td style="text-align:left;color: black !important;background-color: white !important;">
-a student who graduates
+one student per degree earned
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
 49,543
@@ -180,90 +174,195 @@ a student who graduates
 <td style="text-align:right;color: black !important;background-color: white !important;">
 5
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;color: black !important;background-color: white !important;">
 5 Mb
 </td>
 </tr>
 </tbody>
 </table>
-<p>All data tables are keyed by student ID. The <code>course</code> table has multiple observations (rows) per student with one observation per student per course per term. The <code>term</code> table also has multiple rows per student, with one observation per student per term. The <code>degree</code> table has one observation per student per degree and the <code>student</code> table has one observation per student.</p>
-<p>The data in ‘midfielddata’ are practice data, suitable for learning to work with Student Unit Records (SURs) generally. Unlike the MIDFIELD research database, the data tables in ‘midfielddata’ are not research data; they are not suitable for drawing inferences about program attributes or student experiences.</p>
+<p>Student-level data refers to information collected by undergraduate institutions on individual students, including:</p>
+<ul>
+<li>course information such as course name, number, type, credit hours, and student grades</li>
+<li>term information such as year and term, program, academic standing, and grade point average</li>
+<li>student demographic information such as age, sex, race/ethnicity, and standardized test scores</li>
+<li>degree information such as institution, program, term, and baccalaureate degree</li>
+</ul>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
+<p>Data tables can be loaded individually as needed.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Load the package</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://midfieldr.github.io/midfielddata/">"midfielddata"</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Load individual data tables as needed</span></span>
+<code class="sourceCode R"><span><span class="co"># Load individual data tables</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">student</span>, package <span class="op">=</span> <span class="st">"midfielddata"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">term</span>, package <span class="op">=</span> <span class="st">"midfielddata"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">course</span>, package <span class="op">=</span> <span class="st">"midfielddata"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">degree</span>, package <span class="op">=</span> <span class="st">"midfielddata"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Alternatively, load several tables with one line</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">student</span>, <span class="va">term</span>, <span class="va">degree</span>, package <span class="op">=</span> <span class="st">"midfielddata"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">term</span>,    package <span class="op">=</span> <span class="st">"midfielddata"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">course</span>,  package <span class="op">=</span> <span class="st">"midfielddata"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">degree</span>,  package <span class="op">=</span> <span class="st">"midfielddata"</span><span class="op">)</span></span></code></pre></div>
+<p>Alternatively, several data tables can be loaded at once.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Load multiple tables at once </span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">student</span>, <span class="va">course</span>, <span class="va">term</span>, <span class="va">degree</span>, package <span class="op">=</span> <span class="st">"midfielddata"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="requirements">Requirements<a class="anchor" aria-label="anchor" href="#requirements"></a>
+<h2 id="student">
+<code>student</code><a class="anchor" aria-label="anchor" href="#student"></a>
 </h2>
-<ul>
-<li>
-<a href="https://www.r-project.org/" class="external-link">R</a> (&gt;= 3.5.0)</li>
-</ul>
+<p>We use ‘data.table’ throughout for its compact syntax. Its use is optional, though one would have to modify the examples to accommodate a different data manipulation syntax such as that in base ‘R’ or ‘dplyr’.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Package useful for data manipulation</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com" class="external-link">data.table</a></span><span class="op">)</span></span></code></pre></div>
+<p>To illustrate the data structure, we can examine the student-level data for one specific student.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># One student ID</span></span>
+<span><span class="va">mcid_we_want</span> <span class="op">&lt;-</span> <span class="st">"MCID3112192438"</span></span></code></pre></div>
+<p>The <code>student</code> data table contains one observation per student. Here we select a subset of columns for a less cluttered printout.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Select specific columns</span></span>
+<span><span class="va">cols_we_want</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mcid"</span>, <span class="st">"institution"</span>, <span class="st">"transfer"</span>, <span class="st">"race"</span>, <span class="st">"sex"</span>, <span class="st">"age_desc"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># All observations for this ID </span></span>
+<span><span class="va">student</span><span class="op">[</span><span class="va">mcid</span> <span class="op">==</span> <span class="va">mcid_we_want</span>, <span class="va">.SD</span>, .SDcols <span class="op">=</span> <span class="va">cols_we_want</span><span class="op">]</span></span>
+<span><span class="co">#&gt;              mcid   institution              transfer   race    sex age_desc</span></span>
+<span><span class="co">#&gt;            &lt;char&gt;        &lt;char&gt;                &lt;char&gt; &lt;char&gt; &lt;char&gt;   &lt;char&gt;</span></span>
+<span><span class="co">#&gt; 1: MCID3112192438 Institution C First-Time in College  White Female Under 25</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="course">
+<code>course</code><a class="anchor" aria-label="anchor" href="#course"></a>
+</h2>
+<p>The remaining excerpts illustrate the block-record structure of the data, that is, information for one student ID over several rows. The <code>course</code> data table, for example, has one row per student per course per term. This student enrolled in 47 courses from Fall 2005 through Spring 2009.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Select specific columns</span></span>
+<span><span class="va">cols_we_want</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mcid"</span>, <span class="st">"term_course"</span>, <span class="st">"course"</span>, <span class="st">"grade"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># All observations for this ID </span></span>
+<span><span class="va">course</span><span class="op">[</span><span class="va">mcid</span> <span class="op">==</span> <span class="va">mcid_we_want</span>, <span class="va">.SD</span>, .SDcols <span class="op">=</span> <span class="va">cols_we_want</span><span class="op">]</span></span>
+<span><span class="co">#&gt;               mcid term_course                         course  grade</span></span>
+<span><span class="co">#&gt;             &lt;char&gt;      &lt;char&gt;                         &lt;char&gt; &lt;char&gt;</span></span>
+<span><span class="co">#&gt;  1: MCID3112192438       20051 Key Academic Community Seminar      A</span></span>
+<span><span class="co">#&gt;  2: MCID3112192438       20051       Humans and Other Animals      B</span></span>
+<span><span class="co">#&gt;  3: MCID3112192438       20051            Health and Wellness      A</span></span>
+<span><span class="co">#&gt;  4: MCID3112192438       20051            College Composition      A</span></span>
+<span><span class="co">#&gt;  5: MCID3112192438       20051      Moral and Social Problems      A</span></span>
+<span><span class="co">#&gt;  6: MCID3112192438       20053 Africn-Americn Hist Since 1865     B+</span></span>
+<span><span class="co">#&gt;  7: MCID3112192438       20053  Individual&amp;Family Development      B</span></span>
+<span><span class="co">#&gt;  8: MCID3112192438       20053           First-Year Spanish I     A-</span></span>
+<span><span class="co">#&gt;  9: MCID3112192438       20061  Chicana/o History and Culture     C+</span></span>
+<span><span class="co">#&gt; 10: MCID3112192438       20061   Basic Concepts of Plant Life      B</span></span>
+<span><span class="co">#&gt; 11: MCID3112192438       20061  Basic Concepts-Plant Life Lab      A</span></span>
+<span><span class="co">#&gt; 12: MCID3112192438       20061                    Advertising     B-</span></span>
+<span><span class="co">#&gt; 13: MCID3112192438       20061    Ldrshp in Higher Ed Environ      A</span></span>
+<span><span class="co">#&gt; 14: MCID3112192438       20061 Introductn to Criminal Justice      A</span></span>
+<span><span class="co">#&gt; 15: MCID3112192438       20063          First-Year Spanish II     A-</span></span>
+<span><span class="co">#&gt; 16: MCID3112192438       20063 Contemporary Sociolgicl Theory      A</span></span>
+<span><span class="co">#&gt; 17: MCID3112192438       20071    Introduction to Social Work     B+</span></span>
+<span><span class="co">#&gt; 18: MCID3112192438       20071  Human Behavior Social Environ      A</span></span>
+<span><span class="co">#&gt; 19: MCID3112192438       20071 Practicum-Communication Skills      A</span></span>
+<span><span class="co">#&gt; 20: MCID3112192438       20071 Methds of Sociological Inquiry     A-</span></span>
+<span><span class="co">#&gt; 21: MCID3112192438       20073      Psychology of Differences     B+</span></span>
+<span><span class="co">#&gt; 22: MCID3112192438       20073  Research Methds in Psychology      A</span></span>
+<span><span class="co">#&gt; 23: MCID3112192438       20073              Social Psychology      A</span></span>
+<span><span class="co">#&gt; 24: MCID3112192438       20073 Introductn-Statistical Methods      C</span></span>
+<span><span class="co">#&gt; 25: MCID3112192438       20081              Writing Arguments      A</span></span>
+<span><span class="co">#&gt; 26: MCID3112192438       20081      Organizational Psychology      B</span></span>
+<span><span class="co">#&gt; 27: MCID3112192438       20081  Organizational Psychology Lab      A</span></span>
+<span><span class="co">#&gt; 28: MCID3112192438       20081  History&amp;Systems of Psychology      A</span></span>
+<span><span class="co">#&gt; 29: MCID3112192438       20081  Computer Methods in Sociology      A</span></span>
+<span><span class="co">#&gt; 30: MCID3112192438       20081          Sociology of Disaster      A</span></span>
+<span><span class="co">#&gt; 31: MCID3112192438       20083 Concepts-Human Anat&amp;Physiology      A</span></span>
+<span><span class="co">#&gt; 32: MCID3112192438       20083 Principles of Human Physiology      B</span></span>
+<span><span class="co">#&gt; 33: MCID3112192438       20083      Mind, Brain, and Behavior      A</span></span>
+<span><span class="co">#&gt; 34: MCID3112192438       20083       Sensation and Perception      A</span></span>
+<span><span class="co">#&gt; 35: MCID3112192438       20083   Sensation and Perception Lab      A</span></span>
+<span><span class="co">#&gt; 36: MCID3112192438       20083           Symbolic Interaction      A</span></span>
+<span><span class="co">#&gt; 37: MCID3112192438       20091  Psychology of Human Sexuality      A</span></span>
+<span><span class="co">#&gt; 38: MCID3112192438       20091            Abnormal Psychology      A</span></span>
+<span><span class="co">#&gt; 39: MCID3112192438       20091          Social Stratification     A+</span></span>
+<span><span class="co">#&gt; 40: MCID3112192438       20091                     Internship      A</span></span>
+<span><span class="co">#&gt; 41: MCID3112192438       20091                        Seminar      A</span></span>
+<span><span class="co">#&gt; 42: MCID3112192438       20093 Introduction to Ethnic Studies     A+</span></span>
+<span><span class="co">#&gt; 43: MCID3112192438       20093              Independent Study      A</span></span>
+<span><span class="co">#&gt; 44: MCID3112192438       20093          Leadership for Greeks      A</span></span>
+<span><span class="co">#&gt; 45: MCID3112192438       20093            Health and the Mind     A+</span></span>
+<span><span class="co">#&gt; 46: MCID3112192438       20093   Social Psychology Laboratory      A</span></span>
+<span><span class="co">#&gt; 47: MCID3112192438       20093                    Group Study     A+</span></span>
+<span><span class="co">#&gt;               mcid term_course                         course  grade</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="term">
+<code>term</code><a class="anchor" aria-label="anchor" href="#term"></a>
+</h2>
+<p>The <code>term</code> data table has one observation per student per term. This student enrolled for 10 consecutive terms, changing majors once (row 2, <code>cip6</code> variable) and then changing back.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Select specific columns</span></span>
+<span><span class="va">cols_we_want</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mcid"</span>, <span class="st">"term"</span>, <span class="st">"cip6"</span>, <span class="st">"level"</span>, <span class="st">"standing"</span>, <span class="st">"gpa_cumul"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># All observations for this ID </span></span>
+<span><span class="va">term</span><span class="op">[</span><span class="va">mcid</span> <span class="op">==</span> <span class="va">mcid_we_want</span>, <span class="va">.SD</span>, .SDcols <span class="op">=</span> <span class="va">cols_we_want</span><span class="op">]</span></span>
+<span><span class="co">#&gt;               mcid   term   cip6              level      standing gpa_cumul</span></span>
+<span><span class="co">#&gt;             &lt;char&gt; &lt;char&gt; &lt;char&gt;             &lt;char&gt;        &lt;char&gt;     &lt;num&gt;</span></span>
+<span><span class="co">#&gt;  1: MCID3112192438  20051 451101      01 First-year Good Standing      3.80</span></span>
+<span><span class="co">#&gt;  2: MCID3112192438  20053 190701      01 First-year Good Standing      3.63</span></span>
+<span><span class="co">#&gt;  3: MCID3112192438  20061 451101     02 Second-year Good Standing      3.49</span></span>
+<span><span class="co">#&gt;  4: MCID3112192438  20063 451101     02 Second-year Good Standing      3.54</span></span>
+<span><span class="co">#&gt;  5: MCID3112192438  20071 451101      03 Third-year Good Standing      3.58</span></span>
+<span><span class="co">#&gt;  6: MCID3112192438  20073 451101      03 Third-year Good Standing      3.54</span></span>
+<span><span class="co">#&gt;  7: MCID3112192438  20081 451101      03 Third-year Good Standing      3.58</span></span>
+<span><span class="co">#&gt;  8: MCID3112192438  20083 451101     04 Fourth-year Good Standing      3.61</span></span>
+<span><span class="co">#&gt;  9: MCID3112192438  20091 451101     04 Fourth-year Good Standing      3.65</span></span>
+<span><span class="co">#&gt; 10: MCID3112192438  20093 451101 05 Fifth-year Plus Good Standing      3.68</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="degree">
+<code>degree</code><a class="anchor" aria-label="anchor" href="#degree"></a>
+</h2>
+<p>The <code>degree</code> data table has one observation per student per degree. This student earned a double degree in Psychology and Sociology, thus there are two observations for this ID.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Select specific columns </span></span>
+<span><span class="va">cols_we_want</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mcid"</span>, <span class="st">"term_degree"</span>, <span class="st">"cip6"</span>, <span class="st">"degree"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># All observations for this ID </span></span>
+<span><span class="va">degree</span><span class="op">[</span><span class="va">mcid</span> <span class="op">==</span> <span class="va">mcid_we_want</span>, <span class="va">.SD</span>, .SDcols <span class="op">=</span> <span class="va">cols_we_want</span><span class="op">]</span></span>
+<span><span class="co">#&gt;              mcid term_degree   cip6                            degree</span></span>
+<span><span class="co">#&gt;            &lt;char&gt;      &lt;char&gt; &lt;char&gt;                            &lt;char&gt;</span></span>
+<span><span class="co">#&gt; 1: MCID3112192438       20093 420101 Bachelor of Science in Psychology</span></span>
+<span><span class="co">#&gt; 2: MCID3112192438       20093 451101     Bachelor of Arts in Sociology</span></span></code></pre></div>
+<p>Not all students with more than one degree earn them in the same term. For example, the next student earned a degree in Biological Sciences in 1996 and a second baccalaureate degree in Animal Biology in 1999. In most analyses, only the first baccalaureate degree would be used.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># All observations for this ID </span></span>
+<span><span class="va">degree</span><span class="op">[</span><span class="va">mcid</span> <span class="op">==</span> <span class="st">"MCID3111315508"</span>, <span class="va">.SD</span>, .SDcols <span class="op">=</span> <span class="va">cols_we_want</span><span class="op">]</span></span>
+<span><span class="co">#&gt;              mcid term_degree   cip6                                     degree</span></span>
+<span><span class="co">#&gt;            &lt;char&gt;      &lt;char&gt; &lt;char&gt;                                     &lt;char&gt;</span></span>
+<span><span class="co">#&gt; 1: MCID3111315508       19961 260101 Bachelor of Science in Biological Sciences</span></span>
+<span><span class="co">#&gt; 2: MCID3111315508       19994 260701      Bachelor of Science in Animal Biology</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>Because of the size of the data tables, installing midfielddata takes time; please be patient and wait for the prompt “&gt;” to reappear. In the Console, run:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Type in the Console</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"midfielddata"</span>,</span>
+<p>The installed size of ‘midfielddata’ is about 24 Mb. Because this exceeds the CRAN package limit (5 Mb), we host the package on MIDFIELD’s <a href="https://github.com/MIDFIELDR/drat" class="external-link">‘drat’</a> repository.</p>
+<p>Also because of its size, the installation takes some time. Install with:</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"midfielddata"</span>,</span>
 <span>  repos <span class="op">=</span> <span class="st">"https://MIDFIELDR.github.io/drat/"</span>,</span>
 <span>  type <span class="op">=</span> <span class="st">"source"</span></span>
-<span><span class="op">)</span></span>
-<span><span class="co"># be patient</span></span></code></pre></div>
-<p>You can confirm a successful installation by running the following lines to bring up the package help page in the Help window.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Confirm successful installation</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://midfieldr.github.io/midfielddata/">"midfielddata"</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/help.html" class="external-link">help</a></span><span class="op">(</span><span class="st">"midfielddata-package"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-midfielddata-help-page-1.png" width="90%"></p>
+<span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="build">Build<a class="anchor" aria-label="anchor" href="#build"></a>
+<h2 id="more-information">More information<a class="anchor" aria-label="anchor" href="#more-information"></a>
 </h2>
-<p>‘midfielddata’ currently passes R CMD check with the results shown below. As a general rule, CRAN expects packages to not exceed 5 Mb, hence the “note” below.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>0 errors | 0 warnings | 1 note </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>NOTE  installed size is 24.3Mb</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>      sub-directories of 1Mb or more:</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>      data 23.9Mb</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>R CMD check succeeded  </span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
-</h2>
-<ul>
-<li><p>Because this is a data package, contributions would not generally be expected. However, bug reports and feedback are welcome via the GitHub <a href="https://github.com/MIDFIELDR/midfielddata/issues" class="external-link">Issues</a> page.</p></li>
-<li><p>Participation in this open source project is subject to a <a href="CONDUCT.html">Code of Conduct</a>.</p></li>
-</ul>
-</div>
-<div class="section level2">
-<h2 id="acknowledgments">Acknowledgments<a class="anchor" aria-label="anchor" href="#acknowledgments"></a>
-</h2>
-<p>This work is supported by grants from the US National Science Foundation (EEC 1545667).</p>
+<p><a href="https://midfield.online/" class="external-link">MIDFIELD</a><br>
+A database that, as of October 2022, contains individual student-level data for 1.7M undergraduates at 19 US institutions from 1987 through 2018. Access to the MIDFIELD research database is currently limited to MIDFIELD partner institutions, but a sample of these data are available in ‘midfielddata’.</p>
+<p>‘midfielddata’<br>
+A proportionate stratified sample of the MIDFIELD database. However, while MIDFIELD is used in education research, ‘midfielddata’ are practice data, not suitable for drawing inferences about program attributes or student experiences.</p>
+<p><a href="https://midfieldr.github.io/midfieldr/" class="external-link">‘midfieldr’</a><br>
+A companion ‘R’ package that provides tools and detailed procedures for working with MIDFIELD data.</p>
 </div>
 <div class="section level2">
 <h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
 </h2>
-<p><a href="https://creativecommons.org/publicdomain/zero/1.0/" class="external-link"><img src="reference/figures/License-CC-0-blue.svg" alt="License"></a></p>
-<p>‘midfielddata’, written in 2018–2023 by Richard Layton, Russell Long, Matthew Ohland, Marisa Orr, and Susan Long, is licensed under CC0 1.0 <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" class="external-link">(CC0 summary)</a> <a href="LICENSE.html">(CC0 full license)</a>.</p>
-<p>To the extent possible under law, the authors have dedicated all copyright and related and neighboring rights to this software to the public domain worldwide. This software is distributed without any warranty.</p>
+<p>‘midfielddata’ by Richard Layton, Russell Long, Susan Lord, Matthew Ohland, and Marisa Orr is licensed under CC0 1.0 <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" class="external-link">(CC0 summary)</a> <a href="LICENSE.html">(CC0 full license)</a>.</p>
 </div>
-</div>
+
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
@@ -302,12 +401,7 @@ a student who graduates
 </ul>
 </div>
 
-<div class="dev-status">
-<h2 data-toc-skip>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://creativecommons.org/publicdomain/zero/1.0/" class="external-link"><img src="reference/figures/License-CC-0-blue.svg" alt="License"></a></li>
-</ul>
-</div>
+
 
   </aside>
 </div>
