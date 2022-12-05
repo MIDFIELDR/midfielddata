@@ -3,26 +3,33 @@
 \docType{package}
 \name{midfielddata-package}
 \alias{midfielddata-package}
-\title{Sample of MIDFIELD Student Unit Record Data}
+\title{MIDFIELD Data Sample}
 \source{
-Data provided by the MIDFIELD project: \url{https://midfield.online/}
+Data provided by MIDFIELD: \url{https://midfield.online/}.
 }
 \description{
-An 'R' data package providing practice data and documentation of anonymized
-Student Unit Records (SURs) for approximately 98,000 students at three US
-institutions from 1988 through 2018 organized in four tables: \code{course},
-\code{term}, \code{student}, and \code{degree}. These data are a proportionate stratified
-sample of the MIDFIELD database which contains (as of October, 2022)
-individual SUR data for 1.7M undergraduate students at 19 US institutions
-from 1987 through 2018.
+Provides a data sample for practice working with individual undergraduate
+student unit records (registrar's data) in 'R'. Data are organized in four
+data tables --- \code{student}, \code{course}, \code{term}, and \code{degree} --- providing
+anonymized records for approximately 98,000 students at three US institutions
+from 1988 through 2018, keyed by student ID. These data are a proportionate
+stratified sample of the MIDFIELD database. However, unlike MIDFIELD data,
+the data in 'midfielddata' are not suitable for drawing inferences about
+program attributes or student experiences --- these are practice data, not
+research data.
 }
 \details{
-The data in 'midfielddata' are practice data, suitable for learning to work
-with SURs generally. Unlike the MIDFIELD research database, the data tables
-in 'midfielddata' are not research data; they are not suitable for drawing
-inferences about program attributes or student experiences.
+\href{https://midfield.online/}{MIDFIELD} is a database containing (as of October,
+2022) individual Student Unit Records (SURs) for 1.7M undergraduate students
+at 19 US institutions from 1987 through 2018. Access to the MIDFIELD research
+database is currently limited to MIDFIELD partner institutions, but a sample
+of the data is available in the 'midfielddata' package.
 
-The \href{https://midfieldr.github.io/midfieldr/}{'midfieldr'} package
-provides tools for working with 'midfielddata' practice data as well as the
-MIDFIELD research data.
+\href{https://midfieldr.github.io/midfieldr/}{'midfieldr'} is a companion 'R'
+package that provides tools and detailed procedures for working with MIDFIELD
+research data and with 'midfielddata' practice data.
+
+This work is supported by a grant from the US National Science Foundation
+(EEC 1545667).
 }
+\concept{package}
