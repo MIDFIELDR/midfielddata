@@ -1,20 +1,32 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<br>An ‘R’ data package that provides undergraduate student-level data
-sampled from the MIDFIELD database.
+<br>This package contains a practice-data sample of the MIDFIELD
+database that provides anonymized student-level records for 98,000
+undergraduates.
 
 ![](https://github.com/MIDFIELDR/midfielddata/blob/main/docs/logo.png?raw=true)
 
 ## Introduction
 
-‘midfielddata’ provides anonymized student-level data on approximately
-98,000 undergraduates at three US institutions from 1988 through 2018.
-Data are organized in four tables keyed by student ID.
+Student-level data refers to information collected by undergraduate
+institutions on individual students, including:
+
+- *course* information, e.g., course name & number, credit hours, and
+  student grades
+- *term* information, e.g., program, academic standing, and grade point
+  average
+- *student* demographic information, e.g., age, sex, and race/ethnicity
+- *degree* information, e.g., institution, program, term, and
+  baccalaureate degree
+
+‘midfielddata’ provides anonymized student-level records for 98,000
+undergraduates at three US institutions from 1988 through 2018,
+collected in four data tables keyed by student ID.
 
 <table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>
-Practice data tables in ‘midfielddata’.
+Table 1. Practice data in ‘midfielddata’.
 </caption>
 <thead>
 <tr>
@@ -107,54 +119,38 @@ one student per degree earned
 </tbody>
 </table>
 
-Student-level data refers to information collected by undergraduate
-institutions on individual students, including:
-
-- course information such as course name, number, credit hours, and
-  student grades
-- term information such as program, academic standing, and grade point
-  average
-- student demographic information such as age, sex, and race/ethnicity
-- degree information such as institution, program, term, and
-  baccalaureate degree
+These data are a proportionate stratified sample of the [MIDFIELD
+database](#more-information), but are not suitable for drawing
+inferences about program attributes or student
+experiences—‘midfielddata’ provides practice data, not research data.
 
 ## Usage
-
-Data tables can be loaded individually as needed.
-
-``` r
-# Load individual data tables
-data(student, package = "midfielddata")
-data(term,    package = "midfielddata")
-data(course,  package = "midfielddata")
-data(degree,  package = "midfielddata")
-```
-
-Alternatively, several data tables can be loaded at once.
-
-``` r
-# Load multiple tables at once 
-data(student, course, term, degree, package = "midfielddata")
-```
 
 We use ‘data.table’ throughout for its compact syntax. Its use is
 optional, though one would have to modify the examples to accommodate a
 different data manipulation syntax such as that in base ‘R’ or ‘dplyr’.
 
 ``` r
-# Package useful for data manipulation
+# For data manipulation
 library(data.table)
 ```
 
-## `student`
+Data tables can be loaded individually or in groups as needed.
 
-To illustrate the data structure, we can examine the student-level data
-for one specific student.
+``` r
+# Load multiple tables at once 
+data(student, course, term, degree, package = "midfielddata")
+```
+
+To illustrate the data structure, we examine the student-level data for
+one specific student.
 
 ``` r
 # One student ID
 mcid_we_want <- "MCID3112192438"
 ```
+
+### `student`
 
 The `student` data table contains one observation per student. Here we
 select a subset of columns for a less cluttered printout.
@@ -170,12 +166,14 @@ student[mcid == mcid_we_want, .SD, .SDcols = cols_we_want]
 #> 1: MCID3112192438 Institution C First-Time in College  White Female Under 25
 ```
 
-## `course`
+### `course`
 
 The remaining excerpts illustrate the block-record structure of the
-data, that is, information for one student ID over several rows. The
-`course` data table, for example, has one row per student per course per
-term. This student enrolled in 47 courses from Fall 2005 through Spring
+data, that is, information for one student forms a block of rows, all
+with the same ID.
+
+The `course` information for this student, for example, contains 47
+rows—one observation per course per term—from Fall 2005 through Spring
 2009.
 
 ``` r
@@ -236,7 +234,7 @@ course[mcid == mcid_we_want, .SD, .SDcols = cols_we_want]
 #>               mcid term_course                         course  grade
 ```
 
-## `term`
+### `term`
 
 The `term` data table has one observation per student per term. This
 student enrolled for 10 consecutive terms, changing majors once (row 2,
@@ -262,7 +260,7 @@ term[mcid == mcid_we_want, .SD, .SDcols = cols_we_want]
 #> 10: MCID3112192438  20093 451101 05 Fifth-year Plus Good Standing      3.68
 ```
 
-## `degree`
+### `degree`
 
 The `degree` data table has one observation per student per degree. This
 student earned a double degree in Psychology and Sociology, thus there
@@ -297,8 +295,8 @@ degree[mcid == "MCID3111315508", .SD, .SDcols = cols_we_want]
 ## Installation
 
 The installed size of ‘midfielddata’ is about 24 Mb. Because this
-exceeds the CRAN package limit (5 Mb), we host the package on MIDFIELD’s
-[‘drat’](https://github.com/MIDFIELDR/drat) repository.
+exceeds the CRAN package limit (5 Mb), we host the package on the
+[MIDFIELD ‘drat’ repository](https://github.com/MIDFIELDR/drat).
 
 Also because of its size, the installation takes some time. Install
 with:
@@ -312,25 +310,13 @@ install.packages("midfielddata",
 
 ## More information
 
-[MIDFIELD](https://midfield.online/)  
-A database that, as of October 2022, contains individual student-level
-data for 1.7M undergraduates at 19 US institutions from 1987
-through 2018. Access to the MIDFIELD research database is currently
-limited to MIDFIELD partner institutions, but a sample of these data are
-available in ‘midfielddata’.
-
-‘midfielddata’  
-A proportionate stratified sample of the MIDFIELD database. However,
-while MIDFIELD is used in education research, ‘midfielddata’ are
-practice data, not suitable for drawing inferences about program
-attributes or student experiences.
+[MIDFIELD database](https://midfield.online/)  
+MIDFIELD contains, as of October 2022, individual student-level data for
+1.7M undergraduates at 19 US institutions from 1987 through 2018. Access
+to the MIDFIELD research database is currently limited to MIDFIELD
+partner institutions, but a sample of these data are available in
+‘midfielddata’.
 
 [‘midfieldr’](https://midfieldr.github.io/midfieldr/)  
 A companion ‘R’ package that provides tools and detailed procedures for
 working with MIDFIELD data.
-
-## License
-
-‘midfielddata’ is licensed under CC0 1.0 [(CC0
-summary)](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
-[(CC0 full license)](LICENSE.html).

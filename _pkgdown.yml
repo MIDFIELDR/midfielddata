@@ -4,43 +4,6 @@ template:
   bootstrap: 5
   bootswatch: spacelab
 
-navbar:
-  title: ~
-  left:
-    - text: Reference
-      href: reference/index.html
-    - text: News
-      href: news/index.html
-
-reference:
-  - title: ~
-    desc: >
-      'midfielddata' is an 'R' data package. Functions for working with
-      these data are provided in the 
-      ['midfieldr'](https://midfieldr.github.io/midfieldr/) package. 
-    
-  - title: Package
-  - contents:
-      - midfielddata-package
-
-  - title: Practice data 
-  - contents:
-      - student
-      - course
-      - term
-      - degree
-      
-news:
-  cran_dates: false
-
-authors:
-  Richard Layton:
-    href: https://github.com/graphdr
-    
-home:
-  links:
-  - text: midfieldr package
-    href: https://midfieldr.github.io/midfieldr
 
 
 
