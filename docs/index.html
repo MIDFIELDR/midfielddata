@@ -62,7 +62,7 @@
   <a class="nav-link" href="reference/index.html">Reference</a>
 </li>
 <li class="nav-item">
-  <a class="nav-link" href="news/index.html">Changelog</a>
+  <a class="nav-link" href="news/index.html">News</a>
 </li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
@@ -199,7 +199,7 @@ one student per degree earned
 </h2>
 <p>Data tables can be loaded individually or in groups as needed.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Load multiple tables at once </span></span>
+<code class="sourceCode R"><span><span class="co"># Load multiple tables at once</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">student</span>, <span class="va">course</span>, <span class="va">term</span>, <span class="va">degree</span>, package <span class="op">=</span> <span class="st">"midfielddata"</span><span class="op">)</span></span></code></pre></div>
 <p>To illustrate the data structure, we examine the student-level data for one specific student.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
@@ -215,7 +215,7 @@ one student per degree earned
 <span><span class="va">rows_we_want</span> <span class="op">&lt;-</span> <span class="va">student</span><span class="op">$</span><span class="va">mcid</span> <span class="op">==</span> <span class="va">mcid_we_want</span></span>
 <span><span class="va">cols_we_want</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mcid"</span>, <span class="st">"institution"</span>, <span class="st">"transfer"</span>, <span class="st">"race"</span>, <span class="st">"sex"</span>, <span class="st">"age_desc"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># All observations for this ID </span></span>
+<span><span class="co"># All observations for this ID</span></span>
 <span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">student</span><span class="op">[</span><span class="va">rows_we_want</span>, <span class="va">cols_we_want</span><span class="op">]</span></span>
 <span></span>
 <span><span class="co"># Cleanup and display</span></span>
@@ -235,7 +235,7 @@ one student per degree earned
 <span><span class="va">rows_we_want</span> <span class="op">&lt;-</span> <span class="va">course</span><span class="op">$</span><span class="va">mcid</span> <span class="op">==</span> <span class="va">mcid_we_want</span></span>
 <span><span class="va">cols_we_want</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mcid"</span>, <span class="st">"term_course"</span>, <span class="st">"course"</span>, <span class="st">"grade"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># All observations for this ID </span></span>
+<span><span class="co"># All observations for this ID</span></span>
 <span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">course</span><span class="op">[</span><span class="va">rows_we_want</span>, <span class="va">cols_we_want</span><span class="op">]</span></span>
 <span></span>
 <span><span class="co"># Cleanup and display</span></span>
@@ -301,7 +301,7 @@ one student per degree earned
 <span><span class="va">rows_we_want</span> <span class="op">&lt;-</span> <span class="va">term</span><span class="op">$</span><span class="va">mcid</span> <span class="op">==</span> <span class="va">mcid_we_want</span></span>
 <span><span class="va">cols_we_want</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mcid"</span>, <span class="st">"term"</span>, <span class="st">"cip6"</span>, <span class="st">"level"</span>, <span class="st">"standing"</span>, <span class="st">"gpa_cumul"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># All observations for this ID </span></span>
+<span><span class="co"># All observations for this ID</span></span>
 <span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">term</span><span class="op">[</span><span class="va">rows_we_want</span>, <span class="va">cols_we_want</span><span class="op">]</span></span>
 <span></span>
 <span><span class="co"># Cleanup and display</span></span>
@@ -330,7 +330,7 @@ one student per degree earned
 <span><span class="va">rows_we_want</span> <span class="op">&lt;-</span> <span class="va">degree</span><span class="op">$</span><span class="va">mcid</span> <span class="op">==</span> <span class="va">mcid_we_want</span></span>
 <span><span class="va">cols_we_want</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mcid"</span>, <span class="st">"term_degree"</span>, <span class="st">"cip6"</span>, <span class="st">"degree"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># All observations for this ID </span></span>
+<span><span class="co"># All observations for this ID</span></span>
 <span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">degree</span><span class="op">[</span><span class="va">rows_we_want</span>, <span class="va">cols_we_want</span><span class="op">]</span></span>
 <span></span>
 <span><span class="co"># Cleanup and display</span></span>
@@ -345,7 +345,7 @@ one student per degree earned
 <span><span class="va">rows_we_want</span> <span class="op">&lt;-</span> <span class="va">degree</span><span class="op">$</span><span class="va">mcid</span> <span class="op">==</span> <span class="st">"MCID3111315508"</span></span>
 <span><span class="va">cols_we_want</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mcid"</span>, <span class="st">"term_degree"</span>, <span class="st">"cip6"</span>, <span class="st">"degree"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># All observations for this ID </span></span>
+<span><span class="co"># All observations for this ID</span></span>
 <span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">degree</span><span class="op">[</span><span class="va">rows_we_want</span>, <span class="va">cols_we_want</span><span class="op">]</span></span>
 <span></span>
 <span><span class="co"># Cleanup and display</span></span>
@@ -381,6 +381,7 @@ The MIDFIELD database contains, as of October 2022, individual student-level dat
 <ul class="list-unstyled">
 <li><a href="https://github.com/MIDFIELDR/midfielddata/" class="external-link">Browse source code</a></li>
 <li><a href="https://github.com/MIDFIELDR/midfielddata/issues" class="external-link">Report a bug</a></li>
+<li><a href="https://midfieldr.github.io/midfieldr" class="external-link">midfieldr</a></li>
 </ul>
 </div>
 
