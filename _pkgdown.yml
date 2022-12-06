@@ -4,7 +4,27 @@ template:
   bootstrap: 5
   bootswatch: spacelab
 
+navbar:
+  title: ~
+  left:
+    - text: Reference
+      href: reference/index.html
+    - text: News
+      href: news/index.html
 
+reference:
+  - title: Practice data 
+  - contents:
+      - student
+      - course
+      - term
+      - degree  
 
+  - title: Package
+  - contents:
+      - midfielddata-package
 
-
+home:
+  links:
+  - text: midfieldr
+    href: https://midfieldr.github.io/midfieldr
