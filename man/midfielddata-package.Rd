@@ -15,11 +15,11 @@ information collected by undergraduate institutions about individual students
 including demographics, programs, academic standing, courses, grades, and
 degrees. These data are a proportionate stratified sample of the MIDFIELD
 database, but are not suitable for drawing inferences about program
-attributes or student experiences---\pkg{midfielddata} provides practice
+attributes or student experiences---'midfielddata' provides practice
 data, not research data.
 }
 \seealso{
-Package \href{https://midfieldr.github.io/midfieldr/}{\pkg{midfieldr}}
+Package \href{https://midfieldr.github.io/midfieldr/}{'midfieldr'}
 for tools and methods for working with MIDFIELD data in 'R'.
 }
 \concept{package}

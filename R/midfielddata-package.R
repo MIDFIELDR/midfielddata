@@ -8,14 +8,14 @@
 #' including demographics, programs, academic standing, courses, grades, and
 #' degrees. These data are a proportionate stratified sample of the MIDFIELD
 #' database, but are not suitable for drawing inferences about program
-#' attributes or student experiences---\pkg{midfielddata} provides practice
+#' attributes or student experiences---'midfielddata' provides practice
 #' data, not research data.
 #'
 #' @name midfielddata-package
 #' @docType package
 #' @family package
 #' @source 2022 [MIDFIELD](https://midfield.online/) database
-#' @seealso Package [\pkg{midfieldr}](https://midfieldr.github.io/midfieldr/)
+#' @seealso Package ['midfieldr'](https://midfieldr.github.io/midfieldr/)
 #'   for tools and methods for working with MIDFIELD data in 'R'.
 #'   
 NULL

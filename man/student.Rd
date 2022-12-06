@@ -66,10 +66,10 @@ Student data are structured in row-record form, that is, information
 associated with a particular ID occupies a single row---one record per
 student.
 
-The data in \pkg{midfielddata} are a proportionate stratified sample of the
+The data in 'midfielddata' are a proportionate stratified sample of the
 MIDFIELD database, but are not suitable for drawing inferences about program
-attributes or student experiences---\pkg{midfielddata} provides practice
-data, not research data.
+attributes or student experiences---'midfielddata' provides practice data,
+not research data.
 }
 \examples{
 \dontrun{
@@ -88,8 +88,8 @@ student[rows_we_want, cols_we_want]
 
 }
 \seealso{
-Package \href{https://midfieldr.github.io/midfieldr/}{\pkg{midfieldr}}
-for tools and methods for working with MIDFIELD data in 'R'.
+Package \href{https://midfieldr.github.io/midfieldr/}{'midfieldr'} for
+tools and methods for working with MIDFIELD data in 'R'.
 
 Other datasets: 
 \code{\link{course}},

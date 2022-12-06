@@ -128,7 +128,7 @@ experiences—‘midfielddata’ provides practice data, not research data.
 Data tables can be loaded individually or in groups as needed.
 
 ``` r
-# Load multiple tables at once 
+# Load multiple tables at once
 data(student, course, term, degree, package = "midfielddata")
 ```
 
@@ -150,7 +150,7 @@ select a subset of columns for a less cluttered printout.
 rows_we_want <- student$mcid == mcid_we_want
 cols_we_want <- c("mcid", "institution", "transfer", "race", "sex", "age_desc")
 
-# All observations for this ID 
+# All observations for this ID
 df <- student[rows_we_want, cols_we_want]
 
 # Cleanup and display
@@ -173,7 +173,7 @@ For the example case, the `course` records span 47 rows.
 rows_we_want <- course$mcid == mcid_we_want
 cols_we_want <- c("mcid", "term_course", "course", "grade")
 
-# All observations for this ID 
+# All observations for this ID
 df <- course[rows_we_want, cols_we_want]
 
 # Cleanup and display
@@ -241,7 +241,7 @@ For the example case, the `term` records span 10 rows.
 rows_we_want <- term$mcid == mcid_we_want
 cols_we_want <- c("mcid", "term", "cip6", "level", "standing", "gpa_cumul")
 
-# All observations for this ID 
+# All observations for this ID
 df <- term[rows_we_want, cols_we_want]
 
 # Cleanup and display
@@ -274,7 +274,7 @@ Psychology and Sociology earned in the same term.
 rows_we_want <- degree$mcid == mcid_we_want
 cols_we_want <- c("mcid", "term_degree", "cip6", "degree")
 
-# All observations for this ID 
+# All observations for this ID
 df <- degree[rows_we_want, cols_we_want]
 
 # Cleanup and display
@@ -295,7 +295,7 @@ most analyses, only the first baccalaureate degree would be used.
 rows_we_want <- degree$mcid == "MCID3111315508"
 cols_we_want <- c("mcid", "term_degree", "cip6", "degree")
 
-# All observations for this ID 
+# All observations for this ID
 df <- degree[rows_we_want, cols_we_want]
 
 # Cleanup and display

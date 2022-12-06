@@ -18,16 +18,16 @@
 #' `19954`. The source database includes special month-long sessions encoded
 #' with letters `A`, `B`, `C`, etc., though none are included in this sample.
 #'
-#' The data in \pkg{midfielddata} are a proportionate stratified sample of the
+#' The data in 'midfielddata' are a proportionate stratified sample of the
 #' MIDFIELD database, but are not suitable for drawing inferences about program
-#' attributes or student experiences---\pkg{midfielddata} provides practice
+#' attributes or student experiences---'midfielddata' provides practice
 #' data, not research data.
 #'
 #' @docType data
 #' @family datasets
 #' @keywords datasets
 #' @source 2022 [MIDFIELD](https://midfield.online/) database
-#' @seealso Package [\pkg{midfieldr}](https://midfieldr.github.io/midfieldr/)
+#' @seealso Package ['midfieldr'](https://midfieldr.github.io/midfieldr/)
 #'   for tools and methods for working with MIDFIELD data in 'R'.
 #'
 #' @usage data(course)

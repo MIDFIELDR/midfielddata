@@ -10,17 +10,17 @@
 #' associated with a particular ID occupies a single row---one record per
 #' student.
 #'
-#' The data in \pkg{midfielddata} are a proportionate stratified sample of the
+#' The data in 'midfielddata' are a proportionate stratified sample of the
 #' MIDFIELD database, but are not suitable for drawing inferences about program
-#' attributes or student experiences---\pkg{midfielddata} provides practice
-#' data, not research data.
-#' 
+#' attributes or student experiences---'midfielddata' provides practice data,
+#' not research data.
+#'
 #' @docType data
 #' @family datasets
 #' @keywords datasets
 #' @source 2022 [MIDFIELD](https://midfield.online/) database
-#' @seealso Package [\pkg{midfieldr}](https://midfieldr.github.io/midfieldr/)
-#'   for tools and methods for working with MIDFIELD data in 'R'.
+#' @seealso Package ['midfieldr'](https://midfieldr.github.io/midfieldr/) for
+#'   tools and methods for working with MIDFIELD data in 'R'.
 #'
 #' @usage data(student)
 #'

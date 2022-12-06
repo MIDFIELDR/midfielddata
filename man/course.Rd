@@ -78,9 +78,9 @@ Spring 95--96 is encoded \code{19953}, and the first Summer 95-96 term is encode
 \code{19954}. The source database includes special month-long sessions encoded
 with letters \code{A}, \code{B}, \code{C}, etc., though none are included in this sample.
 
-The data in \pkg{midfielddata} are a proportionate stratified sample of the
+The data in 'midfielddata' are a proportionate stratified sample of the
 MIDFIELD database, but are not suitable for drawing inferences about program
-attributes or student experiences---\pkg{midfielddata} provides practice
+attributes or student experiences---'midfielddata' provides practice
 data, not research data.
 }
 \examples{
@@ -100,7 +100,7 @@ course[rows_we_want, cols_we_want]
  
 }
 \seealso{
-Package \href{https://midfieldr.github.io/midfieldr/}{\pkg{midfieldr}}
+Package \href{https://midfieldr.github.io/midfieldr/}{'midfieldr'}
 for tools and methods for working with MIDFIELD data in 'R'.
 
 Other datasets: 

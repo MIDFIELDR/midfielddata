@@ -9,7 +9,7 @@
 #' Degree data are structured in block-record form, that is, records associated
 #' with a particular ID can span multiple rows---one record per student per
 #' degree. Multiple degrees can occur in the same term or in different terms.
-#' 
+#'
 #' Terms are encoded `YYYYT`, where `YYYY` is the year at the start of the
 #' academic year and `T` encodes the semester or quarter within an academic year
 #' as Fall (`1`), Winter (`2`), Spring (`3`), and Summer (`4`, `5`, and `6`).
@@ -17,21 +17,21 @@
 #' Spring 95--96 is encoded `19953`, and the first Summer 95-96 term is encoded
 #' `19954`. The source database includes special month-long sessions encoded
 #' with letters `A`, `B`, `C`, etc., though none are included in this sample.
-#' 
-#' For program codes, \pkg{midfielddata}  uses the 2010 version of the
-#' Classification of Instructional Programs (CIP). If  \pkg{midfieldr}  is
-#' installed, type `help(cip, package = "midfieldr")` for details. 
 #'
-#' The data in \pkg{midfielddata} are a proportionate stratified sample of the
+#' For program codes, 'midfielddata' uses the 2010 version of the Classification
+#' of Instructional Programs (CIP). If  'midfieldr' is installed and loaded,
+#' type `? cip` for details.
+#'
+#' The data in 'midfielddata' are a proportionate stratified sample of the
 #' MIDFIELD database, but are not suitable for drawing inferences about program
-#' attributes or student experiences---\pkg{midfielddata} provides practice
-#' data, not research data.
-#'
+#' attributes or student experiences---'midfielddata' provides practice data,
+#' not research data.
+#' 
 #' @docType data
 #' @family datasets
 #' @keywords datasets
 #' @source 2022 [MIDFIELD](https://midfield.online/) database
-#' @seealso Package [\pkg{midfieldr}](https://midfieldr.github.io/midfieldr/)
+#' @seealso Package ['midfieldr'](https://midfieldr.github.io/midfieldr/)
 #'   for tools and methods for working with MIDFIELD data in 'R'.
 #' 
 #' @usage data(degree)
