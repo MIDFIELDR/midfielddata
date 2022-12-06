@@ -1,15 +1,15 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<br>This data package contains anonymized student-level records for
-98,000 undergraduates; a practice-data sample of the MIDFIELD database.
+<br>An `R` data package containing anonymized student-level records for
+98,000 undergraduates—a practice-data sample of the MIDFIELD database.
 
 ![](https://github.com/MIDFIELDR/midfielddata/blob/main/docs/logo.png?raw=true)
 
 ## Introduction
 
-Student-level data refers to information collected by undergraduate
-institutions on individual students, including:
+Data at the “student-level” refers to information collected by
+undergraduate institutions on individual students, including:
 
 - *course* information, e.g., course name & number, credit hours, and
   student grades
@@ -19,13 +19,13 @@ institutions on individual students, including:
 - *degree* information, e.g., institution, program, term, and
   baccalaureate degree
 
-‘midfielddata’ provides anonymized student-level records for 98,000
+`midfielddata` provides anonymized student-level records for 98,000
 undergraduates at three US institutions from 1988 through 2018,
 collected in four data tables keyed by student ID.
 
 <table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>
-Table 1. Practice data in ‘midfielddata’.
+Table 1. Practice data in `midfielddata`.
 </caption>
 <thead>
 <tr>
@@ -118,10 +118,10 @@ one student per degree earned
 </tbody>
 </table>
 
-These data are a proportionate stratified sample of the [MIDFIELD
-database](#more-information), but are not suitable for drawing
+These data are a proportionate stratified sample of the
+[MIDFIELD](#more-information) database, but are not suitable for drawing
 inferences about program attributes or student
-experiences—‘midfielddata’ provides practice data, not research data.
+experiences—`midfielddata` provides practice data, not research data.
 
 ## Usage
 
@@ -140,7 +140,7 @@ one specific student.
 mcid_we_want <- "MCID3112192438"
 ```
 
-### `student`
+### student
 
 The `student` data table contains one observation per student. Here we
 select a subset of columns for a less cluttered printout.
@@ -160,7 +160,7 @@ df
 #> 1 MCID3112192438 Institution C First-Time in College White Female Under 25
 ```
 
-### `course`
+### course
 
 Course data are structured in block-record form, that is, records
 associated with a particular ID can span multiple rows—one record per
@@ -229,7 +229,7 @@ df
 #> 47 MCID3112192438       20093                    Group Study    A+
 ```
 
-### `term`
+### term
 
 Term data are also structured in block-record form—one record per
 student per term.
@@ -260,7 +260,7 @@ df
 #> 10 MCID3112192438 20093 451101 05 Fifth-year Plus Good Standing      3.68
 ```
 
-### `degree`
+### degree
 
 Degree data are also structured in block-record form—one record per
 student per degree. Multiple degrees can occur in the same term or in
@@ -317,7 +317,7 @@ install.packages("midfielddata",
 )
 ```
 
-The installed size of ‘midfielddata’ is about 24 Mb, which has two
+The installed size of `midfielddata` is about 24 Mb, which has two
 consequences. First, the installation takes some time. Second, we host
 the package on the [MIDFIELD ‘drat’
 repository](https://github.com/MIDFIELDR/drat) instead of CRAN because
@@ -325,13 +325,13 @@ repository](https://github.com/MIDFIELDR/drat) instead of CRAN because
 
 ## More information
 
-[‘midfieldr’](https://midfieldr.github.io/midfieldr/)  
-A companion ‘R’ package that provides tools and detailed procedures for
+[`midfieldr`](https://midfieldr.github.io/midfieldr/)  
+A companion `R` package that provides tools and detailed procedures for
 working with MIDFIELD data.
 
 [MIDFIELD](https://midfield.online/)  
 The MIDFIELD database contains, as of October 2022, individual
 student-level data for 1.7M undergraduates at 19 US institutions from
 1987 through 2018. Access to the MIDFIELD research database is currently
-limited to MIDFIELD partner institutions, but ‘midfielddata’ provides a
-sample of MIDFIELD data.
+limited to MIDFIELD partner institutions. A sample of these data is
+supplied by `midfielddata`.

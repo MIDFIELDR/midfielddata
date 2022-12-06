@@ -1,8 +1,8 @@
 
-#' Term student-level data
+#' Student-level term data
 #'
 #' Student-level term information for approximately 98,000 undergraduates, keyed
-#' by student ID. "Student-level" data refers to information collected by
+#' by student ID. Data at the "student-level" refers to information collected by
 #' undergraduate institutions about individual students, for example, program
 #' code, academic standing, and grade point average by term.
 #'
@@ -18,21 +18,22 @@
 #' `19954`. The source database includes special month-long sessions encoded
 #' with letters `A`, `B`, `C`, etc., though none are included in this sample.
 #'
-#' For program codes, 'midfielddata' uses the 2010 version of the Classification
-#' of Instructional Programs (CIP). If 'midfieldr' is installed and loaded, type
-#' `? cip` for details.
+#' For program codes, `midfielddata` uses the 2010 version of the Classification
+#' of Instructional Programs (CIP). If the `midfieldr` package is installed and
+#' loaded, type `?cip` for details.
 #'
-#' The data in 'midfielddata' are a proportionate stratified sample of the
+#' The data in `midfielddata` are a proportionate stratified sample of the
 #' MIDFIELD database, but are not suitable for drawing inferences about program
-#' attributes or student experiences---'midfielddata' provides practice data,
+#' attributes or student experiences---`midfielddata` provides practice data,
 #' not research data.
 #'
+#' @name term
 #' @docType data
 #' @family datasets
 #' @keywords datasets
 #' @source 2022 [MIDFIELD](https://midfield.online/) database
-#' @seealso Package ['midfieldr'](https://midfieldr.github.io/midfieldr/) for
-#'   tools and methods for working with MIDFIELD data in 'R'.
+#' @seealso Package [`midfieldr`](https://midfieldr.github.io/midfieldr/) for
+#'   tools and methods for working with MIDFIELD data in `R`. 
 #'
 #' @usage data(term)
 #'
@@ -41,38 +42,37 @@
 #'
 #'   \describe{ 
 #'   
-#'   \item{mcid}{Character, anonymized student identifier, e.g., 
-#'   `"MCID3111142225"`.}
+#'   \item{`mcid`}{Character, anonymized student identifier, e.g., 
+#'   `MCID3111142225`.}
 #'
-#'   \item{institution}{Character, anonymized institution name, e.g., 
-#'   `"Institution B"`.}
+#'   \item{`institution`}{Character, anonymized institution name, e.g., 
+#'   `Institution B`.}
 #'         
-#'   \item{term}{Character, academic year and term, format `"YYYYT"`.} 
+#'   \item{`term`}{Character, academic year and term, format `YYYYT`.} 
 #'   
-#'   \item{cip6}{Character, 6-digit CIP code of program in which a student is 
-#'   enrolled in a term, e.g., `"090101"`, `"141201"`, `"260901"`, `"420101"`, 
-#'   etc.} 
+#'   \item{`cip6`}{Character, 6-digit CIP code of program in which a student is 
+#'   enrolled in a term, e.g., `090101`, `141201`, `260901`, `420101`, etc.} 
 #'         
-#'   \item{level}{Character, academic level determined by cumulative number of 
-#'   credit ours earned, e.g., `"01 First-year"`, `"02 Second-year"`, etc.} 
+#'   \item{`level`}{Character, academic level determined by cumulative number of 
+#'   credit ours earned, e.g., `01 First-year`, `02 Second-year`, etc.} 
 #'   
-#'   \item{standing}{Character, academic standing, e.g., `"Good Standing"`, 
-#'   `"Academic Warning"`, etc.}
+#'   \item{`standing`}{Character, academic standing, e.g., `Good Standing`, 
+#'   `Academic Warning`, etc.}
 #'         
-#'   \item{coop}{Character, cooperative education term, possible values are 
-#'   `"Yes"`, `"No."`}
+#'   \item{`coop`}{Character, cooperative education term, possible values are 
+#'   `Yes`, `No`.}
 #'   
-#'   \item{hours_term}{Numeric, credit hours earned in the term.}
+#'   \item{`hours_term`}{Numeric, credit hours earned in the term.}
 #'   
-#'   \item{hours_term_attempt}{Numeric, credit hours attempted in the term.}
+#'   \item{`hours_term_attempt`}{Numeric, credit hours attempted in the term.}
 #'   
-#'   \item{hours_cumul}{Numeric, cumulative credit hours earned.}
+#'   \item{`hours_cumul`}{Numeric, cumulative credit hours earned.}
 #'   
-#'   \item{hours_cumul_attempt}{Numeric, cumulative credit hours attempted.}
+#'   \item{`hours_cumul_attempt`}{Numeric, cumulative credit hours attempted.}
 #'   
-#'   \item{gpa_term}{Numeric, term grade point average.}
+#'   \item{`gpa_term`}{Numeric, term grade point average.}
 #'   
-#'   \item{gpa_cumul}{Numeric, cumulative grade point average.} 
+#'   \item{`gpa_cumul`}{Numeric, cumulative grade point average.} 
 #'   
 #'   }
 #'   
@@ -91,4 +91,4 @@
 #' 
 #' }
 #'   
-"term"
+NULL

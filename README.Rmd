@@ -1,5 +1,5 @@
 ---
-output: github_document
+output: github_document 
 bibliography: inst/REFERENCES.bib
 csl: inst/information-science-and-technology.csl
 link-citations: yes
@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 options(datatable.print.class = TRUE)
 ```
 
-<br>This data package contains anonymized student-level records for 98,000 undergraduates; a practice-data sample of the MIDFIELD database. 
+<br>An `R` data package containing anonymized student-level records for 98,000 undergraduates---a practice-data sample of the MIDFIELD database. 
 
 ![](https://github.com/MIDFIELDR/midfielddata/blob/main/docs/logo.png?raw=true)
 
@@ -30,7 +30,7 @@ options(datatable.print.class = TRUE)
 
 ## Introduction
 
-Student-level data refers to information collected by undergraduate institutions on individual students, including:   
+Data at the "student-level" refers to information collected by undergraduate institutions on individual students, including:   
 
 - *course* information, e.g., course name & number, credit hours, and student grades 
 - *term* information, e.g., program, academic standing, and grade point average 
@@ -38,7 +38,7 @@ Student-level data refers to information collected by undergraduate institutions
 - *degree* information, e.g., institution, program, term, and baccalaureate degree
 
 
-'midfielddata' provides anonymized student-level records for 98,000 undergraduates at three US institutions from 1988 through 2018, collected in four data tables keyed by student ID. 
+`midfielddata` provides anonymized student-level records for 98,000 undergraduates at three US institutions from 1988 through 2018, collected in four data tables keyed by student ID. 
 
 ```{r}
 #| echo: false
@@ -52,7 +52,7 @@ wrapr::build_frame(
 ) |>
   kableExtra::kbl(
     align = "llrrr",
-    caption = "Table 1. Practice data in 'midfielddata'."
+    caption = "Table 1. Practice data in `midfielddata`."
   ) |>
   kableExtra::kable_paper(lightable_options = "basic", full_width = TRUE) |>
   kableExtra::row_spec(0, background = "#c7eae5") |>
@@ -61,7 +61,7 @@ wrapr::build_frame(
 ```
 
 
-These data are a proportionate stratified sample of the [MIDFIELD database](#more-information), but are not suitable for drawing inferences about program attributes or student experiences---'midfielddata' provides practice data, not research data.
+These data are a proportionate stratified sample of the [MIDFIELD](#more-information) database, but are not suitable for drawing inferences about program attributes or student experiences---`midfielddata`  provides practice data, not research data.
 
 ## Usage
 
@@ -88,7 +88,7 @@ mcid_we_want <- "MCID3112192438"
 
 
 
-### `student` 
+### student 
 
 The `student` data table contains one observation per student. Here we select a subset of columns for a less cluttered printout. 
 
@@ -108,7 +108,7 @@ df
 
 
 
-### `course`
+### course
 
 Course data are structured in block-record form, that is, records associated with a particular ID can span multiple rows---one record per student per course per term.
 
@@ -179,7 +179,7 @@ df
 
 
 
-### `term`
+### term
 
 Term data are also structured in block-record form---one record per student per term.
 
@@ -202,7 +202,7 @@ df
 
 
 
-### `degree`
+### degree
 
 Degree data are also structured in block-record form---one record per student per degree. Multiple degrees can occur in the same term or in different terms.
 
@@ -262,15 +262,19 @@ install.packages("midfielddata",
 )
 ``` 
 
-The installed size of 'midfielddata' is about 24 Mb, which has two consequences. First, the installation takes some time. Second, we host the package on the  [MIDFIELD 'drat' repository](https://github.com/MIDFIELDR/drat) instead of CRAN because 24 Mb exceeds the CRAN package limit (5 Mb). 
+The installed size of `midfielddata` is about 24 Mb, which has two consequences. First, the installation takes some time. Second, we host the package on the  [MIDFIELD 'drat' repository](https://github.com/MIDFIELDR/drat) instead of CRAN because 24 Mb exceeds the CRAN package limit (5 Mb). 
+
+
+
+
 
 
 ## More information
 
-['midfieldr'](https://midfieldr.github.io/midfieldr/)
+[`midfieldr`](https://midfieldr.github.io/midfieldr/)
 
-: A companion 'R' package that provides tools and detailed procedures for working with MIDFIELD data. 
+: A companion `R` package that provides tools and detailed procedures for working with MIDFIELD data. 
 
 [MIDFIELD](https://midfield.online/)
 
-: The MIDFIELD database contains, as of October 2022, individual student-level data for 1.7M undergraduates at 19 US institutions from 1987 through 2018. Access to the MIDFIELD research database is currently limited to MIDFIELD partner institutions, but 'midfielddata' provides a sample of MIDFIELD data. 
+: The MIDFIELD database contains, as of October 2022, individual student-level data for 1.7M undergraduates at 19 US institutions from 1987 through 2018. Access to the MIDFIELD research database is currently limited to MIDFIELD partner institutions. A sample of these data is supplied by `midfielddata`. 

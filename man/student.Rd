@@ -10,42 +10,42 @@ observations of unique students occupying 18 MB of memory:
 
 \describe{
 
-\item{mcid}{Character, anonymized student identifier, e.g.,
-\code{"MCID3111142225"}.}
+\item{\code{mcid}}{Character, anonymized student identifier, e.g.,
+\code{MCID3111142225}.}
 
-\item{institution}{Character, anonymized institution name, e.g.,
-\code{"Institution B"}.}
+\item{\code{institution}}{Character, anonymized institution name, e.g.,
+\verb{Institution B}.}
 
-\item{transfer}{Character, transfer status, possible values are
-\code{"First-Time in College"}, \code{"First-Time Transfer"}.}
+\item{\code{transfer}}{Character, transfer status, possible values are
+\verb{First-Time in College}, \verb{First-Time Transfer}.}
 
-\item{hours_transfer}{Numeric, number of credit hours transferred (or
+\item{\code{hours_transfer}}{Numeric, number of credit hours transferred (or
 \code{NA}).}
 
-\item{race}{Character, race/ethnicity, e.g., \code{"Asian"}, \code{"Black"},
-\code{"International"}, \code{"Latine"}, etc.}
+\item{\code{race}}{Character, race/ethnicity, e.g., \code{Asian}, \code{Black},
+\code{International}, \code{Latine}, etc.}
 
-\item{sex}{Character, sex, possible values are \code{"Female"}, \code{"Male"},
-\code{"Unknown"}.}
+\item{\code{sex}}{Character, sex, possible values are \code{Female}, \code{Male},
+\code{Unknown}.}
 
-\item{age_desc}{Character, age group, possible values are \code{"25 and Older"},
-\code{"Under 25"}.}
+\item{\code{age_desc}}{Character, age group, possible values are \verb{25 and Older},
+\verb{Under 25}.}
 
-\item{us_citizen}{Character, US citizenship, possible values are \code{"No"},
-\code{"Yes"}.}
+\item{\code{us_citizen}}{Character, US citizenship, possible values are \code{No},
+\code{Yes}.}
 
-\item{home_zip}{Character, home ZIP code (or \code{NA}), e.g., \code{"02056"},
-\code{"20170"}, \code{"51301"}, \code{"80129"}, etc.}
+\item{\code{home_zip}}{Character, home ZIP code (or \code{NA}), e.g., \code{02056},
+\code{20170}, \code{51301}, \code{80129}, etc.}
 
-\item{high_school}{Character, code for the last high school attended before
-admission (or \code{NA}), e.g., \code{"060075"}, \code{"210512"}, \code{"431800"}, \code{"502195"},
+\item{\code{high_school}}{Character, code for the last high school attended before
+admission (or \code{NA}), e.g., \code{060075}, \code{210512}, \code{431800}, \code{502195},
 etc.}
 
-\item{sat_math}{Numeric, SAT mathematics test score (or \code{NA}).}
+\item{\code{sat_math}}{Numeric, SAT mathematics test score (or \code{NA}).}
 
-\item{sat_verbal}{Numeric, SAT reading test score (or \code{NA}).}
+\item{\code{sat_verbal}}{Numeric, SAT reading test score (or \code{NA}).}
 
-\item{act_comp}{Numeric, ACT composite test score (or \code{NA}).}
+\item{\code{act_comp}}{Numeric, ACT composite test score (or \code{NA}).}
 
 }
 }
@@ -57,18 +57,19 @@ data(student)
 }
 \description{
 Student-level demographic information for approximately 98,000 degree-seeking
-undergraduate students, keyed by student ID. "Student-level" data refers to
-information collected by undergraduate institutions about individual
-students, for example, age, sex, and race/ethnicity at matriculation.
+undergraduate students, keyed by student ID. Data at the "student-level"
+refers to information collected by undergraduate institutions about
+individual students, for example, age, sex, and race/ethnicity at
+matriculation.
 }
 \details{
 Student data are structured in row-record form, that is, information
 associated with a particular ID occupies a single row---one record per
 student.
 
-The data in 'midfielddata' are a proportionate stratified sample of the
+The data in \code{midfielddata} are a proportionate stratified sample of the
 MIDFIELD database, but are not suitable for drawing inferences about program
-attributes or student experiences---'midfielddata' provides practice data,
+attributes or student experiences---\code{midfielddata} provides practice data,
 not research data.
 }
 \examples{
@@ -78,8 +79,8 @@ not research data.
 data(student)
 
 # Select specific rows and columns
-rows_we_want <- student$mcid == "MCID3112192438"
-cols_we_want <- c("mcid", "institution", "transfer", "race", "sex", "age_desc")
+rows_we_want <- student$mcid == MCID3112192438
+cols_we_want <- c(mcid, institution, transfer, race, sex, age_desc)
 
 # View observations for this ID 
 student[rows_we_want, cols_we_want]
@@ -88,8 +89,8 @@ student[rows_we_want, cols_we_want]
 
 }
 \seealso{
-Package \href{https://midfieldr.github.io/midfieldr/}{'midfieldr'} for
-tools and methods for working with MIDFIELD data in 'R'.
+Package \href{https://midfieldr.github.io/midfieldr/}{\code{midfieldr}} for
+tools and methods for working with MIDFIELD data in \code{R}.
 
 Other datasets: 
 \code{\link{course}},

@@ -3,27 +3,27 @@
 \docType{data}
 \name{degree}
 \alias{degree}
-\title{Degree student-level data}
+\title{Student-level degree data}
 \format{
 A \code{data.frame} and \code{data.table} with 5 variables and 49,543
 observations of unique students occupying 6 MB of memory:
 
 \describe{
 
-\item{mcid}{Character, anonymized student identifier, e.g.,
-\code{"MCID3111142225"}.}
+\item{\code{mcid}}{Character, anonymized student identifier, e.g.,
+\code{MCID3111142225}.}
 
-\item{institution}{Character, anonymized institution name, e.g.,
-\code{"Institution B"}.}
+\item{\code{institution}}{Character, anonymized institution name, e.g.,
+\verb{Institution B}.}
 
-\item{term_degree}{Character, academic year and term, format \code{"YYYYT"}, in
+\item{\code{term_degree}}{Character, academic year and term, format \code{YYYYT}, in
 which a student completes their program.}
 
-\item{cip6}{Character, 6-digit CIP code of program in which a student earns
-a degree, e.g., \code{"090101"}, \code{"141201"}, \code{"260901"}, \code{"420101"}, etc.}
+\item{\code{cip6}}{Character, 6-digit CIP code of program in which a student earns
+a degree, e.g., \code{090101}, \code{141201}, \code{260901}, \code{420101}, etc.}
 
-\item{degree}{Character, type of degree awarded, e.g.,
-\code{"Bachelor of Arts in Geography"}, \code{"Bachelor of Science in Finance"},
+\item{\code{degree}}{Character, type of degree awarded, e.g.,
+\verb{Bachelor of Arts in Geography}, \verb{Bachelor of Science in Finance},
 etc.}
 
 }
@@ -36,7 +36,7 @@ data(degree)
 }
 \description{
 Student-level degree information for approximately 50,000 undergraduates
-earning degrees, keyed by student ID. "Student-level" data refers to
+earning degrees, keyed by student ID. Data at the "student-level" refers to
 information collected by undergraduate institutions about individual
 students, for example, institution, program, term, and baccalaureate degree.
 }
@@ -53,13 +53,13 @@ Spring 95--96 is encoded \code{19953}, and the first Summer 95-96 term is encode
 \code{19954}. The source database includes special month-long sessions encoded
 with letters \code{A}, \code{B}, \code{C}, etc., though none are included in this sample.
 
-For program codes, 'midfielddata' uses the 2010 version of the Classification
-of Instructional Programs (CIP). If  'midfieldr' is installed and loaded,
-type \code{? cip} for details.
+For program codes, \code{midfielddata} uses the 2010 version of the Classification
+of Instructional Programs (CIP). If the \code{midfieldr} package is installed and
+loaded, type \code{?cip} for details.
 
-The data in 'midfielddata' are a proportionate stratified sample of the
+The data in \code{midfielddata} are a proportionate stratified sample of the
 MIDFIELD database, but are not suitable for drawing inferences about program
-attributes or student experiences---'midfielddata' provides practice data,
+attributes or student experiences---\code{midfielddata} provides practice data,
 not research data.
 }
 \examples{
@@ -69,8 +69,8 @@ not research data.
 data(degree)
 
 # Select specific rows and columns
-rows_we_want <- degree$mcid == "MCID3112192438"
-cols_we_want <- c("mcid", "term_degree", "cip6", "degree")
+rows_we_want <- degree$mcid == MCID3112192438
+cols_we_want <- c(mcid, term_degree, cip6, degree)
 
 # View observations for this ID 
 degree[rows_we_want, cols_we_want]
@@ -79,8 +79,8 @@ degree[rows_we_want, cols_we_want]
 
 }
 \seealso{
-Package \href{https://midfieldr.github.io/midfieldr/}{'midfieldr'}
-for tools and methods for working with MIDFIELD data in 'R'.
+Package \href{https://midfieldr.github.io/midfieldr/}{\code{midfieldr}}
+for tools and methods for working with MIDFIELD data in \code{R}.
 
 Other datasets: 
 \code{\link{course}},

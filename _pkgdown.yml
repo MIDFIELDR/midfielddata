@@ -2,7 +2,9 @@ url: https://midfieldr.github.io/midfielddata/
 
 template:
   bootstrap: 5
-  bootswatch: spacelab
+  bslib:
+    code_font: {google: "Inconsolata"}
+    code-bg: "#FFFFFF"
 
 navbar:
   title: ~

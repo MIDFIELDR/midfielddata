@@ -3,45 +3,44 @@
 \docType{data}
 \name{term}
 \alias{term}
-\title{Term student-level data}
+\title{Student-level term data}
 \format{
 A \code{data.frame} and \code{data.table} with 13 variables and approximately
 640,000 observations of 97,555 unique students occupying 73 MB of memory:
 
 \describe{
 
-\item{mcid}{Character, anonymized student identifier, e.g.,
-\code{"MCID3111142225"}.}
+\item{\code{mcid}}{Character, anonymized student identifier, e.g.,
+\code{MCID3111142225}.}
 
-\item{institution}{Character, anonymized institution name, e.g.,
-\code{"Institution B"}.}
+\item{\code{institution}}{Character, anonymized institution name, e.g.,
+\verb{Institution B}.}
 
-\item{term}{Character, academic year and term, format \code{"YYYYT"}.}
+\item{\code{term}}{Character, academic year and term, format \code{YYYYT}.}
 
-\item{cip6}{Character, 6-digit CIP code of program in which a student is
-enrolled in a term, e.g., \code{"090101"}, \code{"141201"}, \code{"260901"}, \code{"420101"},
-etc.}
+\item{\code{cip6}}{Character, 6-digit CIP code of program in which a student is
+enrolled in a term, e.g., \code{090101}, \code{141201}, \code{260901}, \code{420101}, etc.}
 
-\item{level}{Character, academic level determined by cumulative number of
-credit ours earned, e.g., \code{"01 First-year"}, \code{"02 Second-year"}, etc.}
+\item{\code{level}}{Character, academic level determined by cumulative number of
+credit ours earned, e.g., \verb{01 First-year}, \verb{02 Second-year}, etc.}
 
-\item{standing}{Character, academic standing, e.g., \code{"Good Standing"},
-\code{"Academic Warning"}, etc.}
+\item{\code{standing}}{Character, academic standing, e.g., \verb{Good Standing},
+\verb{Academic Warning}, etc.}
 
-\item{coop}{Character, cooperative education term, possible values are
-\code{"Yes"}, \code{"No."}}
+\item{\code{coop}}{Character, cooperative education term, possible values are
+\code{Yes}, \code{No}.}
 
-\item{hours_term}{Numeric, credit hours earned in the term.}
+\item{\code{hours_term}}{Numeric, credit hours earned in the term.}
 
-\item{hours_term_attempt}{Numeric, credit hours attempted in the term.}
+\item{\code{hours_term_attempt}}{Numeric, credit hours attempted in the term.}
 
-\item{hours_cumul}{Numeric, cumulative credit hours earned.}
+\item{\code{hours_cumul}}{Numeric, cumulative credit hours earned.}
 
-\item{hours_cumul_attempt}{Numeric, cumulative credit hours attempted.}
+\item{\code{hours_cumul_attempt}}{Numeric, cumulative credit hours attempted.}
 
-\item{gpa_term}{Numeric, term grade point average.}
+\item{\code{gpa_term}}{Numeric, term grade point average.}
 
-\item{gpa_cumul}{Numeric, cumulative grade point average.}
+\item{\code{gpa_cumul}}{Numeric, cumulative grade point average.}
 
 }
 }
@@ -53,7 +52,7 @@ data(term)
 }
 \description{
 Student-level term information for approximately 98,000 undergraduates, keyed
-by student ID. "Student-level" data refers to information collected by
+by student ID. Data at the "student-level" refers to information collected by
 undergraduate institutions about individual students, for example, program
 code, academic standing, and grade point average by term.
 }
@@ -70,13 +69,13 @@ Spring 95--96 is encoded \code{19953}, and the first Summer 95-96 term is encode
 \code{19954}. The source database includes special month-long sessions encoded
 with letters \code{A}, \code{B}, \code{C}, etc., though none are included in this sample.
 
-For program codes, 'midfielddata' uses the 2010 version of the Classification
-of Instructional Programs (CIP). If 'midfieldr' is installed and loaded, type
-\code{? cip} for details.
+For program codes, \code{midfielddata} uses the 2010 version of the Classification
+of Instructional Programs (CIP). If the \code{midfieldr} package is installed and
+loaded, type \code{?cip} for details.
 
-The data in 'midfielddata' are a proportionate stratified sample of the
+The data in \code{midfielddata} are a proportionate stratified sample of the
 MIDFIELD database, but are not suitable for drawing inferences about program
-attributes or student experiences---'midfielddata' provides practice data,
+attributes or student experiences---\code{midfielddata} provides practice data,
 not research data.
 }
 \examples{
@@ -96,8 +95,8 @@ term[rows_we_want, cols_we_want]
   
 }
 \seealso{
-Package \href{https://midfieldr.github.io/midfieldr/}{'midfieldr'} for
-tools and methods for working with MIDFIELD data in 'R'.
+Package \href{https://midfieldr.github.io/midfieldr/}{\code{midfieldr}} for
+tools and methods for working with MIDFIELD data in \code{R}.
 
 Other datasets: 
 \code{\link{course}},
