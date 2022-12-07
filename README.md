@@ -2,7 +2,8 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 <br>An `R` data package containing anonymized student-level records for
-98,000 undergraduates—a practice-data sample of the MIDFIELD database.
+98,000 undergraduates, a sample of the MIDFIELD database to practice
+using the tools and methods provided by the `midfieldr` package.
 
 ![](https://github.com/MIDFIELDR/midfielddata/blob/main/docs/logo.png?raw=true)
 
@@ -330,8 +331,12 @@ A companion `R` package that provides tools and detailed procedures for
 working with MIDFIELD data.
 
 [MIDFIELD](https://midfield.online/)  
-The MIDFIELD database contains, as of October 2022, individual
-student-level data for 1.7M undergraduates at 19 US institutions from
-1987 through 2018. Access to the MIDFIELD research database is currently
-limited to MIDFIELD partner institutions. A sample of these data is
-supplied by `midfielddata`.
+A database of student-level records for approximately 1.7M
+undergraduates at nineteen US institutions from 1987 through 2018, of
+which `midfielddata` provides a sample. The full research database is
+currently accessible to MIDFIELD partner institutions only.
+
+## Acknowledgments
+
+This work is supported by a grant from the US National Science
+Foundation (EEC 1545667).
