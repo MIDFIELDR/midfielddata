@@ -1,9 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<br>An `R` data package containing anonymized student-level records for
-98,000 undergraduates, a sample of the MIDFIELD database to practice
-using the tools and methods provided by the `midfieldr` package.
+<br>`midfielddata` is an R data package that supplies anonymized
+student-level records for 98,000 undergraduates from the MIDFIELD
+database. Provides practice data for the tools and methods of
+`midfieldr`.
 
 ![](https://github.com/MIDFIELDR/midfielddata/blob/main/docs/logo.png?raw=true)
 
@@ -24,23 +25,26 @@ undergraduate institutions on individual students, including:
 undergraduates at three US institutions from 1988 through 2018,
 collected in four data tables keyed by student ID.
 
-<table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-Table 1. Practice data in `midfielddata`.
+Table 1. Practice datasets in `midfielddata`.
 </caption>
 <thead>
 <tr>
 <th style="text-align:left;background-color: #c7eae5 !important;">
-Practice data table
+Dataset
 </th>
 <th style="text-align:left;background-color: #c7eae5 !important;">
 Each row is
 </th>
 <th style="text-align:right;background-color: #c7eae5 !important;">
-No. of rows
+Students
 </th>
 <th style="text-align:right;background-color: #c7eae5 !important;">
-No. of columns
+Rows
+</th>
+<th style="text-align:right;background-color: #c7eae5 !important;">
+Columns
 </th>
 <th style="text-align:right;background-color: #c7eae5 !important;">
 Memory
@@ -53,7 +57,10 @@ Memory
 course
 </td>
 <td style="text-align:left;color: black !important;background-color: white !important;">
-one student per course per term
+one student per course
+</td>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+97,555
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
 3,289,532
@@ -62,7 +69,7 @@ one student per course per term
 12
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
-324 Mb
+324.3 MB
 </td>
 </tr>
 <tr>
@@ -73,13 +80,16 @@ term
 one student per term
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
+97,555
+</td>
+<td style="text-align:right;color: black !important;background-color: white !important;">
 639,915
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
 13
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
-73 Mb
+72.8 MB
 </td>
 </tr>
 <tr>
@@ -87,7 +97,10 @@ one student per term
 student
 </td>
 <td style="text-align:left;color: black !important;background-color: white !important;">
-one degree-seeking student
+one student
+</td>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+97,555
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
 97,555
@@ -96,7 +109,7 @@ one degree-seeking student
 13
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
-18 Mb
+17.3 MB
 </td>
 </tr>
 <tr>
@@ -104,207 +117,194 @@ one degree-seeking student
 degree
 </td>
 <td style="text-align:left;color: black !important;background-color: white !important;">
-one student per degree earned
+one student per degree
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
 49,543
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
+49,665
+</td>
+<td style="text-align:right;color: black !important;background-color: white !important;">
 5
 </td>
 <td style="text-align:right;color: black !important;background-color: white !important;">
-5 Mb
+5.2 MB
 </td>
 </tr>
 </tbody>
 </table>
 
-These data are a proportionate stratified sample of the
-[MIDFIELD](#more-information) database, but are not suitable for drawing
-inferences about program attributes or student
-experiences—`midfielddata` provides practice data, not research data.
+The data in `midfielddata` are a proportionate stratified sample of the
+[MIDFIELD](#more-information) database, but are *not suitable for
+drawing inferences* about program attributes or student
+experiences—`midfielddata` are for *practice*, not research.
+
+*Notes on syntax.*   We use `data.table` for data manipulation. Some
+users may prefer base R or `dplyr`. Each system has its strengths—users
+are welcome to translate our examples to their preferred syntax.
+
+``` r
+format(Sys.Date(), "%Y-%m-%d") # Today's date
+#> [1] "2022-12-09"
+packageVersion("midfielddata") # Student-level records practice data 
+#> [1] '0.2.0'
+packageVersion("data.table")   # For data manipulation
+#> [1] '1.14.6'
+```
 
 ## Usage
 
-Data tables can be loaded individually or in groups as needed.
+In this example, we display the student-level records for a single
+student across all four datasets.
 
 ``` r
-# Load multiple tables at once
-data(student, course, term, degree, package = "midfielddata")
+library(midfielddata)
+library(data.table)
 ```
 
-To illustrate the data structure, we examine the student-level data for
-one specific student.
+Data tables can be loaded individually or collectively as needed.
+
+``` r
+# Load one table as needed
+data(student)
+
+# Or load multiple tables
+data(course, term, degree)
+```
+
+Selecting a specific student ID.
 
 ``` r
 # One student ID
-mcid_we_want <- "MCID3112192438"
+id_we_want <- "MCID3112192438"
 ```
 
-### student
+### `student`
 
-The `student` data table contains one observation per student. Here we
-select a subset of columns for a less cluttered printout.
+Run `?student` to view its help page and data dictionary. Contains one
+observation per student. Our example case yields, as expected, one
+observation.
 
 ``` r
-# Select specific rows and columns
-rows_we_want <- student$mcid == mcid_we_want
-cols_we_want <- c("mcid", "institution", "transfer", "race", "sex", "age_desc")
-
 # All observations for this ID
-df <- student[rows_we_want, cols_we_want]
-
-# Cleanup and display
-row.names(df) <- NULL
-df
-#>             mcid   institution              transfer  race    sex age_desc
-#> 1 MCID3112192438 Institution C First-Time in College White Female Under 25
+student[mcid == id_we_want]
+#>              mcid   institution              transfer hours_transfer  race
+#> 1: MCID3112192438 Institution C First-Time in College             NA White
+#>       sex age_desc us_citizen home_zip high_school sat_math sat_verbal act_comp
+#> 1: Female Under 25        Yes    80521        <NA>      580        390       27
 ```
 
-### course
+### `course`
 
-Course data are structured in block-record form, that is, records
-associated with a particular ID can span multiple rows—one record per
-student per course per term.
+Run `?course` to view its help page and data dictionary. Contains one
+observation per student per course. Most students enroll in multiple
+courses, so we expect a specific ID to yield a block of observations.
 
-For the example case, the `course` records span 47 rows.
+Our example case yields 47 course observations.
 
 ``` r
-# Select specific rows and columns
-rows_we_want <- course$mcid == mcid_we_want
-cols_we_want <- c("mcid", "term_course", "course", "grade")
-
 # All observations for this ID
-df <- course[rows_we_want, cols_we_want]
-
-# Cleanup and display
-row.names(df) <- NULL
-df
-#>              mcid term_course                         course grade
-#> 1  MCID3112192438       20051 Key Academic Community Seminar     A
-#> 2  MCID3112192438       20051       Humans and Other Animals     B
-#> 3  MCID3112192438       20051            Health and Wellness     A
-#> 4  MCID3112192438       20051            College Composition     A
-#> 5  MCID3112192438       20051      Moral and Social Problems     A
-#> 6  MCID3112192438       20053 Africn-Americn Hist Since 1865    B+
-#> 7  MCID3112192438       20053  Individual&Family Development     B
-#> 8  MCID3112192438       20053           First-Year Spanish I    A-
-#> 9  MCID3112192438       20061  Chicana/o History and Culture    C+
-#> 10 MCID3112192438       20061   Basic Concepts of Plant Life     B
-#> 11 MCID3112192438       20061  Basic Concepts-Plant Life Lab     A
-#> 12 MCID3112192438       20061                    Advertising    B-
-#> 13 MCID3112192438       20061    Ldrshp in Higher Ed Environ     A
-#> 14 MCID3112192438       20061 Introductn to Criminal Justice     A
-#> 15 MCID3112192438       20063          First-Year Spanish II    A-
-#> 16 MCID3112192438       20063 Contemporary Sociolgicl Theory     A
-#> 17 MCID3112192438       20071    Introduction to Social Work    B+
-#> 18 MCID3112192438       20071  Human Behavior Social Environ     A
-#> 19 MCID3112192438       20071 Practicum-Communication Skills     A
-#> 20 MCID3112192438       20071 Methds of Sociological Inquiry    A-
-#> 21 MCID3112192438       20073      Psychology of Differences    B+
-#> 22 MCID3112192438       20073  Research Methds in Psychology     A
-#> 23 MCID3112192438       20073              Social Psychology     A
-#> 24 MCID3112192438       20073 Introductn-Statistical Methods     C
-#> 25 MCID3112192438       20081              Writing Arguments     A
-#> 26 MCID3112192438       20081      Organizational Psychology     B
-#> 27 MCID3112192438       20081  Organizational Psychology Lab     A
-#> 28 MCID3112192438       20081  History&Systems of Psychology     A
-#> 29 MCID3112192438       20081  Computer Methods in Sociology     A
-#> 30 MCID3112192438       20081          Sociology of Disaster     A
-#> 31 MCID3112192438       20083 Concepts-Human Anat&Physiology     A
-#> 32 MCID3112192438       20083 Principles of Human Physiology     B
-#> 33 MCID3112192438       20083      Mind, Brain, and Behavior     A
-#> 34 MCID3112192438       20083       Sensation and Perception     A
-#> 35 MCID3112192438       20083   Sensation and Perception Lab     A
-#> 36 MCID3112192438       20083           Symbolic Interaction     A
-#> 37 MCID3112192438       20091  Psychology of Human Sexuality     A
-#> 38 MCID3112192438       20091            Abnormal Psychology     A
-#> 39 MCID3112192438       20091          Social Stratification    A+
-#> 40 MCID3112192438       20091                     Internship     A
-#> 41 MCID3112192438       20091                        Seminar     A
-#> 42 MCID3112192438       20093 Introduction to Ethnic Studies    A+
-#> 43 MCID3112192438       20093              Independent Study     A
-#> 44 MCID3112192438       20093          Leadership for Greeks     A
-#> 45 MCID3112192438       20093            Health and the Mind    A+
-#> 46 MCID3112192438       20093   Social Psychology Laboratory     A
-#> 47 MCID3112192438       20093                    Group Study    A+
+course[mcid == id_we_want]
+#>               mcid   institution term_course                         course
+#>  1: MCID3112192438 Institution C       20051 Key Academic Community Seminar
+#>  2: MCID3112192438 Institution C       20051       Humans and Other Animals
+#>  3: MCID3112192438 Institution C       20051            Health and Wellness
+#> ---                                                                        
+#> 45: MCID3112192438 Institution C       20093            Health and the Mind
+#> 46: MCID3112192438 Institution C       20093   Social Psychology Laboratory
+#> 47: MCID3112192438 Institution C       20093                    Group Study
+#>     abbrev number section         type              faculty_rank hours_course
+#>  1:     KA    192     009         <NA>                Instructor            3
+#>  2:   BZCC    101     002         <NA>       Assistant Professor            3
+#>  3:   EXCC    145     004         <NA> Non-Academic Professional            3
+#> ---                                                                          
+#> 45:    PSY    121     001 Face-to-Face Non-Academic Professional            1
+#> 46:    PSY    317     L02 Face-to-Face        Graduate Assistant            2
+#> 47:    PSY    496     004 Face-to-Face                Instructor            3
+#>     grade                        discipline_midfield
+#>  1:     A                           Academic Support
+#>  2:     B Biological and Biomedical Sciences: Botany
+#>  3:     A           Education: Physical and Coaching
+#> ---                                                 
+#> 45:    A+                                 Psychology
+#> 46:     A                                 Psychology
+#> 47:    A+                                 Psychology
 ```
 
-### term
+### `term`
 
-Term data are also structured in block-record form—one record per
-student per term.
+Run `?term` to view its help page and data dictionary. Contains one
+observation per student per term. Again, most students enroll in
+multiple terms, so we expect a specific ID to yield a block of
+observations.
 
-For the example case, the `term` records span 10 rows.
+Our example case yields 10 term observations.
 
 ``` r
-# Select specific rows and columns
-rows_we_want <- term$mcid == mcid_we_want
-cols_we_want <- c("mcid", "term", "cip6", "level", "standing", "gpa_cumul")
-
 # All observations for this ID
-df <- term[rows_we_want, cols_we_want]
-
-# Cleanup and display
-row.names(df) <- NULL
-df
-#>              mcid  term   cip6              level      standing gpa_cumul
-#> 1  MCID3112192438 20051 451101      01 First-year Good Standing      3.80
-#> 2  MCID3112192438 20053 190701      01 First-year Good Standing      3.63
-#> 3  MCID3112192438 20061 451101     02 Second-year Good Standing      3.49
-#> 4  MCID3112192438 20063 451101     02 Second-year Good Standing      3.54
-#> 5  MCID3112192438 20071 451101      03 Third-year Good Standing      3.58
-#> 6  MCID3112192438 20073 451101      03 Third-year Good Standing      3.54
-#> 7  MCID3112192438 20081 451101      03 Third-year Good Standing      3.58
-#> 8  MCID3112192438 20083 451101     04 Fourth-year Good Standing      3.61
-#> 9  MCID3112192438 20091 451101     04 Fourth-year Good Standing      3.65
-#> 10 MCID3112192438 20093 451101 05 Fifth-year Plus Good Standing      3.68
+term[mcid == id_we_want]
+#>               mcid   institution  term   cip6              level      standing
+#>  1: MCID3112192438 Institution C 20051 451101      01 First-year Good Standing
+#>  2: MCID3112192438 Institution C 20053 190701      01 First-year Good Standing
+#>  3: MCID3112192438 Institution C 20061 451101     02 Second-year Good Standing
+#> ---                                                                           
+#>  8: MCID3112192438 Institution C 20083 451101     04 Fourth-year Good Standing
+#>  9: MCID3112192438 Institution C 20091 451101     04 Fourth-year Good Standing
+#> 10: MCID3112192438 Institution C 20093 451101 05 Fifth-year Plus Good Standing
+#>     coop hours_term hours_term_attempt hours_cumul hours_cumul_attempt gpa_term
+#>  1:   No         15                 15          15                  15     3.80
+#>  2:   No         11                 11          26                  26     3.40
+#>  3:   No         16                 16          42                  42     3.25
+#> ---                                                                            
+#>  8:   No         16                 16         105                 105     3.75
+#>  9:   No         13                 13         118                 118     4.00
+#> 10:   No         12                 12         130                 130     4.00
+#>     gpa_cumul
+#>  1:      3.80
+#>  2:      3.63
+#>  3:      3.49
+#> ---          
+#>  8:      3.61
+#>  9:      3.65
+#> 10:      3.68
 ```
 
-### degree
+### `degree`
 
-Degree data are also structured in block-record form—one record per
-student per degree. Multiple degrees can occur in the same term or in
-different terms.
+Run `?degree` to view its help page and data dictionary. Contains one
+observation per student per degree. Most students earn one baccalaureate
+degree, but some earn more than one.
 
-For the example case, the `degree` records indicate a double degree in
-Psychology and Sociology earned in the same term.
+Our example case yields two degree observations, both earned in Spring
+of academic year (AY) 2009–10 (encoded `20093`).
 
 ``` r
-# Select specific rows and columns
-rows_we_want <- degree$mcid == mcid_we_want
-cols_we_want <- c("mcid", "term_degree", "cip6", "degree")
-
 # All observations for this ID
-df <- degree[rows_we_want, cols_we_want]
-
-# Cleanup and display
-row.names(df) <- NULL
-df
-#>             mcid term_degree   cip6                            degree
-#> 1 MCID3112192438       20093 420101 Bachelor of Science in Psychology
-#> 2 MCID3112192438       20093 451101     Bachelor of Arts in Sociology
+degree[mcid == id_we_want]
+#>              mcid   institution term_degree   cip6
+#> 1: MCID3112192438 Institution C       20093 420101
+#> 2: MCID3112192438 Institution C       20093 451101
+#>                               degree
+#> 1: Bachelor of Science in Psychology
+#> 2:     Bachelor of Arts in Sociology
 ```
 
-Not all students with more than one degree earn them in the same term.
-For example, the next student earned a degree in Biological Sciences in
-1996 and a second baccalaureate degree in Animal Biology in 1999. In
-most analyses, only the first baccalaureate degree would be used.
+Some students earn additional degrees after their first degree. The
+student `below`, for example, earned their first degree in Fall AY
+1996–97 (encoded `19961`) and their second in Summer AY 1999–2000
+(encoded `19994`). In many analyses, only the first baccalaureate degree
+would be used.
 
 ``` r
-# Select specific rows and columns
-rows_we_want <- degree$mcid == "MCID3111315508"
-cols_we_want <- c("mcid", "term_degree", "cip6", "degree")
-
-# All observations for this ID
-df <- degree[rows_we_want, cols_we_want]
-
-# Cleanup and display
-row.names(df) <- NULL
-df
-#>             mcid term_degree   cip6                                     degree
-#> 1 MCID3111315508       19961 260101 Bachelor of Science in Biological Sciences
-#> 2 MCID3111315508       19994 260701      Bachelor of Science in Animal Biology
+# All observations for a new ID
+degree[mcid == "MCID3111315508"]
+#>              mcid   institution term_degree   cip6
+#> 1: MCID3111315508 Institution C       19961 260101
+#> 2: MCID3111315508 Institution C       19994 260701
+#>                                        degree
+#> 1: Bachelor of Science in Biological Sciences
+#> 2:      Bachelor of Science in Animal Biology
 ```
 
 ## Installation
@@ -318,23 +318,30 @@ install.packages("midfielddata",
 )
 ```
 
-The installed size of `midfielddata` is about 24 Mb, which has two
-consequences. First, the installation takes some time. Second, we host
-the package on the [MIDFIELD ‘drat’
-repository](https://github.com/MIDFIELDR/drat) instead of CRAN because
-24 Mb exceeds the CRAN package limit (5 Mb).
+The installed size of `midfielddata` is about 24 Mb, so installation
+will take longer than that of a conventional CRAN package. Also because
+of its size, the package is not hosted on CRAN (with its 5 MB size
+limit)—instead, we host it on the MIDFIELDR `drat` repository as
+indicated above.
+
+Link to installation instructions for `midfieldr` below.
 
 ## More information
 
 [`midfieldr`](https://midfieldr.github.io/midfieldr/)  
-A companion `R` package that provides tools and detailed procedures for
-working with MIDFIELD data.
+A companion R package that provides tools and methods for studying
+undergraduate student-level records from the MIDFIELD database.
 
 [MIDFIELD](https://midfield.online/)  
 A database of student-level records for approximately 1.7M
 undergraduates at nineteen US institutions from 1987 through 2018, of
 which `midfielddata` provides a sample. The full research database is
 currently accessible to MIDFIELD partner institutions only.
+
+[MIDFIELD Institute](https://midfieldr.github.io/2022-midfield-institute/)  
+Materials from the 2022 workshop, including an introduction to R for
+beginners, chart basics with `ggplot2` and data basics with
+`data.table`.
 
 ## Acknowledgments
 

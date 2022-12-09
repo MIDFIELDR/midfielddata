@@ -1,11 +1,9 @@
 ---
 output: github_document 
-bibliography: inst/REFERENCES.bib
-csl: inst/information-science-and-technology.csl
-link-citations: yes
-always_allow_html: true
-resource_files:
-  - man/figures/README-midfielddata-help-page-1.png
+csl: inst/information-science-and-technology.csl 
+bibliography: inst/REFERENCES.bib 
+always_allow_html: true 
+link-citations: yes 
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -13,15 +11,32 @@ resource_files:
 ```{r}
 #| include: false
 knitr::opts_chunk$set(
+  echo = TRUE,
   collapse = TRUE,
   comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
+  fig.path = "man/figures/README-"
 )
-options(datatable.print.class = TRUE)
+
+# data.table printout
+options(
+  datatable.print.nrows = 6,
+  datatable.print.topn = 3,
+  datatable.print.class = FALSE
+)
+
+# inline numbers
+knitr::knit_hooks$set(inline = function(x) {
+  if (!is.numeric(x)) {
+    x
+  } else if (x >= 10000) {
+    prettyNum(round(x, 2), big.mark = ",")
+  } else {
+    prettyNum(round(x, 2))
+  }
+})
 ```
 
-<br>An `R` data package containing anonymized student-level records for 98,000 undergraduates, a sample of the MIDFIELD database to practice using the tools and methods provided by the `midfieldr` package.
+<br>`midfielddata` is an R data package that supplies anonymized student-level records for 98,000 undergraduates from the MIDFIELD database. Provides practice data for the tools and methods of `midfieldr`. 
 
 ![](https://github.com/MIDFIELDR/midfielddata/blob/main/docs/logo.png?raw=true)
 
@@ -37,203 +52,129 @@ Data at the "student-level" refers to information collected by undergraduate ins
 - *student* demographic information, e.g., age, sex, and race/ethnicity
 - *degree* information, e.g., institution, program, term, and baccalaureate degree
 
-
 `midfielddata` provides anonymized student-level records for 98,000 undergraduates at three US institutions from 1988 through 2018, collected in four data tables keyed by student ID. 
 
 ```{r}
 #| echo: false
-
-wrapr::build_frame(
-  "Practice data table", "Each row is", "No. of rows", "No. of columns", "Memory" |
-    "course", "one student per course per term", "3,289,532", "12", "324 Mb" |
-    "term", "one student per term", "639,915", "13", "73 Mb" |
-    "student", "one degree-seeking student", "97,555", "13", "18 Mb" |
-    "degree", "one student per degree earned", "49,543", "5", "5 Mb"
-) |>
-  kableExtra::kbl(
-    align = "llrrr",
-    caption = "Table 1. Practice data in `midfielddata`."
-  ) |>
-  kableExtra::kable_paper(lightable_options = "basic", full_width = TRUE) |>
+load("R/sysdata.rda")
+practice_data_summary |>
+  kableExtra::kbl(align = "llrrrr", caption = "Table 1. Practice datasets in `midfielddata`.") |>
+  kableExtra::kable_paper(lightable_options = "basic", full_width = FALSE) |>
   kableExtra::row_spec(0, background = "#c7eae5") |>
   kableExtra::column_spec(1, monospace = TRUE) |>
-  kableExtra::column_spec(1:5, color = "black", background = "white")
+  kableExtra::column_spec(1:6, color = "black", background = "white")
+```
+
+The data in `midfielddata` are a proportionate stratified sample of the [MIDFIELD](#more-information) database, but are *not suitable for drawing inferences* about program attributes or student experiences---`midfielddata` are for *practice*, not research. 
+
+*Notes on syntax.* &nbsp; We use `data.table` for data manipulation. Some users may prefer base R or `dplyr`. Each system has its strengths---users are welcome to translate our examples to their preferred syntax.  
+
+```{r}
+format(Sys.Date(), "%Y-%m-%d") # Today's date
+packageVersion("midfielddata") # Student-level records practice data 
+packageVersion("data.table")   # For data manipulation
 ```
 
 
-These data are a proportionate stratified sample of the [MIDFIELD](#more-information) database, but are not suitable for drawing inferences about program attributes or student experiences---`midfielddata`  provides practice data, not research data.
+
 
 ## Usage
 
-Data tables can be loaded individually or in groups as needed.  
+In this example, we display the student-level records for a single student across all four datasets. 
 
 ```{r}
-#| eval: false
-# Load multiple tables at once
-data(student, course, term, degree, package = "midfielddata")
+library(midfielddata)
+library(data.table)
 ```
+
+Data tables can be loaded individually or collectively as needed.  
 
 ```{r}
-#| echo: false
-# Load the three smaller data tables (avoiding time-consuming course)
-data(student, term, degree, package = "midfielddata")
+# Load one table as needed
+data(student)
+
+# Or load multiple tables
+data(course, term, degree)
 ```
 
-To illustrate the data structure, we examine the student-level data for one specific student. 
+Selecting a specific student ID.  
 
 ```{r}
 # One student ID
-mcid_we_want <- "MCID3112192438"
-```
-
-
-
-### student 
-
-The `student` data table contains one observation per student. Here we select a subset of columns for a less cluttered printout. 
-
-```{r}
-# Select specific rows and columns
-rows_we_want <- student$mcid == mcid_we_want
-cols_we_want <- c("mcid", "institution", "transfer", "race", "sex", "age_desc")
-
-# All observations for this ID
-df <- student[rows_we_want, cols_we_want]
-
-# Cleanup and display
-row.names(df) <- NULL
-df
-```
-
-
-
-
-### course
-
-Course data are structured in block-record form, that is, records associated with a particular ID can span multiple rows---one record per student per course per term.
-
-For the example case, the `course` records span 47 rows. 
-
-```{r}
-#| eval: false
-# Select specific rows and columns
-rows_we_want <- course$mcid == mcid_we_want
-cols_we_want <- c("mcid", "term_course", "course", "grade")
-
-# All observations for this ID
-df <- course[rows_we_want, cols_we_want]
-
-# Cleanup and display
-row.names(df) <- NULL
-df
-#>              mcid term_course                         course grade
-#> 1  MCID3112192438       20051 Key Academic Community Seminar     A
-#> 2  MCID3112192438       20051       Humans and Other Animals     B
-#> 3  MCID3112192438       20051            Health and Wellness     A
-#> 4  MCID3112192438       20051            College Composition     A
-#> 5  MCID3112192438       20051      Moral and Social Problems     A
-#> 6  MCID3112192438       20053 Africn-Americn Hist Since 1865    B+
-#> 7  MCID3112192438       20053  Individual&Family Development     B
-#> 8  MCID3112192438       20053           First-Year Spanish I    A-
-#> 9  MCID3112192438       20061  Chicana/o History and Culture    C+
-#> 10 MCID3112192438       20061   Basic Concepts of Plant Life     B
-#> 11 MCID3112192438       20061  Basic Concepts-Plant Life Lab     A
-#> 12 MCID3112192438       20061                    Advertising    B-
-#> 13 MCID3112192438       20061    Ldrshp in Higher Ed Environ     A
-#> 14 MCID3112192438       20061 Introductn to Criminal Justice     A
-#> 15 MCID3112192438       20063          First-Year Spanish II    A-
-#> 16 MCID3112192438       20063 Contemporary Sociolgicl Theory     A
-#> 17 MCID3112192438       20071    Introduction to Social Work    B+
-#> 18 MCID3112192438       20071  Human Behavior Social Environ     A
-#> 19 MCID3112192438       20071 Practicum-Communication Skills     A
-#> 20 MCID3112192438       20071 Methds of Sociological Inquiry    A-
-#> 21 MCID3112192438       20073      Psychology of Differences    B+
-#> 22 MCID3112192438       20073  Research Methds in Psychology     A
-#> 23 MCID3112192438       20073              Social Psychology     A
-#> 24 MCID3112192438       20073 Introductn-Statistical Methods     C
-#> 25 MCID3112192438       20081              Writing Arguments     A
-#> 26 MCID3112192438       20081      Organizational Psychology     B
-#> 27 MCID3112192438       20081  Organizational Psychology Lab     A
-#> 28 MCID3112192438       20081  History&Systems of Psychology     A
-#> 29 MCID3112192438       20081  Computer Methods in Sociology     A
-#> 30 MCID3112192438       20081          Sociology of Disaster     A
-#> 31 MCID3112192438       20083 Concepts-Human Anat&Physiology     A
-#> 32 MCID3112192438       20083 Principles of Human Physiology     B
-#> 33 MCID3112192438       20083      Mind, Brain, and Behavior     A
-#> 34 MCID3112192438       20083       Sensation and Perception     A
-#> 35 MCID3112192438       20083   Sensation and Perception Lab     A
-#> 36 MCID3112192438       20083           Symbolic Interaction     A
-#> 37 MCID3112192438       20091  Psychology of Human Sexuality     A
-#> 38 MCID3112192438       20091            Abnormal Psychology     A
-#> 39 MCID3112192438       20091          Social Stratification    A+
-#> 40 MCID3112192438       20091                     Internship     A
-#> 41 MCID3112192438       20091                        Seminar     A
-#> 42 MCID3112192438       20093 Introduction to Ethnic Studies    A+
-#> 43 MCID3112192438       20093              Independent Study     A
-#> 44 MCID3112192438       20093          Leadership for Greeks     A
-#> 45 MCID3112192438       20093            Health and the Mind    A+
-#> 46 MCID3112192438       20093   Social Psychology Laboratory     A
-#> 47 MCID3112192438       20093                    Group Study    A+
-```
-
-
-
-
-### term
-
-Term data are also structured in block-record form---one record per student per term.
-
-For the example case, the `term` records span 10 rows. 
-
-```{r}
-# Select specific rows and columns
-rows_we_want <- term$mcid == mcid_we_want
-cols_we_want <- c("mcid", "term", "cip6", "level", "standing", "gpa_cumul")
-
-# All observations for this ID
-df <- term[rows_we_want, cols_we_want]
-
-# Cleanup and display
-row.names(df) <- NULL
-df
+id_we_want <- "MCID3112192438"
 ```
 
 
 
 
 
-### degree
+### `student` 
 
-Degree data are also structured in block-record form---one record per student per degree. Multiple degrees can occur in the same term or in different terms.
-
-For the example case, the `degree` records indicate a double degree in Psychology and Sociology earned in the same term. 
+Run `?student` to view its help page and data dictionary. Contains one observation per student. Our example case yields, as expected, one observation. 
 
 ```{r}
-# Select specific rows and columns
-rows_we_want <- degree$mcid == mcid_we_want
-cols_we_want <- c("mcid", "term_degree", "cip6", "degree")
-
 # All observations for this ID
-df <- degree[rows_we_want, cols_we_want]
-
-# Cleanup and display
-row.names(df) <- NULL
-df
+student[mcid == id_we_want]
 ```
 
-Not all students with more than one degree earn them in the same term. For example, the next student earned a degree in Biological Sciences in 1996 and a second baccalaureate degree in Animal Biology in 1999. In most analyses, only the first baccalaureate degree would be used. 
+
+
+
+
+
+
+### `course`
+
+Run `?course` to view its help page and data dictionary. Contains one observation per student per course. Most students enroll in multiple courses, so we expect a specific ID to yield a block of observations. 
+
+Our example case yields 47 course observations. 
 
 ```{r}
-# Select specific rows and columns
-rows_we_want <- degree$mcid == "MCID3111315508"
-cols_we_want <- c("mcid", "term_degree", "cip6", "degree")
-
 # All observations for this ID
-df <- degree[rows_we_want, cols_we_want]
+course[mcid == id_we_want]
+```
 
-# Cleanup and display
-row.names(df) <- NULL
-df
+
+
+
+
+
+
+### `term`
+
+Run `?term` to view its help page and data dictionary. Contains one observation per student per term. Again, most students enroll in multiple terms, so we expect a specific ID to yield a block of observations. 
+
+Our example case yields 10 term observations. 
+
+```{r}
+# All observations for this ID
+term[mcid == id_we_want]
+```
+
+
+
+
+
+
+
+
+
+### `degree`
+
+Run `?degree` to view its help page and data dictionary. Contains one observation per student per degree. Most students earn one baccalaureate degree, but some earn more than one. 
+
+Our example case yields two degree observations, both earned in Spring of academic year (AY) 2009--10 (encoded `20093`). 
+
+```{r}
+# All observations for this ID
+degree[mcid == id_we_want]
+```
+
+Some students earn additional degrees after their first degree. The student `below`, for example, earned their first degree in Fall AY 1996--97 (encoded  `19961`) and their second in Summer AY 1999--2000 (encoded `19994`). In many analyses, only the first baccalaureate degree would be used. 
+
+```{r}
+# All observations for a new ID
+degree[mcid == "MCID3111315508"]
 ```
 
 ```{r}
@@ -262,9 +203,9 @@ install.packages("midfielddata",
 )
 ``` 
 
-The installed size of `midfielddata` is about 24 Mb, which has two consequences. First, the installation takes some time. Second, we host the package on the  [MIDFIELD 'drat' repository](https://github.com/MIDFIELDR/drat) instead of CRAN because 24 Mb exceeds the CRAN package limit (5 Mb). 
+The installed size of `midfielddata` is about 24 Mb, so installation will take longer than that of a conventional CRAN package. Also because of its size, the package is not hosted on CRAN (with its 5 MB size limit)---instead, we host it on the MIDFIELDR `drat` repository as indicated above. 
 
-
+Link to installation instructions for `midfieldr` below.
 
 
 
@@ -273,11 +214,18 @@ The installed size of `midfielddata` is about 24 Mb, which has two consequences.
 
 [`midfieldr`](https://midfieldr.github.io/midfieldr/)
 
-: A companion `R` package that provides tools and detailed procedures for working with MIDFIELD data. 
+: A companion R package that provides tools and methods for studying undergraduate student-level records from the MIDFIELD database. 
 
 [MIDFIELD](https://midfield.online/)
 
-: A database of student-level records for approximately 1.7M undergraduates at nineteen US institutions from 1987 through 2018, of which `midfielddata` provides a sample. The full research database is currently accessible to MIDFIELD partner institutions only. 
+: A database of student-level records for approximately 1.7M undergraduates at nineteen US institutions from 1987 through 2018, of which `midfielddata`  provides a sample. The full research database is currently accessible to MIDFIELD partner institutions only. 
+
+[MIDFIELD Institute](https://midfieldr.github.io/2022-midfield-institute/)
+
+: Materials from the 2022 workshop, including an introduction to R for beginners, chart basics with `ggplot2` and data basics with `data.table`. 
+
+
+
 
 
 

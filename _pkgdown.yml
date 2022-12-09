@@ -3,7 +3,7 @@ url: https://midfieldr.github.io/midfielddata/
 template:
   bootstrap: 5
   bslib:
-    code_font: {google: "Inconsolata"}
+    code_font: {google: "Courier Prime"}
     code-bg: "#FFFFFF"
 
 navbar:
