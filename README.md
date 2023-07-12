@@ -146,24 +146,25 @@ are welcome to translate our examples to their preferred syntax.
 
 ``` r
 format(Sys.Date(), "%Y-%m-%d") # Today's date
-#> [1] "2022-12-09"
-packageVersion("midfielddata") # Student-level records practice data 
+#> [1] "2023-07-12"
+packageVersion("midfielddata") # Student-level records practice data
 #> [1] '0.2.0'
-packageVersion("data.table")   # For data manipulation
-#> [1] '1.14.6'
+packageVersion("data.table") # For data manipulation
+#> [1] '1.14.8'
 ```
 
 ## Usage
 
-In this example, we display the student-level records for a single
-student across all four datasets.
+*Start.*   If you are writing your own script to follow along, we use
+these packages in this vignette:
 
 ``` r
 library(midfielddata)
 library(data.table)
 ```
 
-Data tables can be loaded individually or collectively as needed.
+*Load data tables.*   Data tables can be loaded individually or
+collectively as needed.
 
 ``` r
 # Load one table as needed
@@ -173,21 +174,18 @@ data(student)
 data(course, term, degree)
 ```
 
-Selecting a specific student ID.
+We display the records for one specific student, using their ID to
+subset each dataset.
 
 ``` r
 # One student ID
 id_we_want <- "MCID3112192438"
 ```
 
-### `student`
-
-Run `?student` to view its help page and data dictionary. Contains one
-observation per student. Our example case yields, as expected, one
-observation.
+*Student.*   As expected, `student` yields one row per student.
 
 ``` r
-# All observations for this ID
+# Observations for a selected ID
 student[mcid == id_we_want]
 #>              mcid   institution              transfer hours_transfer  race
 #> 1: MCID3112192438 Institution C First-Time in College             NA White
@@ -195,16 +193,11 @@ student[mcid == id_we_want]
 #> 1: Female Under 25        Yes    80521        <NA>      580        390       27
 ```
 
-### `course`
-
-Run `?course` to view its help page and data dictionary. Contains one
-observation per student per course. Most students enroll in multiple
-courses, so we expect a specific ID to yield a block of observations.
-
-Our example case yields 47 course observations.
+*Course.*   For this student, the records span 47 rows, one row per
+course.
 
 ``` r
-# All observations for this ID
+# Observations for a selected ID
 course[mcid == id_we_want]
 #>               mcid   institution term_course                         course
 #>  1: MCID3112192438 Institution C       20051 Key Academic Community Seminar
@@ -232,17 +225,10 @@ course[mcid == id_we_want]
 #> 47:    A+                                 Psychology
 ```
 
-### `term`
-
-Run `?term` to view its help page and data dictionary. Contains one
-observation per student per term. Again, most students enroll in
-multiple terms, so we expect a specific ID to yield a block of
-observations.
-
-Our example case yields 10 term observations.
+*Term.*   Here, the records span 10 rows, one row per term.
 
 ``` r
-# All observations for this ID
+# Observations for a selected ID
 term[mcid == id_we_want]
 #>               mcid   institution  term   cip6              level      standing
 #>  1: MCID3112192438 Institution C 20051 451101      01 First-year Good Standing
@@ -270,17 +256,11 @@ term[mcid == id_we_want]
 #> 10:      3.68
 ```
 
-### `degree`
-
-Run `?degree` to view its help page and data dictionary. Contains one
-observation per student per degree. Most students earn one baccalaureate
-degree, but some earn more than one.
-
-Our example case yields two degree observations, both earned in Spring
-of academic year (AY) 2009–10 (encoded `20093`).
+*Degree.*   In this example, the records span 2 rows, one row per
+degree. The degrees were earned in the same term, Spring 2009.
 
 ``` r
-# All observations for this ID
+# Observations for a selected ID
 degree[mcid == id_we_want]
 #>              mcid   institution term_degree   cip6
 #> 1: MCID3112192438 Institution C       20093 420101
@@ -290,14 +270,13 @@ degree[mcid == id_we_want]
 #> 2:     Bachelor of Arts in Sociology
 ```
 
-Some students earn additional degrees after their first degree. The
-student `below`, for example, earned their first degree in Fall AY
-1996–97 (encoded `19961`) and their second in Summer AY 1999–2000
-(encoded `19994`). In many analyses, only the first baccalaureate degree
+Not all students with more than one degree earn them in the same term.
+For example, the next student earned a degree in 1996 and a second
+degree in 1999. In most analyses, only the first baccalaureate degree
 would be used.
 
 ``` r
-# All observations for a new ID
+# Observations for a different ID
 degree[mcid == "MCID3111315508"]
 #>              mcid   institution term_degree   cip6
 #> 1: MCID3111315508 Institution C       19961 260101
@@ -333,15 +312,14 @@ A companion R package that provides tools and methods for studying
 undergraduate student-level records from the MIDFIELD database.
 
 [MIDFIELD](https://midfield.online/)  
-A database of student-level records for approximately 1.7M
-undergraduates at nineteen US institutions from 1987 through 2018, of
-which `midfielddata` provides a sample. The full research database is
-currently accessible to MIDFIELD partner institutions only.
+A database of anonymized student-level records for approximately 2.4M
+undergraduates at 21 US institutions from 1987-2022. Access to this
+database requires a confidentiality agreement and Institutional Review
+Board (IRB) approval for human subjects research.
 
-[MIDFIELD Institute](https://midfieldr.github.io/2022-midfield-institute/)  
-Materials from the 2022 workshop, including an introduction to R for
-beginners, chart basics with `ggplot2` and data basics with
-`data.table`.
+[MIDFIELD Institute](https://midfieldr.github.io/2023-midfield-institute/)  
+aterials from the 2023 workshop, including an introduction to R for
+beginners, chart basics with ggplot2, and data basics with data.table.
 
 ## Acknowledgments
 

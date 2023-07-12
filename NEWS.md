@@ -1,3 +1,7 @@
+## midfielddata 0.2.0.9000 (2022-12)
+
+- Clarifications to help pages. 
+
 ## midfielddata 0.2.0 (2022-12)
 
 - New sample data, all four data sets

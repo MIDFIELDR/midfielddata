@@ -1,6 +1,6 @@
 Package: midfielddata
 Title: MIDFIELD Data Sample
-Version: 0.2.0
+Version: 0.2.0.9000
 Description: This data package contains anonymized student-level records for 
   98,000 undergraduates from three US institutions from 1988 through 2018 
   organized in four data tables keyed by student ID. Student-level data refers 

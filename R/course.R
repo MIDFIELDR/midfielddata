@@ -17,6 +17,11 @@
 #' Spring 95--96 is encoded `19953`, and the first Summer 95-96 term is encoded
 #' `19954`. The source database includes special month-long sessions encoded
 #' with letters `A`, `B`, `C`, etc., though none are included in this sample.
+#' 
+#' The possible values of the `grade` variable includes `NG` for "no grade 
+#' given", which is not the same as `W` indicating a withdrawal. For example, 
+#' a lab course may be a mandatory co-requisite for a lecture course, but a 
+#' grade is given for the lecture course and the lab grade is recorded as `NG`. 
 #'
 #' The data in `midfielddata` are a proportionate stratified sample of the
 #' MIDFIELD database, but are not suitable for drawing inferences about program
