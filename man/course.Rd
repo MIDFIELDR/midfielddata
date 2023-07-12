@@ -78,6 +78,11 @@ Spring 95--96 is encoded \code{19953}, and the first Summer 95-96 term is encode
 \code{19954}. The source database includes special month-long sessions encoded
 with letters \code{A}, \code{B}, \code{C}, etc., though none are included in this sample.
 
+The possible values of the \code{grade} variable includes \code{NG} for "no grade
+given", which is not the same as \code{W} indicating a withdrawal. For example,
+a lab course may be a mandatory co-requisite for a lecture course, but a
+grade is given for the lecture course and the lab grade is recorded as \code{NG}.
+
 The data in \code{midfielddata} are a proportionate stratified sample of the
 MIDFIELD database, but are not suitable for drawing inferences about program
 attributes or student experiences---\code{midfielddata} provides practice data,

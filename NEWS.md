@@ -1,6 +1,7 @@
 ## midfielddata 0.2.0.9000 (2022-12)
 
 - Clarifications to help pages. 
+- Update `RoxygenNote` to "7.2.3"
 
 ## midfielddata 0.2.0 (2022-12)
 
