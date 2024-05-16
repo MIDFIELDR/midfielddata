@@ -9,23 +9,16 @@ A \code{data.frame} and \code{data.table} with 5 variables and 49,543
 observations of unique students occupying 6 MB of memory:
 
 \describe{
-
-\item{\code{mcid}}{Character, anonymized student identifier, e.g.,
-\code{MCID3111142225}.}
-
-\item{\code{institution}}{Character, anonymized institution name, e.g.,
-\verb{Institution B}.}
-
-\item{\code{term_degree}}{Character, academic year and term, format \code{YYYYT}, in
-which a student completes their program.}
-
-\item{\code{cip6}}{Character, 6-digit CIP code of program in which a student earns
-a degree, e.g., \code{090101}, \code{141201}, \code{260901}, \code{420101}, etc.}
-
+\item{\code{mcid}}{Character, anonymized student identifier, e.g., \code{MCID3111142225}.}
+\item{\code{institution}}{Character, de-identified institution name, e.g., Institution
+A, Institution B, etc.}
+\item{\code{term_degree}}{Character, academic year and term, format \code{YYYYT}, in which
+a student completes their program.}
+\item{\code{cip6}}{Character, 6-digit CIP code of program in which a student
+earns a degree, e.g., \code{090101}, \code{141201}, \code{260901}, \code{420101}, etc.}
 \item{\code{degree}}{Character, type of degree awarded, e.g.,
 \verb{Bachelor of Arts in Geography}, \verb{Bachelor of Science in Finance},
 etc.}
-
 }
 }
 \source{

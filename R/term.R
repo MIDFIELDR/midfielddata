@@ -1,3 +1,8 @@
+# Documentation described below using an inline R code chunk, e.g.,
+# "`r var_mcid`" or "`r var_institution`", are documented in the
+# R/roxygen.R file.
+
+
 
 #' Student-level term data
 #'
@@ -41,39 +46,22 @@
 #'   640,000 observations of 97,555 unique students occupying 73 MB of memory:
 #'
 #'   \describe{ 
-#'   
-#'   \item{`mcid`}{Character, anonymized student identifier, e.g., 
-#'   `MCID3111142225`.}
-#'
-#'   \item{`institution`}{Character, anonymized institution name, e.g., 
-#'   `Institution B`.}
-#'         
-#'   \item{`term`}{Character, academic year and term, format `YYYYT`.} 
-#'   
-#'   \item{`cip6`}{Character, 6-digit CIP code of program in which a student is 
-#'   enrolled in a term, e.g., `090101`, `141201`, `260901`, `420101`, etc.} 
-#'         
+#'   \item{`mcid`}{`r var_mcid`}
+#'   \item{`institution`}{`r var_institution`}
+#'   \item{`term`}{`r var_term`}
+#'   \item{`cip6`}{`r var_cip6_term`} 
 #'   \item{`level`}{Character, academic level determined by cumulative number of 
-#'   credit ours earned, e.g., `01 First-year`, `02 Second-year`, etc.} 
-#'   
+#'          credit ours earned, e.g., `01 First-year`, `02 Second-year`, etc.} 
 #'   \item{`standing`}{Character, academic standing, e.g., `Good Standing`, 
-#'   `Academic Warning`, etc.}
-#'         
+#'         `Academic Warning`, etc.}
 #'   \item{`coop`}{Character, cooperative education term, possible values are 
-#'   `Yes`, `No`.}
-#'   
+#'         `Yes`, `No`.}
 #'   \item{`hours_term`}{Numeric, credit hours earned in the term.}
-#'   
 #'   \item{`hours_term_attempt`}{Numeric, credit hours attempted in the term.}
-#'   
 #'   \item{`hours_cumul`}{Numeric, cumulative credit hours earned.}
-#'   
 #'   \item{`hours_cumul_attempt`}{Numeric, cumulative credit hours attempted.}
-#'   
 #'   \item{`gpa_term`}{Numeric, term grade point average.}
-#'   
 #'   \item{`gpa_cumul`}{Numeric, cumulative grade point average.} 
-#'   
 #'   }
 #'   
 #' @examples

@@ -1,3 +1,8 @@
+# Documentation described below using an inline R code chunk, e.g.,
+# "`r var_mcid`" or "`r var_institution`", are documented in the
+# R/roxygen.R file.
+
+
 
 #' Student-level demographic data
 #'
@@ -30,44 +35,28 @@
 #'   observations of unique students occupying 18 MB of memory:
 #'
 #'   \describe{
-#'
-#'   \item{`mcid`}{Character, anonymized student identifier, e.g.,
-#'   `MCID3111142225`.}
-#'
-#'   \item{`institution`}{Character, anonymized institution name, e.g.,
-#'   `Institution B`.}
-#'
+#'   \item{`mcid`}{`r var_mcid`}
+#'   \item{`institution`}{`r var_institution`}
 #'   \item{`transfer`}{Character, transfer status, possible values are
-#'   `First-Time in College`, `First-Time Transfer`.}
-#'
+#'         `First-Time in College`, `First-Time Transfer`.}
 #'   \item{`hours_transfer`}{Numeric, number of credit hours transferred (or
-#'   `NA`).}
-#'
-#'   \item{`race`}{Character, race/ethnicity, e.g., `Asian`, `Black`,
-#'   `International`, `Latine`, etc.}
-#'
-#'   \item{`sex`}{Character, sex, possible values are `Female`, `Male`,
-#'   `Unknown`.}
-#'
+#'         `NA`).}
+#'   \item{`race`}{Character, race/ethnicity as self-reported by the student, 
+#'          e.g., Asian, Black, Latine, etc.}
+#'   \item{`sex`}{Character, sex as self-reported by the student, possible 
+#'          values are Female, Male, and Unknown.}
 #'   \item{`age_desc`}{Character, age group, possible values are `25 and Older`,
-#'   `Under 25`.}
-#'
+#'         `Under 25`.}
 #'   \item{`us_citizen`}{Character, US citizenship, possible values are `No`,
-#'   `Yes`.}
-#'
+#'         `Yes`.}
 #'   \item{`home_zip`}{Character, home ZIP code (or `NA`), e.g., `02056`,
-#'   `20170`, `51301`, `80129`, etc.}
-#'
+#'         `20170`, `51301`, `80129`, etc.}
 #'   \item{`high_school`}{Character, code for the last high school attended before
-#'   admission (or `NA`), e.g., `060075`, `210512`, `431800`, `502195`,
-#'   etc.}
-#'
+#'          admission (or `NA`), e.g., `060075`, `210512`, `431800`, `502195`,
+#'          etc.}
 #'   \item{`sat_math`}{Numeric, SAT mathematics test score (or `NA`).}
-#'
 #'   \item{`sat_verbal`}{Numeric, SAT reading test score (or `NA`).}
-#'
 #'   \item{`act_comp`}{Numeric, ACT composite test score (or `NA`).}
-#'
 #'   }
 #'   
 #' @examples

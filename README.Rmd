@@ -8,20 +8,19 @@ link-citations: yes
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r}
+```{r child-common-setup}
 #| include: false
+# code chunks
 knitr::opts_chunk$set(
-  echo = TRUE,
+  fig.width = 8,
+  out.width = "100%",
   collapse = TRUE,
   comment = "#>",
-  fig.path = "man/figures/README-"
-)
-
-# data.table printout
-options(
-  datatable.print.nrows = 6,
-  datatable.print.topn = 3,
-  datatable.print.class = FALSE
+  message = FALSE,
+  cache = FALSE,
+  error = FALSE,
+  tidy = FALSE,
+  echo = TRUE
 )
 
 # inline numbers
@@ -34,6 +33,26 @@ knitr::knit_hooks$set(inline = function(x) {
     prettyNum(round(x, 2))
   }
 })
+
+# accented text
+accent <- function(text_string) {
+  kableExtra::text_spec(text_string, color = "#b35806", bold = TRUE)
+}
+
+# Backup user options (load packages to capture default options)
+suppressPackageStartupMessages(library(data.table))
+backup_options <- options()
+
+# Backup user random number seed
+oldseed <- NULL
+if (exists(".Random.seed")) oldseed <- .Random.seed
+
+# data.table printout
+options(
+  datatable.print.nrows = 10,
+  datatable.print.topn = 3,
+  datatable.print.class = FALSE
+)
 ```
 
 <br>`midfielddata` is an R data package that supplies anonymized student-level records for 98,000 undergraduates from the MIDFIELD database. Provides practice data for the tools and methods of `midfieldr`. 
@@ -185,21 +204,44 @@ Link to installation instructions for `midfieldr` below.
 
 [MIDFIELD](https://midfield.online/)
 
-: A database of anonymized student-level records for approximately 2.4M undergraduates at 21 US institutions from 1987-2022. Access to this database requires a confidentiality agreement and Institutional Review Board (IRB) approval for human subjects research. 
-
-[MIDFIELD Institute](https://midfieldr.github.io/2023-midfield-institute/)
-
-: aterials from the 2023 workshop, including an introduction to R for beginners, chart basics with ggplot2, and data basics with data.table. 
+: A database of anonymized student-level records for approximately 2.4M undergraduates at 21 US institutions from 1987-2022. Access to this database requires a confidentiality agreement and Institutional Review Board (IRB) approval for human subjects research. For a detailed description of the database, see [@aee2016]. 
 
 
 ## Acknowledgments
 
-This work is supported by a grant from the US National Science Foundation (EEC 1545667).
+This work was supported by the US National Science Foundation through grant numbers 1545667 and 2142087. 
+
+## References
+
+<div id="refs"></div>
 
 ```{r}
 #| echo: false
 
+# Restore the user options (saved in common-setup.Rmd)
+options(backup_options)
+
+# Restore user random number seed if any
+if (!is.null(oldseed)) {
+  .Random.seed <- oldseed
+}
+
 # to change the CSS file
 # per https://github.com/rstudio/rmarkdown/issues/732
 knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{css}
+blockquote {
+    padding:     10px 20px;
+    margin:      0 0 20px;
+    border-left: 0px
+}
+caption {
+    color:       #525252;
+    text-align:  left;
+    font-weight: normal;
+    font-size:   medium;
+    line-height: 1.5;
+}
 ```

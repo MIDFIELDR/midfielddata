@@ -1,7 +1,8 @@
-## midfielddata 0.2.0.9000 (2022-12)
+## midfielddata 0.2.1 (2024-05)
 
-- Clarifications to help pages. 
-- Update `RoxygenNote` to "7.2.3"
+- Update the `midfielddata-package.R` file
+- Add roxygen.R to generate repeated text for common arguments.
+- Update `RoxygenNote` to "7.3.1"
 
 ## midfielddata 0.2.0 (2022-12)
 

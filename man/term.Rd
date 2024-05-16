@@ -9,39 +9,25 @@ A \code{data.frame} and \code{data.table} with 13 variables and approximately
 640,000 observations of 97,555 unique students occupying 73 MB of memory:
 
 \describe{
-
-\item{\code{mcid}}{Character, anonymized student identifier, e.g.,
-\code{MCID3111142225}.}
-
-\item{\code{institution}}{Character, anonymized institution name, e.g.,
-\verb{Institution B}.}
-
-\item{\code{term}}{Character, academic year and term, format \code{YYYYT}.}
-
+\item{\code{mcid}}{Character, anonymized student identifier, e.g., \code{MCID3111142225}.}
+\item{\code{institution}}{Character, de-identified institution name, e.g., Institution
+A, Institution B, etc.}
+\item{\code{term}}{Character, academic year and term, format YYYYT.}
 \item{\code{cip6}}{Character, 6-digit CIP code of program in which a student is
-enrolled in a term, e.g., \code{090101}, \code{141201}, \code{260901}, \code{420101}, etc.}
-
+enrolled in a term, e.g., \code{090101}, \code{141201}, \code{260901}, \code{420101},
+etc.}
 \item{\code{level}}{Character, academic level determined by cumulative number of
 credit ours earned, e.g., \verb{01 First-year}, \verb{02 Second-year}, etc.}
-
 \item{\code{standing}}{Character, academic standing, e.g., \verb{Good Standing},
 \verb{Academic Warning}, etc.}
-
 \item{\code{coop}}{Character, cooperative education term, possible values are
 \code{Yes}, \code{No}.}
-
 \item{\code{hours_term}}{Numeric, credit hours earned in the term.}
-
 \item{\code{hours_term_attempt}}{Numeric, credit hours attempted in the term.}
-
 \item{\code{hours_cumul}}{Numeric, cumulative credit hours earned.}
-
 \item{\code{hours_cumul_attempt}}{Numeric, cumulative credit hours attempted.}
-
 \item{\code{gpa_term}}{Numeric, term grade point average.}
-
 \item{\code{gpa_cumul}}{Numeric, cumulative grade point average.}
-
 }
 }
 \source{

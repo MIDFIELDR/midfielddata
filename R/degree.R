@@ -1,3 +1,8 @@
+# Documentation described below using an inline R code chunk, e.g.,
+# "`r var_mcid`" or "`r var_institution`", are documented in the
+# R/roxygen.R file.
+
+
 
 #' Student-level degree data
 #'
@@ -41,23 +46,13 @@
 #'   observations of unique students occupying 6 MB of memory:
 #'
 #'   \describe{
-#'
-#'   \item{`mcid`}{Character, anonymized student identifier, e.g., 
-#'   `MCID3111142225`.}
-#'
-#'   \item{`institution`}{Character, anonymized institution name, e.g., 
-#'   `Institution B`.}
-#'
-#'   \item{`term_degree`}{Character, academic year and term, format `YYYYT`, in
-#'   which a student completes their program.}
-#'
-#'   \item{`cip6`}{Character, 6-digit CIP code of program in which a student earns
-#'   a degree, e.g., `090101`, `141201`, `260901`, `420101`, etc.}
-#'
+#'   \item{`mcid`}{`r var_mcid`}
+#'   \item{`institution`}{`r var_institution`}
+#'   \item{`term_degree`}{`r var_term_degree`}
+#'   \item{`cip6`}{`r var_cip6_degree`}
 #'   \item{`degree`}{Character, type of degree awarded, e.g., 
-#'   `Bachelor of Arts in Geography`, `Bachelor of Science in Finance`, 
-#'   etc.}
-#'
+#'         `Bachelor of Arts in Geography`, `Bachelor of Science in Finance`, 
+#'          etc.}
 #'   }
 #'   
 #' @examples

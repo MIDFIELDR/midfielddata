@@ -146,11 +146,11 @@ are welcome to translate our examples to their preferred syntax.
 
 ``` r
 format(Sys.Date(), "%Y-%m-%d") # Today's date
-#> [1] "2023-07-12"
+#> [1] "2024-05-16"
 packageVersion("midfielddata") # Student-level records practice data
-#> [1] '0.2.0'
+#> [1] '0.2.1'
 packageVersion("data.table") # For data manipulation
-#> [1] '1.14.8'
+#> [1] '1.15.4'
 ```
 
 ## Usage
@@ -234,7 +234,10 @@ term[mcid == id_we_want]
 #>  1: MCID3112192438 Institution C 20051 451101      01 First-year Good Standing
 #>  2: MCID3112192438 Institution C 20053 190701      01 First-year Good Standing
 #>  3: MCID3112192438 Institution C 20061 451101     02 Second-year Good Standing
-#> ---                                                                           
+#>  4: MCID3112192438 Institution C 20063 451101     02 Second-year Good Standing
+#>  5: MCID3112192438 Institution C 20071 451101      03 Third-year Good Standing
+#>  6: MCID3112192438 Institution C 20073 451101      03 Third-year Good Standing
+#>  7: MCID3112192438 Institution C 20081 451101      03 Third-year Good Standing
 #>  8: MCID3112192438 Institution C 20083 451101     04 Fourth-year Good Standing
 #>  9: MCID3112192438 Institution C 20091 451101     04 Fourth-year Good Standing
 #> 10: MCID3112192438 Institution C 20093 451101 05 Fifth-year Plus Good Standing
@@ -242,7 +245,10 @@ term[mcid == id_we_want]
 #>  1:   No         15                 15          15                  15     3.80
 #>  2:   No         11                 11          26                  26     3.40
 #>  3:   No         16                 16          42                  42     3.25
-#> ---                                                                            
+#>  4:   No          8                  8          50                  50     3.81
+#>  5:   No         12                 12          62                  62     3.75
+#>  6:   No         13                 13          75                  75     3.38
+#>  7:  Yes         14                 14          89                  89     3.79
 #>  8:   No         16                 16         105                 105     3.75
 #>  9:   No         13                 13         118                 118     4.00
 #> 10:   No         12                 12         130                 130     4.00
@@ -250,7 +256,10 @@ term[mcid == id_we_want]
 #>  1:      3.80
 #>  2:      3.63
 #>  3:      3.49
-#> ---          
+#>  4:      3.54
+#>  5:      3.58
+#>  6:      3.54
+#>  7:      3.58
 #>  8:      3.61
 #>  9:      3.65
 #> 10:      3.68
@@ -315,13 +324,42 @@ undergraduate student-level records from the MIDFIELD database.
 A database of anonymized student-level records for approximately 2.4M
 undergraduates at 21 US institutions from 1987-2022. Access to this
 database requires a confidentiality agreement and Institutional Review
-Board (IRB) approval for human subjects research.
-
-[MIDFIELD Institute](https://midfieldr.github.io/2023-midfield-institute/)  
-aterials from the 2023 workshop, including an introduction to R for
-beginners, chart basics with ggplot2, and data basics with data.table.
+Board (IRB) approval for human subjects research. For a detailed
+description of the database, see ([Ohland & Long, 2016](#ref-aee2016)).
 
 ## Acknowledgments
 
-This work is supported by a grant from the US National Science
-Foundation (EEC 1545667).
+This work was supported by the US National Science Foundation through
+grant numbers 1545667 and 2142087.
+
+## References
+
+<div id="refs" class="references csl-bib-body hanging-indent"
+entry-spacing="0" line-spacing="2">
+
+<div id="ref-aee2016" class="csl-entry">
+
+Ohland, M. W., & Long, R. A. (2016). The Multiple-Institution Database
+for Investigating Engineering Longitudinal Development: An experiential
+case study of data sharing and reuse. *Advances in Engineering
+Education*, *5*(2).
+<https://advances.asee.org/wp-content/uploads/vol05/issue02/Papers/AEE-18-Ohland.pdf>
+
+</div>
+
+</div>
+
+<style type="text/css">
+blockquote {
+    padding:     10px 20px;
+    margin:      0 0 20px;
+    border-left: 0px
+}
+caption {
+    color:       #525252;
+    text-align:  left;
+    font-weight: normal;
+    font-size:   medium;
+    line-height: 1.5;
+}
+</style>

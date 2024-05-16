@@ -2,24 +2,35 @@
 % Please edit documentation in R/midfielddata-package.R
 \docType{package}
 \name{midfielddata-package}
+\alias{midfielddata}
 \alias{midfielddata-package}
-\title{MIDFIELD Data Sample}
-\source{
-2022 \href{https://midfield.online/}{MIDFIELD} database
-}
+\title{midfielddata: MIDFIELD Data Sample}
 \description{
-This data package contains anonymized student-level records for 98,000
-undergraduates from three US institutions from 1988 through 2018 organized in
-four data tables keyed by student ID. Data at the "student-level" refers to
-information collected by undergraduate institutions about individual students
-including demographics, programs, academic standing, courses, grades, and
-degrees. These data are a proportionate stratified sample of the MIDFIELD
-database, but are not suitable for drawing inferences about program
-attributes or student experiences---\code{midfielddata} provides practice data,
-not research data.
+This data package contains anonymized student-level records for 98,000 undergraduates from three US institutions from 1988 through 2018 organized in four data tables keyed by student ID. Student-level data refers to information collected by undergraduate institutions on individual students including demographics, programs and academic standing by term, individual courses, grades, and degrees. These data are a proportionate stratified sample of the MIDFIELD database, but are not suitable for drawing inferences about program attributes or student experiences---‘midfielddata’ provides practice data, not research data.
 }
 \seealso{
-Package \href{https://midfieldr.github.io/midfieldr/}{\code{midfieldr}}
-for tools and methods for working with MIDFIELD data in \code{R}.
+Useful links:
+\itemize{
+  \item \url{https://midfieldr.github.io/midfielddata/}
+  \item Report bugs at \url{https://github.com/MIDFIELDR/midfielddata/issues}
 }
-\concept{package}
+
+}
+\author{
+\strong{Maintainer}: Richard Layton \email{graphdoctor@gmail.com} [copyright holder]
+
+Authors:
+\itemize{
+  \item Russell Long \email{ralong@purdue.edu} [copyright holder, data manager]
+  \item Matthew Ohland \email{ohland@purdue.edu} [copyright holder]
+  \item Marisa Orr \email{marisak@clemson.edu} [copyright holder]
+  \item Susan Lord \email{slord@sandiego.edu} [copyright holder]
+}
+
+Other contributors:
+\itemize{
+  \item US National Science Foundation [funder]
+}
+
+}
+\keyword{internal}

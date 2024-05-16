@@ -9,44 +9,29 @@ A \code{data.frame} and \code{data.table} with 13 variables and 97,555
 observations of unique students occupying 18 MB of memory:
 
 \describe{
-
-\item{\code{mcid}}{Character, anonymized student identifier, e.g.,
-\code{MCID3111142225}.}
-
-\item{\code{institution}}{Character, anonymized institution name, e.g.,
-\verb{Institution B}.}
-
+\item{\code{mcid}}{Character, anonymized student identifier, e.g., \code{MCID3111142225}.}
+\item{\code{institution}}{Character, de-identified institution name, e.g., Institution
+A, Institution B, etc.}
 \item{\code{transfer}}{Character, transfer status, possible values are
 \verb{First-Time in College}, \verb{First-Time Transfer}.}
-
 \item{\code{hours_transfer}}{Numeric, number of credit hours transferred (or
 \code{NA}).}
-
-\item{\code{race}}{Character, race/ethnicity, e.g., \code{Asian}, \code{Black},
-\code{International}, \code{Latine}, etc.}
-
-\item{\code{sex}}{Character, sex, possible values are \code{Female}, \code{Male},
-\code{Unknown}.}
-
+\item{\code{race}}{Character, race/ethnicity as self-reported by the student,
+e.g., Asian, Black, Latine, etc.}
+\item{\code{sex}}{Character, sex as self-reported by the student, possible
+values are Female, Male, and Unknown.}
 \item{\code{age_desc}}{Character, age group, possible values are \verb{25 and Older},
 \verb{Under 25}.}
-
 \item{\code{us_citizen}}{Character, US citizenship, possible values are \code{No},
 \code{Yes}.}
-
 \item{\code{home_zip}}{Character, home ZIP code (or \code{NA}), e.g., \code{02056},
 \code{20170}, \code{51301}, \code{80129}, etc.}
-
 \item{\code{high_school}}{Character, code for the last high school attended before
 admission (or \code{NA}), e.g., \code{060075}, \code{210512}, \code{431800}, \code{502195},
 etc.}
-
 \item{\code{sat_math}}{Numeric, SAT mathematics test score (or \code{NA}).}
-
 \item{\code{sat_verbal}}{Numeric, SAT reading test score (or \code{NA}).}
-
 \item{\code{act_comp}}{Numeric, ACT composite test score (or \code{NA}).}
-
 }
 }
 \source{
