@@ -6,7 +6,9 @@ student-level records for 98,000 undergraduates from the MIDFIELD
 database. Provides practice data for the tools and methods of
 `midfieldr`.
 
-![](https://github.com/MIDFIELDR/midfielddata/blob/main/docs/logo.png?raw=true)
+<!-- ![](https://github.com/MIDFIELDR/midfielddata/blob/main/docs/logo.png?raw=true) -->
+
+<img src="man/figures/logo.png" width="15%" />
 
 ## Introduction
 
@@ -25,28 +27,28 @@ undergraduate institutions on individual students, including:
 undergraduates at three US institutions from 1988 through 2018,
 collected in four data tables keyed by student ID.
 
-<table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class=" lightable-paper" style="color: black; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 Table 1. Practice datasets in `midfielddata`.
 </caption>
 <thead>
 <tr>
-<th style="text-align:left;background-color: #c7eae5 !important;">
+<th style="text-align:left;background-color: rgba(199, 234, 229, 255) !important;">
 Dataset
 </th>
-<th style="text-align:left;background-color: #c7eae5 !important;">
+<th style="text-align:left;background-color: rgba(199, 234, 229, 255) !important;">
 Each row is
 </th>
-<th style="text-align:right;background-color: #c7eae5 !important;">
+<th style="text-align:right;background-color: rgba(199, 234, 229, 255) !important;">
 Students
 </th>
-<th style="text-align:right;background-color: #c7eae5 !important;">
+<th style="text-align:right;background-color: rgba(199, 234, 229, 255) !important;">
 Rows
 </th>
-<th style="text-align:right;background-color: #c7eae5 !important;">
+<th style="text-align:right;background-color: rgba(199, 234, 229, 255) !important;">
 Columns
 </th>
-<th style="text-align:right;background-color: #c7eae5 !important;">
+<th style="text-align:right;background-color: rgba(199, 234, 229, 255) !important;">
 Memory
 </th>
 </tr>
@@ -146,9 +148,9 @@ are welcome to translate our examples to their preferred syntax.
 
 ``` r
 format(Sys.Date(), "%Y-%m-%d") # Today's date
-#> [1] "2024-05-16"
+#> [1] "2024-11-30"
 packageVersion("midfielddata") # Student-level records practice data
-#> [1] '0.2.1'
+#> [1] '0.2.2'
 packageVersion("data.table") # For data manipulation
 #> [1] '1.15.4'
 ```

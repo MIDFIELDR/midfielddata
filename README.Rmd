@@ -57,10 +57,13 @@ options(
 
 <br>`midfielddata` is an R data package that supplies anonymized student-level records for 98,000 undergraduates from the MIDFIELD database. Provides practice data for the tools and methods of `midfieldr`. 
 
-![](https://github.com/MIDFIELDR/midfielddata/blob/main/docs/logo.png?raw=true)
+<!-- ![](https://github.com/MIDFIELDR/midfielddata/blob/main/docs/logo.png?raw=true) -->
 
-
-
+```{r}
+#| echo: false
+#| out.width: "15%"
+knitr::include_graphics("man/figures/logo.png")
+```
 
 ## Introduction
 
