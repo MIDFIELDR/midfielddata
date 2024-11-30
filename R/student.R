@@ -42,7 +42,7 @@
 #'   \item{`hours_transfer`}{Numeric, number of credit hours transferred (or
 #'         `NA`).}
 #'   \item{`race`}{Character, race/ethnicity as self-reported by the student, 
-#'          e.g., Asian, Black, Latine, etc.}
+#'          e.g., Asian, Black, Hispanic, etc.}
 #'   \item{`sex`}{Character, sex as self-reported by the student, possible 
 #'          values are Female, Male, and Unknown.}
 #'   \item{`age_desc`}{Character, age group, possible values are `25 and Older`,

@@ -1,6 +1,6 @@
 Package: midfielddata
 Title: MIDFIELD Data Sample
-Version: 0.2.1
+Version: 0.2.2
 Description: This data package contains anonymized student-level records for 
   98,000 undergraduates from three US institutions from 1988 through 2018 
   organized in four data tables keyed by student ID. Student-level data refers 
@@ -33,7 +33,7 @@ BugReports: https://github.com/MIDFIELDR/midfielddata/issues
 FundingBy: National Science Foundation, EEC 1545667
 URL: https://midfieldr.github.io/midfielddata/
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Depends: R (>= 3.5.0)
 LazyData: FALSE
 Encoding: UTF-8

@@ -17,7 +17,7 @@ A, Institution B, etc.}
 \item{\code{hours_transfer}}{Numeric, number of credit hours transferred (or
 \code{NA}).}
 \item{\code{race}}{Character, race/ethnicity as self-reported by the student,
-e.g., Asian, Black, Latine, etc.}
+e.g., Asian, Black, Hispanic, etc.}
 \item{\code{sex}}{Character, sex as self-reported by the student, possible
 values are Female, Male, and Unknown.}
 \item{\code{age_desc}}{Character, age group, possible values are \verb{25 and Older},

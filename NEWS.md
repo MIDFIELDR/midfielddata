@@ -1,8 +1,13 @@
+## midfielddata 0.2.2 (2024-12)
+
+- Revise race/ethnicity from Latinx to Hispanic
+- Update `RoxygenNote` to 7.3.2
+
 ## midfielddata 0.2.1 (2024-05)
 
 - Update the `midfielddata-package.R` file
 - Add roxygen.R to generate repeated text for common arguments.
-- Update `RoxygenNote` to "7.3.1"
+- Update `RoxygenNote` to 7.3.1
 
 ## midfielddata 0.2.0 (2022-12)
 
@@ -12,7 +17,7 @@
 
 ## midfielddata 0.1.5 (2022-10)
 
-- Revise race/ethnicity to change Latinx to Latine
+- Revise race/ethnicity from Latinx to Latine
 - Ensure values of "" are replaced with NA_character_ 
 
 ## midfielddata 0.1.4 (2022-07)
