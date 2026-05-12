@@ -3,7 +3,6 @@
 # R/roxygen.R file.
 
 
-
 #' Student-level demographic data
 #'
 #' Student-level demographic information for approximately 98,000 degree-seeking
@@ -20,7 +19,7 @@
 #' MIDFIELD database, but are not suitable for drawing inferences about program
 #' attributes or student experiences---`midfielddata` provides practice data,
 #' not research data.
-#' 
+#'
 #' @name student
 #' @docType data
 #' @family datasets
@@ -41,9 +40,9 @@
 #'         `First-Time in College`, `First-Time Transfer`.}
 #'   \item{`hours_transfer`}{Numeric, number of credit hours transferred (or
 #'         `NA`).}
-#'   \item{`race`}{Character, race/ethnicity as self-reported by the student, 
+#'   \item{`race`}{Character, race/ethnicity as self-reported by the student,
 #'          e.g., Asian, Black, Hispanic, etc.}
-#'   \item{`sex`}{Character, sex as self-reported by the student, possible 
+#'   \item{`sex`}{Character, sex as self-reported by the student, possible
 #'          values are Female, Male, and Unknown.}
 #'   \item{`age_desc`}{Character, age group, possible values are `25 and Older`,
 #'         `Under 25`.}
@@ -58,20 +57,19 @@
 #'   \item{`sat_verbal`}{Numeric, SAT reading test score (or `NA`).}
 #'   \item{`act_comp`}{Numeric, ACT composite test score (or `NA`).}
 #'   }
-#'   
+#'
 #' @examples
 #' \dontrun{
-#' 
+#'
 #' # Load data
 #' data(student)
-#' 
+#'
 #' # Select specific rows and columns
 #' rows_we_want <- student$mcid == MCID3112192438
 #' cols_we_want <- c(mcid, institution, transfer, race, sex, age_desc)
-#' 
-#' # View observations for this ID 
+#'
+#' # View observations for this ID
 #' student[rows_we_want, cols_we_want]
-#' 
 #' }
-#' 
+#'
 NULL

@@ -1,14 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<br>`midfielddata` is an R data package that supplies anonymized
+<br>midfielddata is an R data package that supplies anonymized
 student-level records for 98,000 undergraduates from the MIDFIELD
-database. Provides practice data for the tools and methods of
-`midfieldr`.
+database. Provides practice data for the tools and methods of the
+midfieldr package.
 
-<!-- ![](https://github.com/MIDFIELDR/midfielddata/blob/main/docs/logo.png?raw=true) -->
-
-<img src="man/figures/logo.png" width="15%" />
+<img src="man/figures/logo.png" alt="" width="15%" />
 
 ## Introduction
 
@@ -23,150 +21,470 @@ undergraduate institutions on individual students, including:
 - *degree* information, e.g., institution, program, term, and
   baccalaureate degree
 
-`midfielddata` provides anonymized student-level records for 98,000
+midfielddata provides anonymized student-level records for 98,000
 undergraduates at three US institutions from 1988 through 2018,
 collected in four data tables keyed by student ID.
 
-<table class=" lightable-paper" style="color: black; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
-<caption>
-Table 1. Practice datasets in `midfielddata`.
-</caption>
-<thead>
-<tr>
-<th style="text-align:left;background-color: rgba(199, 234, 229, 255) !important;">
-Dataset
-</th>
-<th style="text-align:left;background-color: rgba(199, 234, 229, 255) !important;">
-Each row is
-</th>
-<th style="text-align:right;background-color: rgba(199, 234, 229, 255) !important;">
-Students
-</th>
-<th style="text-align:right;background-color: rgba(199, 234, 229, 255) !important;">
-Rows
-</th>
-<th style="text-align:right;background-color: rgba(199, 234, 229, 255) !important;">
-Columns
-</th>
-<th style="text-align:right;background-color: rgba(199, 234, 229, 255) !important;">
-Memory
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;font-family: monospace;color: black !important;background-color: white !important;">
-course
-</td>
-<td style="text-align:left;color: black !important;background-color: white !important;">
-one student per course
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-97,555
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-3,289,532
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-12
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-324.3 MB
-</td>
-</tr>
-<tr>
-<td style="text-align:left;font-family: monospace;color: black !important;background-color: white !important;">
-term
-</td>
-<td style="text-align:left;color: black !important;background-color: white !important;">
-one student per term
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-97,555
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-639,915
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-13
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-72.8 MB
-</td>
-</tr>
-<tr>
-<td style="text-align:left;font-family: monospace;color: black !important;background-color: white !important;">
-student
-</td>
-<td style="text-align:left;color: black !important;background-color: white !important;">
-one student
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-97,555
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-97,555
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-13
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-17.3 MB
-</td>
-</tr>
-<tr>
-<td style="text-align:left;font-family: monospace;color: black !important;background-color: white !important;">
-degree
-</td>
-<td style="text-align:left;color: black !important;background-color: white !important;">
-one student per degree
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-49,543
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-49,665
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-5
-</td>
-<td style="text-align:right;color: black !important;background-color: white !important;">
-5.2 MB
-</td>
-</tr>
-</tbody>
-</table>
+<div id="rwmzfhlxmc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rwmzfhlxmc table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+&#10;#rwmzfhlxmc thead, #rwmzfhlxmc tbody, #rwmzfhlxmc tfoot, #rwmzfhlxmc tr, #rwmzfhlxmc td, #rwmzfhlxmc th {
+  border-style: none;
+}
+&#10;#rwmzfhlxmc p {
+  margin: 0;
+  padding: 0;
+}
+&#10;#rwmzfhlxmc .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: small;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+&#10;#rwmzfhlxmc .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+&#10;#rwmzfhlxmc .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+&#10;#rwmzfhlxmc .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+&#10;#rwmzfhlxmc .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+&#10;#rwmzfhlxmc .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+&#10;#rwmzfhlxmc .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+&#10;#rwmzfhlxmc .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+&#10;#rwmzfhlxmc .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+&#10;#rwmzfhlxmc .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+&#10;#rwmzfhlxmc .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+&#10;#rwmzfhlxmc .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+&#10;#rwmzfhlxmc .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+&#10;#rwmzfhlxmc .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+&#10;#rwmzfhlxmc .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  vertical-align: middle;
+}
+&#10;#rwmzfhlxmc .gt_from_md > :first-child {
+  margin-top: 0;
+}
+&#10;#rwmzfhlxmc .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+&#10;#rwmzfhlxmc .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: none;
+  border-top-width: 1px;
+  border-top-color: #D5D5D5;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D5D5D5;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D5D5D5;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+&#10;#rwmzfhlxmc .gt_stub {
+  color: #FFFFFF;
+  background-color: #5F5F5F;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #5F5F5F;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#rwmzfhlxmc .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+&#10;#rwmzfhlxmc .gt_row_group_first td {
+  border-top-width: 2px;
+}
+&#10;#rwmzfhlxmc .gt_row_group_first th {
+  border-top-width: 2px;
+}
+&#10;#rwmzfhlxmc .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#rwmzfhlxmc .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #5F5F5F;
+}
+&#10;#rwmzfhlxmc .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+&#10;#rwmzfhlxmc .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+&#10;#rwmzfhlxmc .gt_grand_summary_row {
+  color: #333333;
+  background-color: #D5D5D5;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#rwmzfhlxmc .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #5F5F5F;
+}
+&#10;#rwmzfhlxmc .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #5F5F5F;
+}
+&#10;#rwmzfhlxmc .gt_striped {
+  background-color: #F4F4F4;
+}
+&#10;#rwmzfhlxmc .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+&#10;#rwmzfhlxmc .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+&#10;#rwmzfhlxmc .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#rwmzfhlxmc .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+&#10;#rwmzfhlxmc .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#rwmzfhlxmc .gt_left {
+  text-align: left;
+}
+&#10;#rwmzfhlxmc .gt_center {
+  text-align: center;
+}
+&#10;#rwmzfhlxmc .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+&#10;#rwmzfhlxmc .gt_font_normal {
+  font-weight: normal;
+}
+&#10;#rwmzfhlxmc .gt_font_bold {
+  font-weight: bold;
+}
+&#10;#rwmzfhlxmc .gt_font_italic {
+  font-style: italic;
+}
+&#10;#rwmzfhlxmc .gt_super {
+  font-size: 65%;
+}
+&#10;#rwmzfhlxmc .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+&#10;#rwmzfhlxmc .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+&#10;#rwmzfhlxmc .gt_indent_1 {
+  text-indent: 5px;
+}
+&#10;#rwmzfhlxmc .gt_indent_2 {
+  text-indent: 10px;
+}
+&#10;#rwmzfhlxmc .gt_indent_3 {
+  text-indent: 15px;
+}
+&#10;#rwmzfhlxmc .gt_indent_4 {
+  text-indent: 20px;
+}
+&#10;#rwmzfhlxmc .gt_indent_5 {
+  text-indent: 25px;
+}
+&#10;#rwmzfhlxmc .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+&#10;#rwmzfhlxmc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <caption>Table 1: Practice datasets in midfielddata</caption>
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="Dataset">Dataset</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="Each-row-is">Each row is</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="Students">Students</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="Rows">Rows</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="Columns">Columns</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="Memory-(Mb)">Memory (Mb)</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Dataset" class="gt_row gt_left">course</td>
+<td headers="Each row is" class="gt_row gt_left">one student per term per course</td>
+<td headers="Students" class="gt_row gt_right">97,555</td>
+<td headers="Rows" class="gt_row gt_right">3,289,532</td>
+<td headers="Columns" class="gt_row gt_right">12</td>
+<td headers="Memory (Mb)" class="gt_row gt_right">324.3</td></tr>
+    <tr><td headers="Dataset" class="gt_row gt_left gt_striped">term</td>
+<td headers="Each row is" class="gt_row gt_left gt_striped">one student per term</td>
+<td headers="Students" class="gt_row gt_right gt_striped">97,555</td>
+<td headers="Rows" class="gt_row gt_right gt_striped">639,915</td>
+<td headers="Columns" class="gt_row gt_right gt_striped">13</td>
+<td headers="Memory (Mb)" class="gt_row gt_right gt_striped">72.8</td></tr>
+    <tr><td headers="Dataset" class="gt_row gt_left">student</td>
+<td headers="Each row is" class="gt_row gt_left">one student</td>
+<td headers="Students" class="gt_row gt_right">97,555</td>
+<td headers="Rows" class="gt_row gt_right">97,555</td>
+<td headers="Columns" class="gt_row gt_right">13</td>
+<td headers="Memory (Mb)" class="gt_row gt_right">17.3</td></tr>
+    <tr><td headers="Dataset" class="gt_row gt_left gt_striped">degree</td>
+<td headers="Each row is" class="gt_row gt_left gt_striped">one student per degree</td>
+<td headers="Students" class="gt_row gt_right gt_striped">49,543</td>
+<td headers="Rows" class="gt_row gt_right gt_striped">49,665</td>
+<td headers="Columns" class="gt_row gt_right gt_striped">5</td>
+<td headers="Memory (Mb)" class="gt_row gt_right gt_striped">5.2</td></tr>
+  </tbody>
+  &#10;</table>
+</div>
 
-The data in `midfielddata` are a proportionate stratified sample of the
+The data in midfielddata are a proportionate stratified sample of the
 [MIDFIELD](#more-information) database, but are *not suitable for
 drawing inferences* about program attributes or student
-experiences—`midfielddata` are for *practice*, not research.
+experiences—midfielddata are for *practice*, not research.
 
-*Notes on syntax.*   We use `data.table` for data manipulation. Some
-users may prefer base R or `dplyr`. Each system has its strengths—users
-are welcome to translate our examples to their preferred syntax.
-
-``` r
-format(Sys.Date(), "%Y-%m-%d") # Today's date
-#> [1] "2024-11-30"
-packageVersion("midfielddata") # Student-level records practice data
-#> [1] '0.2.2'
-packageVersion("data.table") # For data manipulation
-#> [1] '1.15.4'
-```
+*Notes on syntax.*   We use data.table for data manipulation. For users
+who prefer base R or dplyr, our website for the 2024 MIDFIELD Institute
+<a href="https://midfieldr.github.io/2024-midfield-institute/data-shaping-00-introduction.html">\[link\]</a>
+includes a sequence of tutorials that addresses the needs of users who
+would prefer to translate our data.table syntax to their preferred
+system. We illustrate common MIDFIELD data shaping tasks three ways:
+using base R, data.table, and dplyr systems.
 
 ## Usage
 
-*Start.*   If you are writing your own script to follow along, we use
-these packages in this vignette:
+We generally use these two packages when loading these data:
 
 ``` r
 library(midfielddata)
 library(data.table)
 ```
 
-*Load data tables.*   Data tables can be loaded individually or
-collectively as needed.
+Data tables can be loaded individually or collectively as needed.
 
 ``` r
 # Load one table as needed
@@ -176,128 +494,18 @@ data(student)
 data(course, term, degree)
 ```
 
-We display the records for one specific student, using their ID to
-subset each dataset.
-
-``` r
-# One student ID
-id_we_want <- "MCID3112192438"
-```
-
-*Student.*   As expected, `student` yields one row per student.
-
-``` r
-# Observations for a selected ID
-student[mcid == id_we_want]
-#>              mcid   institution              transfer hours_transfer  race
-#> 1: MCID3112192438 Institution C First-Time in College             NA White
-#>       sex age_desc us_citizen home_zip high_school sat_math sat_verbal act_comp
-#> 1: Female Under 25        Yes    80521        <NA>      580        390       27
-```
-
-*Course.*   For this student, the records span 47 rows, one row per
-course.
-
-``` r
-# Observations for a selected ID
-course[mcid == id_we_want]
-#>               mcid   institution term_course                         course
-#>  1: MCID3112192438 Institution C       20051 Key Academic Community Seminar
-#>  2: MCID3112192438 Institution C       20051       Humans and Other Animals
-#>  3: MCID3112192438 Institution C       20051            Health and Wellness
-#> ---                                                                        
-#> 45: MCID3112192438 Institution C       20093            Health and the Mind
-#> 46: MCID3112192438 Institution C       20093   Social Psychology Laboratory
-#> 47: MCID3112192438 Institution C       20093                    Group Study
-#>     abbrev number section         type              faculty_rank hours_course
-#>  1:     KA    192     009         <NA>                Instructor            3
-#>  2:   BZCC    101     002         <NA>       Assistant Professor            3
-#>  3:   EXCC    145     004         <NA> Non-Academic Professional            3
-#> ---                                                                          
-#> 45:    PSY    121     001 Face-to-Face Non-Academic Professional            1
-#> 46:    PSY    317     L02 Face-to-Face        Graduate Assistant            2
-#> 47:    PSY    496     004 Face-to-Face                Instructor            3
-#>     grade                        discipline_midfield
-#>  1:     A                           Academic Support
-#>  2:     B Biological and Biomedical Sciences: Botany
-#>  3:     A           Education: Physical and Coaching
-#> ---                                                 
-#> 45:    A+                                 Psychology
-#> 46:     A                                 Psychology
-#> 47:    A+                                 Psychology
-```
-
-*Term.*   Here, the records span 10 rows, one row per term.
-
-``` r
-# Observations for a selected ID
-term[mcid == id_we_want]
-#>               mcid   institution  term   cip6              level      standing
-#>  1: MCID3112192438 Institution C 20051 451101      01 First-year Good Standing
-#>  2: MCID3112192438 Institution C 20053 190701      01 First-year Good Standing
-#>  3: MCID3112192438 Institution C 20061 451101     02 Second-year Good Standing
-#>  4: MCID3112192438 Institution C 20063 451101     02 Second-year Good Standing
-#>  5: MCID3112192438 Institution C 20071 451101      03 Third-year Good Standing
-#>  6: MCID3112192438 Institution C 20073 451101      03 Third-year Good Standing
-#>  7: MCID3112192438 Institution C 20081 451101      03 Third-year Good Standing
-#>  8: MCID3112192438 Institution C 20083 451101     04 Fourth-year Good Standing
-#>  9: MCID3112192438 Institution C 20091 451101     04 Fourth-year Good Standing
-#> 10: MCID3112192438 Institution C 20093 451101 05 Fifth-year Plus Good Standing
-#>     coop hours_term hours_term_attempt hours_cumul hours_cumul_attempt gpa_term
-#>  1:   No         15                 15          15                  15     3.80
-#>  2:   No         11                 11          26                  26     3.40
-#>  3:   No         16                 16          42                  42     3.25
-#>  4:   No          8                  8          50                  50     3.81
-#>  5:   No         12                 12          62                  62     3.75
-#>  6:   No         13                 13          75                  75     3.38
-#>  7:  Yes         14                 14          89                  89     3.79
-#>  8:   No         16                 16         105                 105     3.75
-#>  9:   No         13                 13         118                 118     4.00
-#> 10:   No         12                 12         130                 130     4.00
-#>     gpa_cumul
-#>  1:      3.80
-#>  2:      3.63
-#>  3:      3.49
-#>  4:      3.54
-#>  5:      3.58
-#>  6:      3.54
-#>  7:      3.58
-#>  8:      3.61
-#>  9:      3.65
-#> 10:      3.68
-```
-
-*Degree.*   In this example, the records span 2 rows, one row per
-degree. The degrees were earned in the same term, Spring 2009.
-
-``` r
-# Observations for a selected ID
-degree[mcid == id_we_want]
-#>              mcid   institution term_degree   cip6
-#> 1: MCID3112192438 Institution C       20093 420101
-#> 2: MCID3112192438 Institution C       20093 451101
-#>                               degree
-#> 1: Bachelor of Science in Psychology
-#> 2:     Bachelor of Arts in Sociology
-```
-
-Not all students with more than one degree earn them in the same term.
-For example, the next student earned a degree in 1996 and a second
-degree in 1999. In most analyses, only the first baccalaureate degree
-would be used.
-
-``` r
-# Observations for a different ID
-degree[mcid == "MCID3111315508"]
-#>              mcid   institution term_degree   cip6
-#> 1: MCID3111315508 Institution C       19961 260101
-#> 2: MCID3111315508 Institution C       19994 260701
-#>                                        degree
-#> 1: Bachelor of Science in Biological Sciences
-#> 2:      Bachelor of Science in Animal Biology
-```
+We examine these data in greater detail in the package
+[\[articles\]](https://midfieldr.github.io/midfielddata/articles/index.html).
+In addition, how one *uses* these data is developed in detail on the
+website for [\[midfieldr\]](https://midfieldr.github.io/midfieldr/).
 
 ## Installation
+
+The installed size of midfielddata is about 24 Mb, so installation will
+take longer than that of a conventional CRAN package. Also because of
+its size, the package is not hosted on CRAN (with its 5 MB size
+limit)—instead, we host it on the MIDFIELDR `drat` repository as
+indicated above.
 
 Install with:
 
@@ -308,26 +516,18 @@ install.packages("midfielddata",
 )
 ```
 
-The installed size of `midfielddata` is about 24 Mb, so installation
-will take longer than that of a conventional CRAN package. Also because
-of its size, the package is not hosted on CRAN (with its 5 MB size
-limit)—instead, we host it on the MIDFIELDR `drat` repository as
-indicated above.
-
-Link to installation instructions for `midfieldr` below.
-
 ## More information
 
-[`midfieldr`](https://midfieldr.github.io/midfieldr/)  
+[\[midfieldr\]](https://midfieldr.github.io/midfieldr/)  
 A companion R package that provides tools and methods for studying
 undergraduate student-level records from the MIDFIELD database.
 
-[MIDFIELD](https://midfield.online/)  
+[\[MIDFIELD\]](https://midfield.online/)  
 A database of anonymized student-level records for approximately 2.4M
 undergraduates at 21 US institutions from 1987-2022. Access to this
 database requires a confidentiality agreement and Institutional Review
 Board (IRB) approval for human subjects research. For a detailed
-description of the database, see ([Ohland & Long, 2016](#ref-aee2016)).
+description of the database, see ([Ohland and Long 2016](#ref-aee2016)).
 
 ## Acknowledgments
 
@@ -336,16 +536,15 @@ grant numbers 1545667 and 2142087.
 
 ## References
 
-<div id="refs" class="references csl-bib-body hanging-indent"
-entry-spacing="0" line-spacing="2">
+<div id="refs" class="references csl-bib-body hanging-indent">
 
 <div id="ref-aee2016" class="csl-entry">
 
-Ohland, M. W., & Long, R. A. (2016). The Multiple-Institution Database
-for Investigating Engineering Longitudinal Development: An experiential
-case study of data sharing and reuse. *Advances in Engineering
-Education*, *5*(2).
-<https://advances.asee.org/wp-content/uploads/vol05/issue02/Papers/AEE-18-Ohland.pdf>
+Ohland, Matthew W., and Russell A. Long. 2016. “The Multiple-Institution
+Database for Investigating Engineering Longitudinal Development: An
+Experiential Case Study of Data Sharing and Reuse.” *Advances in
+Engineering Education* 5 (2).
+<https://advances.asee.org/wp-content/uploads/vol05/issue02/Papers/AEE-18-Ohland.pdf>.
 
 </div>
 

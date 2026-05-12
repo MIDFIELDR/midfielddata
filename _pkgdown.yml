@@ -9,8 +9,15 @@ template:
 navbar:
   title: ~
   left:
+  
+    - text: Articles
+      menu:
+      - text: Data structure
+        href: articles/data-structure.html
+        
     - text: Reference
       href: reference/index.html
+      
     - text: News
       href: news/index.html
 

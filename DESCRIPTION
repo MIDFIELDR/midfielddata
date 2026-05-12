@@ -1,47 +1,46 @@
 Package: midfielddata
 Title: MIDFIELD Data Sample
-Version: 0.2.2
-Description: This data package contains anonymized student-level records for 
-  98,000 undergraduates from three US institutions from 1988 through 2018 
-  organized in four data tables keyed by student ID. Student-level data refers 
-  to information collected by undergraduate institutions on individual students 
-  including demographics, programs and academic standing by term, individual 
-  courses, grades, and degrees. These data are a proportionate stratified sample 
-  of the MIDFIELD database, but are not suitable for drawing inferences about 
-  program attributes or student experiences---‘midfielddata’ provides practice 
-  data, not research data.   
+Version: 0.2.3
 Authors@R: c(
-  person("Richard", "Layton", 
-       email = "graphdoctor@gmail.com", 
-       role = c("cph", "aut", "cre")),
-  person("Russell", "Long", 
-       email = "ralong@purdue.edu", 
-       role = c("cph", "aut", "dtm")), 
-  person("Matthew", "Ohland", 
-       email = "ohland@purdue.edu",
-       role = c("cph", "aut")),
-  person("Marisa", "Orr", 
-       email = "marisak@clemson.edu", 
-       role = c("cph", "aut")),
-  person("Susan", "Lord", 
-       email = "slord@sandiego.edu",
-       role = c("cph", "aut")),
-  person("US National Science Foundation", 
-       role = c("fnd"))
+    person("Richard", "Layton", , "graphdoctor@gmail.com", role = c("cph", "aut", "cre")),
+    person("Russell", "Long", , "ralong@purdue.edu", role = c("cph", "aut")),
+    person("Matthew", "Ohland", , "ohland@purdue.edu", role = c("cph", "aut")),
+    person("Marisa", "Orr", role = c("cph", "aut")),
+    person("Susan", "Lord", , "slord@sandiego.edu", role = c("cph", "aut")),
+    person("US National Science Foundation", role = "fnd")
   )
-BugReports: https://github.com/MIDFIELDR/midfielddata/issues
-FundingBy: National Science Foundation, EEC 1545667
-URL: https://midfieldr.github.io/midfielddata/
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
-Depends: R (>= 3.5.0)
-LazyData: FALSE
-Encoding: UTF-8
-Language: en-US
-Suggests: 
-    data.table, 
-    kableExtra,
-    knitr, 
-    tinytest, 
-    wrapr
+Description: This data package contains anonymized student-level records
+    for 98,000 undergraduates from three US institutions from 1988 through
+    2018 organized in four data tables keyed by student ID. Student-level
+    data refers to information collected by undergraduate institutions on
+    individual students including demographics, programs and academic
+    standing by term, individual courses, grades, and degrees. These data
+    are a proportionate stratified sample of the MIDFIELD database (since
+    2023, managed by the American Society for Engineering Education), but
+    are not suitable for drawing inferences about program attributes or
+    student experiences---‘midfielddata’ provides practice data, not
+    research data. The 'midfieldr' package, available at <
+    https://CRAN.R-project.org/package=midfieldr>, is designed to interact
+    with 'midfielddata' as well as with the full MIDFIELD database. The
+    development of 'midfieldr' and 'midfielddata' was supported by the US
+    National Science Foundation through grant numbers 1545667 and 2142087.
 License: CC0
+URL: https://midfieldr.github.io/midfielddata/
+BugReports: https://github.com/MIDFIELDR/midfielddata/issues
+Depends: 
+    R (>= 3.5.0)
+Suggests: 
+    data.table,
+    knitr,
+    rmarkdown,
+    tinytest,
+    wrapr
+VignetteBuilder: 
+    knitr
+Config/Needs/website: rmarkdown
+Config/roxygen2/version: 8.0.0
+Encoding: UTF-8
+FundingBy: National Science Foundation
+Language: en-US
+LazyData: FALSE
+Roxygen: list(markdown = TRUE)

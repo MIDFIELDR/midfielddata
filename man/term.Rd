@@ -74,17 +74,16 @@ data(term)
 rows_we_want <- term$mcid == "MCID3112192438"
 cols_we_want <- c("mcid", "term", "cip6", "level", "standing", "gpa_cumul")
 
-# View observations for this ID 
-term[rows_we_want, cols_we_want] 
-
+# View observations for this ID
+term[rows_we_want, cols_we_want]
 }
-  
+
 }
 \seealso{
 Package \href{https://midfieldr.github.io/midfieldr/}{\code{midfieldr}} for
 tools and methods for working with MIDFIELD data in \code{R}.
 
-Other datasets: 
+Other datasets:
 \code{\link{course}},
 \code{\link{degree}},
 \code{\link{student}}

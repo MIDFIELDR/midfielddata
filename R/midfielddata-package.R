@@ -1,6 +1,5 @@
-
 #' @keywords internal
-"_PACKAGE"  
+"_PACKAGE"
 NULL
 
 # bind names due to NSE notes in R CMD check

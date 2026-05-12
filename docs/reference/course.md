@@ -1,0 +1,138 @@
+# Student-level course data
+
+Student-level course information for approximately 98,000
+undergraduates, keyed by student ID. Data at the "student-level" refers
+to information collected by undergraduate institutions about individual
+students, for example, course name and number, credit hours, and student
+grades.
+
+## Usage
+
+``` r
+data(course)
+```
+
+## Format
+
+A `data.frame` and `data.table` with 12 variables and approximately 3.3M
+observations of 97,555 unique students occupying 325 MB of memory:
+
+- `mcid`:
+
+  Character, anonymized student identifier, e.g., `MCID3111142225`.
+
+- `institution`:
+
+  Character, de-identified institution name, e.g., Institution A,
+  Institution B, etc.
+
+- `term_course`:
+
+  Character, academic year and term, format YYYYT.
+
+- `course`:
+
+  Character, course name, e.g., `Astrophysics III`,
+  `Calculus For Social Science And Business`, `Corp Financial Rprtng 1`,
+  `Environmental Sanitation II`, `Fitness and Wellness`,
+  `Introductory Astronomy 2`, `Our Changing Environment`, etc.
+
+- `abbrev`:
+
+  Character, course alpha identifier, e.g. `AA`, `MATH`, `ACCT`, `EH`,
+  `HES`, `ASTR`, etc.
+
+- `number`:
+
+  Character, course numeric identifier, e.g. `1104`, `1209`, `228`,
+  `4047`, etc.
+
+- `section`:
+
+  Character, course section identifier, from one to four characters,
+  e.g., `1`, `2`, `01`, `14`, `001`, `040`, `785`, `H02`, `R01`, `300E`,
+  `888R`, etc.
+
+- `type`:
+
+  Character, predominant delivery method for this section, e.g.,
+  `Blended`, `Distance Education`, `Face-to-Face`, `Online`, etc.
+
+- `faculty_rank`:
+
+  Character, academic rank of the person teaching the course, e.g.,
+  `Assistant Professor`, `Associate Professor`, `Graduate Assistant`,
+  `Visiting Faculty`, etc.
+
+- `hours_course`:
+
+  Numeric, number of credit-hours for successful course completion.
+
+- `grade`:
+
+  Character, course grade, e.g., `A+`, `A`, `A-`, `B+`, `I`, `NG`, etc.
+
+- `discipline_midfield`:
+
+  Character, a variable for grouping courses by academic discipline
+  assigned by the MIDFIELD data curator, e.g., `Anthropology`,
+  `Business`, `Computer Science`, `Engineering`,
+  `Language and Literature`, `Mathematics`,
+  `Visual and Performing Arts`, etc.
+
+## Source
+
+2022 [MIDFIELD](https://midfield.online/) database
+
+## Details
+
+Course data are structured in block-record form, that is, records
+associated with a particular ID can span multiple rows—one record per
+student per course per term.
+
+Terms are encoded `YYYYT`, where `YYYY` is the year at the start of the
+academic year and `T` encodes the semester or quarter within an academic
+year as Fall (`1`), Winter (`2`), Spring (`3`), and Summer (`4`, `5`,
+and `6`). For example, for academic year 1995–96, Fall 95–96 is encoded
+`19951`, Spring 95–96 is encoded `19953`, and the first Summer 95-96
+term is encoded `19954`. The source database includes special month-long
+sessions encoded with letters `A`, `B`, `C`, etc., though none are
+included in this sample.
+
+The possible values of the `grade` variable includes `NG` for "no grade
+given", which is not the same as `W` indicating a withdrawal. For
+example, a lab course may be a mandatory co-requisite for a lecture
+course, but a grade is given for the lecture course and the lab grade is
+recorded as `NG`.
+
+The data in `midfielddata` are a proportionate stratified sample of the
+MIDFIELD database, but are not suitable for drawing inferences about
+program attributes or student experiences—`midfielddata` provides
+practice data, not research data.
+
+## See also
+
+Package [`midfieldr`](https://midfieldr.github.io/midfieldr/) for tools
+and methods for working with MIDFIELD data in `R`.
+
+Other datasets:
+[`degree`](https://midfieldr.github.io/midfielddata/reference/degree.md),
+[`student`](https://midfieldr.github.io/midfielddata/reference/student.md),
+[`term`](https://midfieldr.github.io/midfielddata/reference/term.md)
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+
+# Load data
+data(course)
+
+# Select specific rows and columns
+rows_we_want <- course$mcid == MCID3112192438
+cols_we_want <- c(mcid, term_course, course, grade)
+
+# View observations for this ID
+course[rows_we_want, cols_we_want]
+} # }
+```

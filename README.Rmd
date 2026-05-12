@@ -1,9 +1,7 @@
 ---
-output: github_document 
-csl: inst/information-science-and-technology.csl 
-bibliography: inst/REFERENCES.bib 
-always_allow_html: true 
-link-citations: yes 
+output: github_document
+bibliography: inst/REFERENCES.bib
+link-citations: true
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -34,13 +32,10 @@ knitr::knit_hooks$set(inline = function(x) {
   }
 })
 
-# accented text
-accent <- function(text_string) {
-  kableExtra::text_spec(text_string, color = "#b35806", bold = TRUE)
-}
-
 # Backup user options (load packages to capture default options)
 suppressPackageStartupMessages(library(data.table))
+library(knitr)
+library(gt)
 backup_options <- options()
 
 # Backup user random number seed
@@ -55,13 +50,12 @@ options(
 )
 ```
 
-<br>`midfielddata` is an R data package that supplies anonymized student-level records for 98,000 undergraduates from the MIDFIELD database. Provides practice data for the tools and methods of `midfieldr`. 
-
-<!-- ![](https://github.com/MIDFIELDR/midfielddata/blob/main/docs/logo.png?raw=true) -->
+<br>midfielddata is an R data package that supplies anonymized student-level records for 98,000 undergraduates from the MIDFIELD database. Provides practice data for the tools and methods of the midfieldr package. 
 
 ```{r}
 #| echo: false
 #| out.width: "15%"
+
 knitr::include_graphics("man/figures/logo.png")
 ```
 
@@ -74,49 +68,51 @@ Data at the "student-level" refers to information collected by undergraduate ins
 - *student* demographic information, e.g., age, sex, and race/ethnicity
 - *degree* information, e.g., institution, program, term, and baccalaureate degree
 
-`midfielddata` provides anonymized student-level records for 98,000 undergraduates at three US institutions from 1988 through 2018, collected in four data tables keyed by student ID. 
+midfielddata provides anonymized student-level records for 98,000 undergraduates at three US institutions from 1988 through 2018, collected in four data tables keyed by student ID. 
 
 ```{r}
 #| echo: false
-wrapr::build_frame(
-  "Dataset", "Each row is", "Students", "Rows", "Columns", "Memory" |
-    "course", "one student per course", "97,555", "3,289,532", 12L, "324.3 MB" |
-    "term", "one student per term", "97,555", "639,915", 13L, "72.8 MB" |
-    "student", "one student", "97,555", "97,555", 13L, "17.3 MB" |
-    "degree", "one student per degree", "49,543", "49,665", 5L, "5.2 MB"
-) |>
-  kableExtra::kbl(align = "llrrrr", caption = "Table 1. Practice datasets in `midfielddata`.") |>
-  kableExtra::kable_paper(lightable_options = "basic", full_width = FALSE) |>
-  kableExtra::row_spec(0, background = "#c7eae5") |>
-  kableExtra::column_spec(1, monospace = TRUE) |>
-  kableExtra::column_spec(1:6, color = "black", background = "white")
+#| eval: true
+
+x <- wrapr::build_frame(
+  "Dataset", "Each row is", "Students", "Rows", "Columns", "Memory (Mb)" |
+    "course", "one student per term per course", "97,555", "3,289,532", 12L, 324.3 |
+    "term", "one student per term", "97,555", "639,915", 13L, 72.8 |
+    "student", "one student", "97,555", "97,555", 13L, 17.3 |
+    "degree", "one student per degree", "49,543", "49,665", 5L, 5.2
+)
+setDT(x)
+
+library(gt)
+x |>
+  gt() |>
+  tab_caption("Table 1: Practice datasets in midfielddata") |>
+  tab_options(table.font.size = "small") |>
+  opt_stylize(style = 1, color = "gray") |>
+  tab_style(
+    style = list(cell_fill(color = "#c7eae5")),
+    locations = cells_column_labels(columns = everything())
+  )
 ```
 
-The data in `midfielddata` are a proportionate stratified sample of the [MIDFIELD](#more-information) database, but are *not suitable for drawing inferences* about program attributes or student experiences---`midfielddata` are for *practice*, not research. 
+The data in midfielddata are a proportionate stratified sample of the [MIDFIELD](#more-information) database, but are *not suitable for drawing inferences* about program attributes or student experiences---midfielddata are for *practice*, not research. 
 
-*Notes on syntax.* &nbsp; We use `data.table` for data manipulation. Some users may prefer base R or `dplyr`. Each system has its strengths---users are welcome to translate our examples to their preferred syntax.  
-
-```{r}
-format(Sys.Date(), "%Y-%m-%d") # Today's date
-packageVersion("midfielddata") # Student-level records practice data
-packageVersion("data.table") # For data manipulation
-```
-
-
+*Notes on syntax.* &nbsp; We use data.table for data manipulation. For users who prefer base R or dplyr, our website for the 2024 MIDFIELD Institute <a href="https://midfieldr.github.io/2024-midfield-institute/data-shaping-00-introduction.html">[link]</a> includes a sequence of tutorials that addresses the needs of users who would prefer to translate our data.table syntax to their preferred system. We illustrate common MIDFIELD data shaping tasks three ways: using base R, data.table, and dplyr systems.
 
 
 ## Usage
 
-*Start.* &nbsp; If you are writing your own script to follow along, we use these packages in this vignette:
+We generally use these two packages when loading these data:
 
 ```{r}
 library(midfielddata)
 library(data.table)
 ```
 
-*Load data tables.*  &nbsp; Data tables can be loaded individually or collectively as needed.  
+Data tables can be loaded individually or collectively as needed.  
 
 ```{r}
+#| eval: false
 # Load one table as needed
 data(student)
 
@@ -124,63 +120,17 @@ data(student)
 data(course, term, degree)
 ```
 
-We display the records for one specific student, using their ID to subset each dataset.  
+We examine these data in greater detail in the package   [[articles]](https://midfieldr.github.io/midfielddata/articles/index.html). In addition, how one *uses* these data is developed in detail on the website for [[midfieldr]](https://midfieldr.github.io/midfieldr/).  
 
-```{r}
-# One student ID
-id_we_want <- "MCID3112192438"
-```
 
-*Student.* &nbsp; As expected, `student` yields one row per student.
 
-```{r}
-# Observations for a selected ID
-student[mcid == id_we_want]
-```
-
-*Course.* &nbsp; For this student, the records span `r nrow(course[mcid == id_we_want])` rows, one row per course. 
-
-```{r}
-# Observations for a selected ID
-course[mcid == id_we_want]
-```
-
-*Term.* &nbsp; Here, the records span `r nrow(term[mcid == id_we_want])` rows, one row per term. 
-
-```{r}
-# Observations for a selected ID
-term[mcid == id_we_want]
-```
-
-*Degree.* &nbsp; In this example, the records span `r nrow(degree[mcid == id_we_want])` rows, one row per degree. The degrees were earned in the same term, Spring 2009. 
-
-```{r}
-# Observations for a selected ID
-degree[mcid == id_we_want]
-```
-
-Not all students with more than one degree earn them in the same term. For example, the next student earned a degree in 1996 and a second degree in 1999. In most analyses, only the first baccalaureate degree would be used.
-
-```{r}
-# Observations for a different ID
-degree[mcid == "MCID3111315508"]
-```
-
-```{r}
-#| include: false
-
-# Find duplicate IDs in degree
-# DT <- copy(degree)
-# idx <- which(duplicated(DT[, .(mcid)]))
-# dup_ID <- DT[idx, .(mcid)]
-# dup_degree <- dup_ID[degree, on = "mcid", nomatch = NULL]
-# dup_degree
-```
 
 
 
 
 ## Installation
+
+The installed size of midfielddata is about 24 Mb, so installation will take longer than that of a conventional CRAN package. Also because of its size, the package is not hosted on CRAN (with its 5 MB size limit)---instead, we host it on the MIDFIELDR `drat` repository as indicated above. 
 
 Install with: 
 
@@ -192,20 +142,17 @@ install.packages("midfielddata",
 )
 ``` 
 
-The installed size of `midfielddata` is about 24 Mb, so installation will take longer than that of a conventional CRAN package. Also because of its size, the package is not hosted on CRAN (with its 5 MB size limit)---instead, we host it on the MIDFIELDR `drat` repository as indicated above. 
-
-Link to installation instructions for `midfieldr` below.
 
 
 
 
 ## More information
 
-[`midfieldr`](https://midfieldr.github.io/midfieldr/)
+[[midfieldr]](https://midfieldr.github.io/midfieldr/)
 
 : A companion R package that provides tools and methods for studying undergraduate student-level records from the MIDFIELD database. 
 
-[MIDFIELD](https://midfield.online/)
+[[MIDFIELD]](https://midfield.online/)
 
 : A database of anonymized student-level records for approximately 2.4M undergraduates at 21 US institutions from 1987-2022. Access to this database requires a confidentiality agreement and Institutional Review Board (IRB) approval for human subjects research. For a detailed description of the database, see [@aee2016]. 
 

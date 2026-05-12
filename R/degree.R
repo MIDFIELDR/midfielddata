@@ -3,7 +3,6 @@
 # R/roxygen.R file.
 
 
-
 #' Student-level degree data
 #'
 #' Student-level degree information for approximately 50,000 undergraduates
@@ -31,7 +30,7 @@
 #' MIDFIELD database, but are not suitable for drawing inferences about program
 #' attributes or student experiences---`midfielddata` provides practice data,
 #' not research data.
-#' 
+#'
 #' @name degree
 #' @docType data
 #' @family datasets
@@ -39,10 +38,10 @@
 #' @source 2022 [MIDFIELD](https://midfield.online/) database
 #' @seealso Package [`midfieldr`](https://midfieldr.github.io/midfieldr/)
 #'   for tools and methods for working with MIDFIELD data in `R`.
-#' 
+#'
 #' @usage data(degree)
 #'
-#' @format A `data.frame` and `data.table` with 5 variables and 49,543 
+#' @format A `data.frame` and `data.table` with 5 variables and 49,543
 #'   observations of unique students occupying 6 MB of memory:
 #'
 #'   \describe{
@@ -50,24 +49,23 @@
 #'   \item{`institution`}{`r var_institution`}
 #'   \item{`term_degree`}{`r var_term_degree`}
 #'   \item{`cip6`}{`r var_cip6_degree`}
-#'   \item{`degree`}{Character, type of degree awarded, e.g., 
-#'         `Bachelor of Arts in Geography`, `Bachelor of Science in Finance`, 
+#'   \item{`degree`}{Character, type of degree awarded, e.g.,
+#'         `Bachelor of Arts in Geography`, `Bachelor of Science in Finance`,
 #'          etc.}
 #'   }
-#'   
+#'
 #' @examples
 #' \dontrun{
-#' 
+#'
 #' # Load data
 #' data(degree)
-#' 
+#'
 #' # Select specific rows and columns
 #' rows_we_want <- degree$mcid == MCID3112192438
 #' cols_we_want <- c(mcid, term_degree, cip6, degree)
-#' 
-#' # View observations for this ID 
+#'
+#' # View observations for this ID
 #' degree[rows_we_want, cols_we_want]
-#' 
 #' }
-#' 
+#'
 NULL

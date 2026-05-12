@@ -67,9 +67,8 @@ data(student)
 rows_we_want <- student$mcid == MCID3112192438
 cols_we_want <- c(mcid, institution, transfer, race, sex, age_desc)
 
-# View observations for this ID 
+# View observations for this ID
 student[rows_we_want, cols_we_want]
-
 }
 
 }
@@ -77,7 +76,7 @@ student[rows_we_want, cols_we_want]
 Package \href{https://midfieldr.github.io/midfieldr/}{\code{midfieldr}} for
 tools and methods for working with MIDFIELD data in \code{R}.
 
-Other datasets: 
+Other datasets:
 \code{\link{course}},
 \code{\link{degree}},
 \code{\link{term}}

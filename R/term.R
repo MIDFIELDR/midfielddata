@@ -3,7 +3,6 @@
 # R/roxygen.R file.
 
 
-
 #' Student-level term data
 #'
 #' Student-level term information for approximately 98,000 undergraduates, keyed
@@ -38,45 +37,44 @@
 #' @keywords datasets
 #' @source 2022 [MIDFIELD](https://midfield.online/) database
 #' @seealso Package [`midfieldr`](https://midfieldr.github.io/midfieldr/) for
-#'   tools and methods for working with MIDFIELD data in `R`. 
+#'   tools and methods for working with MIDFIELD data in `R`.
 #'
 #' @usage data(term)
 #'
-#' @format A `data.frame` and `data.table` with 13 variables and approximately 
+#' @format A `data.frame` and `data.table` with 13 variables and approximately
 #'   640,000 observations of 97,555 unique students occupying 73 MB of memory:
 #'
-#'   \describe{ 
+#'   \describe{
 #'   \item{`mcid`}{`r var_mcid`}
 #'   \item{`institution`}{`r var_institution`}
 #'   \item{`term`}{`r var_term`}
-#'   \item{`cip6`}{`r var_cip6_term`} 
-#'   \item{`level`}{Character, academic level determined by cumulative number of 
-#'          credit ours earned, e.g., `01 First-year`, `02 Second-year`, etc.} 
-#'   \item{`standing`}{Character, academic standing, e.g., `Good Standing`, 
+#'   \item{`cip6`}{`r var_cip6_term`}
+#'   \item{`level`}{Character, academic level determined by cumulative number of
+#'          credit ours earned, e.g., `01 First-year`, `02 Second-year`, etc.}
+#'   \item{`standing`}{Character, academic standing, e.g., `Good Standing`,
 #'         `Academic Warning`, etc.}
-#'   \item{`coop`}{Character, cooperative education term, possible values are 
+#'   \item{`coop`}{Character, cooperative education term, possible values are
 #'         `Yes`, `No`.}
 #'   \item{`hours_term`}{Numeric, credit hours earned in the term.}
 #'   \item{`hours_term_attempt`}{Numeric, credit hours attempted in the term.}
 #'   \item{`hours_cumul`}{Numeric, cumulative credit hours earned.}
 #'   \item{`hours_cumul_attempt`}{Numeric, cumulative credit hours attempted.}
 #'   \item{`gpa_term`}{Numeric, term grade point average.}
-#'   \item{`gpa_cumul`}{Numeric, cumulative grade point average.} 
+#'   \item{`gpa_cumul`}{Numeric, cumulative grade point average.}
 #'   }
-#'   
+#'
 #' @examples
 #' \dontrun{
-#' 
+#'
 #' # Load data
 #' data(term)
-#' 
+#'
 #' # Select specific rows and columns
 #' rows_we_want <- term$mcid == "MCID3112192438"
 #' cols_we_want <- c("mcid", "term", "cip6", "level", "standing", "gpa_cumul")
-#' 
-#' # View observations for this ID 
-#' term[rows_we_want, cols_we_want] 
-#' 
+#'
+#' # View observations for this ID
+#' term[rows_we_want, cols_we_want]
 #' }
-#'   
+#'
 NULL

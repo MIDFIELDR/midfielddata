@@ -6,7 +6,9 @@
 \alias{midfielddata-package}
 \title{midfielddata: MIDFIELD Data Sample}
 \description{
-This data package contains anonymized student-level records for 98,000 undergraduates from three US institutions from 1988 through 2018 organized in four data tables keyed by student ID. Student-level data refers to information collected by undergraduate institutions on individual students including demographics, programs and academic standing by term, individual courses, grades, and degrees. These data are a proportionate stratified sample of the MIDFIELD database, but are not suitable for drawing inferences about program attributes or student experiences---‘midfielddata’ provides practice data, not research data.
+\if{html}{\figure{logo.svg}{options: style='float: right' alt='logo' width='120'}}
+
+This data package contains anonymized student-level records for 98,000 undergraduates from three US institutions from 1988 through 2018 organized in four data tables keyed by student ID. Student-level data refers to information collected by undergraduate institutions on individual students including demographics, programs and academic standing by term, individual courses, grades, and degrees. These data are a proportionate stratified sample of the MIDFIELD database (since 2023, managed by the American Society for Engineering Education), but are not suitable for drawing inferences about program attributes or student experiences---‘midfielddata’ provides practice data, not research data. The 'midfieldr' package, available at < https://CRAN.R-project.org/package=midfieldr>, is designed to interact with 'midfielddata' as well as with the full MIDFIELD database. The development of 'midfieldr' and 'midfielddata' was supported by the US National Science Foundation through grant numbers 1545667 and 2142087.
 }
 \seealso{
 Useful links:
@@ -21,9 +23,10 @@ Useful links:
 
 Authors:
 \itemize{
-  \item Russell Long \email{ralong@purdue.edu} [copyright holder, data manager]
+  \item Richard Layton \email{graphdoctor@gmail.com} [copyright holder]
+  \item Russell Long \email{ralong@purdue.edu} [copyright holder]
   \item Matthew Ohland \email{ohland@purdue.edu} [copyright holder]
-  \item Marisa Orr \email{marisak@clemson.edu} [copyright holder]
+  \item Marisa Orr [copyright holder]
   \item Susan Lord \email{slord@sandiego.edu} [copyright holder]
 }
 
