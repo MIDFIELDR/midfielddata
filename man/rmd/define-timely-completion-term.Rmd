@@ -1,0 +1,3 @@
+timely completion term
+
+:   The last term in which a student's degree completion would be considered timely. In many cases the timely completion (TC) term is 6 years after admission. The TC term can be adjusted to account for transfer credits. (Currently, there is no mechanism for extending the TC term for co-ops or migrators.) 

@@ -34,28 +34,19 @@
 #'   observations of unique students occupying 18 MB of memory:
 #'
 #'   \describe{
-#'   \item{`mcid`}{`r var_mcid`}
-#'   \item{`institution`}{`r var_institution`}
-#'   \item{`transfer`}{Character, transfer status, possible values are
-#'         `First-Time in College`, `First-Time Transfer`.}
-#'   \item{`hours_transfer`}{Numeric, number of credit hours transferred (or
-#'         `NA`).}
-#'   \item{`race`}{Character, race/ethnicity as self-reported by the student,
-#'          e.g., Asian, Black, Hispanic, etc.}
-#'   \item{`sex`}{Character, sex as self-reported by the student, possible
-#'          values are Female, Male, and Unknown.}
-#'   \item{`age_desc`}{Character, age group, possible values are `25 and Older`,
-#'         `Under 25`.}
-#'   \item{`us_citizen`}{Character, US citizenship, possible values are `No`,
-#'         `Yes`.}
-#'   \item{`home_zip`}{Character, home ZIP code (or `NA`), e.g., `02056`,
-#'         `20170`, `51301`, `80129`, etc.}
-#'   \item{`high_school`}{Character, code for the last high school attended before
-#'          admission (or `NA`), e.g., `060075`, `210512`, `431800`, `502195`,
-#'          etc.}
-#'   \item{`sat_math`}{Numeric, SAT mathematics test score (or `NA`).}
-#'   \item{`sat_verbal`}{Numeric, SAT reading test score (or `NA`).}
-#'   \item{`act_comp`}{Numeric, ACT composite test score (or `NA`).}
+#'   `r var_mcid`
+#'   `r var_institution`
+#'   `r var_transfer`
+#'   `r var_hours_transfer`
+#'   `r var_race`
+#'   `r var_sex`
+#'   `r var_age_desc`
+#'   `r var_us_citizen`
+#'   `r var_home_zip`
+#'   `r var_high_school`
+#'   `r var_sat_math`
+#'   `r var_sat_verbal`
+#'   `r var_act_comp`
 #'   }
 #'
 #' @examples

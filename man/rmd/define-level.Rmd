@@ -1,0 +1,3 @@
+level
+
+: Academic level determined by cumulative number of credit hours earned, e.g., 01 First-year, 02 Second-year, etc.

@@ -20,7 +20,7 @@ memory:
 
 - `mcid`:
 
-  Character, anonymized student identifier, e.g., `MCID3111142225`.
+  Character, de-identified student ID. Key column.
 
 - `institution`:
 
@@ -29,7 +29,7 @@ memory:
 
 - `term`:
 
-  Character, academic year and term, format YYYYT.
+  Character, academic year and term, format YYYYT. Key column.
 
 - `cip6`:
 
@@ -38,8 +38,8 @@ memory:
 
 - `level`:
 
-  Character, academic level determined by cumulative number of credit
-  ours earned, e.g., `01 First-year`, `02 Second-year`, etc.
+  Character, 01 Freshman, 02 Sophomore, etc. The equivalent values in
+  the current practice data are 01 First-Year, 02-Second Year, etc.
 
 - `standing`:
 

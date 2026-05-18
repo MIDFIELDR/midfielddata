@@ -1,0 +1,1 @@
+*Initialize.* &nbsp; Use the `term` and `student` data tables to obtain a data frame of student IDs meeting the data sufficiency and degree-seeking criteria. Appled to the practice data, this procedure yields the `baseline_mcid` data frame derived in [Blocs](art-050-blocs.html#initial-processing) and included with midfieldr. 

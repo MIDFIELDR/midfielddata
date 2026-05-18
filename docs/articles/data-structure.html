@@ -39,6 +39,7 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
 <li><a class="dropdown-item" href="../articles/data-structure.html">Data structure</a></li>
+    <li><a class="dropdown-item" href="../articles/individual-students.html">Data linked by student ID</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
@@ -70,53 +71,26 @@
 
     
     
-<p>In this article, we examine the general structure and identify the
-primary and composite keys for the four data tables:
-<code>student</code>, <code>course</code>, <code>term</code>, and
-<code>degree</code>.</p>
-<div class="section level2">
-<h2 id="load-data">Load data<a class="anchor" aria-label="anchor" href="#load-data"></a>
-</h2>
-<p><em>Start.</em>   If you are writing your own script to follow along,
-we use these packages in this article:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/WinVector/wrapr" class="external-link">wrapr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://midfieldr.github.io/midfielddata/">midfielddata</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com" class="external-link">data.table</a></span><span class="op">)</span></span></code></pre></div>
-<p><em>Load data tables.</em>   Data tables can be loaded individually
-or collectively as needed. View data dictionaries via
-<code><a href="../reference/student.html">?student</a></code>, <code><a href="../reference/course.html">?course</a></code>, <code><a href="../reference/term.html">?term</a></code>, or
-<code><a href="../reference/degree.html">?degree</a></code>.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Load one table as needed</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">student</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Or load multiple tables</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">course</span>, <span class="va">term</span>, <span class="va">degree</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="student">
-<code>student</code><a class="anchor" aria-label="anchor" href="#student"></a>
-</h2>
-<p>Data table with 13 variables and 97,555 rows. The variables are
-listed in Table 1.</p>
-<div id="mwlefoodfi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mwlefoodfi table {
+<p>We examine the structure of the four data tables in midfielddata:
+number of observations, number and class of variables, representative
+values, and database keys.</p>
+<div id="amukhfpqfm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#amukhfpqfm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mwlefoodfi thead, #mwlefoodfi tbody, #mwlefoodfi tfoot, #mwlefoodfi tr, #mwlefoodfi td, #mwlefoodfi th {
+#amukhfpqfm thead, #amukhfpqfm tbody, #amukhfpqfm tfoot, #amukhfpqfm tr, #amukhfpqfm td, #amukhfpqfm th {
   border-style: none;
 }
 
-#mwlefoodfi p {
+#amukhfpqfm p {
   margin: 0;
   padding: 0;
 }
 
-#mwlefoodfi .gt_table {
+#amukhfpqfm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -142,12 +116,12 @@ listed in Table 1.</p>
   border-left-color: #D3D3D3;
 }
 
-#mwlefoodfi .gt_caption {
+#amukhfpqfm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mwlefoodfi .gt_title {
+#amukhfpqfm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -159,7 +133,7 @@ listed in Table 1.</p>
   border-bottom-width: 0;
 }
 
-#mwlefoodfi .gt_subtitle {
+#amukhfpqfm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -171,7 +145,7 @@ listed in Table 1.</p>
   border-top-width: 0;
 }
 
-#mwlefoodfi .gt_heading {
+#amukhfpqfm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -183,13 +157,13 @@ listed in Table 1.</p>
   border-right-color: #D3D3D3;
 }
 
-#mwlefoodfi .gt_bottom_border {
+#amukhfpqfm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#mwlefoodfi .gt_col_headings {
+#amukhfpqfm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -204,7 +178,7 @@ listed in Table 1.</p>
   border-right-color: #D3D3D3;
 }
 
-#mwlefoodfi .gt_col_heading {
+#amukhfpqfm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -224,7 +198,7 @@ listed in Table 1.</p>
   overflow-x: hidden;
 }
 
-#mwlefoodfi .gt_column_spanner_outer {
+#amukhfpqfm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -236,15 +210,15 @@ listed in Table 1.</p>
   padding-right: 4px;
 }
 
-#mwlefoodfi .gt_column_spanner_outer:first-child {
+#amukhfpqfm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mwlefoodfi .gt_column_spanner_outer:last-child {
+#amukhfpqfm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mwlefoodfi .gt_column_spanner {
+#amukhfpqfm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -256,11 +230,11 @@ listed in Table 1.</p>
   width: 100%;
 }
 
-#mwlefoodfi .gt_spanner_row {
+#amukhfpqfm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mwlefoodfi .gt_group_heading {
+#amukhfpqfm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -286,7 +260,7 @@ listed in Table 1.</p>
   text-align: left;
 }
 
-#mwlefoodfi .gt_empty_group_heading {
+#amukhfpqfm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -301,15 +275,15 @@ listed in Table 1.</p>
   vertical-align: middle;
 }
 
-#mwlefoodfi .gt_from_md > :first-child {
+#amukhfpqfm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mwlefoodfi .gt_from_md > :last-child {
+#amukhfpqfm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mwlefoodfi .gt_row {
+#amukhfpqfm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -328,7 +302,7 @@ listed in Table 1.</p>
   overflow-x: hidden;
 }
 
-#mwlefoodfi .gt_stub {
+#amukhfpqfm .gt_stub {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -341,7 +315,7 @@ listed in Table 1.</p>
   padding-right: 5px;
 }
 
-#mwlefoodfi .gt_stub_row_group {
+#amukhfpqfm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -355,15 +329,15 @@ listed in Table 1.</p>
   vertical-align: top;
 }
 
-#mwlefoodfi .gt_row_group_first td {
+#amukhfpqfm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mwlefoodfi .gt_row_group_first th {
+#amukhfpqfm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mwlefoodfi .gt_summary_row {
+#amukhfpqfm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -373,16 +347,16 @@ listed in Table 1.</p>
   padding-right: 5px;
 }
 
-#mwlefoodfi .gt_first_summary_row {
+#amukhfpqfm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#mwlefoodfi .gt_first_summary_row.thick {
+#amukhfpqfm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mwlefoodfi .gt_last_summary_row {
+#amukhfpqfm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -392,7 +366,7 @@ listed in Table 1.</p>
   border-bottom-color: #5F5F5F;
 }
 
-#mwlefoodfi .gt_grand_summary_row {
+#amukhfpqfm .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -402,7 +376,7 @@ listed in Table 1.</p>
   padding-right: 5px;
 }
 
-#mwlefoodfi .gt_first_grand_summary_row {
+#amukhfpqfm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -412,7 +386,7 @@ listed in Table 1.</p>
   border-top-color: #5F5F5F;
 }
 
-#mwlefoodfi .gt_last_grand_summary_row_top {
+#amukhfpqfm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -422,11 +396,11 @@ listed in Table 1.</p>
   border-bottom-color: #5F5F5F;
 }
 
-#mwlefoodfi .gt_striped {
+#amukhfpqfm .gt_striped {
   background-color: #F4F4F4;
 }
 
-#mwlefoodfi .gt_table_body {
+#amukhfpqfm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -435,7 +409,7 @@ listed in Table 1.</p>
   border-bottom-color: #5F5F5F;
 }
 
-#mwlefoodfi .gt_footnotes {
+#amukhfpqfm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -449,7 +423,7 @@ listed in Table 1.</p>
   border-right-color: #D3D3D3;
 }
 
-#mwlefoodfi .gt_footnote {
+#amukhfpqfm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -458,7 +432,7 @@ listed in Table 1.</p>
   padding-right: 5px;
 }
 
-#mwlefoodfi .gt_sourcenotes {
+#amukhfpqfm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -472,7 +446,7 @@ listed in Table 1.</p>
   border-right-color: #D3D3D3;
 }
 
-#mwlefoodfi .gt_sourcenote {
+#amukhfpqfm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -480,152 +454,167 @@ listed in Table 1.</p>
   padding-right: 5px;
 }
 
-#mwlefoodfi .gt_left {
+#amukhfpqfm .gt_left {
   text-align: left;
 }
 
-#mwlefoodfi .gt_center {
+#amukhfpqfm .gt_center {
   text-align: center;
 }
 
-#mwlefoodfi .gt_right {
+#amukhfpqfm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mwlefoodfi .gt_font_normal {
+#amukhfpqfm .gt_font_normal {
   font-weight: normal;
 }
 
-#mwlefoodfi .gt_font_bold {
+#amukhfpqfm .gt_font_bold {
   font-weight: bold;
 }
 
-#mwlefoodfi .gt_font_italic {
+#amukhfpqfm .gt_font_italic {
   font-style: italic;
 }
 
-#mwlefoodfi .gt_super {
+#amukhfpqfm .gt_super {
   font-size: 65%;
 }
 
-#mwlefoodfi .gt_footnote_marks {
+#amukhfpqfm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mwlefoodfi .gt_asterisk {
+#amukhfpqfm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mwlefoodfi .gt_indent_1 {
+#amukhfpqfm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mwlefoodfi .gt_indent_2 {
+#amukhfpqfm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mwlefoodfi .gt_indent_3 {
+#amukhfpqfm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mwlefoodfi .gt_indent_4 {
+#amukhfpqfm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mwlefoodfi .gt_indent_5 {
+#amukhfpqfm .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mwlefoodfi .katex-display {
+#amukhfpqfm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mwlefoodfi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#amukhfpqfm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 <table class="table gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<caption>Table 1: Variables in student</caption>
-  <thead><tr class="gt_col_headings">
-<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="variable">variable</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="class">class</th>
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="Table">Table</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="Each-row-is">Each row is</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="N-students">N students</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="N-rows">N rows</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="N-columns">N columns</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="Mb-memory">Mb memory</th>
     </tr></thead>
 <tbody class="gt_table_body">
 <tr>
-<td headers="variable" class="gt_row gt_left">mcid</td>
-<td headers="class" class="gt_row gt_left">character</td>
+<td headers="Table" class="gt_row gt_left">course</td>
+<td headers="Each row is" class="gt_row gt_left">one student per term &amp; course</td>
+<td headers="N students" class="gt_row gt_right">97,555</td>
+<td headers="N rows" class="gt_row gt_right">3,289,532</td>
+<td headers="N columns" class="gt_row gt_right">12</td>
+<td headers="Mb memory" class="gt_row gt_right">324.3</td>
 </tr>
 <tr>
-<td headers="variable" class="gt_row gt_left gt_striped">institution</td>
-<td headers="class" class="gt_row gt_left gt_striped">character</td>
+<td headers="Table" class="gt_row gt_left gt_striped">term</td>
+<td headers="Each row is" class="gt_row gt_left gt_striped">one student per term</td>
+<td headers="N students" class="gt_row gt_right gt_striped">97,555</td>
+<td headers="N rows" class="gt_row gt_right gt_striped">639,915</td>
+<td headers="N columns" class="gt_row gt_right gt_striped">13</td>
+<td headers="Mb memory" class="gt_row gt_right gt_striped">72.8</td>
 </tr>
 <tr>
-<td headers="variable" class="gt_row gt_left">transfer</td>
-<td headers="class" class="gt_row gt_left">character</td>
+<td headers="Table" class="gt_row gt_left">student</td>
+<td headers="Each row is" class="gt_row gt_left">one student</td>
+<td headers="N students" class="gt_row gt_right">97,555</td>
+<td headers="N rows" class="gt_row gt_right">97,555</td>
+<td headers="N columns" class="gt_row gt_right">13</td>
+<td headers="Mb memory" class="gt_row gt_right">17.3</td>
 </tr>
 <tr>
-<td headers="variable" class="gt_row gt_left gt_striped">hours_transfer</td>
-<td headers="class" class="gt_row gt_left gt_striped">numeric</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left">race</td>
-<td headers="class" class="gt_row gt_left">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left gt_striped">sex</td>
-<td headers="class" class="gt_row gt_left gt_striped">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left">age_desc</td>
-<td headers="class" class="gt_row gt_left">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left gt_striped">us_citizen</td>
-<td headers="class" class="gt_row gt_left gt_striped">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left">home_zip</td>
-<td headers="class" class="gt_row gt_left">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left gt_striped">high_school</td>
-<td headers="class" class="gt_row gt_left gt_striped">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left">sat_math</td>
-<td headers="class" class="gt_row gt_left">numeric</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left gt_striped">sat_verbal</td>
-<td headers="class" class="gt_row gt_left gt_striped">numeric</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left">act_comp</td>
-<td headers="class" class="gt_row gt_left">numeric</td>
+<td headers="Table" class="gt_row gt_left gt_striped">degree</td>
+<td headers="Each row is" class="gt_row gt_left gt_striped">one student per degree</td>
+<td headers="N students" class="gt_row gt_right gt_striped">49,543</td>
+<td headers="N rows" class="gt_row gt_right gt_striped">49,665</td>
+<td headers="N columns" class="gt_row gt_right gt_striped">5</td>
+<td headers="Mb memory" class="gt_row gt_right gt_striped">5.2</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>The primary key is the student ID variable, <code>mcid</code>. We can
-use a function from the wrapr package to check that this column provides
-a unique key and verify that the number of NA values in the key column
-is zero.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Check that the indicated column forms a primary key</span></span>
-<span><span class="va">DT</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/data.table/man/copy.html" class="external-link">copy</a></span><span class="op">(</span><span class="va">student</span><span class="op">)</span></span>
-<span><span class="va">key_col_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mcid"</span><span class="op">)</span></span>
-<span><span class="fu">wrapr</span><span class="fu">::</span><span class="fu"><a href="https://winvector.github.io/wrapr//reference/checkColsFormUniqueKeys.html" class="external-link">checkColsFormUniqueKeys</a></span><span class="op">(</span><span class="va">DT</span>, <span class="va">key_col_names</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] TRUE</span></span>
+<div class="section level2">
+<h2 id="load-data">Load data<a class="anchor" aria-label="anchor" href="#load-data"></a>
+</h2>
+<p><em>Start.</em>   If you are writing your own script to follow along,
+we use these packages in this article:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://midfieldr.github.io/midfielddata/">midfielddata</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com" class="external-link">data.table</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/WinVector/wrapr" class="external-link">wrapr</a></span><span class="op">)</span></span></code></pre></div>
+<p><em>Load data tables.</em>   Data tables can be loaded individually
+or collectively as needed.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Load one table as needed</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">student</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Primary key variable should have no missing values</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">student</span><span class="op">$</span><span class="va">mcid</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0</span></span></code></pre></div>
-<p>Rows contain one observation per student.</p>
+<span><span class="co"># Or load multiple tables</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">course</span>, <span class="va">term</span>, <span class="va">degree</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="student">
+<code>student</code><a class="anchor" aria-label="anchor" href="#student"></a>
+</h2>
+<p>Student-level demographic information for 97,555 degree-seeking
+undergraduate students. Data at the “student-level” refers to
+information collected by undergraduate institutions about individual
+students at matriculation, for example, age, sex, and
+race/ethnicity.</p>
+<p>The <code>student</code> data table has 97,555 observations of the 13
+variables listed below. View the data dictionary using
+<code><a href="../reference/student.html">?student</a></code>.</p>
+<pre><code>         Variable     Class
+1            mcid character
+2     institution character
+3        transfer character
+4  hours_transfer   numeric
+5            race character
+6             sex character
+7        age_desc character
+8      us_citizen character
+9        home_zip character
+10    high_school character
+11       sat_math   numeric
+12     sat_verbal   numeric
+13       act_comp   numeric</code></pre>
+<p>Student data are structured in row-record form, that is, information
+associated with a particular ID occupies a single row—one record per
+student.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># First few rows and last few rows</span></span>
 <span><span class="va">student</span></span>
@@ -656,19 +645,31 @@ is zero.</p>
 <span><span class="co">#&gt; 97553:        590       24</span></span>
 <span><span class="co">#&gt; 97554:        590       32</span></span>
 <span><span class="co">#&gt; 97555:        540       32</span></span></code></pre></div>
+<p>Here, the ID variable is the primary key, as well as being the key
+common to all four data sets. We can verify that this column provides a
+unique key as follows:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Check that the indicated column forms a primary key</span></span>
+<span><span class="va">key_col_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mcid"</span><span class="op">)</span></span>
+<span><span class="fu">wrapr</span><span class="fu">::</span><span class="fu"><a href="https://winvector.github.io/wrapr//reference/checkColsFormUniqueKeys.html" class="external-link">checkColsFormUniqueKeys</a></span><span class="op">(</span><span class="va">student</span>, <span class="va">key_col_names</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] TRUE</span></span>
+<span></span>
+<span><span class="co"># Primary key variable should have no missing values</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">student</span><span class="op">$</span><span class="va">mcid</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0</span></span></code></pre></div>
 <p>Student IDs and institution names have been anonymized to remove
 identifiable information.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Anonymized IDs</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">student</span><span class="op">$</span><span class="va">mcid</span>, <span class="fl">8</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "MCID3111478315" "MCID3111363338" "MCID3111216590" "MCID3111876789"</span></span>
-<span><span class="co">#&gt; [5] "MCID3112383444" "MCID3111948721" "MCID3111381575" "MCID3112827958"</span></span>
+<span><span class="co">#&gt; [1] "MCID3111312879" "MCID3112197606" "MCID3111735491" "MCID3112243871"</span></span>
+<span><span class="co">#&gt; [5] "MCID3112849521" "MCID3112669477" "MCID3111754188" "MCID3112290710"</span></span>
 <span></span>
 <span><span class="co"># Anonymized institutions</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">student</span><span class="op">$</span><span class="va">institution</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "Institution B" "Institution C" "Institution J"</span></span></code></pre></div>
 <p>Race/ethnicity and sex are often used as grouping variables.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Possible values</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">student</span><span class="op">$</span><span class="va">race</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "Asian"           "Black"           "Hispanic"        "International"  </span></span>
@@ -678,7 +679,7 @@ identifiable information.</p>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">student</span><span class="op">$</span><span class="va">sex</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "Female"  "Male"    "Unknown"</span></span></code></pre></div>
 <p>Counts in each category.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># N by institution</span></span>
 <span><span class="va">student</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html" class="external-link">order</a></span><span class="op">(</span><span class="va">institution</span><span class="op">)</span>, <span class="va">.N</span>, by <span class="op">=</span> <span class="st">"institution"</span><span class="op">]</span></span>
 <span><span class="co">#&gt;      institution     N</span></span>
@@ -711,535 +712,29 @@ identifiable information.</p>
 <h2 id="course">
 <code>course</code><a class="anchor" aria-label="anchor" href="#course"></a>
 </h2>
-<p>Data table with 12 variables and 3,289,532 rows. The variables are
-listed in Table 2.</p>
-<div id="yvkgufivju" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yvkgufivju table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#yvkgufivju thead, #yvkgufivju tbody, #yvkgufivju tfoot, #yvkgufivju tr, #yvkgufivju td, #yvkgufivju th {
-  border-style: none;
-}
-
-#yvkgufivju p {
-  margin: 0;
-  padding: 0;
-}
-
-#yvkgufivju .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: small;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #000000;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #000000;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#yvkgufivju .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#yvkgufivju .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#yvkgufivju .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#yvkgufivju .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#yvkgufivju .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-}
-
-#yvkgufivju .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #5F5F5F;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#yvkgufivju .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#yvkgufivju .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#yvkgufivju .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#yvkgufivju .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#yvkgufivju .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#yvkgufivju .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#yvkgufivju .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #5F5F5F;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#yvkgufivju .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #5F5F5F;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-  vertical-align: middle;
-}
-
-#yvkgufivju .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#yvkgufivju .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#yvkgufivju .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: none;
-  border-top-width: 1px;
-  border-top-color: #D5D5D5;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D5D5D5;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D5D5D5;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#yvkgufivju .gt_stub {
-  color: #FFFFFF;
-  background-color: #5F5F5F;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #5F5F5F;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#yvkgufivju .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#yvkgufivju .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#yvkgufivju .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#yvkgufivju .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#yvkgufivju .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #5F5F5F;
-}
-
-#yvkgufivju .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#yvkgufivju .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-}
-
-#yvkgufivju .gt_grand_summary_row {
-  color: #333333;
-  background-color: #D5D5D5;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#yvkgufivju .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #5F5F5F;
-}
-
-#yvkgufivju .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #5F5F5F;
-}
-
-#yvkgufivju .gt_striped {
-  background-color: #F4F4F4;
-}
-
-#yvkgufivju .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #5F5F5F;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-}
-
-#yvkgufivju .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#yvkgufivju .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#yvkgufivju .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#yvkgufivju .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#yvkgufivju .gt_left {
-  text-align: left;
-}
-
-#yvkgufivju .gt_center {
-  text-align: center;
-}
-
-#yvkgufivju .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#yvkgufivju .gt_font_normal {
-  font-weight: normal;
-}
-
-#yvkgufivju .gt_font_bold {
-  font-weight: bold;
-}
-
-#yvkgufivju .gt_font_italic {
-  font-style: italic;
-}
-
-#yvkgufivju .gt_super {
-  font-size: 65%;
-}
-
-#yvkgufivju .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#yvkgufivju .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#yvkgufivju .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#yvkgufivju .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#yvkgufivju .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#yvkgufivju .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#yvkgufivju .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#yvkgufivju .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#yvkgufivju div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-<table class="table gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<caption>Table 2: Variables in course</caption>
-  <thead><tr class="gt_col_headings">
-<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="variable">variable</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="class">class</th>
-    </tr></thead>
-<tbody class="gt_table_body">
-<tr>
-<td headers="variable" class="gt_row gt_left">mcid</td>
-<td headers="class" class="gt_row gt_left">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left gt_striped">institution</td>
-<td headers="class" class="gt_row gt_left gt_striped">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left">term_course</td>
-<td headers="class" class="gt_row gt_left">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left gt_striped">course</td>
-<td headers="class" class="gt_row gt_left gt_striped">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left">abbrev</td>
-<td headers="class" class="gt_row gt_left">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left gt_striped">number</td>
-<td headers="class" class="gt_row gt_left gt_striped">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left">section</td>
-<td headers="class" class="gt_row gt_left">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left gt_striped">type</td>
-<td headers="class" class="gt_row gt_left gt_striped">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left">faculty_rank</td>
-<td headers="class" class="gt_row gt_left">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left gt_striped">hours_course</td>
-<td headers="class" class="gt_row gt_left gt_striped">numeric</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left">grade</td>
-<td headers="class" class="gt_row gt_left">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left gt_striped">discipline_midfield</td>
-<td headers="class" class="gt_row gt_left gt_striped">character</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>The key for the course data is a composite key of four variables:
-student ID, term, course abbreviation, and course number.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Check that the indicated column forms a primary key</span></span>
-<span><span class="va">DT</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/data.table/man/copy.html" class="external-link">copy</a></span><span class="op">(</span><span class="va">course</span><span class="op">)</span></span>
-<span><span class="va">key_col_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mcid"</span>, <span class="st">"term_course"</span>, <span class="st">"abbrev"</span>, <span class="st">"number"</span><span class="op">)</span></span>
-<span><span class="fu">wrapr</span><span class="fu">::</span><span class="fu"><a href="https://winvector.github.io/wrapr//reference/checkColsFormUniqueKeys.html" class="external-link">checkColsFormUniqueKeys</a></span><span class="op">(</span><span class="va">DT</span>, <span class="va">key_col_names</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] TRUE</span></span>
-<span> </span>
-<span><span class="co"># Composite key variables should have no missing values</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">course</span><span class="op">$</span><span class="va">mcid</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">course</span><span class="op">$</span><span class="va">term_course</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">course</span><span class="op">$</span><span class="va">abbrev</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">course</span><span class="op">$</span><span class="va">number</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0</span></span></code></pre></div>
-<p>Rows contain one observation per student per term per course.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<p>Student-level course information for 97,555 undergraduates including
+course name and number, credit hours, and student grades for individual
+students in each term and course.</p>
+<p>The <code>course</code> data table has 3,289,532 observations of the
+12 variables listed below. View the data dictionary using
+<code><a href="../reference/course.html">?course</a></code>.</p>
+<pre><code>              Variable     Class
+1                 mcid character
+2          institution character
+3          term_course character
+4               course character
+5               abbrev character
+6               number character
+7              section character
+8                 type character
+9         faculty_rank character
+10        hours_course   numeric
+11               grade character
+12 discipline_midfield character</code></pre>
+<p>Course data are structured in block-record form, that is, records
+associated with a particular ID can span multiple rows—one record per
+student per term per course.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># First few rows and last few rows</span></span>
 <span><span class="va">course</span></span>
 <span><span class="co">#&gt;                    mcid   institution term_course                   course</span></span>
@@ -1269,540 +764,100 @@ student ID, term, course abbreviation, and course number.</p>
 <span><span class="co">#&gt; 3289530:    Language and Literature: Japanese</span></span>
 <span><span class="co">#&gt; 3289531:                          Mathematics</span></span>
 <span><span class="co">#&gt; 3289532:           Social Sciences: Sociology</span></span></code></pre></div>
+<p>Here, the key is a composite of four variables: student ID, course
+abbreviation and number, and term.</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Check that the indicated column forms a primary key</span></span>
+<span><span class="va">key_col_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mcid"</span>, <span class="st">"term_course"</span>, <span class="st">"abbrev"</span>, <span class="st">"number"</span><span class="op">)</span></span>
+<span><span class="fu">wrapr</span><span class="fu">::</span><span class="fu"><a href="https://winvector.github.io/wrapr//reference/checkColsFormUniqueKeys.html" class="external-link">checkColsFormUniqueKeys</a></span><span class="op">(</span><span class="va">course</span>, <span class="va">key_col_names</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] TRUE</span></span>
+<span> </span>
+<span><span class="co"># Composite key variables should have no missing values</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">course</span><span class="op">$</span><span class="va">mcid</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">course</span><span class="op">$</span><span class="va">term_course</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">course</span><span class="op">$</span><span class="va">abbrev</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">course</span><span class="op">$</span><span class="va">number</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0</span></span></code></pre></div>
+<p>Sample of the course names. The course names do not contribute to the
+composite key, thus NAs are possible.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Sample course names</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">course</span><span class="op">$</span><span class="va">course</span>, <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "Sociology Of Aging"                     </span></span>
+<span><span class="co">#&gt;  [2] NA                                       </span></span>
+<span><span class="co">#&gt;  [3] "War/Peace/Strat Defense"                </span></span>
+<span><span class="co">#&gt;  [4] "Campaigns And Revolutions"              </span></span>
+<span><span class="co">#&gt;  [5] NA                                       </span></span>
+<span><span class="co">#&gt;  [6] "College Composition"                    </span></span>
+<span><span class="co">#&gt;  [7] "Ethics"                                 </span></span>
+<span><span class="co">#&gt;  [8] NA                                       </span></span>
+<span><span class="co">#&gt;  [9] "Shakespeare/Nonmajors"                  </span></span>
+<span><span class="co">#&gt; [10] "Global Issues And International Affairs"</span></span></code></pre></div>
+<p>Possible values of the faculty rank variable.</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Possible values</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">course</span><span class="op">$</span><span class="va">faculty_rank</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "Academic Professional"     "Adjunct Faculty"          </span></span>
+<span><span class="co">#&gt;  [3] "Administrative Assistant"  "Assistant Professor"      </span></span>
+<span><span class="co">#&gt;  [5] "Associate Professor"       "Clinical Faculty"         </span></span>
+<span><span class="co">#&gt;  [7] "Graduate Assistant"        "Instructor"               </span></span>
+<span><span class="co">#&gt;  [9] "Lecturer"                  "Non-Academic Professional"</span></span>
+<span><span class="co">#&gt; [11] "Other"                     "Pre/Post Doctoral"        </span></span>
+<span><span class="co">#&gt; [13] "Professor"                 "Research Faculty"         </span></span>
+<span><span class="co">#&gt; [15] "Senior Administrator"      "Technician/Specialist"    </span></span>
+<span><span class="co">#&gt; [17] "Undergraduate Assistant"   "Visiting Faculty"</span></span></code></pre></div>
+<p>Using the course abbreviation and number keys, we can count the
+number of unique courses in these data.</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Extract unique courses</span></span>
+<span><span class="va">DT</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/data.table/man/copy.html" class="external-link">copy</a></span><span class="op">(</span><span class="va">course</span><span class="op">)</span></span>
+<span><span class="va">DT</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">DT</span><span class="op">[</span>, <span class="fu">.</span><span class="op">(</span><span class="va">abbrev</span>, <span class="va">number</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">DT</span></span>
+<span><span class="co">#&gt;        abbrev number</span></span>
+<span><span class="co">#&gt;        &lt;char&gt; &lt;char&gt;</span></span>
+<span><span class="co">#&gt;     1:   ECEN   2230</span></span>
+<span><span class="co">#&gt;     2:   ECEN   4811</span></span>
+<span><span class="co">#&gt;     3:   MCEN   4147</span></span>
+<span><span class="co">#&gt;    ---              </span></span>
+<span><span class="co">#&gt; 22985:   ENVD   1976</span></span>
+<span><span class="co">#&gt; 22986:   ORGN   1001</span></span>
+<span><span class="co">#&gt; 22987:   IPHY   2010</span></span>
+<span></span>
+<span><span class="co"># Number of unique courses</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">DT</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 22987</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="term">
 <code>term</code><a class="anchor" aria-label="anchor" href="#term"></a>
 </h2>
-<p>Data table with 13 variables and 639,915 rows. The variables are
-listed in Table 3.</p>
-<div id="bqtxvafbsn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bqtxvafbsn table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#bqtxvafbsn thead, #bqtxvafbsn tbody, #bqtxvafbsn tfoot, #bqtxvafbsn tr, #bqtxvafbsn td, #bqtxvafbsn th {
-  border-style: none;
-}
-
-#bqtxvafbsn p {
-  margin: 0;
-  padding: 0;
-}
-
-#bqtxvafbsn .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: small;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #000000;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #000000;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#bqtxvafbsn .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#bqtxvafbsn .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#bqtxvafbsn .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#bqtxvafbsn .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#bqtxvafbsn .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-}
-
-#bqtxvafbsn .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #5F5F5F;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#bqtxvafbsn .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#bqtxvafbsn .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#bqtxvafbsn .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#bqtxvafbsn .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#bqtxvafbsn .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#bqtxvafbsn .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#bqtxvafbsn .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #5F5F5F;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#bqtxvafbsn .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #5F5F5F;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-  vertical-align: middle;
-}
-
-#bqtxvafbsn .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#bqtxvafbsn .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#bqtxvafbsn .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: none;
-  border-top-width: 1px;
-  border-top-color: #D5D5D5;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D5D5D5;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D5D5D5;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#bqtxvafbsn .gt_stub {
-  color: #FFFFFF;
-  background-color: #5F5F5F;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #5F5F5F;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#bqtxvafbsn .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#bqtxvafbsn .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#bqtxvafbsn .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#bqtxvafbsn .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#bqtxvafbsn .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #5F5F5F;
-}
-
-#bqtxvafbsn .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#bqtxvafbsn .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-}
-
-#bqtxvafbsn .gt_grand_summary_row {
-  color: #333333;
-  background-color: #D5D5D5;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#bqtxvafbsn .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #5F5F5F;
-}
-
-#bqtxvafbsn .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #5F5F5F;
-}
-
-#bqtxvafbsn .gt_striped {
-  background-color: #F4F4F4;
-}
-
-#bqtxvafbsn .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #5F5F5F;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-}
-
-#bqtxvafbsn .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#bqtxvafbsn .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#bqtxvafbsn .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#bqtxvafbsn .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#bqtxvafbsn .gt_left {
-  text-align: left;
-}
-
-#bqtxvafbsn .gt_center {
-  text-align: center;
-}
-
-#bqtxvafbsn .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#bqtxvafbsn .gt_font_normal {
-  font-weight: normal;
-}
-
-#bqtxvafbsn .gt_font_bold {
-  font-weight: bold;
-}
-
-#bqtxvafbsn .gt_font_italic {
-  font-style: italic;
-}
-
-#bqtxvafbsn .gt_super {
-  font-size: 65%;
-}
-
-#bqtxvafbsn .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#bqtxvafbsn .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#bqtxvafbsn .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#bqtxvafbsn .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#bqtxvafbsn .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#bqtxvafbsn .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#bqtxvafbsn .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#bqtxvafbsn .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#bqtxvafbsn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-<table class="table gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<caption>Table 3: Variables in term</caption>
-  <thead><tr class="gt_col_headings">
-<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="variable">variable</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="class">class</th>
-    </tr></thead>
-<tbody class="gt_table_body">
-<tr>
-<td headers="variable" class="gt_row gt_left">mcid</td>
-<td headers="class" class="gt_row gt_left">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left gt_striped">institution</td>
-<td headers="class" class="gt_row gt_left gt_striped">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left">term</td>
-<td headers="class" class="gt_row gt_left">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left gt_striped">cip6</td>
-<td headers="class" class="gt_row gt_left gt_striped">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left">level</td>
-<td headers="class" class="gt_row gt_left">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left gt_striped">standing</td>
-<td headers="class" class="gt_row gt_left gt_striped">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left">coop</td>
-<td headers="class" class="gt_row gt_left">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left gt_striped">hours_term</td>
-<td headers="class" class="gt_row gt_left gt_striped">numeric</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left">hours_term_attempt</td>
-<td headers="class" class="gt_row gt_left">numeric</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left gt_striped">hours_cumul</td>
-<td headers="class" class="gt_row gt_left gt_striped">numeric</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left">hours_cumul_attempt</td>
-<td headers="class" class="gt_row gt_left">numeric</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left gt_striped">gpa_term</td>
-<td headers="class" class="gt_row gt_left gt_striped">numeric</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left">gpa_cumul</td>
-<td headers="class" class="gt_row gt_left">numeric</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>The key for the term data is a composite key of two variables:
-student ID and term.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Check that the indicated column forms a primary key</span></span>
-<span><span class="va">DT</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/data.table/man/copy.html" class="external-link">copy</a></span><span class="op">(</span><span class="va">term</span><span class="op">)</span></span>
-<span><span class="va">key_col_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mcid"</span>, <span class="st">"term"</span><span class="op">)</span></span>
-<span><span class="fu">wrapr</span><span class="fu">::</span><span class="fu"><a href="https://winvector.github.io/wrapr//reference/checkColsFormUniqueKeys.html" class="external-link">checkColsFormUniqueKeys</a></span><span class="op">(</span><span class="va">DT</span>, <span class="va">key_col_names</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] TRUE</span></span>
-<span></span>
-<span><span class="co"># Composite key variables should have no missing values</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">term</span><span class="op">$</span><span class="va">mcid</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">term</span><span class="op">$</span><span class="va">term</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0</span></span></code></pre></div>
-<p>Rows contain one observation per student per term.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<p>Student-level term information for 135 undergraduates including
+program code, academic standing, and grade point average for individual
+students in each term.</p>
+<p>The <code>term</code> data table has 639,915 observations of the 13
+variables listed below. View the data dictionary using
+<code><a href="../reference/term.html">?term</a></code>.</p>
+<pre><code>              Variable     Class
+1                 mcid character
+2          institution character
+3                 term character
+4                 cip6 character
+5                level character
+6             standing character
+7                 coop character
+8           hours_term   numeric
+9   hours_term_attempt   numeric
+10         hours_cumul   numeric
+11 hours_cumul_attempt   numeric
+12            gpa_term   numeric
+13           gpa_cumul   numeric</code></pre>
+<p>Term data are structured in block-record form, that is, records
+associated with a particular ID can span multiple rows—one record per
+student per term.</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># First few rows and last few rows</span></span>
 <span><span class="va">term</span></span>
 <span><span class="co">#&gt;                   mcid   institution   term   cip6         level</span></span>
@@ -1832,6 +887,19 @@ student ID and term.</p>
 <span><span class="co">#&gt; 639913:                  13     3.52      3.52</span></span>
 <span><span class="co">#&gt; 639914:                  18     3.50      3.50</span></span>
 <span><span class="co">#&gt; 639915:                  15     2.18      2.18</span></span></code></pre></div>
+<p>Here, the key is a composite of two variables: student ID and
+term.</p>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Check that the indicated column forms a primary key</span></span>
+<span><span class="va">key_col_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mcid"</span>, <span class="st">"term"</span><span class="op">)</span></span>
+<span><span class="fu">wrapr</span><span class="fu">::</span><span class="fu"><a href="https://winvector.github.io/wrapr//reference/checkColsFormUniqueKeys.html" class="external-link">checkColsFormUniqueKeys</a></span><span class="op">(</span><span class="va">term</span>, <span class="va">key_col_names</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] TRUE</span></span>
+<span></span>
+<span><span class="co"># Composite key variables should have no missing values</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">term</span><span class="op">$</span><span class="va">mcid</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">term</span><span class="op">$</span><span class="va">term</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0</span></span></code></pre></div>
 <p>Terms are encoded <code>YYYYT</code>, where</p>
 <ul>
 <li>
@@ -1854,7 +922,7 @@ academic year</li>
 <code>19954</code> encodes Summer 95–96 (first session)</li>
 </ul>
 <p>Different institutions supply data over different time spans.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Range of data by institution</span></span>
 <span><span class="va">term</span><span class="op">[</span>, <span class="fu">.</span><span class="op">(</span>min_term <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">min</a></span><span class="op">(</span><span class="va">term</span><span class="op">)</span>, max_term <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">term</span><span class="op">)</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">"institution"</span><span class="op">]</span></span>
 <span><span class="co">#&gt;      institution min_term max_term</span></span>
@@ -1864,16 +932,15 @@ academic year</li>
 <span><span class="co">#&gt; 3: Institution C    19901    20154</span></span></code></pre></div>
 <p>Programs are encoded in the <code>cip6</code> variable, a 6-digit
 character based on the 2010 Classification of Instructional Programs
-(CIP) <span class="citation">(<a href="#ref-cip2010"><em><span>IPEDS</span> <span>C</span>lassification
-of <span>I</span>nstructional <span>P</span>rograms</em>
+(CIP) <span class="citation">(<a href="#ref-NCES:2010">NCES
 2010</a>)</span>.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># A sample of cip6 values</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">term</span><span class="op">$</span><span class="va">cip6</span>, <span class="fl">8</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "030511" "160101" "260202" "261310" "400501" "500501" "511104" "520201"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "030103" "140201" "141201" "240199" "260901" "450701" "540101"</span></span></code></pre></div>
 <p>Student level is used when determining timely completion terms of
 transfer students.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Possible values</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">term</span><span class="op">$</span><span class="va">level</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "01 First-year"      "02 Second-year"     "03 Third-year"     </span></span>
@@ -1883,503 +950,23 @@ transfer students.</p>
 <h2 id="degree">
 <code>degree</code><a class="anchor" aria-label="anchor" href="#degree"></a>
 </h2>
-<p>Data table with 5 variables and 49,665 rows. The variables are listed
-in Table 4.</p>
-<div id="gfvsybhaag" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gfvsybhaag table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#gfvsybhaag thead, #gfvsybhaag tbody, #gfvsybhaag tfoot, #gfvsybhaag tr, #gfvsybhaag td, #gfvsybhaag th {
-  border-style: none;
-}
-
-#gfvsybhaag p {
-  margin: 0;
-  padding: 0;
-}
-
-#gfvsybhaag .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: small;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #000000;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #000000;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#gfvsybhaag .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#gfvsybhaag .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#gfvsybhaag .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#gfvsybhaag .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#gfvsybhaag .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-}
-
-#gfvsybhaag .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #5F5F5F;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#gfvsybhaag .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#gfvsybhaag .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#gfvsybhaag .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#gfvsybhaag .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#gfvsybhaag .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#gfvsybhaag .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#gfvsybhaag .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #5F5F5F;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#gfvsybhaag .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #5F5F5F;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-  vertical-align: middle;
-}
-
-#gfvsybhaag .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#gfvsybhaag .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#gfvsybhaag .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: none;
-  border-top-width: 1px;
-  border-top-color: #D5D5D5;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D5D5D5;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D5D5D5;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#gfvsybhaag .gt_stub {
-  color: #FFFFFF;
-  background-color: #5F5F5F;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #5F5F5F;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#gfvsybhaag .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#gfvsybhaag .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#gfvsybhaag .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#gfvsybhaag .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#gfvsybhaag .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #5F5F5F;
-}
-
-#gfvsybhaag .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#gfvsybhaag .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-}
-
-#gfvsybhaag .gt_grand_summary_row {
-  color: #333333;
-  background-color: #D5D5D5;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#gfvsybhaag .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #5F5F5F;
-}
-
-#gfvsybhaag .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #5F5F5F;
-}
-
-#gfvsybhaag .gt_striped {
-  background-color: #F4F4F4;
-}
-
-#gfvsybhaag .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #5F5F5F;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-}
-
-#gfvsybhaag .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#gfvsybhaag .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#gfvsybhaag .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#gfvsybhaag .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#gfvsybhaag .gt_left {
-  text-align: left;
-}
-
-#gfvsybhaag .gt_center {
-  text-align: center;
-}
-
-#gfvsybhaag .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#gfvsybhaag .gt_font_normal {
-  font-weight: normal;
-}
-
-#gfvsybhaag .gt_font_bold {
-  font-weight: bold;
-}
-
-#gfvsybhaag .gt_font_italic {
-  font-style: italic;
-}
-
-#gfvsybhaag .gt_super {
-  font-size: 65%;
-}
-
-#gfvsybhaag .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#gfvsybhaag .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#gfvsybhaag .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#gfvsybhaag .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#gfvsybhaag .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#gfvsybhaag .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#gfvsybhaag .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#gfvsybhaag .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#gfvsybhaag div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-<table class="table gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<caption>Table 4: Variables in degree</caption>
-  <thead><tr class="gt_col_headings">
-<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="variable">variable</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="class">class</th>
-    </tr></thead>
-<tbody class="gt_table_body">
-<tr>
-<td headers="variable" class="gt_row gt_left">mcid</td>
-<td headers="class" class="gt_row gt_left">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left gt_striped">institution</td>
-<td headers="class" class="gt_row gt_left gt_striped">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left">term_degree</td>
-<td headers="class" class="gt_row gt_left">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left gt_striped">cip6</td>
-<td headers="class" class="gt_row gt_left gt_striped">character</td>
-</tr>
-<tr>
-<td headers="variable" class="gt_row gt_left">degree</td>
-<td headers="class" class="gt_row gt_left">character</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>The key for the degree data is a composite key of two variables:
-student ID and degree</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Check that the indicated column forms a primary key</span></span>
-<span><span class="va">DT</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/data.table/man/copy.html" class="external-link">copy</a></span><span class="op">(</span><span class="va">degree</span><span class="op">)</span></span>
-<span><span class="va">key_col_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mcid"</span>, <span class="st">"degree"</span><span class="op">)</span></span>
-<span><span class="fu">wrapr</span><span class="fu">::</span><span class="fu"><a href="https://winvector.github.io/wrapr//reference/checkColsFormUniqueKeys.html" class="external-link">checkColsFormUniqueKeys</a></span><span class="op">(</span><span class="va">DT</span>, <span class="va">key_col_names</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] TRUE</span></span>
-<span></span>
-<span><span class="co"># Composite key variables should have no missing values</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">degree</span><span class="op">$</span><span class="va">mcid</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">degree</span><span class="op">$</span><span class="va">degree</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0</span></span></code></pre></div>
-<p>Rows contain one observation per student per degree.</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<p>Student-level degree information for 49,543 undergraduates including
+institution, program, term, and baccalaureate degree for each
+student.</p>
+<p>The <code>degree</code> data table has 49,665 observations of the 5
+variables listed below. View the data dictionary using
+<code><a href="../reference/degree.html">?degree</a></code>.</p>
+<pre><code>     Variable     Class
+1        mcid character
+2 institution character
+3 term_degree character
+4        cip6 character
+5      degree character</code></pre>
+<p>Degree data are structured in block-record form, that is, records
+associated with a particular ID can span multiple rows—one record per
+student per degree. Multiple degrees can occur in the same term or in
+different terms.</p>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># First few rows and last few rows</span></span>
 <span><span class="va">degree</span></span>
 <span><span class="co">#&gt;                  mcid   institution term_degree   cip6</span></span>
@@ -2400,33 +987,66 @@ student ID and degree</p>
 <span><span class="co">#&gt; 49663:                       Bachelor of Science in Linguistics</span></span>
 <span><span class="co">#&gt; 49664:                       Bachelor of Science in Mathematics</span></span>
 <span><span class="co">#&gt; 49665: Bachelor of Science in Speech Communication and Rhetoric</span></span></code></pre></div>
-<p>This dataset contains records for graduates only, thus the number of
-observations in <code>degree</code> (49,665) is less than the number of
-observations in <code>student</code> (97,555). The
-<code>term_degree</code> and <code>cip6</code> variables indicate when
-and from which program a student graduates.</p>
-<p>Number of degrees earned per student. In these practice data, only
-one student earned more than one degree.</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<p>Here, the key is a composite of two variables: student ID and the CIP
+code.</p>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Check that the indicated column forms a primary key</span></span>
+<span><span class="va">key_col_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mcid"</span>, <span class="st">"cip6"</span><span class="op">)</span></span>
+<span><span class="fu">wrapr</span><span class="fu">::</span><span class="fu"><a href="https://winvector.github.io/wrapr//reference/checkColsFormUniqueKeys.html" class="external-link">checkColsFormUniqueKeys</a></span><span class="op">(</span><span class="va">degree</span>, <span class="va">key_col_names</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] TRUE</span></span>
+<span></span>
+<span><span class="co"># Composite key variables should have no missing values</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">degree</span><span class="op">$</span><span class="va">mcid</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">degree</span><span class="op">$</span><span class="va">degree</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0</span></span></code></pre></div>
+<p>This dataset contains records for graduates only, thus
+<code>degree</code> has fewer rows that <code>student</code>. The
+<code>term_degree</code> variable indicates when the student graduated
+and the and <code>cip6</code> indicates from which program.</p>
+<p>Sample of the degree names.</p>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">degree</span><span class="op">$</span><span class="va">degree</span>, <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "Bachelor of Science in Aerospace Engineering"                 </span></span>
+<span><span class="co">#&gt;  [2] "Bachelor of Science in Business Administration and Management"</span></span>
+<span><span class="co">#&gt;  [3] "Bachelor of Fine Arts in Theatre Arts"                        </span></span>
+<span><span class="co">#&gt;  [4] "Bachelor of International and Global Studies"                 </span></span>
+<span><span class="co">#&gt;  [5] "Bachelor of Science in Molecular Biology"                     </span></span>
+<span><span class="co">#&gt;  [6] "Bachelor of Arts in Political Science and Government"         </span></span>
+<span><span class="co">#&gt;  [7] "Bachelor of Liberal Arts and Sciences"                        </span></span>
+<span><span class="co">#&gt;  [8] "Bachelor of Science in Mechanical Engineering"                </span></span>
+<span><span class="co">#&gt;  [9] "Bachelor of Musical Arts"                                     </span></span>
+<span><span class="co">#&gt; [10] "Bachelor of Arts in Geography"</span></span></code></pre></div>
+<p>The number of unique degrees in these data.</p>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Count the unique degrees</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">degree</span><span class="op">$</span><span class="va">degree</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 153</span></span>
+<span></span>
+<span><span class="co"># Count the number of unique program codes</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">degree</span><span class="op">$</span><span class="va">cip6</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 153</span></span></code></pre></div>
+<p>Number of degrees earned per student. In these practice data, 122
+students earned two degrees.</p>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Count number of degrees by student</span></span>
 <span><span class="va">by_id</span> <span class="op">&lt;-</span> <span class="va">degree</span><span class="op">[</span>, <span class="fu">.</span><span class="op">(</span>degree_count <span class="op">=</span> <span class="va">.N</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">"mcid"</span><span class="op">]</span></span>
 <span></span>
-<span><span class="co"># Count number of students by number of degrees earned</span></span>
+<span><span class="co"># Count the number of students by the degree count</span></span>
 <span><span class="va">by_id</span><span class="op">[</span>, <span class="fu">.</span><span class="op">(</span>N_students <span class="op">=</span> <span class="va">.N</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">"degree_count"</span><span class="op">]</span></span>
 <span><span class="co">#&gt;    degree_count N_students</span></span>
 <span><span class="co">#&gt;           &lt;int&gt;      &lt;int&gt;</span></span>
 <span><span class="co">#&gt; 1:            1      49421</span></span>
 <span><span class="co">#&gt; 2:            2        122</span></span></code></pre></div>
 </div>
-<div class="section level2 unnumbered">
-<h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+<div class="section level2">
+<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>
 <div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-cip2010" class="csl-entry">
-<em><span>IPEDS</span> <span>C</span>lassification of
-<span>I</span>nstructional <span>P</span>rograms</em>. 2010.
-<span>N</span>ational <span>C</span>enter for <span>E</span>ducation
-<span>S</span>tatistics (<span>NCES</span>); <a href="https://nces.ed.gov/ipeds/cipcode/" class="external-link uri">https://nces.ed.gov/ipeds/cipcode/</a>.
+<div id="ref-NCES:2010" class="csl-entry">
+NCES. 2010. <em><span class="nocase">IPEDS Classification of
+Instructional Programs (CIP)</span></em>. <span>National Center for
+Education Statistics</span>. <a href="https://nces.ed.gov/ipeds/cipcode/" class="external-link">https://nces.ed.gov/ipeds/cipcode/</a>.
 </div>
 </div>
 </div>
@@ -2437,7 +1057,7 @@ one student earned more than one degree.</p>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Richard Layton, Russell Long, Matthew Ohland, Marisa Orr, Susan Lord, US National Science Foundation.</p>
+  <p>Developed by <a href="https://github.com/graphdr" class="external-link">Richard Layton</a>, Russell Long, Matthew Ohland, Marisa Orr, Susan Lord, US National Science Foundation.</p>
 </div>
 
 <div class="pkgdown-footer-right">

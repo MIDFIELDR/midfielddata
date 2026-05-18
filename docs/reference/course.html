@@ -24,6 +24,7 @@ example, course name and number, credit hours, and student grades.'><meta proper
       <ul class="navbar-nav me-auto"><li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/data-structure.html">Data structure</a></li>
+    <li><a class="dropdown-item" href="../articles/individual-students.html">Data linked by student ID</a></li>
   </ul></li>
 <li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">News</a></li>
@@ -59,57 +60,58 @@ example, course name and number, credit hours, and student grades.</p>
     <p>A <code>data.frame</code> and <code>data.table</code> with 12 variables and approximately
 3.3M observations of 97,555 unique students occupying 325 MB of memory:</p>
 <dl><dt><code>mcid</code></dt>
-<dd><p>Character, anonymized student identifier, e.g., <code>MCID3111142225</code>.</p></dd>
+<dd><p>Character, de-identified student ID. Key column.</p></dd>
 
 <dt><code>institution</code></dt>
-<dd><p>Character, de-identified institution name, e.g., Institution
-A, Institution B, etc.</p></dd>
+<dd><p>Character, de-identified institution
+name, e.g., Institution A, Institution B, etc.</p></dd>
 
-<dt><code>term_course</code></dt>
-<dd><p>Character, academic year and term, format YYYYT.</p></dd>
+<dt><code>term</code></dt>
+<dd><p>Character, academic year and term, format YYYYT.
+Key column.</p></dd>
 
 <dt><code>course</code></dt>
-<dd><p>Character, course name, e.g., <code>Astrophysics III</code>,
-<code>Calculus For Social Science And Business</code>, <code>Corp Financial Rprtng 1</code>,
-<code>Environmental Sanitation II</code>, <code>Fitness and Wellness</code>,
-<code>Introductory Astronomy 2</code>, <code>Our Changing Environment</code>, etc.</p></dd>
+<dd><p>Character, course name, e.g., <code>Astrophysics  III</code>, <code>Calculus For Social Science And Business</code>, <code>Corp  Financial Rprtng 1</code>, <code>Environmental Sanitation II</code>, <code>Fitness  and Wellness</code>, <code>Introductory Astronomy 2</code>, <code>Our Changing  Environment</code>, etc.</p></dd>
 
 <dt><code>abbrev</code></dt>
-<dd><p>Character, course alpha identifier, e.g. <code>AA</code>, <code>MATH</code>,
-<code>ACCT</code>, <code>EH</code>, <code>HES</code>, <code>ASTR</code>, etc.</p></dd>
+<dd><p>Character, course alphabetical identifier,
+e.g. ENGR, MATH, ENGL. Key column.</p></dd>
 
 <dt><code>number</code></dt>
-<dd><p>Character, course numeric identifier, e.g. <code>1104</code>, <code>1209</code>,
-<code>228</code>, <code>4047</code>, etc.</p></dd>
+<dd><p>Character, course numeric identifier, e.g.
+101, 3429. Key column.</p></dd>
 
 <dt><code>section</code></dt>
-<dd><p>Character, course section identifier, from one to four
-characters, e.g., <code>1</code>, <code>2</code>, <code>01</code>, <code>14</code>, <code>001</code>, <code>040</code>, <code>785</code>,
-<code>H02</code>, <code>R01</code>, <code>300E</code>, <code>888R</code>, etc.</p></dd>
+<dd><p>Character, course section identifier, from
+one to four characters, e.g., <code>1</code>, <code>2</code>, <code>01</code>, <code>14</code>, <code>001</code>,
+<code>040</code>, <code>785</code>, <code>H02</code>, <code>R01</code>, <code>300E</code>, <code>888R</code>, etc.</p></dd>
 
 <dt><code>type</code></dt>
-<dd><p>Character, predominant delivery method for this section, e.g.,
-<code>Blended</code>, <code>Distance Education</code>, <code>Face-to-Face</code>, <code>Online</code>, etc.</p></dd>
+<dd><p>Character, predominant delivery method for this
+section, e.g., <code>Blended</code>, <code>Distance Education</code>, <code>Face-to-Face</code>,
+<code>Online</code>, etc.</p></dd>
 
 <dt><code>faculty_rank</code></dt>
-<dd><p>Character, academic rank of the person teaching the
-course, e.g., <code>Assistant Professor</code>, <code>Associate Professor</code>,
-<code>Graduate Assistant</code>, <code>Visiting Faculty</code>, etc.</p></dd>
+<dd><p>Character, academic rank of the
+person teaching the course, e.g., <code>Assistant Professor</code>,
+<code>Associate Professor</code>, <code>Graduate Assistant</code>,
+<code>Visiting Faculty</code>, etc.</p></dd>
 
 <dt><code>hours_course</code></dt>
-<dd><p>Numeric, number of credit-hours for successful course
-completion.</p></dd>
+<dd><p>Numeric, number of credit-hours
+for successful course completion.</p></dd>
 
 <dt><code>grade</code></dt>
-<dd><p>Character, course grade, e.g., <code>A+</code>, <code>A</code>, <code>A-</code>, <code>B+</code>,
-<code>I</code>, <code>NG</code>, etc.</p></dd>
+<dd><p>Character, course grade, e.g., A+, A, A-, B+,
+I, NG, etc.</p></dd>
 
 <dt><code>discipline_midfield</code></dt>
-<dd><p>Character, a variable for grouping courses by
-academic discipline assigned by the MIDFIELD data curator, e.g.,
+<dd><p>Character, a variable
+for grouping courses by academic discipline
+assigned by the pre-2023 MIDFIELD data curator, e.g.,
 <code>Anthropology</code>, <code>Business</code>, <code>Computer Science</code>,
-<code>Engineering</code>, <code>Language and Literature</code>, <code>Mathematics</code>,
-<code>Visual and Performing Arts</code>, etc.</p></dd>
+<code>Engineering</code>, <code>Language and Literature</code>,
+<code>Mathematics</code>,<code>Visual and Performing Arts</code>, etc.</p></dd>
 
 
 </dl></div>
@@ -170,7 +172,7 @@ for tools and methods for working with MIDFIELD data in <code>R</code>.</p>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Richard Layton, Russell Long, Matthew Ohland, Marisa Orr, Susan Lord, US National Science Foundation.</p>
+  <p>Developed by <a href="https://github.com/graphdr" class="external-link">Richard Layton</a>, Russell Long, Matthew Ohland, Marisa Orr, Susan Lord, US National Science Foundation.</p>
 </div>
 
 <div class="pkgdown-footer-right">

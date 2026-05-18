@@ -1,0 +1,3 @@
+graduation rate
+
+: Graduation rate $(G)$ is the ratio of the number of program "starter-graduates" $(N_{sg})$ (i.e., graduates from the program in which they started) to the number of program starters $(N_s)$.

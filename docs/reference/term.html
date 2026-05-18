@@ -24,6 +24,7 @@ code, academic standing, and grade point average by term.'><meta property="og:im
       <ul class="navbar-nav me-auto"><li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/data-structure.html">Data structure</a></li>
+    <li><a class="dropdown-item" href="../articles/individual-students.html">Data linked by student ID</a></li>
   </ul></li>
 <li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">News</a></li>
@@ -59,43 +60,49 @@ code, academic standing, and grade point average by term.</p>
     <p>A <code>data.frame</code> and <code>data.table</code> with 13 variables and approximately
 640,000 observations of 97,555 unique students occupying 73 MB of memory:</p>
 <dl><dt><code>mcid</code></dt>
-<dd><p>Character, anonymized student identifier, e.g., <code>MCID3111142225</code>.</p></dd>
+<dd><p>Character, de-identified student ID. Key column.</p></dd>
 
 <dt><code>institution</code></dt>
-<dd><p>Character, de-identified institution name, e.g., Institution
-A, Institution B, etc.</p></dd>
+<dd><p>Character, de-identified institution
+name, e.g., Institution A, Institution B, etc.</p></dd>
 
 <dt><code>term</code></dt>
-<dd><p>Character, academic year and term, format YYYYT.</p></dd>
+<dd><p>Character, academic year and term, format YYYYT.
+Key column.</p></dd>
 
 <dt><code>cip6</code></dt>
-<dd><p>Character, 6-digit CIP code of program in which a student is
-enrolled in a term, e.g., <code>090101</code>, <code>141201</code>, <code>260901</code>, <code>420101</code>,
-etc.</p></dd>
+<dd><p>Character, 6-digit CIP code of program in
+which a student is enrolled in a term, e.g., <code>090101</code>,
+<code>141201</code>, <code>260901</code>, <code>420101</code>, etc.</p></dd>
 
 <dt><code>level</code></dt>
-<dd><p>Character, academic level determined by cumulative number of
-credit ours earned, e.g., <code>01 First-year</code>, <code>02 Second-year</code>, etc.</p></dd>
+<dd><p>Character, 01 Freshman, 02 Sophomore, etc.
+The equivalent values in the current practice data are 01
+First-Year, 02-Second Year, etc.</p></dd>
 
 <dt><code>standing</code></dt>
-<dd><p>Character, academic standing, e.g., <code>Good Standing</code>,
-<code>Academic Warning</code>, etc.</p></dd>
+<dd><p>Character, academic standing, e.g.,
+<code>Good Standing</code>, <code>Academic Warning</code>, etc.</p></dd>
 
 <dt><code>coop</code></dt>
-<dd><p>Character, cooperative education term, possible values are
-<code>Yes</code>, <code>No</code>.</p></dd>
+<dd><p>Character, cooperative education term, possible
+values are <code>Yes</code>, <code>No</code>.</p></dd>
 
 <dt><code>hours_term</code></dt>
-<dd><p>Numeric, credit hours earned in the term.</p></dd>
+<dd><p>Numeric, credit hours earned
+in the term.</p></dd>
 
 <dt><code>hours_term_attempt</code></dt>
-<dd><p>Numeric, credit hours attempted in the term.</p></dd>
+<dd><p>Numeric, credit
+hours attempted in the term.</p></dd>
 
 <dt><code>hours_cumul</code></dt>
-<dd><p>Numeric, cumulative credit hours earned.</p></dd>
+<dd><p>Numeric, cumulative credit hours
+earned.</p></dd>
 
 <dt><code>hours_cumul_attempt</code></dt>
-<dd><p>Numeric, cumulative credit hours attempted.</p></dd>
+<dd><p>Numeric, cumulative
+credit hours attempted.</p></dd>
 
 <dt><code>gpa_term</code></dt>
 <dd><p>Numeric, term grade point average.</p></dd>
@@ -161,7 +168,7 @@ tools and methods for working with MIDFIELD data in <code>R</code>.</p>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Richard Layton, Russell Long, Matthew Ohland, Marisa Orr, Susan Lord, US National Science Foundation.</p>
+  <p>Developed by <a href="https://github.com/graphdr" class="external-link">Richard Layton</a>, Russell Long, Matthew Ohland, Marisa Orr, Susan Lord, US National Science Foundation.</p>
 </div>
 
 <div class="pkgdown-footer-right">

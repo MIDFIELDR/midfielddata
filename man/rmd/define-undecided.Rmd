@@ -1,0 +1,3 @@
+undecided/unspecified
+
+: The MIDFIELD taxonomy includes the non-IPEDS code (CIP 999999) for Undecided or Unspecified indicating instances in which a student has not declared a major or an institution had not recorded a program. 

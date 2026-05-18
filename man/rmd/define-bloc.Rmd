@@ -1,0 +1,3 @@
+bloc
+
+: A grouping of student-level data dealt with as a unit, for example, starters, students ever-enrolled, graduates, transfer students, traditional and non-traditional students, migrators, etc. 

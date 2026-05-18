@@ -3,9 +3,9 @@ pkgdown: 2.2.0
 pkgdown_sha: ~
 articles:
   articles/data-structure: data-structure.html
+  articles/individual-students: individual-students.html
   midfielddata: midfielddata.html
-  articles/student: student.html
-last_built: 2026-05-12T00:30Z
+last_built: 2026-05-18T20:05Z
 urls:
   reference: https://midfieldr.github.io/midfielddata/reference
   article: https://midfieldr.github.io/midfielddata/articles

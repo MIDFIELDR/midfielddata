@@ -7,68 +7,76 @@ bibliography: ../../inst/REFERENCES.bib
 link-citations: true
 ---
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+```{r setup}
+#| include: false
 
-# inline numbers
-knitr::knit_hooks$set(inline = function(x) {
-  if (!is.numeric(x)) {
-    x
-  } else if (x >= 10000) {
-    prettyNum(round(x, 2), big.mark = ",")
-  } else {
-    prettyNum(round(x, 2))
-  }
-})
-
-# Function returning column classes table
-library(gt)
-var_class <- function(df, caption) {
-  x <- t(as.data.frame(lapply(df, 
-                              function(x) paste(class(x), 
-                                                collapse = ','))))
-  x <- data.table(variable = row.names(x), class = x[, 1])
-  x |>
-    gt() |>
-    tab_caption(caption) |>
-    tab_options(table.font.size = "small") |>
-    opt_stylize(style = 1, color = "gray") |>
-    tab_style(
-      style = list(cell_fill(color = "#c7eae5")),
-      locations = cells_column_labels(columns = everything())
-    )
-}
-
-library(wrapr, warn.conflicts = FALSE)
-library(midfielddata)
-suppressPackageStartupMessages(library(data.table))
-
-# data.table printout
-options(datatable.print.nrows = 10,
-        datatable.print.topn = 3,
-        datatable.print.class = TRUE)
+# for any "child" arguments in r-code-chunks
+library("rprojroot")
+path_to_rmd <- find_root_file("man", "rmd", criterion = has_file("DESCRIPTION"))
 ```
 
-In this article, we examine the general structure and identify the primary and composite keys for the four data  tables: `student`, `course`, `term`, and `degree`. 
+```{r child = paste0(path_to_rmd, "/common-setup.Rmd")}
+```
 
+```{r myfunctions}
+#| include: false
 
+# Function returning column classes DF
+var_class_2 <- function(DT) {
+  variable_class <- sapply(DT, class)
+  x <- as.data.frame(variable_class)
+  x$var_name <- row.names(x)
+  setDT(x)
+  setnames(x, 
+           old = c("var_name", "variable_class"), 
+           new = c("Variable", "Class"))
+  x <- x[, .(Variable, Class)]
+  setDF(x)
+  return(x)
+}
+
+set.seed(20260514)
+```
+
+We examine the structure of the four data tables in midfielddata: number of observations, number and class of variables, representative values, and database keys. 
+
+```{r}
+#| echo: false
+
+library(gt)
+wrapr::build_frame(
+  "Table", "Each row is", "N students", "N rows", "N columns", "Mb memory" |
+    "course", "one student per term & course",
+  "97,555", "3,289,532", 12L, 324.3 |
+    "term", "one student per term",
+  "97,555", "639,915", 13L, 72.8 |
+    "student", "one student",
+  "97,555", "97,555", 13L, 17.3 |
+    "degree", "one student per degree",
+  "49,543", "49,665", 5L, 5.2
+) |>
+  gt() |>
+  # tab_caption("Table 1. Practice data tables in midfielddata") |>
+  tab_options(table.font.size = "small") |>
+  opt_stylize(style = 1, color = "gray") |>
+  tab_style(
+    style = list(cell_fill(color = "#c7eae5")),
+    locations = cells_column_labels(columns = everything())
+  )
+```
 
 ## Load data
 
 *Start.* &nbsp; If you are writing your own script to follow along, we use these packages in this article:
 
 ```{r}
-#| eval: false
-library(wrapr)
 library(midfielddata)
 library(data.table)
+library(wrapr)
 ```
 
 
-*Load data tables.*  &nbsp; Data tables can be loaded individually or collectively as needed.  View data dictionaries via `?student`, `?course`, `?term`, or `?degree`. 
+*Load data tables.*  &nbsp; Data tables can be loaded individually or collectively as needed. 
 
 ```{r}
 # Load one table as needed
@@ -78,6 +86,8 @@ data(student)
 data(course, term, degree)
 ```
 
+ 
+
 
 
 
@@ -85,30 +95,32 @@ data(course, term, degree)
 
 ## `student`
 
-Data table with `r ncol(student)` variables and `r nrow(student)` rows. The variables are listed in Table 1. 
+Student-level demographic information for `r nrow(student)` degree-seeking undergraduate students. Data at the "student-level" refers to information collected by undergraduate institutions about individual students  at matriculation, for example, age, sex, and race/ethnicity.
+
+The `student` data table has `r nrow(student)` observations of the `r ncol(student)` variables listed below.  View the data dictionary using `?student`.
 
 ```{r}
 #| echo: false
-var_class(student, caption = "Table 1: Variables in student")
+#| comment: ""
+var_class_2(student)
 ```
 
-The primary key is the student ID variable, `mcid`. We can use a function from the wrapr package to check that this column provides a unique key and verify that the number of NA values in the key column is zero. 
-
-```{r}
-# Check that the indicated column forms a primary key
-DT <- copy(student)
-key_col_names <- c("mcid")
-wrapr::checkColsFormUniqueKeys(DT, key_col_names)
-
-# Primary key variable should have no missing values
-sum(is.na(student$mcid))
-```
-
-Rows contain one observation per student.
+Student data are structured in row-record form, that is, information associated with a particular ID occupies a single row---one record per student.
 
 ```{r}
 # First few rows and last few rows
 student
+```
+
+Here, the ID variable is the primary key, as well as being the key common to all four data sets. We can verify that this column provides a unique key as follows: 
+
+```{r}
+# Check that the indicated column forms a primary key
+key_col_names <- c("mcid")
+wrapr::checkColsFormUniqueKeys(student, key_col_names)
+
+# Primary key variable should have no missing values
+sum(is.na(student$mcid))
 ```
 
 Student IDs and institution names have been anonymized to remove identifiable information. 
@@ -150,20 +162,29 @@ student[order(sex), .N, by = "sex"]
 
 ## `course`
 
-Data table with `r ncol(course)` variables and `r nrow(course)` rows. The variables  are listed in Table 2.
+Student-level course information for `r length(unique(course$mcid))` undergraduates including course name and number, credit hours, and student grades for individual students in each term and course. 
 
-```{r, comment = ""}
+The `course` data table has `r nrow(course)` observations of the `r ncol(course)` variables listed below.  View the data dictionary using `?course`.
+
+```{r}
 #| echo: false
-var_class(course, caption = "Table 2: Variables in course")
+#| comment: ""
+var_class_2(course)
 ```
 
-The key for the course data is a composite key of four variables: student ID, term, course abbreviation, and course number. 
+Course data are structured in block-record form, that is, records associated with a particular ID can span multiple rows---one record per student per term per course.
+
+```{r}
+# First few rows and last few rows
+course
+```
+
+Here, the key is a composite of four variables: student ID, course abbreviation and number, and term. 
 
 ```{r}
 # Check that the indicated column forms a primary key
-DT <- copy(course)
 key_col_names <- c("mcid", "term_course", "abbrev", "number")
-wrapr::checkColsFormUniqueKeys(DT, key_col_names)
+wrapr::checkColsFormUniqueKeys(course, key_col_names)
  
 # Composite key variables should have no missing values
 sum(is.na(course$mcid))
@@ -172,12 +193,34 @@ sum(is.na(course$abbrev))
 sum(is.na(course$number))
 ```
 
-Rows contain one observation per student per term per course.
+Sample of the course names. The course names do not contribute to the composite key, thus NAs are possible. 
 
 ```{r}
-# First few rows and last few rows
-course
+# Sample course names
+sample(course$course, 10)
 ```
+
+Possible values of the faculty rank variable. 
+
+```{r}
+# Possible values
+sort(unique(course$faculty_rank))
+```
+
+
+
+Using the course abbreviation and number keys, we can count the number of unique courses in these data.  
+
+```{r}
+# Extract unique courses
+DT <- copy(course)
+DT <- unique(DT[, .(abbrev, number)])
+DT
+
+# Number of unique courses
+nrow(DT)
+```
+
 
 
 
@@ -188,31 +231,33 @@ course
 
 ## `term`
 
-Data table with `r ncol(term)` variables and `r nrow(term)` rows. The variables   are listed in Table 3.
+Student-level term information for `r length(unique(course$term))` undergraduates including program code, academic standing, and grade point average for individual students in each term.
 
-```{r, comment = ""}
-#| echo: false
-var_class(term, caption = "Table 3: Variables in term")
-```
-
-The key for the term data is a composite key of two variables: student ID and term. 
+The `term` data table has `r nrow(term)` observations of the `r ncol(term)` variables listed below.  View the data dictionary using `?term`.
 
 ```{r}
-# Check that the indicated column forms a primary key
-DT <- copy(term)
-key_col_names <- c("mcid", "term")
-wrapr::checkColsFormUniqueKeys(DT, key_col_names)
-
-# Composite key variables should have no missing values
-sum(is.na(term$mcid))
-sum(is.na(term$term))
+#| echo: false
+#| comment: ""
+var_class_2(term)
 ```
 
-Rows contain one observation per student per term.
+Term data are structured in block-record form, that is, records associated with a particular ID can span multiple rows---one record per student per term. 
 
 ```{r}
 # First few rows and last few rows
 term
+```
+
+Here, the key is a composite of two variables: student ID and term. 
+
+```{r}
+# Check that the indicated column forms a primary key
+key_col_names <- c("mcid", "term")
+wrapr::checkColsFormUniqueKeys(term, key_col_names)
+
+# Composite key variables should have no missing values
+sum(is.na(term$mcid))
+sum(is.na(term$term))
 ```
 
 Terms are encoded `YYYYT`, where 
@@ -233,7 +278,7 @@ Different institutions supply data over different time spans.
 term[, .(min_term = min(term), max_term = max(term)), by = "institution"]
 ```
 
-Programs are encoded in the `cip6` variable, a 6-digit character based on the 2010 Classification of Instructional Programs (CIP) [@cip2010].
+Programs are encoded in the `cip6` variable, a 6-digit character based on the 2010 Classification of Instructional Programs (CIP) [@NCES:2010].
 
 ```{r}
 # A sample of cip6 values
@@ -254,44 +299,63 @@ sort(unique(term$level))
 
 ## `degree`
 
-Data table with `r ncol(degree)` variables and `r nrow(degree)` rows. The variables  are listed in Table 4.
+Student-level degree information for `r length(unique(degree$mcid))` undergraduates including institution, program, term, and baccalaureate degree for each student. 
 
-```{r, comment = ""}
-#| echo: false
-var_class(degree, caption = "Table 4: Variables in degree")
-```
-
-The key for the degree data is a composite key of two variables: student ID and degree 
+The `degree` data table has `r nrow(degree)` observations of the `r ncol(degree)` variables listed below. View the data dictionary using `?degree`.
 
 ```{r}
-# Check that the indicated column forms a primary key
-DT <- copy(degree)
-key_col_names <- c("mcid", "degree")
-wrapr::checkColsFormUniqueKeys(DT, key_col_names)
-
-# Composite key variables should have no missing values
-sum(is.na(degree$mcid))
-sum(is.na(degree$degree))
+#| echo: false
+#| comment: ""
+var_class_2(degree)
 ```
 
-Rows contain one observation per student per degree.
+Degree data are structured in block-record form, that is, records associated with a particular ID can span multiple rows---one record per student per degree. Multiple degrees can occur in the same term or in different terms.
 
 ```{r}
 # First few rows and last few rows
 degree
 ```
 
-This dataset contains records for graduates only, thus the number of observations in `degree` (`r nrow(degree)`) is less than the number of observations in `student` (`r nrow(student)`). The `term_degree` and `cip6` variables indicate when and from which program a student graduates.  
+Here, the key is a composite of two variables: student ID and the CIP code. 
 
-Number of degrees earned per student. In these practice data, only one student earned more than one degree. 
+```{r}
+# Check that the indicated column forms a primary key
+key_col_names <- c("mcid", "cip6")
+wrapr::checkColsFormUniqueKeys(degree, key_col_names)
+
+# Composite key variables should have no missing values
+sum(is.na(degree$mcid))
+sum(is.na(degree$degree))
+```
+
+This dataset contains records for graduates only, thus `degree` has fewer rows that `student`. The `term_degree` variable indicates when the student graduated and the and `cip6` indicates from which program. 
+
+Sample of the degree names. 
+
+```{r}
+sample(degree$degree, 10)
+```
+
+The number of unique degrees in these data. 
+
+```{r}
+# Count the unique degrees
+length(unique(degree$degree))
+
+# Count the number of unique program codes
+length(unique(degree$cip6))
+```
+
+Number of degrees earned per student. In these practice data, 122 students earned two degrees. 
 
 ```{r}
 # Count number of degrees by student
 by_id <- degree[, .(degree_count = .N), by = "mcid"]
 
-# Count number of students by number of degrees earned
+# Count the number of students by the degree count
 by_id[, .(N_students = .N), by = "degree_count"]
 ```
 
+```{r child = paste0(path_to_rmd, "/common-closing.Rmd")}
+```
 
-## References

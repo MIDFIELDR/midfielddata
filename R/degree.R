@@ -45,13 +45,11 @@
 #'   observations of unique students occupying 6 MB of memory:
 #'
 #'   \describe{
-#'   \item{`mcid`}{`r var_mcid`}
-#'   \item{`institution`}{`r var_institution`}
-#'   \item{`term_degree`}{`r var_term_degree`}
-#'   \item{`cip6`}{`r var_cip6_degree`}
-#'   \item{`degree`}{Character, type of degree awarded, e.g.,
-#'         `Bachelor of Arts in Geography`, `Bachelor of Science in Finance`,
-#'          etc.}
+#'   `r var_mcid`
+#'   `r var_institution`
+#'   `r var_term_degree`
+#'   `r var_cip6_degree`
+#'   `r var_degree`
 #'   }
 #'
 #' @examples

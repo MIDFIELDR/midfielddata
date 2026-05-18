@@ -1,8 +1,15 @@
 # Data structure
 
-In this article, we examine the general structure and identify the
-primary and composite keys for the four data tables: `student`,
-`course`, `term`, and `degree`.
+We examine the structure of the four data tables in midfielddata: number
+of observations, number and class of variables, representative values,
+and database keys.
+
+| Table | Each row is | N students | N rows | N columns | Mb memory |
+|----|----|----|----|----|----|
+| course | one student per term & course | 97,555 | 3,289,532 | 12 | 324.3 |
+| term | one student per term | 97,555 | 639,915 | 13 | 72.8 |
+| student | one student | 97,555 | 97,555 | 13 | 17.3 |
+| degree | one student per degree | 49,543 | 49,665 | 5 | 5.2 |
 
 ## Load data
 
@@ -11,18 +18,13 @@ these packages in this article:
 
 ``` r
 
-library(wrapr)
 library(midfielddata)
 library(data.table)
+library(wrapr)
 ```
 
 *Load data tables.*   Data tables can be loaded individually or
-collectively as needed. View data dictionaries via
-[`?student`](https://midfieldr.github.io/midfielddata/reference/student.md),
-[`?course`](https://midfieldr.github.io/midfielddata/reference/course.md),
-[`?term`](https://midfieldr.github.io/midfielddata/reference/term.md),
-or
-[`?degree`](https://midfieldr.github.io/midfielddata/reference/degree.md).
+collectively as needed.
 
 ``` r
 
@@ -35,47 +37,33 @@ data(course, term, degree)
 
 ## `student`
 
-Data table with 13 variables and 97,555 rows. The variables are listed
-in Table 1.
+Student-level demographic information for 97,555 degree-seeking
+undergraduate students. Data at the “student-level” refers to
+information collected by undergraduate institutions about individual
+students at matriculation, for example, age, sex, and race/ethnicity.
 
-| variable       | class     |
-|----------------|-----------|
-| mcid           | character |
-| institution    | character |
-| transfer       | character |
-| hours_transfer | numeric   |
-| race           | character |
-| sex            | character |
-| age_desc       | character |
-| us_citizen     | character |
-| home_zip       | character |
-| high_school    | character |
-| sat_math       | numeric   |
-| sat_verbal     | numeric   |
-| act_comp       | numeric   |
+The `student` data table has 97,555 observations of the 13 variables
+listed below. View the data dictionary using
+[`?student`](https://midfieldr.github.io/midfielddata/reference/student.md).
 
-Table 1: Variables in student {.table .gt_table
-quarto-disable-processing="false" quarto-bootstrap="false"}
+             Variable     Class
+    1            mcid character
+    2     institution character
+    3        transfer character
+    4  hours_transfer   numeric
+    5            race character
+    6             sex character
+    7        age_desc character
+    8      us_citizen character
+    9        home_zip character
+    10    high_school character
+    11       sat_math   numeric
+    12     sat_verbal   numeric
+    13       act_comp   numeric
 
-The primary key is the student ID variable, `mcid`. We can use a
-function from the wrapr package to check that this column provides a
-unique key and verify that the number of NA values in the key column is
-zero.
-
-``` r
-
-# Check that the indicated column forms a primary key
-DT <- copy(student)
-key_col_names <- c("mcid")
-wrapr::checkColsFormUniqueKeys(DT, key_col_names)
-#> [1] TRUE
-
-# Primary key variable should have no missing values
-sum(is.na(student$mcid))
-#> [1] 0
-```
-
-Rows contain one observation per student.
+Student data are structured in row-record form, that is, information
+associated with a particular ID occupies a single row—one record per
+student.
 
 ``` r
 
@@ -110,6 +98,22 @@ student
 #> 97555:        540       32
 ```
 
+Here, the ID variable is the primary key, as well as being the key
+common to all four data sets. We can verify that this column provides a
+unique key as follows:
+
+``` r
+
+# Check that the indicated column forms a primary key
+key_col_names <- c("mcid")
+wrapr::checkColsFormUniqueKeys(student, key_col_names)
+#> [1] TRUE
+
+# Primary key variable should have no missing values
+sum(is.na(student$mcid))
+#> [1] 0
+```
+
 Student IDs and institution names have been anonymized to remove
 identifiable information.
 
@@ -117,8 +121,8 @@ identifiable information.
 
 # Anonymized IDs
 sample(student$mcid, 8)
-#> [1] "MCID3111478315" "MCID3111363338" "MCID3111216590" "MCID3111876789"
-#> [5] "MCID3112383444" "MCID3111948721" "MCID3111381575" "MCID3112827958"
+#> [1] "MCID3111312879" "MCID3112197606" "MCID3111735491" "MCID3112243871"
+#> [5] "MCID3112849521" "MCID3112669477" "MCID3111754188" "MCID3112290710"
 
 # Anonymized institutions
 sort(unique(student$institution))
@@ -174,50 +178,31 @@ student[order(sex), .N, by = "sex"]
 
 ## `course`
 
-Data table with 12 variables and 3,289,532 rows. The variables are
-listed in Table 2.
+Student-level course information for 97,555 undergraduates including
+course name and number, credit hours, and student grades for individual
+students in each term and course.
 
-| variable            | class     |
-|---------------------|-----------|
-| mcid                | character |
-| institution         | character |
-| term_course         | character |
-| course              | character |
-| abbrev              | character |
-| number              | character |
-| section             | character |
-| type                | character |
-| faculty_rank        | character |
-| hours_course        | numeric   |
-| grade               | character |
-| discipline_midfield | character |
+The `course` data table has 3,289,532 observations of the 12 variables
+listed below. View the data dictionary using
+[`?course`](https://midfieldr.github.io/midfielddata/reference/course.md).
 
-Table 2: Variables in course {.table .gt_table
-quarto-disable-processing="false" quarto-bootstrap="false"}
+                  Variable     Class
+    1                 mcid character
+    2          institution character
+    3          term_course character
+    4               course character
+    5               abbrev character
+    6               number character
+    7              section character
+    8                 type character
+    9         faculty_rank character
+    10        hours_course   numeric
+    11               grade character
+    12 discipline_midfield character
 
-The key for the course data is a composite key of four variables:
-student ID, term, course abbreviation, and course number.
-
-``` r
-
-# Check that the indicated column forms a primary key
-DT <- copy(course)
-key_col_names <- c("mcid", "term_course", "abbrev", "number")
-wrapr::checkColsFormUniqueKeys(DT, key_col_names)
-#> [1] TRUE
- 
-# Composite key variables should have no missing values
-sum(is.na(course$mcid))
-#> [1] 0
-sum(is.na(course$term_course))
-#> [1] 0
-sum(is.na(course$abbrev))
-#> [1] 0
-sum(is.na(course$number))
-#> [1] 0
-```
-
-Rows contain one observation per student per term per course.
+Course data are structured in block-record form, that is, records
+associated with a particular ID can span multiple rows—one record per
+student per term per course.
 
 ``` r
 
@@ -252,49 +237,115 @@ course
 #> 3289532:           Social Sciences: Sociology
 ```
 
-## `term`
-
-Data table with 13 variables and 639,915 rows. The variables are listed
-in Table 3.
-
-| variable            | class     |
-|---------------------|-----------|
-| mcid                | character |
-| institution         | character |
-| term                | character |
-| cip6                | character |
-| level               | character |
-| standing            | character |
-| coop                | character |
-| hours_term          | numeric   |
-| hours_term_attempt  | numeric   |
-| hours_cumul         | numeric   |
-| hours_cumul_attempt | numeric   |
-| gpa_term            | numeric   |
-| gpa_cumul           | numeric   |
-
-Table 3: Variables in term {.table .gt_table
-quarto-disable-processing="false" quarto-bootstrap="false"}
-
-The key for the term data is a composite key of two variables: student
-ID and term.
+Here, the key is a composite of four variables: student ID, course
+abbreviation and number, and term.
 
 ``` r
 
 # Check that the indicated column forms a primary key
-DT <- copy(term)
-key_col_names <- c("mcid", "term")
-wrapr::checkColsFormUniqueKeys(DT, key_col_names)
+key_col_names <- c("mcid", "term_course", "abbrev", "number")
+wrapr::checkColsFormUniqueKeys(course, key_col_names)
 #> [1] TRUE
-
+ 
 # Composite key variables should have no missing values
-sum(is.na(term$mcid))
+sum(is.na(course$mcid))
 #> [1] 0
-sum(is.na(term$term))
+sum(is.na(course$term_course))
+#> [1] 0
+sum(is.na(course$abbrev))
+#> [1] 0
+sum(is.na(course$number))
 #> [1] 0
 ```
 
-Rows contain one observation per student per term.
+Sample of the course names. The course names do not contribute to the
+composite key, thus NAs are possible.
+
+``` r
+
+# Sample course names
+sample(course$course, 10)
+#>  [1] "Sociology Of Aging"                     
+#>  [2] NA                                       
+#>  [3] "War/Peace/Strat Defense"                
+#>  [4] "Campaigns And Revolutions"              
+#>  [5] NA                                       
+#>  [6] "College Composition"                    
+#>  [7] "Ethics"                                 
+#>  [8] NA                                       
+#>  [9] "Shakespeare/Nonmajors"                  
+#> [10] "Global Issues And International Affairs"
+```
+
+Possible values of the faculty rank variable.
+
+``` r
+
+# Possible values
+sort(unique(course$faculty_rank))
+#>  [1] "Academic Professional"     "Adjunct Faculty"          
+#>  [3] "Administrative Assistant"  "Assistant Professor"      
+#>  [5] "Associate Professor"       "Clinical Faculty"         
+#>  [7] "Graduate Assistant"        "Instructor"               
+#>  [9] "Lecturer"                  "Non-Academic Professional"
+#> [11] "Other"                     "Pre/Post Doctoral"        
+#> [13] "Professor"                 "Research Faculty"         
+#> [15] "Senior Administrator"      "Technician/Specialist"    
+#> [17] "Undergraduate Assistant"   "Visiting Faculty"
+```
+
+Using the course abbreviation and number keys, we can count the number
+of unique courses in these data.
+
+``` r
+
+# Extract unique courses
+DT <- copy(course)
+DT <- unique(DT[, .(abbrev, number)])
+DT
+#>        abbrev number
+#>        <char> <char>
+#>     1:   ECEN   2230
+#>     2:   ECEN   4811
+#>     3:   MCEN   4147
+#>    ---              
+#> 22985:   ENVD   1976
+#> 22986:   ORGN   1001
+#> 22987:   IPHY   2010
+
+# Number of unique courses
+nrow(DT)
+#> [1] 22987
+```
+
+## `term`
+
+Student-level term information for 135 undergraduates including program
+code, academic standing, and grade point average for individual students
+in each term.
+
+The `term` data table has 639,915 observations of the 13 variables
+listed below. View the data dictionary using
+[`?term`](https://midfieldr.github.io/midfielddata/reference/term.md).
+
+                  Variable     Class
+    1                 mcid character
+    2          institution character
+    3                 term character
+    4                 cip6 character
+    5                level character
+    6             standing character
+    7                 coop character
+    8           hours_term   numeric
+    9   hours_term_attempt   numeric
+    10         hours_cumul   numeric
+    11 hours_cumul_attempt   numeric
+    12            gpa_term   numeric
+    13           gpa_cumul   numeric
+
+Term data are structured in block-record form, that is, records
+associated with a particular ID can span multiple rows—one record per
+student per term.
 
 ``` r
 
@@ -329,6 +380,22 @@ term
 #> 639915:                  15     2.18      2.18
 ```
 
+Here, the key is a composite of two variables: student ID and term.
+
+``` r
+
+# Check that the indicated column forms a primary key
+key_col_names <- c("mcid", "term")
+wrapr::checkColsFormUniqueKeys(term, key_col_names)
+#> [1] TRUE
+
+# Composite key variables should have no missing values
+sum(is.na(term$mcid))
+#> [1] 0
+sum(is.na(term$term))
+#> [1] 0
+```
+
 Terms are encoded `YYYYT`, where
 
 - `YYYY` is the year at the start of the academic year, and  
@@ -355,14 +422,14 @@ term[, .(min_term = min(term), max_term = max(term)), by = "institution"]
 ```
 
 Programs are encoded in the `cip6` variable, a 6-digit character based
-on the 2010 Classification of Instructional Programs (CIP) ([*IPEDS
-Classification of Instructional Programs* 2010](#ref-cip2010)).
+on the 2010 Classification of Instructional Programs (CIP) ([NCES
+2010](#ref-NCES:2010)).
 
 ``` r
 
 # A sample of cip6 values
 sort(unique(sample(term$cip6, 8)))
-#> [1] "030511" "160101" "260202" "261310" "400501" "500501" "511104" "520201"
+#> [1] "030103" "140201" "141201" "240199" "260901" "450701" "540101"
 ```
 
 Student level is used when determining timely completion terms of
@@ -378,39 +445,24 @@ sort(unique(term$level))
 
 ## `degree`
 
-Data table with 5 variables and 49,665 rows. The variables are listed in
-Table 4.
+Student-level degree information for 49,543 undergraduates including
+institution, program, term, and baccalaureate degree for each student.
 
-| variable    | class     |
-|-------------|-----------|
-| mcid        | character |
-| institution | character |
-| term_degree | character |
-| cip6        | character |
-| degree      | character |
+The `degree` data table has 49,665 observations of the 5 variables
+listed below. View the data dictionary using
+[`?degree`](https://midfieldr.github.io/midfielddata/reference/degree.md).
 
-Table 4: Variables in degree {.table .gt_table
-quarto-disable-processing="false" quarto-bootstrap="false"}
+         Variable     Class
+    1        mcid character
+    2 institution character
+    3 term_degree character
+    4        cip6 character
+    5      degree character
 
-The key for the degree data is a composite key of two variables: student
-ID and degree
-
-``` r
-
-# Check that the indicated column forms a primary key
-DT <- copy(degree)
-key_col_names <- c("mcid", "degree")
-wrapr::checkColsFormUniqueKeys(DT, key_col_names)
-#> [1] TRUE
-
-# Composite key variables should have no missing values
-sum(is.na(degree$mcid))
-#> [1] 0
-sum(is.na(degree$degree))
-#> [1] 0
-```
-
-Rows contain one observation per student per degree.
+Degree data are structured in block-record form, that is, records
+associated with a particular ID can span multiple rows—one record per
+student per degree. Multiple degrees can occur in the same term or in
+different terms.
 
 ``` r
 
@@ -436,20 +488,66 @@ degree
 #> 49665: Bachelor of Science in Speech Communication and Rhetoric
 ```
 
-This dataset contains records for graduates only, thus the number of
-observations in `degree` (49,665) is less than the number of
-observations in `student` (97,555). The `term_degree` and `cip6`
-variables indicate when and from which program a student graduates.
+Here, the key is a composite of two variables: student ID and the CIP
+code.
 
-Number of degrees earned per student. In these practice data, only one
-student earned more than one degree.
+``` r
+
+# Check that the indicated column forms a primary key
+key_col_names <- c("mcid", "cip6")
+wrapr::checkColsFormUniqueKeys(degree, key_col_names)
+#> [1] TRUE
+
+# Composite key variables should have no missing values
+sum(is.na(degree$mcid))
+#> [1] 0
+sum(is.na(degree$degree))
+#> [1] 0
+```
+
+This dataset contains records for graduates only, thus `degree` has
+fewer rows that `student`. The `term_degree` variable indicates when the
+student graduated and the and `cip6` indicates from which program.
+
+Sample of the degree names.
+
+``` r
+
+sample(degree$degree, 10)
+#>  [1] "Bachelor of Science in Aerospace Engineering"                 
+#>  [2] "Bachelor of Science in Business Administration and Management"
+#>  [3] "Bachelor of Fine Arts in Theatre Arts"                        
+#>  [4] "Bachelor of International and Global Studies"                 
+#>  [5] "Bachelor of Science in Molecular Biology"                     
+#>  [6] "Bachelor of Arts in Political Science and Government"         
+#>  [7] "Bachelor of Liberal Arts and Sciences"                        
+#>  [8] "Bachelor of Science in Mechanical Engineering"                
+#>  [9] "Bachelor of Musical Arts"                                     
+#> [10] "Bachelor of Arts in Geography"
+```
+
+The number of unique degrees in these data.
+
+``` r
+
+# Count the unique degrees
+length(unique(degree$degree))
+#> [1] 153
+
+# Count the number of unique program codes
+length(unique(degree$cip6))
+#> [1] 153
+```
+
+Number of degrees earned per student. In these practice data, 122
+students earned two degrees.
 
 ``` r
 
 # Count number of degrees by student
 by_id <- degree[, .(degree_count = .N), by = "mcid"]
 
-# Count number of students by number of degrees earned
+# Count the number of students by the degree count
 by_id[, .(N_students = .N), by = "degree_count"]
 #>    degree_count N_students
 #>           <int>      <int>
@@ -459,5 +557,6 @@ by_id[, .(N_students = .N), by = "degree_count"]
 
 ## References
 
-*IPEDS Classification of Instructional Programs*. 2010. National Center
-for Education Statistics (NCES); <https://nces.ed.gov/ipeds/cipcode/>.
+NCES. 2010. *IPEDS Classification of Instructional Programs (CIP)*.
+National Center for Education Statistics.
+<https://nces.ed.gov/ipeds/cipcode/>.

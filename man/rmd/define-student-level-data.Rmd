@@ -1,0 +1,3 @@
+student-level data
+
+: Data at the "student-level" refers to information about individual students including, for example, demographics, programs, academic standing, courses, grades, and degrees. Also called Student Unit Records (SURs). 

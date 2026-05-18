@@ -1,0 +1,3 @@
+multiway data
+
+: A data set of three variables: a category with _m_ levels; a second independent category with _n_ levels; and a quantitative variable (the response) of length _mn_ such that there is a value of the response for each combination of levels of the two categorical variables.

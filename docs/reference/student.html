@@ -26,6 +26,7 @@ matriculation.'><meta property="og:image" content="https://midfieldr.github.io/m
       <ul class="navbar-nav me-auto"><li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/data-structure.html">Data structure</a></li>
+    <li><a class="dropdown-item" href="../articles/individual-students.html">Data linked by student ID</a></li>
   </ul></li>
 <li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">News</a></li>
@@ -62,53 +63,56 @@ matriculation.</p>
     <p>A <code>data.frame</code> and <code>data.table</code> with 13 variables and 97,555
 observations of unique students occupying 18 MB of memory:</p>
 <dl><dt><code>mcid</code></dt>
-<dd><p>Character, anonymized student identifier, e.g., <code>MCID3111142225</code>.</p></dd>
+<dd><p>Character, de-identified student ID. Key column.</p></dd>
 
 <dt><code>institution</code></dt>
-<dd><p>Character, de-identified institution name, e.g., Institution
-A, Institution B, etc.</p></dd>
+<dd><p>Character, de-identified institution
+name, e.g., Institution A, Institution B, etc.</p></dd>
 
 <dt><code>transfer</code></dt>
-<dd><p>Character, transfer status, possible values are
-<code>First-Time in College</code>, <code>First-Time Transfer</code>.</p></dd>
+<dd><p>Character, transfer status, possible
+values are <code>First-Time in College</code>, <code>First-Time Transfer</code>.</p></dd>
 
 <dt><code>hours_transfer</code></dt>
-<dd><p>Numeric, number of credit hours transferred (or
-<code>NA</code>).</p></dd>
+<dd><p>Numeric, number of credit
+hours transferred (or NA).</p></dd>
 
 <dt><code>race</code></dt>
-<dd><p>Character, race/ethnicity as self-reported by the student,
-e.g., Asian, Black, Hispanic, etc.</p></dd>
+<dd><p>Character, race/ethnicity as self-reported
+by the student, e.g., Asian, Black, Hispanic, etc.</p></dd>
 
 <dt><code>sex</code></dt>
-<dd><p>Character, sex as self-reported by the student, possible
-values are Female, Male, and Unknown.</p></dd>
+<dd><p>Character, sex as self-reported by the student,
+possible values are Female, Male, and Unknown.</p></dd>
 
 <dt><code>age_desc</code></dt>
-<dd><p>Character, age group, possible values are <code>25 and Older</code>,
-<code>Under 25</code>.</p></dd>
+<dd><p>Character, age group, possible values
+are <code>25 and Older</code>, <code>Under 25</code>.</p></dd>
 
 <dt><code>us_citizen</code></dt>
-<dd><p>Character, US citizenship, possible values are <code>No</code>,
-<code>Yes</code>.</p></dd>
+<dd><p>Character, US citizenship, possible
+values are <code>No</code>, <code>Yes</code>.</p></dd>
 
 <dt><code>home_zip</code></dt>
-<dd><p>Character, home ZIP code (or <code>NA</code>), e.g., <code>02056</code>,
-<code>20170</code>, <code>51301</code>, <code>80129</code>, etc.</p></dd>
+<dd><p>Character, home ZIP code (or <code>NA</code>),
+e.g., <code>02056</code>, <code>20170</code>, <code>51301</code>, <code>80129</code>, etc.</p></dd>
 
 <dt><code>high_school</code></dt>
-<dd><p>Character, code for the last high school attended before
-admission (or <code>NA</code>), e.g., <code>060075</code>, <code>210512</code>, <code>431800</code>, <code>502195</code>,
-etc.</p></dd>
+<dd><p>Character, code for the last high
+school attended before admission (or <code>NA</code>), e.g., <code>060075</code>,
+<code>210512</code>, <code>431800</code>, <code>502195</code>, etc.</p></dd>
 
 <dt><code>sat_math</code></dt>
-<dd><p>Numeric, SAT mathematics test score (or <code>NA</code>).</p></dd>
+<dd><p>Numeric, SAT mathematics test score
+(or <code>NA</code>).</p></dd>
 
 <dt><code>sat_verbal</code></dt>
-<dd><p>Numeric, SAT reading test score (or <code>NA</code>).</p></dd>
+<dd><p>Numeric, SAT reading test score
+(or <code>NA</code>).</p></dd>
 
 <dt><code>act_comp</code></dt>
-<dd><p>Numeric, ACT composite test score (or <code>NA</code>).</p></dd>
+<dd><p>Numeric, ACT composite test score
+(or <code>NA</code>).</p></dd>
 
 
 </dl></div>
@@ -158,7 +162,7 @@ tools and methods for working with MIDFIELD data in <code>R</code>.</p>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Richard Layton, Russell Long, Matthew Ohland, Marisa Orr, Susan Lord, US National Science Foundation.</p>
+  <p>Developed by <a href="https://github.com/graphdr" class="external-link">Richard Layton</a>, Russell Long, Matthew Ohland, Marisa Orr, Susan Lord, US National Science Foundation.</p>
 </div>
 
 <div class="pkgdown-footer-right">

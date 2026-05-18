@@ -1,0 +1,3 @@
+multiway chart
+
+: A multi-panel dot plot: horizontal, quantitative scales; rows that encode one category; and panels that encode the second category. All panels have identical axes. The ordering of the rows and panels is crucial to the perception of effects.

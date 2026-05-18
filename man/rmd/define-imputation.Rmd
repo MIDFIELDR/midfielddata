@@ -1,0 +1,3 @@
+multiple imputation
+
+: Method of imputing missing categorical data, in this case, imputing the FYE proxy 6-digit CIP codes.

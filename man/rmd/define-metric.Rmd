@@ -1,0 +1,3 @@
+metric
+
+: A quantitative measure derived from student-level data. Includes statistical measures such as counts of program starters or graduates as well as comparative ratios such as graduation rate or stickiness. Typically involves comparisons of specific  blocs of students and programs. 

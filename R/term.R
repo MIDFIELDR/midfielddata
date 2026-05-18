@@ -45,24 +45,21 @@
 #'   640,000 observations of 97,555 unique students occupying 73 MB of memory:
 #'
 #'   \describe{
-#'   \item{`mcid`}{`r var_mcid`}
-#'   \item{`institution`}{`r var_institution`}
-#'   \item{`term`}{`r var_term`}
-#'   \item{`cip6`}{`r var_cip6_term`}
-#'   \item{`level`}{Character, academic level determined by cumulative number of
-#'          credit ours earned, e.g., `01 First-year`, `02 Second-year`, etc.}
-#'   \item{`standing`}{Character, academic standing, e.g., `Good Standing`,
-#'         `Academic Warning`, etc.}
-#'   \item{`coop`}{Character, cooperative education term, possible values are
-#'         `Yes`, `No`.}
-#'   \item{`hours_term`}{Numeric, credit hours earned in the term.}
-#'   \item{`hours_term_attempt`}{Numeric, credit hours attempted in the term.}
-#'   \item{`hours_cumul`}{Numeric, cumulative credit hours earned.}
-#'   \item{`hours_cumul_attempt`}{Numeric, cumulative credit hours attempted.}
-#'   \item{`gpa_term`}{Numeric, term grade point average.}
-#'   \item{`gpa_cumul`}{Numeric, cumulative grade point average.}
+#'   `r var_mcid`
+#'   `r var_institution`
+#'   `r var_term`
+#'   `r var_cip6_term`
+#'   `r var_level`
+#'   `r var_standing`
+#'   `r var_coop`
+#'   `r var_hours_term`
+#'   `r var_hours_term_attempt`
+#'   `r var_hours_cumul`
+#'   `r var_hours_cumul_attempt`
+#'   `r var_gpa_term`
+#'   `r var_gpa_cumul`
 #'   }
-#'
+#'   
 #' @examples
 #' \dontrun{
 #'

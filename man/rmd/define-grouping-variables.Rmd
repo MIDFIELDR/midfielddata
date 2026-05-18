@@ -1,0 +1,3 @@
+grouping variables
+
+: Detailed information in the student-level data that further characterize a bloc of records, typically used to create bloc subsets for comparison, for example, program, race/ethnicity, sex, age, grade level, grades, etc. 

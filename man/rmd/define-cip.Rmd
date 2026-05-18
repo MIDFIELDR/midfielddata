@@ -1,0 +1,3 @@
+CIP
+
+:  *Classification of Instructional Programs*, a taxonomy of academic programs curated by the US Department of Education [@NCES:2010]. The 2010 codes are included with midfieldr in the data set `cip`. 

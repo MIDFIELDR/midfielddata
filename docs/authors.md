@@ -2,15 +2,16 @@
 
 ## Authors
 
-- **Richard Layton**. Copyright holder, author, maintainer.
+- **[Richard Layton](https://github.com/graphdr)**. Maintainer, author,
+  copyright holder.
 
-- **Russell Long**. Copyright holder, author.
+- **Russell Long**. Author, copyright holder.
 
-- **Matthew Ohland**. Copyright holder, author.
+- **Matthew Ohland**. Author, copyright holder.
 
-- **Marisa Orr**. Copyright holder, author.
+- **Marisa Orr**. Author, copyright holder.
 
-- **Susan Lord**. Copyright holder, author.
+- **Susan Lord**. Author, copyright holder.
 
 - **US National Science Foundation**. Funder.
 

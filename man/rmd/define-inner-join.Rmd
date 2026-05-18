@@ -1,0 +1,3 @@
+inner join
+
+: A merge operation between two data frames `X` and `Y` that returns observations (rows) that match specified conditions in both. The data.table syntax is `Y[X, j, on]` where `j` can be used to select columns. 

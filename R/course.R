@@ -46,34 +46,18 @@
 #'   3.3M observations of 97,555 unique students occupying 325 MB of memory:
 #'
 #'   \describe{
-#'   \item{`mcid`}{`r var_mcid`}
-#'   \item{`institution`}{`r var_institution`}
-#'   \item{`term_course`}{`r var_term`}
-#'   \item{`course`}{Character, course name, e.g., `Astrophysics III`,
-#'         `Calculus For Social Science And Business`, `Corp Financial Rprtng 1`,
-#'         `Environmental Sanitation II`, `Fitness and Wellness`,
-#'         `Introductory Astronomy 2`, `Our Changing Environment`, etc.}
-#'   \item{`abbrev`}{Character, course alpha identifier, e.g. `AA`, `MATH`,
-#'         `ACCT`, `EH`, `HES`, `ASTR`, etc.}
-#'   \item{`number`}{Character, course numeric identifier, e.g. `1104`, `1209`,
-#'         `228`, `4047`, etc.}
-#'   \item{`section`}{Character, course section identifier, from one to four
-#'          characters, e.g., `1`, `2`, `01`, `14`, `001`, `040`, `785`,
-#'         `H02`, `R01`, `300E`, `888R`, etc.}
-#'   \item{`type`}{Character, predominant delivery method for this section, e.g.,
-#'         `Blended`, `Distance Education`, `Face-to-Face`, `Online`, etc.}
-#'   \item{`faculty_rank`}{Character, academic rank of the person teaching the
-#'          course, e.g., `Assistant Professor`, `Associate Professor`,
-#'         `Graduate Assistant`, `Visiting Faculty`, etc.}
-#'   \item{`hours_course`}{Numeric, number of credit-hours for successful course
-#'          completion.}
-#'   \item{`grade`}{Character, course grade, e.g., `A+`, `A`, `A-`, `B+`,
-#'         `I`, `NG`, etc.}
-#'   \item{`discipline_midfield`}{Character, a variable for grouping courses by
-#'          academic discipline assigned by the MIDFIELD data curator, e.g.,
-#'         `Anthropology`, `Business`, `Computer Science`,
-#'         `Engineering`, `Language and Literature`, `Mathematics`,
-#'         `Visual and Performing Arts`, etc.}
+#'   `r var_mcid`
+#'   `r var_institution`
+#'   `r var_term`
+#'   `r var_course`
+#'   `r var_abbrev`
+#'   `r var_number`
+#'   `r var_section`
+#'   `r var_type`
+#'   `r var_faculty_rank`
+#'   `r var_hours_course`
+#'   `r var_grade`
+#'   `r var_discipline_midfield`
 #'   }
 #'
 #' @examples

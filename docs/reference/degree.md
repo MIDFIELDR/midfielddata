@@ -19,7 +19,7 @@ of unique students occupying 6 MB of memory:
 
 - `mcid`:
 
-  Character, anonymized student identifier, e.g., `MCID3111142225`.
+  Character, de-identified student ID. Key column.
 
 - `institution`:
 
@@ -28,19 +28,18 @@ of unique students occupying 6 MB of memory:
 
 - `term_degree`:
 
-  Character, academic year and term, format `YYYYT`, in which a student
-  completes their program.
+  Character, academic year and term in which a student completes their
+  program, format YYYYT.
 
 - `cip6`:
 
-  Character, 6-digit CIP code of program in which a student earns a
-  degree, e.g., `090101`, `141201`, `260901`, `420101`, etc.
+  Character, 6-digit CIP code of program in which a student is enrolled
+  in a term. Key column.
 
 - `degree`:
 
-  Character, type of degree awarded, e.g.,
-  `Bachelor of Arts in Geography`, `Bachelor of Science in Finance`,
-  etc.
+  Character, type of degree awarded, e.g., Bachelor of Arts in
+  Geography, Bachelor of Science in Finance, etc.
 
 ## Source
 

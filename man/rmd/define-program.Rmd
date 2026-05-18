@@ -1,0 +1,3 @@
+program
+
+: US academic field of study. Can be used to indicate a specialty within a field or a collection of fields within a Department, College, or University. Programs are denoted by the *Classification of Instructional Programs* (CIP), a taxonomy of academic programs curated by the US Department of Education [@NCES:2010].

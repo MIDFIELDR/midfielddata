@@ -1,0 +1,3 @@
+graduates
+
+: Bloc of all graduates (timely completers) from a program, without regard to their starting programs. 

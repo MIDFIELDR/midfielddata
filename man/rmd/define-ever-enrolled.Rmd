@@ -1,0 +1,3 @@
+ever-enrolled
+
+: Bloc of students whose term records include a specified program in at least one term. 

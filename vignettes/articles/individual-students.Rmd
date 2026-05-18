@@ -1,0 +1,260 @@
+---
+title: "Data linked by student ID"
+format:
+  gfm:
+    html-table-processing: none
+bibliography: ../../inst/REFERENCES.bib
+link-citations: true
+---
+
+```{r setup}
+#| include: false
+
+# for any "child" arguments in r-code-chunks
+library("rprojroot")
+path_to_rmd <- find_root_file("man", "rmd", 
+                              criterion = has_file("DESCRIPTION"))
+```
+
+```{r child = paste0(path_to_rmd, "/common-setup.Rmd")}
+```
+
+To examine the variables and some representative values in midfielddata, we take a closer look at the records of individual students across the four data tables. 
+
+
+
+
+## Load data
+
+*Start.* &nbsp; If you are writing your own script to follow along, we use these packages in this article:
+
+```{r}
+library(midfielddata)
+library(data.table)
+
+# data.table printout option
+options(datatable.print.nrows = 70)
+```
+
+
+*Load data tables.*  &nbsp; Data tables can be loaded individually or collectively as needed. 
+
+```{r}
+# Load one table as needed
+data(student)
+
+# Or load multiple tables
+data(course, term, degree)
+```
+
+View data dictionaries on the help pages using `?student`, `?course`, `?term`, `?degree`. 
+
+## Student 1: Degree in psychology and sociology 
+
+We display the records for one specific student, using their ID to subset each data table.
+
+```{r}
+# One student ID
+id_we_want <- "MCID3112192438"
+```
+
+
+
+
+
+*student.* &nbsp; Yields one row per student.
+
+```{r}
+# Observations for a selected ID
+DT <- student[mcid == id_we_want]
+
+# display
+DT
+```
+
+
+
+
+
+
+
+*course.* &nbsp; For this student, the course records span `r nrow(course[mcid == id_we_want])` rows, one row per course.
+
+```{r}
+# Observations for a selected ID
+DT <- course[mcid == id_we_want]
+
+# display
+DT
+```
+
+If we omit several columns and rename others, we obtain a more readable output. 
+
+```{r}
+# columns to keep
+cols_we_want <- c("term_course", "course", "abbrev", "number", "hours_course", "grade")
+
+# subset
+DT <- course[mcid == id_we_want, ..cols_we_want]
+
+# order rows
+DT <- DT[order(term_course, number)]
+
+# merge course abbreviation and number, shorten some column names
+DT <- DT[, .(term = term_course, course, number = paste0(abbrev, "-", number), cr_hr = hours_course, grade)]
+
+# display
+DT
+```
+
+
+
+
+
+
+
+*Term.* &nbsp; Here, the records span `r nrow(term[mcid == id_we_want])` rows, one row per term. Again, we can do some editing to improve readability, assuming these are variables we might need in an analysis. 
+
+```{r}
+# columns to keep
+cols_we_want <- c("term", "cip6", "level", "hours_term", "gpa_term", "gpa_cumul")
+
+# subset the data
+DT <- term[mcid == id_we_want, ..cols_we_want]
+
+# order rows
+DT <- DT[order(term)]
+
+# display
+DT
+```
+
+
+
+
+
+*Degree.* &nbsp; In this example, the records span `r nrow(degree[mcid == id_we_want])` rows, one row per degree. The degrees were earned in the same term, Spring 2009.
+
+```{r}
+# Observations for a selected ID, showing selected columns
+DT <- degree[mcid == id_we_want, .(term_degree, cip6, degree)]
+
+# display
+DT
+```
+
+
+
+
+
+
+
+
+
+## Student 2: Degree in biological sciences
+
+
+```{r}
+# One student 
+id_we_want <- "MCID3111315508"
+```
+
+
+*Degree.* &nbsp; In this example, a student has earned two degrees at separate times. Usually we are interested in student records up to the time of their first degree, ignoring subsequent degrees (unless those degrees are relevant to one's study). 
+
+```{r}
+# Observations for a selected ID, showing selected columns
+DT <- degree[mcid == id_we_want, .(term_degree, cip6, degree)]
+
+# display
+DT
+```
+
+Thus, when extracting course and term information, we filter for terms no later than the first degree term---in this case, term 19961.
+
+```{r}
+# extract the term of the first degree
+first_degree_term <- degree[mcid == id_we_want, min(term_degree)]
+
+# display
+first_degree_term
+```
+
+
+
+
+*student.* &nbsp; As expected, yields one row.
+
+```{r}
+# Observations for a selected ID
+DT <- student[mcid == id_we_want]
+
+# display
+DT
+```
+
+*course.* &nbsp; For this student, the records show `r nrow(course[mcid == id_we_want & term_course <= first_degree_term])` courses (one row per course) leading up to thier first degree.
+
+```{r}
+# columns to keep
+cols_we_want <- c("term_course", "course", "abbrev", "number", "hours_course", "grade")
+
+# subset
+DT <- course[mcid == id_we_want, ..cols_we_want]
+
+# retain terms leading up to the first degree
+DT <- DT[term_course <= first_degree_term]
+
+# order rows
+DT <- DT[order(term_course, number)]
+
+# merge course abbreviation and number, shorten some column names
+DT <- DT[, .(term = term_course, course, number = paste0(abbrev, "-", number), cr_hr = hours_course, grade)]
+
+# display
+DT
+```
+
+
+
+
+
+
+
+*Term.* &nbsp; Here, the records show `r nrow(term[mcid == id_we_want & term <= first_degree_term])` terms (one row per term) leading up to their first degree.
+
+```{r}
+# columns to keep
+cols_we_want <- c("term", "cip6", "level", "hours_term", "gpa_term", "gpa_cumul")
+
+# subset the data
+DT <- term[mcid == id_we_want, ..cols_we_want]
+
+# retain terms leading up to the first degree
+DT <- DT[term <= first_degree_term]
+
+# order rows
+DT <- DT[order(term)]
+
+# display
+DT
+```
+
+
+
+
+
+
+## Wrap-up
+
+```{r}
+# Reset data.table print option
+options(datatable.print.nrows = 10)
+```
+
+
+
+
+
+```{r child = paste0(path_to_rmd, "/common-closing.Rmd")}
+```

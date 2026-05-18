@@ -24,6 +24,7 @@ students, for example, institution, program, term, and baccalaureate degree.'><m
       <ul class="navbar-nav me-auto"><li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/data-structure.html">Data structure</a></li>
+    <li><a class="dropdown-item" href="../articles/individual-students.html">Data linked by student ID</a></li>
   </ul></li>
 <li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">News</a></li>
@@ -59,24 +60,24 @@ students, for example, institution, program, term, and baccalaureate degree.</p>
     <p>A <code>data.frame</code> and <code>data.table</code> with 5 variables and 49,543
 observations of unique students occupying 6 MB of memory:</p>
 <dl><dt><code>mcid</code></dt>
-<dd><p>Character, anonymized student identifier, e.g., <code>MCID3111142225</code>.</p></dd>
+<dd><p>Character, de-identified student ID. Key column.</p></dd>
 
 <dt><code>institution</code></dt>
-<dd><p>Character, de-identified institution name, e.g., Institution
-A, Institution B, etc.</p></dd>
+<dd><p>Character, de-identified institution
+name, e.g., Institution A, Institution B, etc.</p></dd>
 
 <dt><code>term_degree</code></dt>
-<dd><p>Character, academic year and term, format <code>YYYYT</code>, in which
-a student completes their program.</p></dd>
+<dd><p>Character, academic year and term
+in which a student completes their program, format YYYYT.</p></dd>
 
 <dt><code>cip6</code></dt>
-<dd><p>Character, 6-digit CIP code of program in which a student
-earns a degree, e.g., <code>090101</code>, <code>141201</code>, <code>260901</code>, <code>420101</code>, etc.</p></dd>
+<dd><p>Character, 6-digit CIP code of program in
+which a student is enrolled in a term. Key column.</p></dd>
 
 <dt><code>degree</code></dt>
 <dd><p>Character, type of degree awarded, e.g.,
-<code>Bachelor of Arts in Geography</code>, <code>Bachelor of Science in Finance</code>,
-etc.</p></dd>
+Bachelor of Arts in Geography, Bachelor of Science
+in Finance, etc.</p></dd>
 
 
 </dl></div>
@@ -136,7 +137,7 @@ for tools and methods for working with MIDFIELD data in <code>R</code>.</p>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Richard Layton, Russell Long, Matthew Ohland, Marisa Orr, Susan Lord, US National Science Foundation.</p>
+  <p>Developed by <a href="https://github.com/graphdr" class="external-link">Richard Layton</a>, Russell Long, Matthew Ohland, Marisa Orr, Susan Lord, US National Science Foundation.</p>
 </div>
 
 <div class="pkgdown-footer-right">

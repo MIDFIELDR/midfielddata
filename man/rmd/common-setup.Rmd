@@ -1,0 +1,35 @@
+```{r child-common-setup}
+#| include: false
+
+library(knitr)
+# code chunks
+knitr::opts_chunk$set(fig.width = 8,
+                      out.width = "100%",
+                      collapse  = TRUE, 
+                      comment   = "#>",
+                      message   = FALSE, 
+                      cache     = FALSE, 
+                      error     = FALSE,
+                      tidy      = FALSE, 
+                      echo      = TRUE)
+
+# inline numbers woth comma separators
+knitr::knit_hooks$set(inline = function(x) {
+    if (!is.numeric(x)) {
+        x
+    } else if (x >= 10000) {
+        prettyNum(round(x, 2), big.mark = ",")
+    } else {
+        prettyNum(round(x, 2))
+    }
+})
+
+# backup existing random number seed
+oldseed <- NULL
+if (exists(".Random.seed")) oldseed <- .Random.seed
+
+# data.table printout
+options(datatable.print.nrows = 10,
+        datatable.print.topn = 3,
+        datatable.print.class = TRUE)
+```

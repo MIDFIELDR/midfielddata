@@ -1,0 +1,1 @@
+The development of midfieldr and midfielddata was supported by the US National Science Foundation through grant numbers 1545667 and 2142087. midfieldr is also designed to interact with the full MIDFIELD database, the management of which was transferred to the American Society for Engineering Education in 2023. 

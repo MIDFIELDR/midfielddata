@@ -1,0 +1,7 @@
+observation
+
+: Row of a data frame (`student`, `course`, `term`, `degree`) keyed by student ID. 
+
+variable
+
+: Column of a data frame

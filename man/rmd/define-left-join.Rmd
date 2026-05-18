@@ -1,0 +1,3 @@
+left join
+
+: A merge operation between two data frames `X` and `Y` which returns all observations (rows) of `X` and all matching rows in `Y`. The data.table syntax is `Y[X, j, on]` where `j` can be used to select columns.

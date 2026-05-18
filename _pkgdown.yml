@@ -14,6 +14,9 @@ navbar:
       menu:
       - text: Data structure
         href: articles/data-structure.html
+      - text: Data linked by student ID
+        href: articles/individual-students.html
+        
         
     - text: Reference
       href: reference/index.html
@@ -32,6 +35,13 @@ reference:
   - title: Package
   - contents:
       - midfielddata-package
+
+news:
+  cran_dates: false
+
+authors:
+  Richard Layton:
+    href: https://github.com/graphdr
 
 home:
   links:

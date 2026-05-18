@@ -19,7 +19,7 @@ observations of unique students occupying 18 MB of memory:
 
 - `mcid`:
 
-  Character, anonymized student identifier, e.g., `MCID3111142225`.
+  Character, de-identified student ID. Key column.
 
 - `institution`:
 
@@ -33,7 +33,7 @@ observations of unique students occupying 18 MB of memory:
 
 - `hours_transfer`:
 
-  Numeric, number of credit hours transferred (or `NA`).
+  Numeric, number of credit hours transferred (or NA).
 
 - `race`:
 

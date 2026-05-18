@@ -19,16 +19,16 @@ observations of 97,555 unique students occupying 325 MB of memory:
 
 - `mcid`:
 
-  Character, anonymized student identifier, e.g., `MCID3111142225`.
+  Character, de-identified student ID. Key column.
 
 - `institution`:
 
   Character, de-identified institution name, e.g., Institution A,
   Institution B, etc.
 
-- `term_course`:
+- `term`:
 
-  Character, academic year and term, format YYYYT.
+  Character, academic year and term, format YYYYT. Key column.
 
 - `course`:
 
@@ -39,13 +39,12 @@ observations of 97,555 unique students occupying 325 MB of memory:
 
 - `abbrev`:
 
-  Character, course alpha identifier, e.g. `AA`, `MATH`, `ACCT`, `EH`,
-  `HES`, `ASTR`, etc.
+  Character, course alphabetical identifier, e.g. ENGR, MATH, ENGL. Key
+  column.
 
 - `number`:
 
-  Character, course numeric identifier, e.g. `1104`, `1209`, `228`,
-  `4047`, etc.
+  Character, course numeric identifier, e.g. 101, 3429. Key column.
 
 - `section`:
 
@@ -70,15 +69,15 @@ observations of 97,555 unique students occupying 325 MB of memory:
 
 - `grade`:
 
-  Character, course grade, e.g., `A+`, `A`, `A-`, `B+`, `I`, `NG`, etc.
+  Character, course grade, e.g., A+, A, A-, B+, I, NG, etc.
 
 - `discipline_midfield`:
 
   Character, a variable for grouping courses by academic discipline
-  assigned by the MIDFIELD data curator, e.g., `Anthropology`,
+  assigned by the pre-2023 MIDFIELD data curator, e.g., `Anthropology`,
   `Business`, `Computer Science`, `Engineering`,
-  `Language and Literature`, `Mathematics`,
-  `Visual and Performing Arts`, etc.
+  `Language and Literature`, `Mathematics`,`Visual and Performing Arts`,
+  etc.
 
 ## Source
 

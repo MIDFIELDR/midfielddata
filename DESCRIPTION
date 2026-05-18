@@ -2,11 +2,11 @@ Package: midfielddata
 Title: MIDFIELD Data Sample
 Version: 0.2.3
 Authors@R: c(
-    person("Richard", "Layton", , "graphdoctor@gmail.com", role = c("cph", "aut", "cre")),
-    person("Russell", "Long", , "ralong@purdue.edu", role = c("cph", "aut")),
-    person("Matthew", "Ohland", , "ohland@purdue.edu", role = c("cph", "aut")),
-    person("Marisa", "Orr", role = c("cph", "aut")),
-    person("Susan", "Lord", , "slord@sandiego.edu", role = c("cph", "aut")),
+    person("Richard", "Layton", , "graphdoctor@gmail.com", role = c("cre", "aut", "cph")),
+    person("Russell", "Long", role = c("aut", "cph")),
+    person("Matthew", "Ohland", , "ohland@purdue.edu", role = c("aut", "cph")),
+    person("Marisa", "Orr", role = c("aut", "cph")),
+    person("Susan", "Lord", role = c("aut", "cph")),
     person("US National Science Foundation", role = "fnd")
   )
 Description: This data package contains anonymized student-level records
@@ -15,15 +15,16 @@ Description: This data package contains anonymized student-level records
     data refers to information collected by undergraduate institutions on
     individual students including demographics, programs and academic
     standing by term, individual courses, grades, and degrees. These data
-    are a proportionate stratified sample of the MIDFIELD database (since
-    2023, managed by the American Society for Engineering Education), but
+    are a proportionate stratified sample of the MIDFIELD database, but
     are not suitable for drawing inferences about program attributes or
-    student experiences---‘midfielddata’ provides practice data, not
+    student experiences---'midfielddata' provides practice data, not
     research data. The 'midfieldr' package, available at <
     https://CRAN.R-project.org/package=midfieldr>, is designed to interact
-    with 'midfielddata' as well as with the full MIDFIELD database. The
-    development of 'midfieldr' and 'midfielddata' was supported by the US
-    National Science Foundation through grant numbers 1545667 and 2142087.
+    with 'midfielddata' as well as with the full MIDFIELD database, the 
+    management of which was transferred to the American Society for Engineering 
+    Education in 2023. The development of 'midfieldr' and 'midfielddata' was 
+    supported by the US National Science Foundation through grant numbers 
+    1545667 and 2142087. 
 License: CC0
 URL: https://midfieldr.github.io/midfielddata/
 BugReports: https://github.com/MIDFIELDR/midfielddata/issues
