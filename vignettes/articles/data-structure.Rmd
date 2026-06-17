@@ -73,7 +73,6 @@ wrapr::build_frame(
 ```{r}
 library(midfielddata)
 library(data.table)
-library(wrapr)
 ```
 
 

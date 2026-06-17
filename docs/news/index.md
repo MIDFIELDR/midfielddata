@@ -1,10 +1,10 @@
 # Changelog
 
-## midfielddata 1.0.3.9xxx
+## midfielddata 0.2.4.9000
 
 Current development version
 
-- no changes yet
+- Update articles
 
 ## version 0.2.3
 

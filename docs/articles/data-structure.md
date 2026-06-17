@@ -20,7 +20,6 @@ these packages in this article:
 
 library(midfielddata)
 library(data.table)
-library(wrapr)
 ```
 
 *Load data tables.*   Data tables can be loaded individually or

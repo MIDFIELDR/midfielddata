@@ -15,7 +15,7 @@
 
 Current development version
 
-- Updates to articles
+- Update articles
 
 ## version 0.2.3
 
