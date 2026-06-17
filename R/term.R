@@ -59,7 +59,7 @@
 #'   `r var_gpa_term`
 #'   `r var_gpa_cumul`
 #'   }
-#'   
+#'
 #' @examples
 #' \dontrun{
 #'

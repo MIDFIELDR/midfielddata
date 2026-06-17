@@ -19,24 +19,37 @@ knitr::opts_chunk$set(fig.path = "man/figures/README-")
 
 ## Overview
 
-midfielddata is an R data package that provides anonymized student-level records for 98,000 undergraduates at three US institutions from 1988 through 2018, collected in four data tables keyed by student ID:
+Contains anonymized student-level records for 98,000 undergraduates from three US institutions from 1988 through 2018 organized in four data tables keyed by student ID. Student-level records are those collected by undergraduate institutions on individual students including demographics, programs and academic standing by term, individual courses, grades, and degrees. 
 
-- __student__ &nbsp; all students, their demographics, transfer status, institution, etc. 
-- __course__  &nbsp; all students, every course, course name, number, credit hours, grades, etc. 
-- __term__    &nbsp; all students, every term, program, standing, GPA, etc. 
-- __degree__  &nbsp; all graduating students, their degree(s), program(s), term
+```{r}
+#| echo: false
 
-The data in midfielddata are a proportionate stratified sample of the MIDFIELD database [@aee2016], but are not suitable for drawing inferences about program attributes or student experiences---midfielddata are for *practice*, not research. 
+library(gt)
+wrapr::build_frame(
+  "Data table", "Example of variables" |
+    "student", "ID, institution, transfer status, demographics, SAT, etc." |
+    "course", "ID, institution, term, course name and number, grade, etc." |
+    "term", "ID, institution, term, program, level, standing, etc., " |
+    "degree", "ID, institution, term, program, degree"
+) |>
+  gt() |>
+  # tab_caption("Table 1. Practice data tables in midfielddata") |>
+  tab_options(table.font.size = "small") |>
+  opt_stylize(style = 1, color = "gray") |>
+  tab_style(
+    style = list(cell_fill(color = "#c7eae5")),
+    locations = cells_column_labels(columns = everything())
+  )
+```
 
-Suggested packages. 
-
-- [midfieldr](https://CRAN.R-project.org/package=midfieldr) for working with MIDFIELD data [@Layton+Long+Ohland:2026:midfieldr]
-- [data.table](https://CRAN.R-project.org/package=data.table) for manipulating data [@Dowle+Srinivasan:2026:data.table]
-
-
+These data are a proportionate stratified sample of MIDFIELD [@ohland:midfield:2023], a database managed since 2023 by the American Society for Engineering Education. The midfielddata datasets are suitable for practice working with student-level records using the midfieldr package [@Layton+Long+Ohland:2026:midfieldr] but are not, however, suitable for drawing inferences about program attributes or student experiences---midfielddata is for *practice*, not *research*. 
+    
+    
+    
+    
 ## Installation
 
-The installed size of midfielddata is about 24 Mb, so installation will take longer than that of a conventional CRAN package. Install from the MIDFIELDR drat repository with: 
+Install from the MIDFIELDR drat repository with: 
 
 ```{r}
 #| eval: false

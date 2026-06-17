@@ -1,6 +1,6 @@
 Package: midfielddata
 Title: MIDFIELD Data Sample
-Version: 0.2.3
+Version: 0.2.4.9000
 Authors@R: c(
     person("Richard", "Layton", , "graphdoctor@gmail.com", role = c("cre", "aut", "cph")),
     person("Russell", "Long", role = c("aut", "cph")),
@@ -9,39 +9,36 @@ Authors@R: c(
     person("Susan", "Lord", role = c("aut", "cph")),
     person("US National Science Foundation", role = "fnd")
   )
-Description: This data package contains anonymized student-level records
-    for 98,000 undergraduates from three US institutions from 1988 through
-    2018 organized in four data tables keyed by student ID. Student-level
-    data refers to information collected by undergraduate institutions on
-    individual students including demographics, programs and academic
-    standing by term, individual courses, grades, and degrees. These data
-    are a proportionate stratified sample of the MIDFIELD database, but
-    are not suitable for drawing inferences about program attributes or
-    student experiences---'midfielddata' provides practice data, not
-    research data. The 'midfieldr' package, available at <
-    https://CRAN.R-project.org/package=midfieldr>, is designed to interact
-    with 'midfielddata' as well as with the full MIDFIELD database, the 
-    management of which was transferred to the American Society for Engineering 
-    Education in 2023. The development of 'midfieldr' and 'midfielddata' was 
+Description: Contains anonymized student-level records for 98,000 
+    undergraduates from three US institutions from 1988 through 2018 organized 
+    in four data tables keyed by student ID. Student-level records are those 
+    collected by undergraduate institutions on individual students including 
+    demographics, programs and academic standing by term, individual courses, 
+    grades, and degrees. 'midfielddata' provides data sets suitable for 
+    learning and practicing basic data skills in manipulating student-level 
+    records as developed in the 'midfieldr' package. 'midfielddata' also serves
+    as a database model for structuring registrar's data in general. The data 
+    in 'midfielddata' are not, however, suitable for drawing inferences about 
+    program attributes or student experiences---'midfielddata' is for practice, 
+    not research. The development of 'midfieldr' and 'midfielddata' was 
     supported by the US National Science Foundation through grant numbers 
-    1545667 and 2142087. 
+    1545667 and 2142087.
 License: CC0
-URL: https://midfieldr.github.io/midfielddata/
-BugReports: https://github.com/MIDFIELDR/midfielddata/issues
+URL: https://midfieldr.github.io/midfielddata/, https://CRAN.R-project.org/package=midfieldr/
+BugReports: https://github.com/MIDFIELDR/midfielddata/issues/
 Depends: 
     R (>= 3.5.0)
 Suggests: 
-    data.table,
+    data.table,  
     knitr,
     rmarkdown,
-    tinytest,
-    wrapr
+    tinytest
 VignetteBuilder: 
-    knitr
+    knitr, 
+    rmarkdown
 Config/Needs/website: rmarkdown
 Config/roxygen2/version: 8.0.0
 Encoding: UTF-8
-FundingBy: National Science Foundation
 Language: en-US
 LazyData: FALSE
 Roxygen: list(markdown = TRUE)

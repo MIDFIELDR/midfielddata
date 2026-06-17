@@ -17,8 +17,8 @@
 <link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="MIDFIELD Data Sample">
-<meta name="description" content="This data package contains anonymized student-level records for 98,000 undergraduates from three US institutions from 1988 through 2018 organized in four data tables keyed by student ID. Student-level data refers to information collected by undergraduate institutions on individual students including demographics, programs and academic standing by term, individual courses, grades, and degrees. These data are a proportionate stratified sample of the MIDFIELD database, but are not suitable for drawing inferences about program attributes or student experiences---midfielddata provides practice data, not research data. The midfieldr package, available at &lt; https://CRAN.R-project.org/package=midfieldr&gt;, is designed to interact with midfielddata as well as with the full MIDFIELD database, the management of which was transferred to the American Society for Engineering Education in 2023. The development of midfieldr and midfielddata was supported by the US National Science Foundation through grant numbers 1545667 and 2142087.">
-<meta property="og:description" content="This data package contains anonymized student-level records for 98,000 undergraduates from three US institutions from 1988 through 2018 organized in four data tables keyed by student ID. Student-level data refers to information collected by undergraduate institutions on individual students including demographics, programs and academic standing by term, individual courses, grades, and degrees. These data are a proportionate stratified sample of the MIDFIELD database, but are not suitable for drawing inferences about program attributes or student experiences---midfielddata provides practice data, not research data. The midfieldr package, available at &lt; https://CRAN.R-project.org/package=midfieldr&gt;, is designed to interact with midfielddata as well as with the full MIDFIELD database, the management of which was transferred to the American Society for Engineering Education in 2023. The development of midfieldr and midfielddata was supported by the US National Science Foundation through grant numbers 1545667 and 2142087.">
+<meta name="description" content="Contains anonymized student-level records for 98,000 undergraduates from three US institutions from 1988 through 2018 organized in four data tables keyed by student ID. Student-level records are those collected by undergraduate institutions on individual students including demographics, programs and academic standing by term, individual courses, grades, and degrees. midfielddata provides data sets suitable for learning and practicing basic data skills in manipulating student-level records as developed in the midfieldr package. midfielddata also serves as a database model for structuring registrars data in general. The data in midfielddata are not, however, suitable for drawing inferences about program attributes or student experiences---midfielddata is for practice, not research. The development of midfieldr and midfielddata' was supported by the US National Science Foundation through grant numbers 1545667 and 2142087.">
+<meta property="og:description" content="Contains anonymized student-level records for 98,000 undergraduates from three US institutions from 1988 through 2018 organized in four data tables keyed by student ID. Student-level records are those collected by undergraduate institutions on individual students including demographics, programs and academic standing by term, individual courses, grades, and degrees. midfielddata provides data sets suitable for learning and practicing basic data skills in manipulating student-level records as developed in the midfieldr package. midfielddata also serves as a database model for structuring registrars data in general. The data in midfielddata are not, however, suitable for drawing inferences about program attributes or student experiences---midfielddata is for practice, not research. The development of midfieldr and midfielddata' was supported by the US National Science Foundation through grant numbers 1545667 and 2142087.">
 <meta property="og:image" content="https://midfieldr.github.io/midfielddata/logo.svg">
 </head>
 <body>
@@ -29,7 +29,7 @@
 
     <a class="navbar-brand me-2" href="index.html">midfielddata</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.3.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,30 +68,454 @@
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
-<p>midfielddata is an R data package that provides anonymized student-level records for 98,000 undergraduates at three US institutions from 1988 through 2018, collected in four data tables keyed by student ID:</p>
-<ul>
-<li>
-<strong>student</strong>   all students, their demographics, transfer status, institution, etc.</li>
-<li>
-<strong>course</strong>   all students, every course, course name, number, credit hours, grades, etc.</li>
-<li>
-<strong>term</strong>   all students, every term, program, standing, GPA, etc.</li>
-<li>
-<strong>degree</strong>   all graduating students, their degree(s), program(s), term</li>
-</ul>
-<p>The data in midfielddata are a proportionate stratified sample of the MIDFIELD database (<a href="#ref-aee2016">Ohland and Long 2016</a>), but are not suitable for drawing inferences about program attributes or student experiences—midfielddata are for <em>practice</em>, not research.</p>
-<p>Suggested packages.</p>
-<ul>
-<li>
-<a href="https://CRAN.R-project.org/package=midfieldr" class="external-link">midfieldr</a> for working with MIDFIELD data (<a href="#ref-Layton+Long+Ohland:2026:midfieldr">Layton et al. 2026</a>)</li>
-<li>
-<a href="https://CRAN.R-project.org/package=data.table" class="external-link">data.table</a> for manipulating data (<a href="#ref-Dowle+Srinivasan:2026:data.table">Barrett et al. 2026</a>)</li>
-</ul>
+<p>Contains anonymized student-level records for 98,000 undergraduates from three US institutions from 1988 through 2018 organized in four data tables keyed by student ID. Student-level records are those collected by undergraduate institutions on individual students including demographics, programs and academic standing by term, individual courses, grades, and degrees.</p>
+<div id="wiymjohyqt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wiymjohyqt table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+&#10;#wiymjohyqt thead, #wiymjohyqt tbody, #wiymjohyqt tfoot, #wiymjohyqt tr, #wiymjohyqt td, #wiymjohyqt th {
+  border-style: none;
+}
+&#10;#wiymjohyqt p {
+  margin: 0;
+  padding: 0;
+}
+&#10;#wiymjohyqt .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: small;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+&#10;#wiymjohyqt .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+&#10;#wiymjohyqt .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+&#10;#wiymjohyqt .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+&#10;#wiymjohyqt .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+&#10;#wiymjohyqt .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+&#10;#wiymjohyqt .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+&#10;#wiymjohyqt .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+&#10;#wiymjohyqt .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+&#10;#wiymjohyqt .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+&#10;#wiymjohyqt .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+&#10;#wiymjohyqt .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+&#10;#wiymjohyqt .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+&#10;#wiymjohyqt .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+&#10;#wiymjohyqt .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  vertical-align: middle;
+}
+&#10;#wiymjohyqt .gt_from_md > :first-child {
+  margin-top: 0;
+}
+&#10;#wiymjohyqt .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+&#10;#wiymjohyqt .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: none;
+  border-top-width: 1px;
+  border-top-color: #D5D5D5;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D5D5D5;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D5D5D5;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+&#10;#wiymjohyqt .gt_stub {
+  color: #FFFFFF;
+  background-color: #5F5F5F;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #5F5F5F;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#wiymjohyqt .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+&#10;#wiymjohyqt .gt_row_group_first td {
+  border-top-width: 2px;
+}
+&#10;#wiymjohyqt .gt_row_group_first th {
+  border-top-width: 2px;
+}
+&#10;#wiymjohyqt .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#wiymjohyqt .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #5F5F5F;
+}
+&#10;#wiymjohyqt .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+&#10;#wiymjohyqt .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+&#10;#wiymjohyqt .gt_grand_summary_row {
+  color: #333333;
+  background-color: #D5D5D5;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#wiymjohyqt .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #5F5F5F;
+}
+&#10;#wiymjohyqt .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #5F5F5F;
+}
+&#10;#wiymjohyqt .gt_striped {
+  background-color: #F4F4F4;
+}
+&#10;#wiymjohyqt .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+&#10;#wiymjohyqt .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+&#10;#wiymjohyqt .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#wiymjohyqt .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+&#10;#wiymjohyqt .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#wiymjohyqt .gt_left {
+  text-align: left;
+}
+&#10;#wiymjohyqt .gt_center {
+  text-align: center;
+}
+&#10;#wiymjohyqt .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+&#10;#wiymjohyqt .gt_font_normal {
+  font-weight: normal;
+}
+&#10;#wiymjohyqt .gt_font_bold {
+  font-weight: bold;
+}
+&#10;#wiymjohyqt .gt_font_italic {
+  font-style: italic;
+}
+&#10;#wiymjohyqt .gt_super {
+  font-size: 65%;
+}
+&#10;#wiymjohyqt .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+&#10;#wiymjohyqt .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+&#10;#wiymjohyqt .gt_indent_1 {
+  text-indent: 5px;
+}
+&#10;#wiymjohyqt .gt_indent_2 {
+  text-indent: 10px;
+}
+&#10;#wiymjohyqt .gt_indent_3 {
+  text-indent: 15px;
+}
+&#10;#wiymjohyqt .gt_indent_4 {
+  text-indent: 20px;
+}
+&#10;#wiymjohyqt .gt_indent_5 {
+  text-indent: 25px;
+}
+&#10;#wiymjohyqt .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+&#10;#wiymjohyqt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="table gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="Data-table">
+Data table
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #C7EAE5;" scope="col" id="Example-of-variables">
+Example of variables
+</th>
+</tr></thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="Data table" class="gt_row gt_left">
+student
+</td>
+<td headers="Example of variables" class="gt_row gt_left">
+ID, institution, transfer status, demographics, SAT, etc.
+</td>
+</tr>
+<tr>
+<td headers="Data table" class="gt_row gt_left gt_striped">
+course
+</td>
+<td headers="Example of variables" class="gt_row gt_left gt_striped">
+ID, institution, term, course name and number, grade, etc.
+</td>
+</tr>
+<tr>
+<td headers="Data table" class="gt_row gt_left">
+term
+</td>
+<td headers="Example of variables" class="gt_row gt_left">
+ID, institution, term, program, level, standing, etc.,
+</td>
+</tr>
+<tr>
+<td headers="Data table" class="gt_row gt_left gt_striped">
+degree
+</td>
+<td headers="Example of variables" class="gt_row gt_left gt_striped">
+ID, institution, term, program, degree
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These data are a proportionate stratified sample of MIDFIELD (<a href="#ref-ohland:midfield:2023">Ohland 2023</a>), a database managed since 2023 by the American Society for Engineering Education. The midfielddata datasets are suitable for practice working with student-level records using the midfieldr package (<a href="#ref-Layton+Long+Ohland:2026:midfieldr">Layton et al. 2026</a>) but are not, however, suitable for drawing inferences about program attributes or student experiences—midfielddata is for <em>practice</em>, not <em>research</em>.</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>The installed size of midfielddata is about 24 Mb, so installation will take longer than that of a conventional CRAN package. Install from the MIDFIELDR drat repository with:</p>
+<p>Install from the MIDFIELDR drat repository with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"midfielddata"</span>,</span>
 <span>  repos <span class="op">=</span> <span class="st">"https://MIDFIELDR.github.io/drat/"</span>,</span>
@@ -125,14 +549,11 @@
 <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>
 <div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-Dowle+Srinivasan:2026:data.table" class="csl-entry">
-Barrett, Tyson, Matt Dowle, Arun Srinivasan, et al. 2026. <em><span class="nocase">data.table: Extension of data.frame</span></em>. R package version 1.18.4. <a href="https://CRAN.R-project.org/package=data.table" class="external-link uri">https://CRAN.R-project.org/package=data.table</a>.
-</div>
 <div id="ref-Layton+Long+Ohland:2026:midfieldr" class="csl-entry">
 Layton, Richard, Russell Long, Susan Lord, Matthew Ohland, and Marisa Orr. 2026. <em><span class="nocase">midfieldr: Tools and Methods for Working with MIDFIELD Data in R</span></em>. R package version 1.0.0. <a href="https://github.com/MIDFIELDR/midfieldr" class="external-link uri">https://github.com/MIDFIELDR/midfieldr</a>.
 </div>
-<div id="ref-aee2016" class="csl-entry">
-Ohland, Matthew W., and Russell A. Long. 2016. “The Multiple-Institution Database for Investigating Engineering Longitudinal Development: An Experiential Case Study of Data Sharing and Reuse.” <em>Advances in Engineering Education</em> 5 (2). <a href="https://advances.asee.org/wp-content/uploads/vol05/issue02/Papers/AEE-18-Ohland.pdf" class="external-link uri">https://advances.asee.org/wp-content/uploads/vol05/issue02/Papers/AEE-18-Ohland.pdf</a>.
+<div id="ref-ohland:midfield:2023" class="csl-entry">
+Ohland, Matthew. 2023. <em>MIDFIELD, 2004–2023</em>. <a href="https://midfield.online/" class="external-link uri">https://midfield.online/</a>.
 </div>
 </div>
 </div>
@@ -141,7 +562,7 @@ Ohland, Matthew W., and Russell A. Long. 2016. “The Multiple-Institution Datab
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
 <li><a href="https://github.com/MIDFIELDR/midfielddata/" class="external-link">Browse source code</a></li>
-<li><a href="https://github.com/MIDFIELDR/midfielddata/issues" class="external-link">Report a bug</a></li>
+<li><a href="https://github.com/MIDFIELDR/midfielddata/issues/" class="external-link">Report a bug</a></li>
 <li><a href="https://midfieldr.github.io/midfieldr" class="external-link">midfieldr</a></li>
 </ul>
 </div>

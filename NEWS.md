@@ -1,15 +1,23 @@
+
+<!-- major.minor.patch.dev -->
+<!-- MAJOR version when you make incompatible API changes ->
+<!-- MINOR version add functionality in a backwards-compatible manner ->
+<!-- PATCH version backwards-compatible bug fixes ->
+
 <!-- ### New features -->
-
 <!-- ### Minor improvements -->
-
 <!-- ### Bug fixes -->
-
 <!-- ### Deprecated -->
-
 <!-- ### Defunct -->
 
 
-## midfielddata 0.2.3
+## midfielddata 0.2.4.9000
+
+Current development version
+
+- Updates to articles
+
+## version 0.2.3
 
 2026-05
 

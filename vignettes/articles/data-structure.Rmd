@@ -27,9 +27,10 @@ var_class_2 <- function(DT) {
   x <- as.data.frame(variable_class)
   x$var_name <- row.names(x)
   setDT(x)
-  setnames(x, 
-           old = c("var_name", "variable_class"), 
-           new = c("Variable", "Class"))
+  setnames(x,
+    old = c("var_name", "variable_class"),
+    new = c("Variable", "Class")
+  )
   x <- x[, .(Variable, Class)]
   setDF(x)
   return(x)
@@ -46,13 +47,13 @@ We examine the structure of the four data tables in midfielddata: number of obse
 library(gt)
 wrapr::build_frame(
   "Table", "Each row is", "N students", "N rows", "N columns", "Mb memory" |
-    "course", "one student per term & course",
-  "97,555", "3,289,532", 12L, 324.3 |
-    "term", "one student per term",
-  "97,555", "639,915", 13L, 72.8 |
-    "student", "one student",
+    "student", "a student",
   "97,555", "97,555", 13L, 17.3 |
-    "degree", "one student per degree",
+    "term", "a student in a term",
+  "97,555", "639,915", 13L, 72.8 |
+    "course", "a student in a course in a term",
+  "97,555", "3,289,532", 12L, 324.3 |
+    "degree", "a graduate from a program in a term",
   "49,543", "49,665", 5L, 5.2
 ) |>
   gt() |>
@@ -87,7 +88,44 @@ data(course, term, degree)
 ```
 
  
+ 
+ 
 
+## Variables
+
+We list the variables in each dataset to provide an overview of the information available. Keys and composite keys in each data table are indicated. The student ID variable `mcid` is the primary key linking the four tables. 
+
+```{r}
+#| echo: false
+#| comment: ""
+cat("student")
+x <- var_class_2(student)
+x$Keys <- ""
+sel <- x$Variable %chin% c("mcid")
+x$Keys[sel] <- "key"
+x
+
+cat("\nterm")
+x <- var_class_2(term)
+x$Keys <- ""
+sel <- x$Variable %chin% c("mcid", "term")
+x$Keys[sel] <- "key"
+x
+
+cat("\ncourse")
+x <- var_class_2(course)
+x$Keys <- ""
+sel <- x$Variable %chin% c("mcid", "term_course", "abbrev", "number")
+x$Keys[sel] <- "key"
+x
+
+cat("\ndegree")
+x <- var_class_2(degree)
+x$Keys <- ""
+sel <- x$Variable %chin% c("mcid", "cip6", "term_degree")
+x$Keys[sel] <- "key"
+x
+```
 
 
 
@@ -95,131 +133,51 @@ data(course, term, degree)
 
 ## `student`
 
-Student-level demographic information for `r nrow(student)` degree-seeking undergraduate students. Data at the "student-level" refers to information collected by undergraduate institutions about individual students  at matriculation, for example, age, sex, and race/ethnicity.
+Student-level demographic information for `r length(unique(student$mcid))` degree-seeking undergraduate students. Data at the "student-level" refers to information collected by undergraduate institutions about individual students  at matriculation, for example, age, sex, and race/ethnicity.
 
-The `student` data table has `r nrow(student)` observations of the `r ncol(student)` variables listed below.  View the data dictionary using `?student`.
-
-```{r}
-#| echo: false
-#| comment: ""
-var_class_2(student)
-```
-
-Student data are structured in row-record form, that is, information associated with a particular ID occupies a single row---one record per student.
+The `student` data table has `r nrow(student)` observations of `r ncol(student)` variables structured in row-record form, that is, information associated with a particular ID occupies a single row---one record per student. The data dictionary is documented at `?student`.
 
 ```{r}
-# First few rows and last few rows
 student
-```
-
-Here, the ID variable is the primary key, as well as being the key common to all four data sets. We can verify that this column provides a unique key as follows: 
-
-```{r}
-# Check that the indicated column forms a primary key
-key_col_names <- c("mcid")
-wrapr::checkColsFormUniqueKeys(student, key_col_names)
-
-# Primary key variable should have no missing values
-sum(is.na(student$mcid))
 ```
 
 Student IDs and institution names have been anonymized to remove identifiable information. 
 
 ```{r}
-# Anonymized IDs
+# Anonymized ID sample
 sample(student$mcid, 8)
 
 # Anonymized institutions
 sort(unique(student$institution))
 ```
 
-Race/ethnicity and sex are often used as grouping variables.
-
-```{r}
-# Possible values
-sort(unique(student$race))
-
-# Possible values
-sort(unique(student$sex))
-```
-
-Counts in each category. 
-
-```{r}
-# N by institution
-student[order(institution), .N, by = "institution"]
-
-# N by race
-student[order(race), .N, by = "race"]
-
-# N by sex
-student[order(sex), .N, by = "sex"]
-```
-
-
-
-
-
-## `course`
-
-Student-level course information for `r length(unique(course$mcid))` undergraduates including course name and number, credit hours, and student grades for individual students in each term and course. 
-
-The `course` data table has `r nrow(course)` observations of the `r ncol(course)` variables listed below.  View the data dictionary using `?course`.
+Counts in each category. Race/ethnicity and sex are often used as grouping variables. 
 
 ```{r}
 #| echo: false
-#| comment: ""
-var_class_2(course)
+options(datatable.print.nrows = 15)
 ```
-
-Course data are structured in block-record form, that is, records associated with a particular ID can span multiple rows---one record per student per term per course.
 
 ```{r}
-# First few rows and last few rows
-course
-```
+# N by institution
+student[, .N, by = "institution"][order(-N)]
 
-Here, the key is a composite of four variables: student ID, course abbreviation and number, and term. 
+# N by race/ethnicity
+student[, .N, by = "race"][order(-N)]
+
+# N by sex
+student[, .N, by = "sex"][order(-N)]
+
+# N by race/ethnicity and sex
+student[, .N, by = c("race", "sex")][order(-N)]
+```
 
 ```{r}
-# Check that the indicated column forms a primary key
-key_col_names <- c("mcid", "term_course", "abbrev", "number")
-wrapr::checkColsFormUniqueKeys(course, key_col_names)
- 
-# Composite key variables should have no missing values
-sum(is.na(course$mcid))
-sum(is.na(course$term_course))
-sum(is.na(course$abbrev))
-sum(is.na(course$number))
-```
-
-Sample of the course names. The course names do not contribute to the composite key, thus NAs are possible. 
-
-```{r}
-# Sample course names
-sample(course$course, 10)
-```
-
-Possible values of the faculty rank variable. 
-
-```{r}
-# Possible values
-sort(unique(course$faculty_rank))
+#| echo: false
+options(datatable.print.nrows = 3)
 ```
 
 
-
-Using the course abbreviation and number keys, we can count the number of unique courses in these data.  
-
-```{r}
-# Extract unique courses
-DT <- copy(course)
-DT <- unique(DT[, .(abbrev, number)])
-DT
-
-# Number of unique courses
-nrow(DT)
-```
 
 
 
@@ -231,33 +189,12 @@ nrow(DT)
 
 ## `term`
 
-Student-level term information for `r length(unique(course$term))` undergraduates including program code, academic standing, and grade point average for individual students in each term.
+Student-level term information for `r length(unique(term$mcid))` undergraduates including program code, academic standing, and grade point average for individual students in each term.
 
-The `term` data table has `r nrow(term)` observations of the `r ncol(term)` variables listed below.  View the data dictionary using `?term`.
-
-```{r}
-#| echo: false
-#| comment: ""
-var_class_2(term)
-```
-
-Term data are structured in block-record form, that is, records associated with a particular ID can span multiple rows---one record per student per term. 
+The `term` data table has `r nrow(term)` observations of `r ncol(term)` variables structured in block-record form, that is, records associated with a particular ID can span multiple rows---one record per term for every student. The data dictionary is documented at `?term`.
 
 ```{r}
-# First few rows and last few rows
 term
-```
-
-Here, the key is a composite of two variables: student ID and term. 
-
-```{r}
-# Check that the indicated column forms a primary key
-key_col_names <- c("mcid", "term")
-wrapr::checkColsFormUniqueKeys(term, key_col_names)
-
-# Composite key variables should have no missing values
-sum(is.na(term$mcid))
-sum(is.na(term$term))
 ```
 
 Terms are encoded `YYYYT`, where 
@@ -267,15 +204,16 @@ Terms are encoded `YYYYT`, where
 
 For example, for academic year 1995--96, 
 
-- `19951` encodes Fall 95--96
-- `19953` encodes Spring 95--96
-- `19954` encodes Summer 95--96 (first session)
+- `19951` encodes Fall 95--96 (calendar year 1995)
+- `19953` encodes Spring 95--96 (calendar year 1996)
+- `19954` encodes Summer 95--96, first session (calendar year 1996)
 
 Different institutions supply data over different time spans. 
 
 ```{r}
 # Range of data by institution
-term[, .(min_term = min(term), max_term = max(term)), by = "institution"]
+x <- term[, .(min_term = min(term), max_term = max(term)), by = "institution"]
+x[order(min_term, max_term)]
 ```
 
 Programs are encoded in the `cip6` variable, a 6-digit character based on the 2010 Classification of Instructional Programs (CIP) [@NCES:2010].
@@ -294,6 +232,56 @@ sort(unique(term$level))
 
 
 
+## `course`
+
+Student-level course information for `r length(unique(course$mcid))` undergraduates including course name and number, credit hours, and student grades for individual students in each term and course. 
+
+The `course` data table has `r nrow(course)` observations of `r ncol(course)` variables structured in block-record form, that is, records associated with a particular ID can span multiple rows---one record for each student in a course in a term. The data dictionary is documented at `?course`.
+
+```{r}
+course
+```
+
+Sample of the course names. The course names do not contribute to the composite key, thus NAs are possible. 
+
+```{r}
+# Sample course names
+sample(course$course, 10)
+```
+
+Possible values of the faculty rank variable. 
+
+```{r}
+# Possible values
+sort(unique(course$faculty_rank))
+```
+
+Possible values of the type of course.
+
+```{r}
+# Possible values
+sort(unique(course$type))
+```
+
+Sample of the possible values of the MIDFIELD-assigned discipline. 
+
+```{r}
+# Sample of possible values
+sort(sample(unique(course$discipline_midfield), 20))
+```
+
+Using the course abbreviation and number keys, we can count the number of unique courses in these data.  
+
+```{r}
+# Unique courses
+x <- unique(course[, .(abbrev, number, institution)])
+x
+
+# N courses by institution
+x <- x[, .N, by = c("institution")]
+x[order(-N)]
+```
+
 
 
 
@@ -301,31 +289,10 @@ sort(unique(term$level))
 
 Student-level degree information for `r length(unique(degree$mcid))` undergraduates including institution, program, term, and baccalaureate degree for each student. 
 
-The `degree` data table has `r nrow(degree)` observations of the `r ncol(degree)` variables listed below. View the data dictionary using `?degree`.
+The `degree` data table has `r nrow(degree)` observations of `r ncol(degree)` variables structured in block-record form, that is, records associated with a particular ID can span multiple rows---one record for each student completing a program in a term. Multiple degrees can occur in the same term or in different terms. The data dictionary is documented at `?degree`.
 
 ```{r}
-#| echo: false
-#| comment: ""
-var_class_2(degree)
-```
-
-Degree data are structured in block-record form, that is, records associated with a particular ID can span multiple rows---one record per student per degree. Multiple degrees can occur in the same term or in different terms.
-
-```{r}
-# First few rows and last few rows
 degree
-```
-
-Here, the key is a composite of two variables: student ID and the CIP code. 
-
-```{r}
-# Check that the indicated column forms a primary key
-key_col_names <- c("mcid", "cip6")
-wrapr::checkColsFormUniqueKeys(degree, key_col_names)
-
-# Composite key variables should have no missing values
-sum(is.na(degree$mcid))
-sum(is.na(degree$degree))
 ```
 
 This dataset contains records for graduates only, thus `degree` has fewer rows that `student`. The `term_degree` variable indicates when the student graduated and the and `cip6` indicates from which program. 
@@ -333,29 +300,28 @@ This dataset contains records for graduates only, thus `degree` has fewer rows t
 Sample of the degree names. 
 
 ```{r}
-sample(degree$degree, 10)
+sort(sample(degree$degree, 10))
 ```
 
-The number of unique degrees in these data. 
+The number of unique degrees in these data by program code.
 
 ```{r}
-# Count the unique degrees
-length(unique(degree$degree))
-
 # Count the number of unique program codes
 length(unique(degree$cip6))
 ```
 
-Number of degrees earned per student. In these practice data, 122 students earned two degrees. 
+Number of degrees earned per student. 
 
 ```{r}
-# Count number of degrees by student
-by_id <- degree[, .(degree_count = .N), by = "mcid"]
+# Degree count by student
+N_degrees <- degree[, .(degree_count = .N), by = "mcid"]
 
-# Count the number of students by the degree count
-by_id[, .(N_students = .N), by = "degree_count"]
+# Number of students by the degree count
+N_degrees[, .(N_students = .N), by = "degree_count"]
 ```
+
+In these practice data, no one earned more than two degrees; 122 students earned two degrees.
+
 
 ```{r child = paste0(path_to_rmd, "/common-closing.Rmd")}
 ```
-

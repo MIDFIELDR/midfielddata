@@ -8,13 +8,14 @@
 \description{
 \if{html}{\figure{logo.svg}{options: style='float: right' alt='logo' width='120'}}
 
-This data package contains anonymized student-level records for 98,000 undergraduates from three US institutions from 1988 through 2018 organized in four data tables keyed by student ID. Student-level data refers to information collected by undergraduate institutions on individual students including demographics, programs and academic standing by term, individual courses, grades, and degrees. These data are a proportionate stratified sample of the MIDFIELD database, but are not suitable for drawing inferences about program attributes or student experiences---'midfielddata' provides practice data, not research data. The 'midfieldr' package, available at < https://CRAN.R-project.org/package=midfieldr>, is designed to interact with 'midfielddata' as well as with the full MIDFIELD database, the management of which was transferred to the American Society for Engineering Education in 2023. The development of 'midfieldr' and 'midfielddata' was supported by the US National Science Foundation through grant numbers 1545667 and 2142087.
+Contains anonymized student-level records for 98,000 undergraduates from three US institutions from 1988 through 2018 organized in four data tables keyed by student ID. Student-level records are those collected by undergraduate institutions on individual students including demographics, programs and academic standing by term, individual courses, grades, and degrees. 'midfielddata' provides data sets suitable for learning and practicing basic data skills in manipulating student-level records as developed in the 'midfieldr' package. 'midfielddata' also serves as a database model for structuring registrar's data in general. The data in 'midfielddata' are not, however, suitable for drawing inferences about program attributes or student experiences---'midfielddata' is for practice, not research. The development of 'midfieldr' and 'midfielddata' was supported by the US National Science Foundation through grant numbers 1545667 and 2142087.
 }
 \seealso{
 Useful links:
 \itemize{
   \item \url{https://midfieldr.github.io/midfielddata/}
-  \item Report bugs at \url{https://github.com/MIDFIELDR/midfielddata/issues}
+  \item \url{https://CRAN.R-project.org/package=midfieldr/}
+  \item Report bugs at \url{https://github.com/MIDFIELDR/midfielddata/issues/}
 }
 
 }

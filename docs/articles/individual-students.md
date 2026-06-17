@@ -352,7 +352,7 @@ DT
 
 ``` r
 
-# One student 
+# One student
 id_we_want <- "MCID3111315508"
 ```
 
@@ -408,7 +408,7 @@ DT
 ```
 
 *course.*   For this student, the records show 52 courses (one row per
-course) leading up to thier first degree.
+course) leading up to their first degree.
 
 ``` r
 

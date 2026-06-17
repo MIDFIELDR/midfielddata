@@ -12,8 +12,9 @@ link-citations: true
 
 # for any "child" arguments in r-code-chunks
 library("rprojroot")
-path_to_rmd <- find_root_file("man", "rmd", 
-                              criterion = has_file("DESCRIPTION"))
+path_to_rmd <- find_root_file("man", "rmd",
+  criterion = has_file("DESCRIPTION")
+)
 ```
 
 ```{r child = paste0(path_to_rmd, "/common-setup.Rmd")}
@@ -155,7 +156,7 @@ DT
 
 
 ```{r}
-# One student 
+# One student
 id_we_want <- "MCID3111315508"
 ```
 
@@ -193,7 +194,7 @@ DT <- student[mcid == id_we_want]
 DT
 ```
 
-*course.* &nbsp; For this student, the records show `r nrow(course[mcid == id_we_want & term_course <= first_degree_term])` courses (one row per course) leading up to thier first degree.
+*course.* &nbsp; For this student, the records show `r nrow(course[mcid == id_we_want & term_course <= first_degree_term])` courses (one row per course) leading up to their first degree.
 
 ```{r}
 # columns to keep

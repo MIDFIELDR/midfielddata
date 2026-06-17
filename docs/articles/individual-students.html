@@ -26,7 +26,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">midfielddata</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.3.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -390,7 +390,7 @@ per degree. The degrees were earned in the same term, Spring 2009.</p>
 <h2 id="student-2-degree-in-biological-sciences">Student 2: Degree in biological sciences<a class="anchor" aria-label="anchor" href="#student-2-degree-in-biological-sciences"></a>
 </h2>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># One student </span></span>
+<code class="sourceCode R"><span><span class="co"># One student</span></span>
 <span><span class="va">id_we_want</span> <span class="op">&lt;-</span> <span class="st">"MCID3111315508"</span></span></code></pre></div>
 <p><em>Degree.</em>   In this example, a student has earned two degrees
 at separate times. Usually we are interested in student records up to
@@ -432,7 +432,7 @@ terms no later than the first degree term—in this case, term 19961.</p>
 <span><span class="co">#&gt;         &lt;num&gt;    &lt;num&gt;</span></span>
 <span><span class="co">#&gt; 1:        490       NA</span></span></code></pre></div>
 <p><em>course.</em>   For this student, the records show 52 courses (one
-row per course) leading up to thier first degree.</p>
+row per course) leading up to their first degree.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># columns to keep</span></span>
 <span><span class="va">cols_we_want</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"term_course"</span>, <span class="st">"course"</span>, <span class="st">"abbrev"</span>, <span class="st">"number"</span>, <span class="st">"hours_course"</span>, <span class="st">"grade"</span><span class="op">)</span></span>
