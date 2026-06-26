@@ -46,9 +46,9 @@
 #'
 #'   \describe{
 #'   `r var_mcid`
-#'   `r var_institution`
 #'   `r var_term_degree`
 #'   `r var_cip6_degree`
+#'   `r var_institution`
 #'   `r var_degree`
 #'   }
 #'

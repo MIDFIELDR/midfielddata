@@ -10,16 +10,16 @@ observations of unique students occupying 18 MB of memory:
 
 \describe{
 \item{\code{mcid}}{Character, de-identified student ID. Key column.}
+\item{\code{race}}{Character, race/ethnicity as self-reported
+by the student, e.g., Asian, Black, Hispanic, etc.}
+\item{\code{sex}}{Character, sex as self-reported by the student,
+possible values are Female, Male, and Unknown.}
 \item{\code{institution}}{Character, de-identified institution
 name, e.g., Institution A, Institution B, etc.}
 \item{\code{transfer}}{Character, transfer status, possible
 values are \verb{First-Time in College}, \verb{First-Time Transfer}.}
 \item{\code{hours_transfer}}{Numeric, number of credit
 hours transferred (or NA).}
-\item{\code{race}}{Character, race/ethnicity as self-reported
-by the student, e.g., Asian, Black, Hispanic, etc.}
-\item{\code{sex}}{Character, sex as self-reported by the student,
-possible values are Female, Male, and Unknown.}
 \item{\code{age_desc}}{Character, age group, possible values
 are \verb{25 and Older}, \verb{Under 25}.}
 \item{\code{us_citizen}}{Character, US citizenship, possible

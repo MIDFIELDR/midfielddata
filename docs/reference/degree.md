@@ -21,11 +21,6 @@ of unique students occupying 6 MB of memory:
 
   Character, de-identified student ID. Key column.
 
-- `institution`:
-
-  Character, de-identified institution name, e.g., Institution A,
-  Institution B, etc.
-
 - `term_degree`:
 
   Character, academic year and term in which a student completes their
@@ -35,6 +30,11 @@ of unique students occupying 6 MB of memory:
 
   Character, 6-digit CIP code of program in which a student is enrolled
   in a term. Key column.
+
+- `institution`:
+
+  Character, de-identified institution name, e.g., Institution A,
+  Institution B, etc.
 
 - `degree`:
 

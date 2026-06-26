@@ -28,8 +28,8 @@ library(gt)
 wrapr::build_frame(
   "Data table", "Example of variables" |
     "student", "ID, institution, transfer status, demographics, SAT, etc." |
-    "course", "ID, institution, term, course name and number, grade, etc." |
     "term", "ID, institution, term, program, level, standing, etc., " |
+    "course", "ID, institution, term, course name and number, grade, etc." |
     "degree", "ID, institution, term, program, degree"
 ) |>
   gt() |>
@@ -76,7 +76,7 @@ library(midfielddata)
 data(student)
 
 # Or load multiple tables
-data(course, term, degree)
+data(term, course, degree)
 ```
 
 Tutorials:

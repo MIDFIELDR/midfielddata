@@ -46,9 +46,9 @@
 #'
 #'   \describe{
 #'   `r var_mcid`
-#'   `r var_institution`
 #'   `r var_term`
 #'   `r var_cip6_term`
+#'   `r var_institution`
 #'   `r var_level`
 #'   `r var_standing`
 #'   `r var_coop`

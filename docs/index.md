@@ -12,8 +12,8 @@ courses, grades, and degrees.
 | Data table | Example of variables                                       |
 |------------|------------------------------------------------------------|
 | student    | ID, institution, transfer status, demographics, SAT, etc.  |
-| course     | ID, institution, term, course name and number, grade, etc. |
 | term       | ID, institution, term, program, level, standing, etc.,     |
+| course     | ID, institution, term, course name and number, grade, etc. |
 | degree     | ID, institution, term, program, degree                     |
 
 These data are a proportionate stratified sample of MIDFIELD ([Ohland
@@ -49,7 +49,7 @@ library(midfielddata)
 data(student)
 
 # Or load multiple tables
-data(course, term, degree)
+data(term, course, degree)
 ```
 
 Tutorials:

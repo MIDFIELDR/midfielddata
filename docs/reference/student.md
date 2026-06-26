@@ -21,6 +21,16 @@ observations of unique students occupying 18 MB of memory:
 
   Character, de-identified student ID. Key column.
 
+- `race`:
+
+  Character, race/ethnicity as self-reported by the student, e.g.,
+  Asian, Black, Hispanic, etc.
+
+- `sex`:
+
+  Character, sex as self-reported by the student, possible values are
+  Female, Male, and Unknown.
+
 - `institution`:
 
   Character, de-identified institution name, e.g., Institution A,
@@ -34,16 +44,6 @@ observations of unique students occupying 18 MB of memory:
 - `hours_transfer`:
 
   Numeric, number of credit hours transferred (or NA).
-
-- `race`:
-
-  Character, race/ethnicity as self-reported by the student, e.g.,
-  Asian, Black, Hispanic, etc.
-
-- `sex`:
-
-  Character, sex as self-reported by the student, possible values are
-  Female, Male, and Unknown.
 
 - `age_desc`:
 

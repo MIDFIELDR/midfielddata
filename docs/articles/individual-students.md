@@ -56,12 +56,15 @@ DT <- student[mcid == id_we_want]
 
 # display
 DT
-#>              mcid   institution              transfer hours_transfer   race
-#>            <char>        <char>                <char>          <num> <char>
-#> 1: MCID3112192438 Institution C First-Time in College             NA  White
-#>       sex age_desc us_citizen home_zip high_school sat_math sat_verbal act_comp
-#>    <char>   <char>     <char>   <char>      <char>    <num>      <num>    <num>
-#> 1: Female Under 25        Yes    80521        <NA>      580        390       27
+#>              mcid   race    sex   institution              transfer
+#>            <char> <char> <char>        <char>                <char>
+#> 1: MCID3112192438  White Female Institution C First-Time in College
+#>    hours_transfer age_desc us_citizen home_zip high_school sat_math sat_verbal
+#>             <num>   <char>     <char>   <char>      <char>    <num>      <num>
+#> 1:             NA Under 25        Yes    80521        <NA>      580        390
+#>    act_comp
+#>       <num>
+#> 1:       27
 ```
 
 *course.*   For this student, the course records span 47 rows, one row
@@ -74,159 +77,210 @@ DT <- course[mcid == id_we_want]
 
 # display
 DT
-#>               mcid   institution term_course                         course
-#>             <char>        <char>      <char>                         <char>
-#>  1: MCID3112192438 Institution C       20051 Key Academic Community Seminar
-#>  2: MCID3112192438 Institution C       20051       Humans and Other Animals
-#>  3: MCID3112192438 Institution C       20051            Health and Wellness
-#>  4: MCID3112192438 Institution C       20051            College Composition
-#>  5: MCID3112192438 Institution C       20051      Moral and Social Problems
-#>  6: MCID3112192438 Institution C       20053 Africn-Americn Hist Since 1865
-#>  7: MCID3112192438 Institution C       20053  Individual&Family Development
-#>  8: MCID3112192438 Institution C       20053           First-Year Spanish I
-#>  9: MCID3112192438 Institution C       20061  Chicana/o History and Culture
-#> 10: MCID3112192438 Institution C       20061   Basic Concepts of Plant Life
-#> 11: MCID3112192438 Institution C       20061  Basic Concepts-Plant Life Lab
-#> 12: MCID3112192438 Institution C       20061                    Advertising
-#> 13: MCID3112192438 Institution C       20061    Ldrshp in Higher Ed Environ
-#> 14: MCID3112192438 Institution C       20061 Introductn to Criminal Justice
-#> 15: MCID3112192438 Institution C       20063          First-Year Spanish II
-#> 16: MCID3112192438 Institution C       20063 Contemporary Sociolgicl Theory
-#> 17: MCID3112192438 Institution C       20071    Introduction to Social Work
-#> 18: MCID3112192438 Institution C       20071  Human Behavior Social Environ
-#> 19: MCID3112192438 Institution C       20071 Practicum-Communication Skills
-#> 20: MCID3112192438 Institution C       20071 Methds of Sociological Inquiry
-#> 21: MCID3112192438 Institution C       20073      Psychology of Differences
-#> 22: MCID3112192438 Institution C       20073  Research Methds in Psychology
-#> 23: MCID3112192438 Institution C       20073              Social Psychology
-#> 24: MCID3112192438 Institution C       20073 Introductn-Statistical Methods
-#> 25: MCID3112192438 Institution C       20081              Writing Arguments
-#> 26: MCID3112192438 Institution C       20081      Organizational Psychology
-#> 27: MCID3112192438 Institution C       20081  Organizational Psychology Lab
-#> 28: MCID3112192438 Institution C       20081  History&Systems of Psychology
-#> 29: MCID3112192438 Institution C       20081  Computer Methods in Sociology
-#> 30: MCID3112192438 Institution C       20081          Sociology of Disaster
-#> 31: MCID3112192438 Institution C       20083 Concepts-Human Anat&Physiology
-#> 32: MCID3112192438 Institution C       20083 Principles of Human Physiology
-#> 33: MCID3112192438 Institution C       20083      Mind, Brain, and Behavior
-#> 34: MCID3112192438 Institution C       20083       Sensation and Perception
-#> 35: MCID3112192438 Institution C       20083   Sensation and Perception Lab
-#> 36: MCID3112192438 Institution C       20083           Symbolic Interaction
-#> 37: MCID3112192438 Institution C       20091  Psychology of Human Sexuality
-#> 38: MCID3112192438 Institution C       20091            Abnormal Psychology
-#> 39: MCID3112192438 Institution C       20091          Social Stratification
-#> 40: MCID3112192438 Institution C       20091                     Internship
-#> 41: MCID3112192438 Institution C       20091                        Seminar
-#> 42: MCID3112192438 Institution C       20093 Introduction to Ethnic Studies
-#> 43: MCID3112192438 Institution C       20093              Independent Study
-#> 44: MCID3112192438 Institution C       20093          Leadership for Greeks
-#> 45: MCID3112192438 Institution C       20093            Health and the Mind
-#> 46: MCID3112192438 Institution C       20093   Social Psychology Laboratory
-#> 47: MCID3112192438 Institution C       20093                    Group Study
-#>               mcid   institution term_course                         course
-#>             <char>        <char>      <char>                         <char>
-#>     abbrev number section         type              faculty_rank hours_course
-#>     <char> <char>  <char>       <char>                    <char>        <num>
-#>  1:     KA    192     009         <NA>                Instructor            3
-#>  2:   BZCC    101     002         <NA>       Assistant Professor            3
-#>  3:   EXCC    145     004         <NA> Non-Academic Professional            3
-#>  4:   COCC    150     120         <NA>                Instructor            3
-#>  5:   PLCC    103     033         <NA>                Instructor            3
-#>  6:   ETCC    251     001         <NA>                Instructor            3
-#>  7:   HDCC    101     003         <NA>        Graduate Assistant            3
-#>  8:      L    105     001         <NA>        Graduate Assistant            5
-#>  9:   ETCC    253     001         <NA>       Assistant Professor            3
-#> 10:   BZCC    104     001         <NA>        Graduate Assistant            3
-#> 11:   BZCC    105     L02         <NA>        Graduate Assistant            1
-#> 12:     JT    250     001         <NA>       Associate Professor            3
-#> 13:     IU    272     001         <NA>     Academic Professional            3
-#> 14:      S    253     001         <NA>                Instructor            3
-#> 15:      L    107     001         <NA>                Instructor            5
-#> 16:      S    302     001         <NA>       Assistant Professor            3
-#> 17:   SOWK    150     001 Face-to-Face                Instructor            3
-#> 18:   SOWK    233     001 Face-to-Face       Assistant Professor            3
-#> 19:   SOWK    286     L01 Face-to-Face     Academic Professional            3
-#> 20:    SOC    311     001 Face-to-Face       Assistant Professor            3
-#> 21:    PSY    210     001 Face-to-Face        Graduate Assistant            3
-#> 22:    PSY    250     001 Face-to-Face          Research Faculty            4
-#> 23:    PSY    315     001 Face-to-Face        Graduate Assistant            3
-#> 24:   STAT    301     002 Face-to-Face        Graduate Assistant            3
-#> 25:     CO    300     025 Face-to-Face                Instructor            3
-#> 26:    PSY    340     001 Face-to-Face       Associate Professor            3
-#> 27:    PSY    341     L01 Face-to-Face        Graduate Assistant            1
-#> 28:    PSY    401     001 Face-to-Face       Assistant Professor            3
-#> 29:    SOC    313     001 Face-to-Face                Instructor            1
-#> 30:    SOC    463     001 Face-to-Face       Assistant Professor            3
-#> 31:    BMS    200     006 Face-to-Face        Graduate Assistant            1
-#> 32:    BMS    300     001 Face-to-Face       Associate Professor            4
-#> 33:    PSY    252     002 Face-to-Face        Graduate Assistant            3
-#> 34:    PSY    456     001 Face-to-Face       Assistant Professor            3
-#> 35:    PSY    457     L02 Face-to-Face        Graduate Assistant            2
-#> 36:    SOC    371     001 Face-to-Face       Assistant Professor            3
-#> 37:    PSY    228     001 Face-to-Face       Assistant Professor            3
-#> 38:    PSY    320     001 Face-to-Face                 Professor            3
-#> 39:    SOC    330     001 Face-to-Face       Assistant Professor            3
-#> 40:    SOC    487     L01 Face-to-Face        Graduate Assistant            3
-#> 41:    SOC    492     001 Face-to-Face        Graduate Assistant            1
-#> 42:   ETST    100     003 Face-to-Face                Instructor            3
-#> 43:     WS    495     002 Face-to-Face     Academic Professional            1
-#> 44:     IU    273     001 Face-to-Face        Graduate Assistant            2
-#> 45:    PSY    121     001 Face-to-Face Non-Academic Professional            1
-#> 46:    PSY    317     L02 Face-to-Face        Graduate Assistant            2
-#> 47:    PSY    496     004 Face-to-Face                Instructor            3
-#>     abbrev number section         type              faculty_rank hours_course
-#>     <char> <char>  <char>       <char>                    <char>        <num>
-#>      grade                             discipline_midfield
-#>     <char>                                          <char>
-#>  1:      A                                Academic Support
-#>  2:      B      Biological and Biomedical Sciences: Botany
-#>  3:      A                Education: Physical and Coaching
-#>  4:      A                Language and Literature: English
-#>  5:      A                                      Philosophy
-#>  6:     B+                            Area Studies: Ethnic
-#>  7:      B Family and Consumer Sciences: Human Development
-#>  8:     A-                Language and Literature: Foreign
-#>  9:     C+                            Area Studies: Ethnic
-#> 10:      B      Biological and Biomedical Sciences: Botany
-#> 11:      A      Biological and Biomedical Sciences: Botany
-#> 12:     B-        Communication and Journalism: Journalism
-#> 13:      A                       Interdisciplinary Studies
-#> 14:      A                      Social Sciences: Sociology
-#> 15:     A-                Language and Literature: Foreign
-#> 16:      A                      Social Sciences: Sociology
-#> 17:     B+              Public Administration: Social Work
-#> 18:      A              Public Administration: Social Work
-#> 19:      A              Public Administration: Social Work
-#> 20:     A-                      Social Sciences: Sociology
-#> 21:     B+                                      Psychology
-#> 22:      A                                      Psychology
-#> 23:      A                                      Psychology
-#> 24:      C                                      Statistics
-#> 25:      A             Cooperative Education or Internship
-#> 26:      B                                      Psychology
-#> 27:      A                                      Psychology
-#> 28:      A                                      Psychology
-#> 29:      A                      Social Sciences: Sociology
-#> 30:      A                      Social Sciences: Sociology
-#> 31:      A               Health Professions: Basic Medical
-#> 32:      B               Health Professions: Basic Medical
-#> 33:      A                                      Psychology
-#> 34:      A                                      Psychology
-#> 35:      A                                      Psychology
-#> 36:      A                      Social Sciences: Sociology
-#> 37:      A                                      Psychology
-#> 38:      A                                      Psychology
-#> 39:     A+                      Social Sciences: Sociology
-#> 40:      A                      Social Sciences: Sociology
-#> 41:      A                      Social Sciences: Sociology
-#> 42:     A+                            Area Studies: Ethnic
-#> 43:      A                  Area Studies: Women and Gender
-#> 44:      A                       Interdisciplinary Studies
-#> 45:     A+                                      Psychology
-#> 46:      A                                      Psychology
-#> 47:     A+                                      Psychology
-#>      grade                             discipline_midfield
-#>     <char>                                          <char>
+#>               mcid term_course abbrev number   institution
+#>             <char>      <char> <char> <char>        <char>
+#>  1: MCID3112192438       20051     KA    192 Institution C
+#>  2: MCID3112192438       20051   BZCC    101 Institution C
+#>  3: MCID3112192438       20051   EXCC    145 Institution C
+#>  4: MCID3112192438       20051   COCC    150 Institution C
+#>  5: MCID3112192438       20051   PLCC    103 Institution C
+#>  6: MCID3112192438       20053   ETCC    251 Institution C
+#>  7: MCID3112192438       20053   HDCC    101 Institution C
+#>  8: MCID3112192438       20053      L    105 Institution C
+#>  9: MCID3112192438       20061   ETCC    253 Institution C
+#> 10: MCID3112192438       20061   BZCC    104 Institution C
+#> 11: MCID3112192438       20061   BZCC    105 Institution C
+#> 12: MCID3112192438       20061     JT    250 Institution C
+#> 13: MCID3112192438       20061     IU    272 Institution C
+#> 14: MCID3112192438       20061      S    253 Institution C
+#> 15: MCID3112192438       20063      L    107 Institution C
+#> 16: MCID3112192438       20063      S    302 Institution C
+#> 17: MCID3112192438       20071   SOWK    150 Institution C
+#> 18: MCID3112192438       20071   SOWK    233 Institution C
+#> 19: MCID3112192438       20071   SOWK    286 Institution C
+#> 20: MCID3112192438       20071    SOC    311 Institution C
+#> 21: MCID3112192438       20073    PSY    210 Institution C
+#> 22: MCID3112192438       20073    PSY    250 Institution C
+#> 23: MCID3112192438       20073    PSY    315 Institution C
+#> 24: MCID3112192438       20073   STAT    301 Institution C
+#> 25: MCID3112192438       20081     CO    300 Institution C
+#> 26: MCID3112192438       20081    PSY    340 Institution C
+#> 27: MCID3112192438       20081    PSY    341 Institution C
+#> 28: MCID3112192438       20081    PSY    401 Institution C
+#> 29: MCID3112192438       20081    SOC    313 Institution C
+#> 30: MCID3112192438       20081    SOC    463 Institution C
+#> 31: MCID3112192438       20083    BMS    200 Institution C
+#> 32: MCID3112192438       20083    BMS    300 Institution C
+#> 33: MCID3112192438       20083    PSY    252 Institution C
+#> 34: MCID3112192438       20083    PSY    456 Institution C
+#> 35: MCID3112192438       20083    PSY    457 Institution C
+#> 36: MCID3112192438       20083    SOC    371 Institution C
+#> 37: MCID3112192438       20091    PSY    228 Institution C
+#> 38: MCID3112192438       20091    PSY    320 Institution C
+#> 39: MCID3112192438       20091    SOC    330 Institution C
+#> 40: MCID3112192438       20091    SOC    487 Institution C
+#> 41: MCID3112192438       20091    SOC    492 Institution C
+#> 42: MCID3112192438       20093   ETST    100 Institution C
+#> 43: MCID3112192438       20093     WS    495 Institution C
+#> 44: MCID3112192438       20093     IU    273 Institution C
+#> 45: MCID3112192438       20093    PSY    121 Institution C
+#> 46: MCID3112192438       20093    PSY    317 Institution C
+#> 47: MCID3112192438       20093    PSY    496 Institution C
+#>               mcid term_course abbrev number   institution
+#>             <char>      <char> <char> <char>        <char>
+#>                             course section         type
+#>                             <char>  <char>       <char>
+#>  1: Key Academic Community Seminar     009         <NA>
+#>  2:       Humans and Other Animals     002         <NA>
+#>  3:            Health and Wellness     004         <NA>
+#>  4:            College Composition     120         <NA>
+#>  5:      Moral and Social Problems     033         <NA>
+#>  6: Africn-Americn Hist Since 1865     001         <NA>
+#>  7:  Individual&Family Development     003         <NA>
+#>  8:           First-Year Spanish I     001         <NA>
+#>  9:  Chicana/o History and Culture     001         <NA>
+#> 10:   Basic Concepts of Plant Life     001         <NA>
+#> 11:  Basic Concepts-Plant Life Lab     L02         <NA>
+#> 12:                    Advertising     001         <NA>
+#> 13:    Ldrshp in Higher Ed Environ     001         <NA>
+#> 14: Introductn to Criminal Justice     001         <NA>
+#> 15:          First-Year Spanish II     001         <NA>
+#> 16: Contemporary Sociolgicl Theory     001         <NA>
+#> 17:    Introduction to Social Work     001 Face-to-Face
+#> 18:  Human Behavior Social Environ     001 Face-to-Face
+#> 19: Practicum-Communication Skills     L01 Face-to-Face
+#> 20: Methds of Sociological Inquiry     001 Face-to-Face
+#> 21:      Psychology of Differences     001 Face-to-Face
+#> 22:  Research Methds in Psychology     001 Face-to-Face
+#> 23:              Social Psychology     001 Face-to-Face
+#> 24: Introductn-Statistical Methods     002 Face-to-Face
+#> 25:              Writing Arguments     025 Face-to-Face
+#> 26:      Organizational Psychology     001 Face-to-Face
+#> 27:  Organizational Psychology Lab     L01 Face-to-Face
+#> 28:  History&Systems of Psychology     001 Face-to-Face
+#> 29:  Computer Methods in Sociology     001 Face-to-Face
+#> 30:          Sociology of Disaster     001 Face-to-Face
+#> 31: Concepts-Human Anat&Physiology     006 Face-to-Face
+#> 32: Principles of Human Physiology     001 Face-to-Face
+#> 33:      Mind, Brain, and Behavior     002 Face-to-Face
+#> 34:       Sensation and Perception     001 Face-to-Face
+#> 35:   Sensation and Perception Lab     L02 Face-to-Face
+#> 36:           Symbolic Interaction     001 Face-to-Face
+#> 37:  Psychology of Human Sexuality     001 Face-to-Face
+#> 38:            Abnormal Psychology     001 Face-to-Face
+#> 39:          Social Stratification     001 Face-to-Face
+#> 40:                     Internship     L01 Face-to-Face
+#> 41:                        Seminar     001 Face-to-Face
+#> 42: Introduction to Ethnic Studies     003 Face-to-Face
+#> 43:              Independent Study     002 Face-to-Face
+#> 44:          Leadership for Greeks     001 Face-to-Face
+#> 45:            Health and the Mind     001 Face-to-Face
+#> 46:   Social Psychology Laboratory     L02 Face-to-Face
+#> 47:                    Group Study     004 Face-to-Face
+#>                             course section         type
+#>                             <char>  <char>       <char>
+#>                  faculty_rank hours_course  grade
+#>                        <char>        <num> <char>
+#>  1:                Instructor            3      A
+#>  2:       Assistant Professor            3      B
+#>  3: Non-Academic Professional            3      A
+#>  4:                Instructor            3      A
+#>  5:                Instructor            3      A
+#>  6:                Instructor            3     B+
+#>  7:        Graduate Assistant            3      B
+#>  8:        Graduate Assistant            5     A-
+#>  9:       Assistant Professor            3     C+
+#> 10:        Graduate Assistant            3      B
+#> 11:        Graduate Assistant            1      A
+#> 12:       Associate Professor            3     B-
+#> 13:     Academic Professional            3      A
+#> 14:                Instructor            3      A
+#> 15:                Instructor            5     A-
+#> 16:       Assistant Professor            3      A
+#> 17:                Instructor            3     B+
+#> 18:       Assistant Professor            3      A
+#> 19:     Academic Professional            3      A
+#> 20:       Assistant Professor            3     A-
+#> 21:        Graduate Assistant            3     B+
+#> 22:          Research Faculty            4      A
+#> 23:        Graduate Assistant            3      A
+#> 24:        Graduate Assistant            3      C
+#> 25:                Instructor            3      A
+#> 26:       Associate Professor            3      B
+#> 27:        Graduate Assistant            1      A
+#> 28:       Assistant Professor            3      A
+#> 29:                Instructor            1      A
+#> 30:       Assistant Professor            3      A
+#> 31:        Graduate Assistant            1      A
+#> 32:       Associate Professor            4      B
+#> 33:        Graduate Assistant            3      A
+#> 34:       Assistant Professor            3      A
+#> 35:        Graduate Assistant            2      A
+#> 36:       Assistant Professor            3      A
+#> 37:       Assistant Professor            3      A
+#> 38:                 Professor            3      A
+#> 39:       Assistant Professor            3     A+
+#> 40:        Graduate Assistant            3      A
+#> 41:        Graduate Assistant            1      A
+#> 42:                Instructor            3     A+
+#> 43:     Academic Professional            1      A
+#> 44:        Graduate Assistant            2      A
+#> 45: Non-Academic Professional            1     A+
+#> 46:        Graduate Assistant            2      A
+#> 47:                Instructor            3     A+
+#>                  faculty_rank hours_course  grade
+#>                        <char>        <num> <char>
+#>                                 discipline_midfield
+#>                                              <char>
+#>  1:                                Academic Support
+#>  2:      Biological and Biomedical Sciences: Botany
+#>  3:                Education: Physical and Coaching
+#>  4:                Language and Literature: English
+#>  5:                                      Philosophy
+#>  6:                            Area Studies: Ethnic
+#>  7: Family and Consumer Sciences: Human Development
+#>  8:                Language and Literature: Foreign
+#>  9:                            Area Studies: Ethnic
+#> 10:      Biological and Biomedical Sciences: Botany
+#> 11:      Biological and Biomedical Sciences: Botany
+#> 12:        Communication and Journalism: Journalism
+#> 13:                       Interdisciplinary Studies
+#> 14:                      Social Sciences: Sociology
+#> 15:                Language and Literature: Foreign
+#> 16:                      Social Sciences: Sociology
+#> 17:              Public Administration: Social Work
+#> 18:              Public Administration: Social Work
+#> 19:              Public Administration: Social Work
+#> 20:                      Social Sciences: Sociology
+#> 21:                                      Psychology
+#> 22:                                      Psychology
+#> 23:                                      Psychology
+#> 24:                                      Statistics
+#> 25:             Cooperative Education or Internship
+#> 26:                                      Psychology
+#> 27:                                      Psychology
+#> 28:                                      Psychology
+#> 29:                      Social Sciences: Sociology
+#> 30:                      Social Sciences: Sociology
+#> 31:               Health Professions: Basic Medical
+#> 32:               Health Professions: Basic Medical
+#> 33:                                      Psychology
+#> 34:                                      Psychology
+#> 35:                                      Psychology
+#> 36:                      Social Sciences: Sociology
+#> 37:                                      Psychology
+#> 38:                                      Psychology
+#> 39:                      Social Sciences: Sociology
+#> 40:                      Social Sciences: Sociology
+#> 41:                      Social Sciences: Sociology
+#> 42:                            Area Studies: Ethnic
+#> 43:                  Area Studies: Women and Gender
+#> 44:                       Interdisciplinary Studies
+#> 45:                                      Psychology
+#> 46:                                      Psychology
+#> 47:                                      Psychology
+#>                                 discipline_midfield
+#>                                              <char>
 ```
 
 If we omit several columns and rename others, we obtain a more readable
@@ -396,15 +450,15 @@ DT <- student[mcid == id_we_want]
 
 # display
 DT
-#>              mcid   institution              transfer hours_transfer
-#>            <char>        <char>                <char>          <num>
-#> 1: MCID3111315508 Institution C First-Time in College             NA
-#>             race    sex age_desc us_citizen home_zip high_school sat_math
-#>           <char> <char>   <char>     <char>   <char>      <char>    <num>
-#> 1: Other/Unknown   Male Under 25        Yes    80521        <NA>      610
-#>    sat_verbal act_comp
-#>         <num>    <num>
-#> 1:        490       NA
+#>              mcid          race    sex   institution              transfer
+#>            <char>        <char> <char>        <char>                <char>
+#> 1: MCID3111315508 Other/Unknown   Male Institution C First-Time in College
+#>    hours_transfer age_desc us_citizen home_zip high_school sat_math sat_verbal
+#>             <num>   <char>     <char>   <char>      <char>    <num>      <num>
+#> 1:             NA Under 25        Yes    80521        <NA>      610        490
+#>    act_comp
+#>       <num>
+#> 1:       NA
 ```
 
 *course.*   For this student, the records show 52 courses (one row per

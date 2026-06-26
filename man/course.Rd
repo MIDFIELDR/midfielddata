@@ -10,15 +10,15 @@ A \code{data.frame} and \code{data.table} with 12 variables and approximately
 
 \describe{
 \item{\code{mcid}}{Character, de-identified student ID. Key column.}
-\item{\code{institution}}{Character, de-identified institution
-name, e.g., Institution A, Institution B, etc.}
 \item{\code{term}}{Character, academic year and term, format YYYYT.
 Key column.}
-\item{\code{course}}{Character, course name, e.g., \verb{Astrophysics  III}, \verb{Calculus For Social Science And Business}, \verb{Corp  Financial Rprtng 1}, \verb{Environmental Sanitation II}, \verb{Fitness  and Wellness}, \verb{Introductory Astronomy 2}, \verb{Our Changing  Environment}, etc.}
 \item{\code{abbrev}}{Character, course alphabetical identifier,
 e.g. ENGR, MATH, ENGL. Key column.}
 \item{\code{number}}{Character, course numeric identifier, e.g.
 101, 3429. Key column.}
+\item{\code{institution}}{Character, de-identified institution
+name, e.g., Institution A, Institution B, etc.}
+\item{\code{course}}{Character, course name, e.g., \verb{Astrophysics III}, \verb{Calculus For Social Science And Business}, \verb{Corp Financial Rprtng 1}, \verb{Environmental Sanitation II}, \verb{Fitness and Wellness}, \verb{Introductory Astronomy 2}, \verb{Our Changing Environment}, etc.}
 \item{\code{section}}{Character, course section identifier, from
 one to four characters, e.g., \code{1}, \code{2}, \code{01}, \code{14}, \code{001},
 \code{040}, \code{785}, \code{H02}, \code{R01}, \verb{300E}, \verb{888R}, etc.}

@@ -22,11 +22,6 @@ memory:
 
   Character, de-identified student ID. Key column.
 
-- `institution`:
-
-  Character, de-identified institution name, e.g., Institution A,
-  Institution B, etc.
-
 - `term`:
 
   Character, academic year and term, format YYYYT. Key column.
@@ -35,6 +30,11 @@ memory:
 
   Character, 6-digit CIP code of program in which a student is enrolled
   in a term, e.g., `090101`, `141201`, `260901`, `420101`, etc.
+
+- `institution`:
+
+  Character, de-identified institution name, e.g., Institution A,
+  Institution B, etc.
 
 - `level`:
 

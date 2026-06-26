@@ -1,10 +1,9 @@
 # Changelog
 
-## midfielddata 0.2.4.9000
-
-Current development version
+## version 0.2.4
 
 - Update articles
+- Reorder columns to put composite keys leftmost
 
 ## version 0.2.3
 

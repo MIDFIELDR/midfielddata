@@ -28,8 +28,8 @@ reference:
   - title: Practice data 
   - contents:
       - student
-      - course
       - term
+      - course
       - degree  
 
   - title: Package

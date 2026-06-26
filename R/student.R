@@ -35,11 +35,11 @@
 #'
 #'   \describe{
 #'   `r var_mcid`
+#'   `r var_race`
+#'   `r var_sex`
 #'   `r var_institution`
 #'   `r var_transfer`
 #'   `r var_hours_transfer`
-#'   `r var_race`
-#'   `r var_sex`
 #'   `r var_age_desc`
 #'   `r var_us_citizen`
 #'   `r var_home_zip`

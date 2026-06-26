@@ -10,13 +10,13 @@ A \code{data.frame} and \code{data.table} with 13 variables and approximately
 
 \describe{
 \item{\code{mcid}}{Character, de-identified student ID. Key column.}
-\item{\code{institution}}{Character, de-identified institution
-name, e.g., Institution A, Institution B, etc.}
 \item{\code{term}}{Character, academic year and term, format YYYYT.
 Key column.}
 \item{\code{cip6}}{Character, 6-digit CIP code of program in
 which a student is enrolled in a term, e.g., \code{090101},
 \code{141201}, \code{260901}, \code{420101}, etc.}
+\item{\code{institution}}{Character, de-identified institution
+name, e.g., Institution A, Institution B, etc.}
 \item{\code{level}}{Character, 01 Freshman, 02 Sophomore, etc.
 The equivalent values in the current practice data are 01
 First-Year, 02-Second Year, etc.}

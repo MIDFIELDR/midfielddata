@@ -47,11 +47,11 @@
 #'
 #'   \describe{
 #'   `r var_mcid`
-#'   `r var_institution`
 #'   `r var_term`
-#'   `r var_course`
 #'   `r var_abbrev`
 #'   `r var_number`
+#'   `r var_institution`
+#'   `r var_course`
 #'   `r var_section`
 #'   `r var_type`
 #'   `r var_faculty_rank`

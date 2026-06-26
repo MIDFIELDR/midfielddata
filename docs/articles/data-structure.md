@@ -44,11 +44,11 @@ four tables.
     student
              Variable     Class Keys
     1            mcid character  key
-    2     institution character     
-    3        transfer character     
-    4  hours_transfer   numeric     
-    5            race character     
-    6             sex character     
+    2            race character     
+    3             sex character     
+    4     institution character     
+    5        transfer character     
+    6  hours_transfer   numeric     
     7        age_desc character     
     8      us_citizen character     
     9        home_zip character     
@@ -60,9 +60,9 @@ four tables.
     term
                   Variable     Class Keys
     1                 mcid character  key
-    2          institution character     
-    3                 term character  key
-    4                 cip6 character     
+    2                 term character  key
+    3                 cip6 character     
+    4          institution character     
     5                level character     
     6             standing character     
     7                 coop character     
@@ -76,11 +76,11 @@ four tables.
     course
                   Variable     Class Keys
     1                 mcid character  key
-    2          institution character     
-    3          term_course character  key
-    4               course character     
-    5               abbrev character  key
-    6               number character  key
+    2          term_course character  key
+    3               abbrev character  key
+    4               number character  key
+    5          institution character     
+    6               course character     
     7              section character     
     8                 type character     
     9         faculty_rank character     
@@ -91,9 +91,9 @@ four tables.
     degree
          Variable     Class Keys
     1        mcid character  key
-    2 institution character     
-    3 term_degree character  key
-    4        cip6 character  key
+    2 term_degree character  key
+    3        cip6 character  key
+    4 institution character     
     5      degree character     
 
 ## `student`
@@ -112,24 +112,24 @@ dictionary is documented at
 ``` r
 
 student
-#>                  mcid   institution              transfer hours_transfer
-#>                <char>        <char>                <char>          <num>
-#>     1: MCID3111142225 Institution B   First-Time Transfer             NA
-#>     2: MCID3111142283 Institution J   First-Time Transfer             NA
-#>     3: MCID3111142290 Institution J   First-Time Transfer             NA
-#>    ---                                                                  
-#> 97553: MCID3112898894 Institution B First-Time in College             NA
-#> 97554: MCID3112898895 Institution B First-Time in College             NA
-#> 97555: MCID3112898940 Institution B First-Time in College             NA
-#>                 race    sex age_desc us_citizen home_zip high_school sat_math
-#>               <char> <char>   <char>     <char>   <char>      <char>    <num>
-#>     1:         Asian   Male Under 25        Yes     <NA>        <NA>       NA
-#>     2:         Asian Female Under 25        Yes    22020        <NA>      560
-#>     3:         Asian   Male Under 25        Yes    23233      471872      510
-#>    ---                                                                       
-#> 97553:         White Female Under 25        Yes    53716      501160      510
-#> 97554:         White Female Under 25        Yes    53029      500853      420
-#> 97555: Other/Unknown   Male Under 25        Yes    20016      090073      470
+#>                  mcid          race    sex   institution              transfer
+#>                <char>        <char> <char>        <char>                <char>
+#>     1: MCID3111142225         Asian   Male Institution B   First-Time Transfer
+#>     2: MCID3111142283         Asian Female Institution J   First-Time Transfer
+#>     3: MCID3111142290         Asian   Male Institution J   First-Time Transfer
+#>    ---                                                                        
+#> 97553: MCID3112898894         White Female Institution B First-Time in College
+#> 97554: MCID3112898895         White Female Institution B First-Time in College
+#> 97555: MCID3112898940 Other/Unknown   Male Institution B First-Time in College
+#>        hours_transfer age_desc us_citizen home_zip high_school sat_math
+#>                 <num>   <char>     <char>   <char>      <char>    <num>
+#>     1:             NA Under 25        Yes     <NA>        <NA>       NA
+#>     2:             NA Under 25        Yes    22020        <NA>      560
+#>     3:             NA Under 25        Yes    23233      471872      510
+#>    ---                                                                 
+#> 97553:             NA Under 25        Yes    53716      501160      510
+#> 97554:             NA Under 25        Yes    53029      500853      420
+#> 97555:             NA Under 25        Yes    20016      090073      470
 #>        sat_verbal act_comp
 #>             <num>    <num>
 #>     1:         NA       NA
@@ -225,15 +225,15 @@ student. The data dictionary is documented at
 ``` r
 
 term
-#>                   mcid   institution   term   cip6         level
-#>                 <char>        <char> <char> <char>        <char>
-#>      1: MCID3111142225 Institution B  19881 140901 01 First-year
-#>      2: MCID3111142283 Institution J  19881 240102 01 First-year
-#>      3: MCID3111142283 Institution J  19883 240102 01 First-year
+#>                   mcid   term   cip6   institution         level
+#>                 <char> <char> <char>        <char>        <char>
+#>      1: MCID3111142225  19881 140901 Institution B 01 First-year
+#>      2: MCID3111142283  19881 240102 Institution J 01 First-year
+#>      3: MCID3111142283  19883 240102 Institution J 01 First-year
 #>     ---                                                         
-#> 639913: MCID3112898894 Institution B  20181 451001 01 First-year
-#> 639914: MCID3112898895 Institution B  20181 302001 01 First-year
-#> 639915: MCID3112898940 Institution B  20181 050103 01 First-year
+#> 639913: MCID3112898894  20181 451001 Institution B 01 First-year
+#> 639914: MCID3112898895  20181 302001 Institution B 01 First-year
+#> 639915: MCID3112898940  20181 050103 Institution B 01 First-year
 #>                   standing   coop hours_term hours_term_attempt hours_cumul
 #>                     <char> <char>      <num>              <num>       <num>
 #>      1:      Good Standing     No          7                  7           7
@@ -317,33 +317,33 @@ course in a term. The data dictionary is documented at
 ``` r
 
 course
-#>                    mcid   institution term_course                   course
-#>                  <char>        <char>      <char>                   <char>
-#>       1: MCID3111142225 Institution B       19881       Microprocessor Lab
-#>       2: MCID3111142225 Institution B       19881           Neural Signals
-#>       3: MCID3111142225 Institution B       19881      Engineering Economy
-#>      ---                                                                  
-#> 3289530: MCID3112898940 Institution B       20181     Beginning Japanese 1
-#> 3289531: MCID3112898940 Institution B       20181  Precalculus Mathematics
-#> 3289532: MCID3112898940 Institution B       20181 Deviance In U S  Society
-#>          abbrev number section         type faculty_rank hours_course  grade
-#>          <char> <char>  <char>       <char>       <char>        <num> <char>
-#>       1:   ECEN   2230     005         <NA>         <NA>            1      C
-#>       2:   ECEN   4811     001         <NA>         <NA>            3      C
-#>       3:   MCEN   4147     001         <NA>         <NA>            3     B+
-#>      ---                                                                    
-#> 3289530:   JPNS   1010     009 Face-to-Face     Lecturer            5      C
-#> 3289531:   MATH   1150     012 Face-to-Face     Lecturer            4     C-
-#> 3289532:   SOCY   1004     100 Face-to-Face   Instructor            3      B
-#>                           discipline_midfield
-#>                                        <char>
-#>       1: Engineering: Electrical and Computer
-#>       2: Engineering: Electrical and Computer
-#>       3:              Engineering: Mechanical
-#>      ---                                     
-#> 3289530:    Language and Literature: Japanese
-#> 3289531:                          Mathematics
-#> 3289532:           Social Sciences: Sociology
+#>                    mcid term_course abbrev number   institution
+#>                  <char>      <char> <char> <char>        <char>
+#>       1: MCID3111142225       19881   ECEN   2230 Institution B
+#>       2: MCID3111142225       19881   ECEN   4811 Institution B
+#>       3: MCID3111142225       19881   MCEN   4147 Institution B
+#>      ---                                                       
+#> 3289530: MCID3112898940       20181   JPNS   1010 Institution B
+#> 3289531: MCID3112898940       20181   MATH   1150 Institution B
+#> 3289532: MCID3112898940       20181   SOCY   1004 Institution B
+#>                            course section         type faculty_rank
+#>                            <char>  <char>       <char>       <char>
+#>       1:       Microprocessor Lab     005         <NA>         <NA>
+#>       2:           Neural Signals     001         <NA>         <NA>
+#>       3:      Engineering Economy     001         <NA>         <NA>
+#>      ---                                                           
+#> 3289530:     Beginning Japanese 1     009 Face-to-Face     Lecturer
+#> 3289531:  Precalculus Mathematics     012 Face-to-Face     Lecturer
+#> 3289532: Deviance In U S  Society     100 Face-to-Face   Instructor
+#>          hours_course  grade                  discipline_midfield
+#>                 <num> <char>                               <char>
+#>       1:            1      C Engineering: Electrical and Computer
+#>       2:            3      C Engineering: Electrical and Computer
+#>       3:            3     B+              Engineering: Mechanical
+#>      ---                                                         
+#> 3289530:            5      C    Language and Literature: Japanese
+#> 3289531:            4     C-                          Mathematics
+#> 3289532:            3      B           Social Sciences: Sociology
 ```
 
 Sample of the course names. The course names do not contribute to the
@@ -464,15 +464,15 @@ term or in different terms. The data dictionary is documented at
 ``` r
 
 degree
-#>                  mcid   institution term_degree   cip6
-#>                <char>        <char>      <char> <char>
-#>     1: MCID3111142225 Institution B       19881 141001
-#>     2: MCID3111142290 Institution J       19921 141001
-#>     3: MCID3111142294 Institution J       19903 141001
+#>                  mcid term_degree   cip6   institution
+#>                <char>      <char> <char>        <char>
+#>     1: MCID3111142225       19881 141001 Institution B
+#>     2: MCID3111142290       19921 141001 Institution J
+#>     3: MCID3111142294       19903 141001 Institution J
 #>    ---                                                
-#> 49663: MCID3112839623 Institution B       20181 160102
-#> 49664: MCID3112845220 Institution B       20181 270101
-#> 49665: MCID3112845673 Institution B       20174 090101
+#> 49663: MCID3112839623       20181 160102 Institution B
+#> 49664: MCID3112845220       20181 270101 Institution B
+#> 49665: MCID3112845673       20174 090101 Institution B
 #>                                                          degree
 #>                                                          <char>
 #>     1:            Bachelor of Science in Electrical Engineering
